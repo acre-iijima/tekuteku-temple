@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>テクテクてんぷる</title>
+  <meta name="theme-color" content="#eef3fb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="てんぷる">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header class="top">
+      <div>
+        <h1>テクテクてんぷる</h1>
+        <p class="date" id="dateLabel"></p>
+      </div>
+      <div class="top-buttons">
+        <button class="icon-btn" id="openDiary" aria-label="おさんぽ日記">日記</button>
+        <button class="icon-btn" id="openSettings" aria-label="せってい">設定</button>
+      </div>
+    </header>
+
+    <main class="stage" id="stage">
+      <div class="sky-deco" id="skyDeco"></div>
+      <div class="particles" id="particles"></div>
+      <div class="chip" id="dayChip" hidden></div>
+
+      <div class="bubble" id="bubble"><p id="bubbleText"></p></div>
+
+      <button class="cat-btn" id="catBtn" aria-label="なでる">
+        <svg class="cat" id="cat" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+          <g class="stars" fill="#1d3c8f">
+            <polygon class="star-l" points="30.0,45.0 33.4,53.3 42.4,54.0 35.6,59.8 37.6,68.5 30.0,63.9 22.4,68.5 24.4,59.8 17.6,54.0 26.6,53.3"/>
+            <polygon class="star-r" points="212.0,37.0 214.9,44.0 222.5,44.6 216.7,49.5 218.5,56.9 212.0,53.0 205.5,56.9 207.3,49.5 201.5,44.6 209.1,44.0"/>
+          </g>
+
+          <g class="tail">
+            <path d="M150 205 C 202 212, 222 176, 206 136" fill="none" stroke="#1d3c8f" stroke-width="30" stroke-linecap="round"/>
+            <path d="M150 205 C 202 212, 222 176, 206 136" fill="none" stroke="#f3dcc2" stroke-width="20" stroke-linecap="round"/>
+          </g>
+
+          <g class="body">
+            <path d="M72 214 Q66 164 102 150 L138 150 Q174 164 168 214 Z" fill="#fffaf2" stroke="#1d3c8f" stroke-width="5" stroke-linejoin="round"/>
+            <ellipse cx="153" cy="186" rx="9" ry="17" fill="#f6d2ad"/>
+            <g class="paws" fill="#fffaf2" stroke="#1d3c8f" stroke-width="5">
+              <ellipse cx="98" cy="218" rx="19" ry="11"/>
+              <ellipse cx="142" cy="218" rx="19" ry="11"/>
+            </g>
+          </g>
+
+          <g class="head">
+            <g class="ear ear-l">
+              <path d="M60 90 L64 30 L112 60 Z" fill="#fffaf2" stroke="#1d3c8f" stroke-width="5" stroke-linejoin="round"/>
+              <path d="M70 72 L72 44 L96 60 Z" fill="#f5a9b8"/>
+              <g class="ribbon" stroke="#1d3c8f" stroke-width="3" stroke-linejoin="round">
+                <path d="M74 40 L56 28 L58 50 Z" fill="#f2849e"/>
+                <path d="M74 40 L88 26 L92 46 Z" fill="#f2849e"/>
+                <circle cx="74" cy="40" r="5.5" fill="#f2849e"/>
+              </g>
+            </g>
+            <g class="ear ear-r">
+              <path d="M180 90 L176 30 L128 60 Z" fill="#fffaf2" stroke="#1d3c8f" stroke-width="5" stroke-linejoin="round"/>
+              <path d="M170 72 L168 44 L144 60 Z" fill="#f5a9b8"/>
+            </g>
+            <ellipse cx="120" cy="104" rx="72" ry="56" fill="#fffaf2" stroke="#1d3c8f" stroke-width="5"/>
+
+            <!-- おでこのアプリコット色と、目のまわりの青グレー -->
+            <path d="M120 52 Q137 53 134 67 Q129 79 120 82 Q111 79 106 67 Q103 53 120 52 Z" fill="#f4b183"/>
+            <ellipse cx="91" cy="103" rx="23" ry="17" fill="#a9b7dd" transform="rotate(-8 91 103)"/>
+            <ellipse cx="149" cy="103" rx="23" ry="17" fill="#a9b7dd" transform="rotate(8 149 103)"/>
+
+            <g class="eyes-open">
+              <g class="eye"><circle cx="93" cy="103" r="12" fill="#fff"/><circle cx="95" cy="103" r="6.5" fill="#1d3c8f"/></g>
+              <g class="eye"><circle cx="147" cy="103" r="12" fill="#fff"/><circle cx="145" cy="103" r="6.5" fill="#1d3c8f"/></g>
+              <path d="M79 96 L72 92 M80 101 L72 100 M161 96 L168 92 M160 101 L168 100" stroke="#1d3c8f" stroke-width="3" stroke-linecap="round"/>
+            </g>
+            <g class="eyes-happy" fill="none" stroke="#1d3c8f" stroke-width="4.5" stroke-linecap="round">
+              <path d="M81 107 Q93 93 105 107"/>
+              <path d="M135 107 Q147 93 159 107"/>
+            </g>
+
+            <ellipse class="blush" cx="76" cy="126" rx="10" ry="6"/>
+            <ellipse class="blush" cx="164" cy="126" rx="10" ry="6"/>
+
+            <!-- ピンクのお鼻と、牛柄みたいな黒ぽっち（鼻の左と、口もと） -->
+            <path d="M111 121 Q120 117 129 121 Q127 130 120 133 Q113 130 111 121 Z" fill="#f2a0b0"/>
+            <path d="M111 121 Q114.5 119 118.5 119.6 Q119 126.5 116 132 Q112.5 128 111 121 Z" fill="#141a33"/>
+            <path d="M112.5 139 Q117.5 137 122 139.5 Q121 145 116.5 145.5 Q112 144 112.5 139 Z" fill="#141a33"/>
+            <path d="M120 133 L120 137 M120 137 Q114.5 143 109.5 138.5 M120 137 Q125.5 143 130.5 138.5" fill="none" stroke="#1d3c8f" stroke-width="3" stroke-linecap="round"/>
+
+            <g stroke="#1d3c8f" stroke-width="3.5" stroke-linecap="round">
+              <path d="M66 118 L44 112"/><path d="M64 127 L40 127"/><path d="M66 136 L44 142"/>
+              <path d="M174 118 L196 112"/><path d="M176 127 L200 127"/><path d="M174 136 L196 142"/>
+            </g>
+          </g>
+        </svg>
+      </button>
+      <div class="ground" id="ground"></div>
+    </main>
+
+    <section class="card steps-card">
+      <p class="card-label">きょうのおさんぽ</p>
+      <p class="steps"><span id="stepsNum">—</span><small>歩</small></p>
+      <p class="sub" id="stepsSub">ショートカットから歩数を届けてね</p>
+    </section>
+
+    <section class="card total-card">
+      <p class="card-label">これまで一緒に歩いた道のり</p>
+      <p class="total" id="totalKm">0 km</p>
+      <p class="sub" id="totalNote"></p>
+    </section>
+  </div>
+
+  <!-- おさんぽ日記 -->
+  <div class="sheet" id="diarySheet" hidden>
+    <div class="sheet-inner">
+      <div class="sheet-head">
+        <button class="nav" id="prevMonth" aria-label="前の月">‹</button>
+        <h2 id="monthLabel"></h2>
+        <button class="nav" id="nextMonth" aria-label="次の月">›</button>
+      </div>
+      <div class="cal-week"><span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span></div>
+      <div class="cal" id="calendar"></div>
+      <p class="sub center" id="monthSum"></p>
+      <button class="close" data-close>とじる</button>
+    </div>
+  </div>
+
+  <!-- せってい -->
+  <div class="sheet" id="settingsSheet" hidden>
+    <div class="sheet-inner">
+      <h2>せってい</h2>
+      <label class="field">ねこの名前
+        <input id="catName" type="text" maxlength="12" placeholder="てんぷる">
+      </label>
+      <label class="field">ねこのお誕生日（あれば）
+        <input id="catBirthday" type="date">
+      </label>
+      <hr>
+      <p class="field-title">歩数を手で入れる</p>
+      <div class="row">
+        <input id="manualDate" type="date">
+        <input id="manualSteps" type="number" inputmode="numeric" min="0" placeholder="歩数">
+        <button class="small" id="manualSave">入れる</button>
+      </div>
+      <hr>
+      <p class="field-title">ショートカット用のURL</p>
+      <p class="sub">ショートカットの「URLを開く」にはこのURLの後ろに歩数をつけます。</p>
+      <code class="url" id="baseUrl"></code>
+      <button class="close" data-close>とじる</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+
+  <script src="holidays.js"></script>
+  <script src="messages.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
