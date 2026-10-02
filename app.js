@@ -323,20 +323,26 @@
 
   // ---------- なでる ----------
   let poseTimer = null;
+  let lastTap = null;
+  // なでると、ランダムにポーズが変わって、そのポーズに合ったひとことを言う
   function cheer() {
     const cat = $('cat');
-    const back = currentPose === 'upright' ? cheer.back : currentPose;
+    const back = window.TapPoses.includes(currentPose) ? cheer.back : currentPose;
     cheer.back = back;
-    drawCat('upright', propsFor(new Date()));
+    const choices = window.TapPoses.filter((p) => p !== lastTap);
+    const pose = pickRandom(choices);
+    lastTap = pose;
+    drawCat(pose, propsFor(new Date()));
     cat.classList.remove('hop');
     void cat.getBoundingClientRect();
     cat.classList.add('hop');
     clearTimeout(poseTimer);
-    poseTimer = setTimeout(() => drawCat(back, propsFor(new Date())), 1600);
+    poseTimer = setTimeout(() => drawCat(back, propsFor(new Date())), 2200);
+    return pose;
   }
   $('catBtn').addEventListener('click', (e) => {
-    cheer();
-    showBubble(pickRandom(M.tap));
+    const pose = cheer();
+    showBubble(pickRandom(M.tap[pose]));
     const heart = document.createElement('span');
     heart.className = 'heart';
     heart.textContent = pickRandom(['♥', '♪', '♥', '…']);

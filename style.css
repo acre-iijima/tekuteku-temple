@@ -136,6 +136,12 @@ h1 { margin: 0; font-size: 1.5rem; font-weight: 600; letter-spacing: 0.06em; }
 .cat .nose { fill: #f2a7b2; stroke: var(--ink); stroke-width: 1.6; }
 .cat .w-mask { fill: #9aa8cc; opacity: 0.38; }
 .cat .w-apricot { fill: #f2b98a; opacity: 0.45; }
+.cat .w-fawn, .cat .w-white { display: none; }
+.cat .iris { fill: #6f95d8; }
+.cat .shine { fill: #fff; }
+.cat .ear-in { fill: #f4b9c3; }
+.cat .tongue { fill: #f2a7b2; stroke: var(--ink); stroke-width: 1.4; }
+.cat .heart-ink { fill: #e9928c; stroke: var(--ink); stroke-width: 2; }
 .cat .tail-out { fill: none; stroke: var(--ink); stroke-width: 15; stroke-linecap: round; }
 .cat .tail-in { fill: none; stroke: #fffdf8; stroke-width: 9; stroke-linecap: round; }
 .cat .prop-purple { fill: #c7b5dc; }
