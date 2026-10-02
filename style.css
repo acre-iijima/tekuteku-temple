@@ -260,3 +260,103 @@ hr { border: none; border-top: 2px dashed #d6ccbb; margin: 16px 0; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; }
 }
+
+/* ===== ポップで明るい見た目（上の設定を上書き） ===== */
+:root {
+  --paper: #fff4cf;
+  --card: #ffffff;
+  --accent: #ff8fab;
+  --yellow: #ffd94a;
+  --pink: #ff9fbb;
+  --mint: #8fe8c8;
+  --blue: #8fd0ff;
+  --orange: #ffa95e;
+  --pop: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Hiragino Sans", system-ui, sans-serif;
+  --pop-shadow: 3px 4px 0 var(--ink);
+  --sketch-radius: 20px;
+}
+body.t-dawn    { --sky: #c8c4ff; }
+body.t-morning { --sky: #ffd6a5; }
+body.t-day     { --sky: #9edcff; }
+body.t-evening { --sky: #ffae8a; }
+body.t-night   { --sky: #4a5aa8; }
+body.t-late    { --sky: #353d7a; }
+body.s-spring { --hill: #b4ec9a; }
+body.s-summer { --hill: #6fdc7a; }
+body.s-autumn { --hill: #ffc56b; }
+body.s-winter { --hill: #ffffff; }
+
+body {
+  font-family: var(--pop);
+  background-color: var(--paper);
+  background-image: radial-gradient(#ffe48a 2.2px, transparent 2.6px);
+  background-size: 22px 22px;
+}
+
+/* タイトル：1文字ずつ色ちがい */
+h1 { font-family: var(--pop); font-weight: 800; font-size: 1.6rem; letter-spacing: 0.02em; }
+h1 span { display: inline-block; -webkit-text-stroke: 1.5px var(--ink); paint-order: stroke fill; text-shadow: 2px 2px 0 var(--ink); }
+h1 span:nth-child(5n+1) { color: var(--pink); }
+h1 span:nth-child(5n+2) { color: var(--yellow); transform: translateY(-2px); }
+h1 span:nth-child(5n+3) { color: var(--mint); }
+h1 span:nth-child(5n+4) { color: var(--blue); transform: translateY(-2px); }
+h1 span:nth-child(5n)   { color: var(--orange); }
+.date { font-weight: 700; color: var(--ink); }
+
+.icon-btn {
+  font-family: var(--pop); font-weight: 800; border-width: 2.5px; border-radius: 16px;
+  box-shadow: var(--pop-shadow);
+}
+#openDiary { background: var(--mint); }
+#openSettings { background: var(--pink); }
+.icon-btn:active, .small:active, .close:active { transform: translate(2px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+
+.stage { border-width: 2.5px; border-radius: 26px; box-shadow: var(--pop-shadow); }
+.ground {
+  left: -15%; right: -15%; bottom: 0; height: 21%;
+  background: var(--hill, #b4ec9a);
+  border-top: 2.5px solid var(--ink);
+  border-radius: 50% 50% 0 0 / 46px 46px 0 0;
+  opacity: 1;
+}
+.cat-btn { margin-bottom: 9%; }
+.sun { background: var(--yellow); width: 46px; height: 46px; border-width: 2.5px; box-shadow: 0 0 0 8px rgba(255, 233, 120, 0.45); }
+.moon { background: #fff3a8; border-width: 2.5px; }
+.star { color: #fff6c2; font-size: 12px; }
+.cloud { border-width: 2.5px; }
+
+.chip {
+  font-family: var(--pop); font-weight: 800; background: var(--yellow);
+  border-width: 2.5px; border-radius: 999px; box-shadow: 2px 3px 0 var(--ink);
+}
+
+.bubble { font-family: var(--hand); border-width: 2.5px; border-radius: 22px; box-shadow: var(--pop-shadow); font-weight: 600; }
+.bubble::after { border-right-width: 2.5px; border-bottom-width: 2.5px; transform: translateX(-50%) rotate(45deg); }
+
+.card { border-width: 2.5px; border-radius: 22px; box-shadow: var(--pop-shadow); }
+.steps-card { background: var(--yellow); }
+.total-card { background: var(--mint); }
+.review-card { background: var(--pink); }
+.card-label { font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+.steps, .total { font-family: var(--pop); font-weight: 800; }
+.steps { font-size: 2.8rem; }
+.sub { color: #4a4540; font-weight: 500; }
+.week-bars .bar { background: #fff; border-width: 2.5px; }
+.week-bars .d { color: var(--ink); font-weight: 700; }
+
+.small { font-family: var(--pop); font-weight: 800; border-width: 2.5px; box-shadow: 2px 3px 0 var(--ink); background: var(--pink); }
+.small.ghost { background: var(--blue); }
+.close { font-family: var(--pop); font-weight: 800; background: var(--yellow); border-width: 2.5px; border-radius: 16px; box-shadow: var(--pop-shadow); }
+.nav { background: var(--yellow); border-width: 2.5px; box-shadow: 2px 3px 0 var(--ink); }
+.sheet-inner { background: #fffaf0; border-width: 2.5px; }
+.sheet h2 { font-weight: 800; }
+.day { border-color: #f0e2c0; }
+.day.lv1 { background: #fff1b8; }
+.day.lv2 { background: #ffe066; }
+.day.lv3 { background: #ffc0d0; }
+.day.lv4 { background: #ff9fbb; }
+.day.today { border-width: 2.5px; }
+.toast { font-family: var(--pop); font-weight: 800; background: var(--pink); border-width: 2.5px; border-radius: 999px; box-shadow: var(--pop-shadow); }
+.stage { height: min(64vh, 460px); padding-top: 52px; }
+.bubble { max-width: 94%; font-size: 0.95rem; padding: 10px 16px; }
+.cat-btn { width: min(68vw, 270px); margin-bottom: 7%; }
