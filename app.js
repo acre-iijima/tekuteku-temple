@@ -27,10 +27,12 @@
   const WD = ['日', '月', '火', '水', '木', '金', '土'];
 
   function timeOfDay(h) {
-    if (h >= 5 && h < 10) return 'morning';
+    if (h >= 4 && h < 6) return 'dawn';
+    if (h >= 6 && h < 10) return 'morning';
     if (h >= 10 && h < 16) return 'day';
     if (h >= 16 && h < 19) return 'evening';
-    return 'night';
+    if (h >= 19 && h < 23) return 'night';
+    return 'late';
   }
   function seasonOf(month) {
     if (month >= 3 && month <= 5) return 'spring';
@@ -46,9 +48,26 @@
     for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); }
     return h >>> 0;
   }
-  // その日のうちは同じ言葉になるように、日付で決める
-  const pickDaily = (arr, seed) => arr[hash(seed) % arr.length];
   const pickRandom = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+  // その日のうちは同じ言葉のまま。さらに、この7日間に出た言葉はなるべく避ける。
+  const daysBetween = (a, b) => Math.round((parseYmd(b) - parseYmd(a)) / 86400000);
+  function pickFresh(pool, slot, today) {
+    state.used = state.used || {};
+    state.picked = state.picked || {};
+    const key = today + '|' + slot;
+    if (state.picked[key] && pool.includes(state.picked[key])) return state.picked[key];
+    const fresh = pool.filter((t) => !state.used[t] || daysBetween(state.used[t], today) >= 7);
+    const list = fresh.length ? fresh : pool;
+    const text = list[hash(key) % list.length];
+    state.used[text] = today;
+    state.picked[key] = text;
+    // 古い記録はかたづける
+    Object.keys(state.picked).forEach((k) => { if (!k.startsWith(today)) delete state.picked[k]; });
+    Object.keys(state.used).forEach((t) => { if (daysBetween(state.used[t], today) > 14) delete state.used[t]; });
+    save();
+    return text;
+  }
 
   const catName = () => (state.settings.catName || '').trim() || 'てんぷる';
   const km = (steps) => (steps * STRIDE_M / 1000);
@@ -80,26 +99,77 @@
     return { holiday, event, season, tod: timeOfDay(now.getHours()), birthday: isBirthday(now) };
   }
 
+  // 今週（月曜〜今日）の記録
+  function weekInfo(now) {
+    const list = [];
+    const mondayOffset = (now.getDay() + 6) % 7;
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() - mondayOffset + i);
+      list.push({ date: d, steps: state.days[ymd(d)] });
+    }
+    const recorded = list.filter((x) => x.steps != null);
+    const total = recorded.reduce((a, x) => a + x.steps, 0);
+    return { list, days: recorded.length, wkm: fmtKm(km(total)) };
+  }
+
   function buildMessage(now, info, steps) {
-    const key = ymd(now);
+    const today = ymd(now);
+    const week = weekInfo(now);
     const vars = {
       steps: steps != null ? steps.toLocaleString() : '',
       km: steps != null ? fmtKm(km(steps)) : '',
       name: catName(),
       holiday: info.holiday,
+      days: week.days,
+      wkm: week.wkm,
     };
     let first;
-    if (info.birthday) first = pickDaily(M.birthday, key + 'b');
-    else if (info.holiday) first = pickDaily(M.holidayByName[info.holiday] || M.holiday, key + 'h');
-    else if (info.event && M.event[info.event]) first = pickDaily(M.event[info.event], key + 'e');
-    else {
-      const pools = [M.greet[info.tod], M.season[now.getMonth() + 1], M.weekday[now.getDay()]];
-      const pool = pools[hash(key + info.tod) % pools.length];
-      first = pickDaily(pool, key + info.tod + 'g');
+    if (info.birthday) first = pickFresh(M.birthday, 'birthday', today);
+    else if (info.holiday) first = pickFresh(M.holidayByName[info.holiday] || M.holiday, 'holiday', today);
+    else if (info.event && M.event[info.event]) first = pickFresh(M.event[info.event], 'event', today);
+    else if (now.getDay() === 0 && (info.tod === 'evening' || info.tod === 'night')) {
+      first = pickFresh(week.days ? M.review : M.reviewNone, 'review', today);
+    } else {
+      // 時間帯・季節・曜日のどれかから。時間帯がいちばん多めに出る
+      const pools = [M.greet[info.tod], M.greet[info.tod], M.season[now.getMonth() + 1], M.weekday[now.getDay()]];
+      const which = hash(today + info.tod) % pools.length;
+      first = pickFresh(pools[which], 'first-' + info.tod, today);
     }
     const band = stepsBand(steps);
-    const second = pickDaily(M.steps[band], key + band);
+    const second = pickFresh(M.steps[band], 'steps-' + band, today);
     return fill(first, vars) + '\n' + fill(second, vars);
+  }
+
+  // ---------- ポーズと小物 ----------
+  function poseFor(info, steps) {
+    if (info.tod === 'dawn' || info.tod === 'morning') return 'stretch';
+    if (info.tod === 'evening') return 'back';
+    if (info.tod === 'night' || info.tod === 'late') return 'loaf';
+    return steps >= 8000 ? 'stand' : 'sit';
+  }
+
+  function propsFor(now) {
+    const md = (now.getMonth() + 1) * 100 + now.getDate();
+    const list = [];
+    if (md >= 1018 && md <= 1031) list.push('witch');
+    else if (md >= 1218 && md <= 1225) list.push('santa');
+    else if (md >= 715 && md <= 831) list.push('straw');
+    else if (md >= 325 && md <= 415) list.push('sakura');
+    if (md >= 1201 || md <= 228) list.push('scarf');
+    return list;
+  }
+
+  let currentPose = null;
+  function drawCat(poseName, props) {
+    const pose = Poses[poseName];
+    let extra = '';
+    props.forEach((p) => {
+      if (p === 'scarf') extra += `<g transform="translate(${pose.neck.x} ${pose.neck.y})">${Props.scarfOf(pose.neck.w)}</g>`;
+      else extra += `<g transform="translate(${pose.head.x} ${pose.head.y}) rotate(${pose.head.r})">${Props[p]}</g>`;
+    });
+    $('catPose').innerHTML = pose.svg + extra;
+    $('cat').classList.toggle('sleeping', !!pose.sleeping);
+    currentPose = poseName;
   }
 
   // ---------- 歩数の受け取り（ショートカットから） ----------
@@ -126,13 +196,14 @@
     document.body.className = `t-${info.tod} s-${info.season}`;
     const deco = $('skyDeco');
     deco.innerHTML = '';
-    if (info.tod === 'night') {
+    if (info.tod === 'night' || info.tod === 'late') {
       const moon = document.createElement('div');
       moon.className = 'moon' + (info.event === '十五夜' ? ' full' : '');
       deco.appendChild(moon);
       for (let i = 0; i < 18; i++) {
         const s = document.createElement('div');
         s.className = 'star';
+        s.textContent = '✦';
         s.style.left = (hash('x' + i) % 100) + '%';
         s.style.top = (hash('y' + i) % 55) + '%';
         s.style.animationDelay = (i % 5) * 0.6 + 's';
@@ -156,11 +227,11 @@
     p.innerHTML = '';
     let chars = null;
     // 絵文字ではなく、絵柄に合わせた平たい記号を降らせる
-    if (info.birthday) chars = [['★', '#f2849e'], ['★', '#1d3c8f']];
-    else if (info.season === 'spring') chars = [['✿', '#f2849e']];
-    else if (info.season === 'autumn') chars = [['◆', '#e98a3c'], ['◆', '#c9572e']];
-    else if (info.season === 'winter') chars = [['❄\uFE0E', '#ffffff']];
-    else if (info.tod === 'night') chars = [['✦', '#fff2b8']];
+    if (info.birthday) chars = [['★', '#e9928c'], ['★', '#2b2b2b']];
+    else if (info.season === 'spring') chars = [['✿', '#e9a0ae']];
+    else if (info.season === 'autumn') chars = [['◆', '#d98a4f'], ['◆', '#b8643a']];
+    else if (info.season === 'winter') chars = [['❄\uFE0E', '#9aa8cc']];
+    else if (info.tod === 'night' || info.tod === 'late') chars = [['✦', '#b9a64a']];
     if (!chars) return;
     for (let i = 0; i < 9; i++) {
       const el = document.createElement('span');
@@ -186,7 +257,7 @@
     chip.hidden = false;
   }
 
-  const PAW = '<svg viewBox="0 0 20 20" width="16" height="16" fill="#1d3c8f"><ellipse cx="10" cy="13" rx="5" ry="4.2"/><circle cx="4" cy="8" r="2.2"/><circle cx="8" cy="4.5" r="2.2"/><circle cx="12" cy="4.5" r="2.2"/><circle cx="16" cy="8" r="2.2"/></svg>';
+  const PAW = '<svg viewBox="0 0 20 20" width="16" height="16" fill="#2b2b2b"><ellipse cx="10" cy="13" rx="5" ry="4.2"/><circle cx="4" cy="8" r="2.2"/><circle cx="8" cy="4.5" r="2.2"/><circle cx="12" cy="4.5" r="2.2"/><circle cx="16" cy="8" r="2.2"/></svg>';
 
   const MILESTONES = [
     [0.5, 'ご近所の公園まで'], [5, 'となり町のさらに先まで'], [21.1, 'ハーフマラソンの距離'],
@@ -199,7 +270,7 @@
     $('stepsNum').textContent = steps != null ? steps.toLocaleString() : '—';
     $('stepsSub').textContent = steps != null
       ? `およそ ${fmtKm(km(steps))} km`
-      : 'ショートカットから歩数を届けてね';
+      : 'ショートカットから、歩数を届けてください';
 
     const total = Object.values(state.days).reduce((a, b) => a + (b || 0), 0);
     const totalKm = km(total);
@@ -207,8 +278,8 @@
     const reached = MILESTONES.filter(([d]) => totalKm >= d).pop();
     const days = Object.keys(state.days).length;
     $('totalNote').textContent = reached
-      ? `${reached[1]}くらい、いっしょに歩いたよ（${days}日ぶん）`
-      : 'これからいっしょに、のんびり歩いていこうね';
+      ? `${reached[1]}くらい、いっしょに歩きました（${days}日ぶん）`
+      : 'これから、のんびり歩いていきましょう';
   }
 
   function showBubble(text) {
@@ -219,35 +290,57 @@
     b.style.animation = '';
   }
 
+  function renderReview(now) {
+    const card = $('reviewCard');
+    card.hidden = now.getDay() !== 0;
+    if (card.hidden) return;
+    const week = weekInfo(now);
+    const max = Math.max(1, ...week.list.map((x) => x.steps || 0));
+    $('weekBars').innerHTML = week.list.map((x) => {
+      const h = x.steps != null ? Math.max(4, Math.round((x.steps / max) * 64)) : 4;
+      return `<div class="col"><div class="bar${x.steps == null ? ' empty' : ''}" style="height:${h}px"></div><span class="d">${WD[x.date.getDay()]}</span></div>`;
+    }).join('');
+    $('reviewNote').textContent = week.days
+      ? `${week.days}日ぶん、あわせて ${week.wkm} km。おつかれさまでした`
+      : '今週は、ゆっくりの週でした';
+  }
+
+  // おためし用に時間帯だけ動かせるようにしておく
+  let hourOverride = null;
   function render() {
     const now = new Date();
+    if (hourOverride != null) now.setHours(hourOverride, 0);
     const info = todayInfo(now);
     const steps = state.days[ymd(now)];
     $('dateLabel').textContent = `${now.getMonth() + 1}月${now.getDate()}日（${WD[now.getDay()]}）`;
     renderSky(info, now);
     renderChip(info);
     renderNumbers(steps);
-    const msg = buildMessage(now, info, steps);
-    showBubble(msg);
+    renderReview(now);
+    drawCat(poseFor(info, steps), propsFor(now));
+    showBubble(buildMessage(now, info, steps));
   }
 
   // ---------- なでる ----------
-  let happyTimer = null;
+  let poseTimer = null;
   function cheer() {
     const cat = $('cat');
+    const back = currentPose === 'upright' ? cheer.back : currentPose;
+    cheer.back = back;
+    drawCat('upright', propsFor(new Date()));
     cat.classList.remove('hop');
     void cat.getBoundingClientRect();
-    cat.classList.add('hop', 'happy');
-    clearTimeout(happyTimer);
-    happyTimer = setTimeout(() => cat.classList.remove('happy'), 1600);
+    cat.classList.add('hop');
+    clearTimeout(poseTimer);
+    poseTimer = setTimeout(() => drawCat(back, propsFor(new Date())), 1600);
   }
   $('catBtn').addEventListener('click', (e) => {
     cheer();
     showBubble(pickRandom(M.tap));
     const heart = document.createElement('span');
     heart.className = 'heart';
-    heart.textContent = pickRandom(['♥', '★', '♥', '✦']);
-    heart.style.color = pickRandom(['#f2849e', '#1d3c8f']);
+    heart.textContent = pickRandom(['♥', '♪', '♥', '…']);
+    heart.style.color = pickRandom(['#e9928c', '#2b2b2b']);
     const r = $('stage').getBoundingClientRect();
     heart.style.left = ((e.clientX || r.width / 2 + r.left) - r.left - 11) + 'px';
     heart.style.top = ((e.clientY || r.top + r.height / 2) - r.top - 20) + 'px';
@@ -299,8 +392,8 @@
       cal.appendChild(el);
     }
     $('monthSum').textContent = count
-      ? `この月は ${count}日ぶんのおさんぽ、あわせて ${fmtKm(km(sum))} km`
-      : 'この月の記録はまだないよ。のんびりいこうね';
+      ? `この月は ${count}日ぶん、あわせて ${fmtKm(km(sum))} km でした`
+      : 'この月の記録は、まだありません';
   }
   $('prevMonth').addEventListener('click', () => { calMonth.setMonth(calMonth.getMonth() - 1); renderCalendar(); });
   $('nextMonth').addEventListener('click', () => { calMonth.setMonth(calMonth.getMonth() + 1); renderCalendar(); });
@@ -333,10 +426,45 @@
   $('manualSave').addEventListener('click', () => {
     const date = $('manualDate').value;
     const steps = parseInt($('manualSteps').value, 10);
-    if (!parseYmd(date) || !Number.isFinite(steps) || steps < 0) { toast('日付と歩数を入れてね'); return; }
+    if (!parseYmd(date) || !Number.isFinite(steps) || steps < 0) { toast('日付と歩数を入れてください'); return; }
     recordSteps(date, steps, true);
     $('manualSteps').value = '';
-    toast(`${date.slice(5).replace('-', '/')} に ${steps.toLocaleString()}歩 を入れたよ`);
+    toast(`${date.slice(5).replace('-', '/')} に ${steps.toLocaleString()}歩 を入れました`);
+  });
+
+  // ---------- バックアップ ----------
+  const BACKUP_PREFIX = 'TEKUTEKU1:';
+  function makeBackup() {
+    const json = JSON.stringify({ days: state.days, settings: state.settings });
+    return BACKUP_PREFIX + btoa(unescape(encodeURIComponent(json)));
+  }
+  $('backupCopy').addEventListener('click', () => {
+    const code = makeBackup();
+    const area = $('backupText');
+    area.value = code;
+    const done = () => toast('コピーしました。メモ帳などに貼っておいてください');
+    const fallback = () => { area.focus(); area.select(); toast('選択した文字を、コピーしてください'); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(code).then(done, fallback);
+    else fallback();
+  });
+  $('backupRestore').addEventListener('click', () => {
+    const raw = $('backupText').value.trim();
+    try {
+      if (!raw.startsWith(BACKUP_PREFIX)) throw new Error('prefix');
+      const data = JSON.parse(decodeURIComponent(escape(atob(raw.slice(BACKUP_PREFIX.length)))));
+      let n = 0;
+      Object.entries(data.days || {}).forEach(([d, v]) => {
+        if (!parseYmd(d) || !Number.isFinite(v)) return;
+        state.days[d] = Math.max(state.days[d] || 0, v);
+        n++;
+      });
+      Object.entries(data.settings || {}).forEach(([k, v]) => { if (!state.settings[k]) state.settings[k] = v; });
+      save();
+      $('backupText').value = '';
+      toast(`${n}日ぶんの記録を、もどしました`);
+    } catch (e) {
+      toast('バックアップの文字を、まるごと貼ってください');
+    }
   });
 
   // ---------- 起動 ----------
@@ -364,6 +492,10 @@
       render();
       toast(fill(pickRandom(M.received), { steps: steps.toLocaleString() }));
       setTimeout(cheer, 300);
+    },
+    at(hour) {
+      hourOverride = hour;
+      render();
     },
   };
 
