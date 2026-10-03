@@ -96,7 +96,32 @@
     const holiday = JpCalendar.holiday(now);
     const event = JpCalendar.event(now);
     const season = seasonOf(now.getMonth() + 1);
-    return { holiday, event, season, tod: timeOfDay(now.getHours()), birthday: isBirthday(now) };
+    return { holiday, event, season, tod: timeOfDay(now.getHours()), birthday: isBirthday(now), weather: todayWeather(now) };
+  }
+
+  // ---------- 天気 ----------
+  // 今日の天気。最後に取れた天気から、今日のぶんを探す（電波がなくても前の天気で）
+  function todayWeather(now) {
+    const data = window.Weather && Weather.get();
+    if (!data || !data.days) return null;
+    const today = ymd(now);
+    const day = data.days.find((d) => d.date === today);
+    if (!day) return null;
+    const fresh = ymd(new Date(data.fetchedAt)) === today && Date.now() - data.fetchedAt < 3 * 3600 * 1000;
+    // 取れたばかりなら「いま」の天気、古ければその日の予報を使う
+    const kind = fresh ? data.current.kind : day.kind;
+    return { kind, dayKind: day.kind, temp: fresh ? data.current.temp : null, max: day.max, min: day.min, pop: day.pop };
+  }
+
+  // ひとことに使う天気の種類
+  function weatherKey(w) {
+    if (!w) return null;
+    // ひとことは一日の予報で決める（途中で天気が変わっても、言うことがころころ変わらないように）
+    const k = w.dayKind;
+    if (['rain', 'snow', 'thunder', 'fog'].includes(k)) return k;
+    if (w.max >= 30) return 'hot';
+    if (w.max <= 8) return 'cold';
+    return k === 'cloudy' ? 'cloudy' : 'clear';
   }
 
   // 今週（月曜〜今日）の記録
@@ -132,6 +157,12 @@
     } else {
       // 時間帯・季節・曜日のどれかから。時間帯がいちばん多めに出る
       const pools = [M.greet[info.tod], M.greet[info.tod], M.season[now.getMonth() + 1], M.weekday[now.getDay()]];
+      // 雨や雪、暑い寒いの日は、天気の話が出やすい
+      const wk = weatherKey(info.weather);
+      if (wk && M.weather && M.weather[wk]) {
+        pools.push(M.weather[wk]);
+        if (!['clear', 'cloudy'].includes(wk)) pools.push(M.weather[wk], M.weather[wk]);
+      }
       const which = hash(today + info.tod) % pools.length;
       first = pickFresh(pools[which], 'first-' + info.tod, today);
     }
@@ -193,10 +224,28 @@
 
   // ---------- 描画 ----------
   function renderSky(info, now) {
-    document.body.className = `t-${info.tod} s-${info.season}`;
+    const wkind = info.weather ? info.weather.kind : null;
+    document.body.className = `t-${info.tod} s-${info.season}` + (wkind ? ` w-${wkind}` : '');
     const deco = $('skyDeco');
     deco.innerHTML = '';
-    if (info.tod === 'night' || info.tod === 'late') {
+    const overcast = ['cloudy', 'rain', 'snow', 'thunder', 'fog'].includes(wkind);
+    if (overcast || wkind === 'partly') {
+      // くもりや雨の日は、雲を多めに。晴れときどきくもりは、お日さまも出す
+      if (wkind === 'partly' && info.tod !== 'night' && info.tod !== 'late') {
+        const sun = document.createElement('div');
+        sun.className = 'sun';
+        deco.appendChild(sun);
+      }
+      const clouds = overcast ? [[4, 120, 0], [14, 90, -12], [26, 140, -26], [9, 70, -34]] : [[8, 100, 0], [22, 70, -20], [14, 80, -32]];
+      clouds.forEach(([top, w, delay]) => {
+        const c = document.createElement('div');
+        c.className = 'cloud' + (overcast ? ' gray' : '');
+        c.style.top = top + '%';
+        c.style.width = w + 'px';
+        c.style.animationDelay = delay + 's';
+        deco.appendChild(c);
+      });
+    } else if (info.tod === 'night' || info.tod === 'late') {
       const moon = document.createElement('div');
       moon.className = 'moon' + (info.event === '十五夜' ? ' full' : '');
       deco.appendChild(moon);
@@ -227,19 +276,33 @@
     p.innerHTML = '';
     let chars = null;
     // 絵文字ではなく、絵柄に合わせた平たい記号を降らせる
+    if (wkind === 'rain' || wkind === 'thunder') {
+      // 雨つぶ
+      for (let i = 0; i < 40; i++) {
+        const el = document.createElement('span');
+        el.className = 'drop';
+        el.style.left = (i * 3 + (hash('r' + i) % 6)) + '%';
+        el.style.animationDuration = 0.7 + (hash('rd' + i) % 5) / 10 + 's';
+        el.style.animationDelay = -(hash('rt' + i) % 20) / 10 + 's';
+        p.appendChild(el);
+      }
+      return;
+    }
     if (info.birthday) chars = [['★', '#e9928c'], ['★', '#2b2b2b']];
+    else if (wkind === 'snow') chars = [['●', '#ffffff'], ['❄\uFE0E', '#ffffff']];
     else if (info.season === 'spring') chars = [['✿', '#e9a0ae']];
     else if (info.season === 'autumn') chars = [['◆', '#d98a4f'], ['◆', '#b8643a']];
     else if (info.season === 'winter') chars = [['❄\uFE0E', '#9aa8cc']];
     else if (info.tod === 'night' || info.tod === 'late') chars = [['✦', '#b9a64a']];
     if (!chars) return;
-    for (let i = 0; i < 9; i++) {
+    const n = wkind === 'snow' ? 22 : 9;
+    for (let i = 0; i < n; i++) {
       const el = document.createElement('span');
-      el.className = 'particle';
+      el.className = 'particle' + (wkind === 'snow' ? ' snow' : '');
       const [ch, color] = chars[i % chars.length];
       el.textContent = ch;
       el.style.color = color;
-      el.style.left = (i * 11 + (hash('p' + i) % 8)) + '%';
+      el.style.left = ((i * (wkind === 'snow' ? 4.6 : 11)) + (hash('p' + i) % 8)) + '%';
       el.style.animationDuration = 9 + (hash('d' + i) % 7) + 's';
       el.style.animationDelay = -(hash('t' + i) % 12) + 's';
       el.style.fontSize = 11 + (hash('s' + i) % 8) + 'px';
@@ -255,6 +318,40 @@
     else if (info.event) text = `★ ${info.event}`;
     chip.textContent = text;
     chip.hidden = false;
+  }
+
+  const WEATHER_WD = ['日', '月', '火', '水', '木', '金', '土'];
+  function renderWeather(info) {
+    const pill = $('weatherPill');
+    const w = info.weather;
+    if (!w) { pill.hidden = true; return; }
+    const t = w.temp != null ? `${w.temp}°` : `<small>最高</small>${w.max}°`;
+    pill.innerHTML = `${Weather.icon(w.kind, 28)}<span class="w-main">${Weather.SHORT[w.kind]} <b>${t}</b></span><span class="w-pop">☂ ${w.pop}%</span>`;
+    pill.hidden = false;
+  }
+
+  function renderWeekWeather() {
+    const data = Weather.get();
+    if (!data) return;
+    const today = ymd(new Date());
+    $('weekWeather').innerHTML = data.days.filter((d) => d.date >= today).map((d, i) => {
+      const [y, m, dd] = d.date.split('-').map(Number);
+      const dt = new Date(y, m - 1, dd);
+      const wd = dt.getDay();
+      const name = d.date === today ? '今日' : i === 1 && data.days[0].date === today ? '明日' : `${m}/${dd}`;
+      const hol = JpCalendar.holiday(dt);
+      const cls = wd === 0 || hol ? ' sun-day' : wd === 6 ? ' sat-day' : '';
+      return `<div class="ww-row${d.date === today ? ' today' : ''}">` +
+        `<span class="ww-day${cls}">${name}<small>（${WEATHER_WD[wd]}）</small></span>` +
+        `<span class="ww-icon">${Weather.icon(d.kind, 34)}</span>` +
+        `<span class="ww-label">${Weather.SHORT[d.kind]}</span>` +
+        `<span class="ww-temp"><b class="hi">${d.max}°</b><b class="lo">${d.min}°</b></span>` +
+        `<span class="ww-pop">☂ ${d.pop}%</span></div>`;
+    }).join('');
+    const f = new Date(data.fetchedAt);
+    $('weatherNote').textContent = data.sample
+      ? 'おためし用の天気です'
+      : `${f.getMonth() + 1}月${f.getDate()}日 ${f.getHours()}:${String(f.getMinutes()).padStart(2, '0')} に取ってきた予報です（Open-Meteo）`;
   }
 
   const PAW = '<svg viewBox="0 0 20 20" width="16" height="16" fill="#2b2b2b"><ellipse cx="10" cy="13" rx="5" ry="4.2"/><circle cx="4" cy="8" r="2.2"/><circle cx="8" cy="4.5" r="2.2"/><circle cx="12" cy="4.5" r="2.2"/><circle cx="16" cy="8" r="2.2"/></svg>';
@@ -315,6 +412,7 @@
     $('dateLabel').textContent = `${now.getMonth() + 1}月${now.getDate()}日（${WD[now.getDay()]}）`;
     renderSky(info, now);
     renderChip(info);
+    renderWeather(info);
     renderNumbers(steps);
     renderReview(now);
     drawCat(poseFor(info, steps), propsFor(now));
@@ -419,6 +517,10 @@
     renderCalendar();
     openSheet('diarySheet');
   });
+  $('weatherPill').addEventListener('click', () => {
+    renderWeekWeather();
+    openSheet('weatherSheet');
+  });
   $('openSettings').addEventListener('click', () => {
     $('catName').value = state.settings.catName || '';
     $('catBirthday').value = state.settings.catBirthday || '';
@@ -483,13 +585,19 @@
     render();
   }
 
+  // 天気は開いたときと、ときどき取りにいく（取れたら描きなおす）
+  Weather.refresh(render);
+  // ニュースの帯
+  News.init();
+
   // 開きっぱなしで日付や時間帯が変わっても追いつく
   let lastKey = ymd(new Date()) + timeOfDay(new Date().getHours());
   setInterval(() => {
     const k = ymd(new Date()) + timeOfDay(new Date().getHours());
     if (k !== lastKey) { lastKey = k; render(); }
+    Weather.refresh(render);
   }, 60 * 1000);
-  document.addEventListener('visibilitychange', () => { if (!document.hidden) render(); });
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) { render(); Weather.refresh(render); } });
 
   // おためし用（歩数が届いたときと同じ動きをする）
   window.TekuTeku = {
@@ -501,6 +609,10 @@
     },
     at(hour) {
       hourOverride = hour;
+      render();
+    },
+    weather(kind) {
+      Weather.fake(kind);
       render();
     },
   };

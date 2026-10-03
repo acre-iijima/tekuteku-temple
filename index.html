@@ -31,9 +31,11 @@
     </header>
 
     <main class="stage" id="stage">
+      <div class="weather-fx" id="weatherFx"></div>
       <div class="sky-deco" id="skyDeco"></div>
       <div class="particles" id="particles"></div>
       <div class="chip" id="dayChip" hidden></div>
+      <button class="weather-pill" id="weatherPill" aria-label="中野区の天気" hidden></button>
 
       <div class="bubble" id="bubble"><p id="bubbleText"></p></div>
 
@@ -52,6 +54,10 @@
         </svg>
       </button>
       <div class="ground" id="ground"></div>
+      <button class="news-band" id="newsBand" aria-label="ニュースの一覧をひらく" hidden>
+        <span class="nb-label">NEWS</span>
+        <span class="nb-window"><span class="nb-track" id="newsTrack"></span></span>
+      </button>
     </main>
 
     <section class="card steps-card">
@@ -84,6 +90,26 @@
       <div class="cal-week"><span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span></div>
       <div class="cal" id="calendar"></div>
       <p class="sub center" id="monthSum"></p>
+      <button class="close" data-close>とじる</button>
+    </div>
+  </div>
+
+  <!-- 1週間の天気 -->
+  <div class="sheet" id="weatherSheet" hidden>
+    <div class="sheet-inner">
+      <h2>中野区の1週間</h2>
+      <div class="week-weather" id="weekWeather"></div>
+      <p class="sub center" id="weatherNote"></p>
+      <button class="close" data-close>とじる</button>
+    </div>
+  </div>
+
+  <!-- ニュース一覧 -->
+  <div class="sheet" id="newsSheet" hidden>
+    <div class="sheet-inner">
+      <h2>ニュース</h2>
+      <div class="news-list" id="newsList"></div>
+      <p class="sub center" id="newsNote"></p>
       <button class="close" data-close>とじる</button>
     </div>
   </div>
@@ -126,6 +152,8 @@
   <script src="holidays.js"></script>
   <script src="messages.js"></script>
   <script src="poses.js"></script>
+  <script src="weather.js"></script>
+  <script src="news.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

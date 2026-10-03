@@ -8,6 +8,8 @@
 - 時間でポーズが変わります（早朝・朝はのび、昼はおすわり、よく歩いた日は立ちポーズ、夕方はうしろ姿、夜は香箱で寝る）
 - 季節の小物：ハロウィンの帽子、クリスマスの帽子、冬のマフラー、夏の麦わら帽子、春の桜の花びら
 - 日曜日は「今週のふりかえり」が出ます
+- 📰 ニュースの帯：絵の下に、経済・主なニュース・国際の見出しが流れます（スポーツは入れません）。押すと一覧が開き、見出しを押すと元の記事が開きます。見出しは GitHub が30分ごとに集めます（設定は下の「ニュースを流すための設定」）
+- ☂ 中野区の天気：右上に今日の天気・気温・降水確率が出て、空も雨・雪・くもりに変わります。天気に合わせたひとことも出ます。天気を押すと1週間の予報が見られます（Open-Meteo の無料予報。電波がないときは、最後に取れた天気を出します）
 - てんぷるをタップすると、びっくりして立ち上がります
 - 📅 おさんぽ日記：歩いた日に肉球スタンプがつくカレンダー
 - 設定：ねこの名前・お誕生日（当日はお祝いになります）・歩数の手入力
@@ -71,11 +73,63 @@
 
 ---
 
+## ニュースを流すための設定（最初の1回だけ）
+
+ニュースの見出しは、GitHub が30分ごとに NHK・Yahoo!ニュース・Google ニュースから集めて `news.json` に書きます。公開しているリポジトリなら無料です。
+
+1. いつもどおり、zip の中身（`news.js`・`news.json`・`tools` フォルダを含む）をリポジトリにアップロードします
+2. 集める係の設定ファイルを作ります。Mac では `.github` フォルダが見えないことがあるので、GitHub の画面で作るのが確実です
+   - リポジトリの画面で「Add file」→「Create new file」
+   - 名前の欄に `.github/workflows/news.yml` と入力（`/` を打つとフォルダになります）
+   - 中身の欄に、zip の中の `.github/workflows/news.yml` の中身をそのまま貼る（下にも同じものがあります）
+   - 「Commit changes」を押す
+3. 上のメニューの「Actions」を開き、「ニュースを集める」→「Run workflow」を押します。1〜2分で緑のチェックがつき、`news.json` に見出しが入ります
+4. そのあとは30分ごとに自動で動きます。アプリを開くと、絵の下にニュースが流れます
+
+うまくいかないとき：
+- 「Actions」の画面で、使えるようにするボタンが出ていたら押してください
+- 赤い × がついたときは、Settings → Actions → General の一番下「Workflow permissions」を「Read and write permissions」にして保存し、もう一度「Run workflow」を押してください
+- 赤い × を押すと、どのニュースサイトが取れなかったかが書いてあります
+
+<details><summary>news.yml の中身</summary>
+
+```yaml
+# 30分ごとにニュースの見出しを集めて news.json を更新する
+name: ニュースを集める
+on:
+  schedule:
+    - cron: '7,37 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: news
+jobs:
+  news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node tools/news.mjs
+      - name: 変わっていたら保存
+        run: |
+          if git diff --quiet -- news.json; then echo "変わりなし"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+          git add news.json
+          git commit -m "ニュースを更新"
+          git push
+```
+
+</details>
+
 ## 3. 困ったときは
 
 - **歩数が「—」のまま**：ショートカットを ▶︎ で実行してみてください。うまくいかないときは、設定 の「歩数を手で入れる」でも入れられます。
 - **歩数が実際と違う**：ショートカットの「グループ化」が「日」になっているか確認してください。
 - **記録のバックアップ**：設定 の「記録のバックアップ」で「コピー」を押し、メモ帳アプリなどに貼っておきます。記録が消えたら、その文字を同じ欄に貼って「もどす」を押してください。
+- **天気が出ない**：天気はネットにつながっているときに取ってきます（30分ごと）。一度も取れていないうちは表示されません。
 - **記録が消えた**：Safariの履歴やWebサイトデータを消すと記録も消えます。また、iPhoneのSafariは「7日以上ひらかれなかったサイト」のデータを消すことがあります。てんぷる自体はいなくならないので、また今日から一緒に歩けば大丈夫です。
 
 ## ファイルの中身
@@ -87,5 +141,8 @@
 | `app.js` | 歩数の受け取り・保存・ひとことの組み立て |
 | `messages.js` | てんぷるのひとこと集（自由に編集OK） |
 | `poses.js` | てんぷるのポーズと季節の小物の絵 |
+| `weather.js` | 中野区の天気の取得と天気アイコン |
+| `news.js` / `news.json` | ニュースの帯と一覧 / 集めた見出し |
+| `tools/news.mjs` / `.github/workflows/news.yml` | 30分ごとにニュースを集めるしくみ（GitHub が動かします） |
 | `holidays.js` | 日本の祝日・行事の計算 |
 | `manifest.webmanifest` / `sw.js` / `icons/` | ホーム画面用アイコンなど |
