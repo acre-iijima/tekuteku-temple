@@ -2,16 +2,19 @@
 // 見出しと記事へのリンクだけを使う。スポーツは入れない。
 import { readFile, writeFile } from 'node:fs/promises';
 
+// NHK の古いRSS（www3.nhk.or.jp/rss）は更新が止まっていたので使わない。NHK の記事は Google ニュース経由で入る
 const FEEDS = [
-  { cat: '経済', source: 'NHK', url: 'https://www3.nhk.or.jp/rss/news/cat5.xml' },
   { cat: '経済', source: 'Yahoo!ニュース', url: 'https://news.yahoo.co.jp/rss/topics/business.xml' },
   { cat: '経済', source: 'Google ニュース', url: 'https://news.google.com/rss/headlines/section/topic/BUSINESS?hl=ja&gl=JP&ceid=JP:ja' },
-  { cat: '主なニュース', source: 'NHK', url: 'https://www3.nhk.or.jp/rss/news/cat0.xml' },
   { cat: '主なニュース', source: 'Yahoo!ニュース', url: 'https://news.yahoo.co.jp/rss/topics/top-picks.xml' },
-  { cat: '国際', source: 'NHK', url: 'https://www3.nhk.or.jp/rss/news/cat6.xml' },
+  { cat: '主なニュース', source: 'Google ニュース', url: 'https://news.google.com/rss/headlines/section/topic/NATION?hl=ja&gl=JP&ceid=JP:ja' },
   { cat: '国際', source: 'Yahoo!ニュース', url: 'https://news.yahoo.co.jp/rss/topics/world.xml' },
+  { cat: '国際', source: 'Google ニュース', url: 'https://news.google.com/rss/headlines/section/topic/WORLD?hl=ja&gl=JP&ceid=JP:ja' },
 ];
 const PER_CAT = 12;
+const MAX_AGE_MS = 2 * 24 * 3600 * 1000; // 2日より古い見出しは出さない
+// スポーツの新聞社・球団名（Google ニュースの経済にまざることがある）
+const SPORTS_SOURCE = /スポーツ|スポニチ|サンスポ|報知|デイリー|ホークス|ジャイアンツ|タイガース|カープ|ドラゴンズ|スワローズ|ベイスターズ|ファイターズ|イーグルス|マリーンズ|ライオンズ|バファローズ|Number|ゲキサカ|ベースボール|サッカーキング|Full-Count|THE DIGEST/i;
 // 主なニュースにまぎれこむスポーツの見出しをはじく
 const SPORTS = /野球|サッカー|大谷|ドジャース|五輪|オリンピック|パラリンピック|Jリーグ|J1|J2|大相撲|横綱|大関|ゴルフ|テニス|ラグビー|バスケ|Bリーグ|フィギュア|スケート|マラソン|駅伝|競馬|競輪|甲子園|ワールドカップ|W杯|プロ野球|メジャー|MLB|NBA|NFL|F1|ボクシング|卓球|バレーボール|柔道|水泳|陸上|選手|代表戦|移籍|優勝|決勝|準決勝|開幕戦|本塁打|ホームラン/;
 
@@ -59,7 +62,8 @@ const seen = new Set();
 const items = [];
 for (const cat of ['経済', '主なニュース', '国際']) {
   const list = results.flat()
-    .filter((x) => x.cat === cat && (cat === '経済' || !SPORTS.test(x.title)))
+    .filter((x) => x.cat === cat && !SPORTS_SOURCE.test(x.source) && (cat === '経済' || !SPORTS.test(x.title)))
+    .filter((x) => !x.time || Date.now() - Date.parse(x.time) < MAX_AGE_MS)
     .sort((a, b) => (b.time || '').localeCompare(a.time || ''));
   let n = 0;
   for (const x of list) {
