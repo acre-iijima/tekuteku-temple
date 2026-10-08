@@ -8,6 +8,7 @@
     'https://api.open-meteo.com/v1/forecast' +
     `?latitude=${PLACE.lat}&longitude=${PLACE.lon}` +
     '&current=temperature_2m,weather_code,is_day' +
+    '&hourly=weather_code,temperature_2m,precipitation_probability' +
     '&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max' +
     '&timezone=Asia%2FTokyo&forecast_days=7';
 
@@ -55,6 +56,20 @@
   // Open-Meteo の返事を、アプリで使う形にする
   function shape(json) {
     const d = json.daily;
+    // 1時間ごとの天気を、日づけごとにまとめる
+    const hours = {};
+    const h = json.hourly;
+    if (h && h.time) {
+      h.time.forEach((t, i) => {
+        const date = t.slice(0, 10);
+        (hours[date] = hours[date] || []).push({
+          hour: Number(t.slice(11, 13)),
+          kind: kindOf(h.weather_code[i]),
+          temp: Math.round(h.temperature_2m[i]),
+          pop: h.precipitation_probability[i],
+        });
+      });
+    }
     return {
       fetchedAt: Date.now(),
       current: {
@@ -67,6 +82,7 @@
         max: Math.round(d.temperature_2m_max[i]),
         min: Math.round(d.temperature_2m_min[i]),
         pop: d.precipitation_probability_max[i],
+        hours: hours[date] || [],
       })),
     };
   }
@@ -80,7 +96,8 @@
     get: () => data,
     // 新しい天気を取りにいく。取れたら onUpdate を呼ぶ
     refresh(onUpdate, force) {
-      if (!force && data && !data.sample && Date.now() - data.fetchedAt < FRESH_MS) return;
+      const hasHours = data && data.days && data.days[0] && data.days[0].hours;
+      if (!force && data && !data.sample && hasHours && Date.now() - data.fetchedAt < FRESH_MS) return;
       if (!force && Date.now() - lastTry < 5 * 60 * 1000) return; // 取れないときに何度も取りにいかない
       lastTry = Date.now();
       fetch(URL)
@@ -99,7 +116,14 @@
         days: kinds.map((k, i) => {
           const dt = new Date(today.getFullYear(), today.getMonth(), today.getDate() + i);
           const iso = `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, '0')}-${String(dt.getDate()).padStart(2, '0')}`;
-          return { date: iso, kind: k, max: 22 - i, min: 14 - i, pop: k === 'rain' || k === 'thunder' ? 80 : k === 'snow' ? 60 : 10 };
+          const max = 22 - i, min = 14 - i;
+          const hours = Array.from({ length: 24 }, (_, hr) => {
+            // 朝は晴れ、昼すぎからその日の天気、のような流れにする
+            const hk = hr < 9 && k !== 'clear' ? 'cloudy' : k;
+            const temp = Math.round(min + (max - min) * Math.max(0, Math.sin(((hr - 5) / 24) * 2 * Math.PI)));
+            return { hour: hr, kind: hk, temp, pop: ['rain', 'thunder', 'snow'].includes(hk) ? 60 + (hr % 4) * 10 : hr % 6 === 0 ? 10 : 0 };
+          });
+          return { date: iso, kind: k, max, min, pop: k === 'rain' || k === 'thunder' ? 80 : k === 'snow' ? 60 : 10, hours };
         }),
       };
       return data;

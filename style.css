@@ -464,3 +464,45 @@ body.w-rain .cloud.gray, body.w-thunder .cloud.gray { background: #c7cedd; }
 .stage .nb-window { padding: 6px 0; }
 .stage .nt-item { font-size: 0.82rem; }
 .stage.has-news .cat-btn { margin-bottom: 16%; }
+
+/* ---------- 1時間ごとの天気 ---------- */
+.ww-wrap { display: flex; flex-direction: column; gap: 6px; }
+button.ww-row { width: 100%; font: inherit; font-family: var(--pop); font-weight: 700; color: var(--ink); text-align: left; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.ww-row { grid-template-columns: 4.8em 40px 1fr auto auto 1.2em; }
+.ww-arrow { font-size: 0.7rem; text-align: right; color: #6a635b; }
+.ww-wrap.open .ww-row { background: var(--blue); }
+.ww-wrap.open .ww-row.today { background: var(--yellow); }
+.ww-hours { margin: 0 0 4px; }
+.wh-strip {
+  display: flex; gap: 6px; overflow-x: auto; padding: 4px 2px 10px;
+  -webkit-overflow-scrolling: touch; scroll-snap-type: x proximity;
+}
+.wh-cell {
+  flex: none; width: 62px; display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 8px 2px; background: #fff; border: 2.5px solid var(--ink); border-radius: 14px;
+  font-family: var(--pop); scroll-snap-align: start;
+}
+.wh-cell.now { background: var(--yellow); box-shadow: 2px 3px 0 var(--ink); }
+.wh-time { font-weight: 800; font-size: 0.85rem; }
+.wh-temp { font-size: 1.05rem; font-weight: 800; }
+.wh-pop { font-size: 0.75rem; color: #2f78c4; font-weight: 700; }
+
+/* ---------- 文字を大きく・ふきだしは太い丸文字に ---------- */
+html { font-size: 112%; }
+.bubble { font-family: var(--pop); font-weight: 700; font-size: 1.02rem; line-height: 1.65; }
+.cat .zzz text { font-family: var(--pop); font-weight: 800; }
+.sub { font-size: 0.9rem; }
+.card-label { font-size: 0.92rem; }
+.ww-row { grid-template-columns: 1fr 40px auto auto 1em; gap: 8px; padding: 6px 12px; }
+.ww-day { display: flex; flex-wrap: wrap; align-items: baseline; }
+.ww-day .ww-label { flex-basis: 100%; font-size: 0.78rem; color: #4a4540; font-weight: 700; }
+.ww-pop { min-width: 3.4em; }
+h1 { font-size: clamp(1.25rem, 6.4vw, 1.6rem); white-space: nowrap; }
+.weather-pill { font-size: 13.5px; }
+.weather-pill b { font-size: 16.5px; }
+.weather-pill .w-pop { font-size: 12px; }
+.weather-pill small { font-size: 11px; }
+.chip { font-size: 14px; }
+.sun, .moon { left: 92px; width: 34px; height: 34px; top: 10px; }
+.sun { box-shadow: 0 0 0 6px rgba(255, 233, 120, 0.45); }
+.moon::after { width: 30px; height: 30px; left: 10px; top: -7px; }

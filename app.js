@@ -330,29 +330,58 @@
     pill.hidden = false;
   }
 
+  // 1時間ごとの天気（今日はいまの時間から）
+  function hoursHtml(d, today) {
+    const now = new Date().getHours();
+    const list = (d.hours || []).filter((h) => d.date !== today || h.hour >= now);
+    if (!list.length) return '<p class="sub center">この日の1時間ごとの天気は、まだありません</p>';
+    return '<div class="wh-strip">' + list.map((h) =>
+      `<div class="wh-cell${d.date === today && h.hour === now ? ' now' : ''}">` +
+      `<span class="wh-time">${d.date === today && h.hour === now ? 'いま' : h.hour + '時'}</span>` +
+      `${Weather.icon(h.kind, 30)}` +
+      `<b class="wh-temp">${h.temp}°</b>` +
+      `<span class="wh-pop">☂${h.pop != null ? h.pop : '-'}%</span></div>`).join('') + '</div>';
+  }
+
+  let openDay = null;
   function renderWeekWeather() {
     const data = Weather.get();
     if (!data) return;
     const today = ymd(new Date());
-    $('weekWeather').innerHTML = data.days.filter((d) => d.date >= today).map((d, i) => {
+    const days = data.days.filter((d) => d.date >= today);
+    // はじめは今日をひらいておく（'' はぜんぶ閉じた状態）
+    if (openDay === null || (openDay && !days.some((d) => d.date === openDay))) openDay = days.length ? days[0].date : '';
+    $('weekWeather').innerHTML = days.map((d, i) => {
       const [y, m, dd] = d.date.split('-').map(Number);
       const dt = new Date(y, m - 1, dd);
       const wd = dt.getDay();
-      const name = d.date === today ? '今日' : i === 1 && data.days[0].date === today ? '明日' : `${m}/${dd}`;
+      const name = d.date === today ? '今日' : i === 1 && days[0].date === today ? '明日' : `${m}/${dd}`;
       const hol = JpCalendar.holiday(dt);
       const cls = wd === 0 || hol ? ' sun-day' : wd === 6 ? ' sat-day' : '';
-      return `<div class="ww-row${d.date === today ? ' today' : ''}">` +
-        `<span class="ww-day${cls}">${name}<small>（${WEATHER_WD[wd]}）</small></span>` +
-        `<span class="ww-icon">${Weather.icon(d.kind, 34)}</span>` +
-        `<span class="ww-label">${Weather.SHORT[d.kind]}</span>` +
+      const open = d.date === openDay;
+      return `<div class="ww-wrap${open ? ' open' : ''}">` +
+        `<button class="ww-row${d.date === today ? ' today' : ''}" data-day="${d.date}" aria-expanded="${open}">` +
+        `<span class="ww-day${cls}">${name}<small>（${WEATHER_WD[wd]}）</small><span class="ww-label">${Weather.SHORT[d.kind]}</span></span>` +
+        `<span class="ww-icon">${Weather.icon(d.kind, 36)}</span>` +
         `<span class="ww-temp"><b class="hi">${d.max}°</b><b class="lo">${d.min}°</b></span>` +
-        `<span class="ww-pop">☂ ${d.pop}%</span></div>`;
+        `<span class="ww-pop">☂ ${d.pop}%</span><span class="ww-arrow">${open ? '▲' : '▼'}</span></button>` +
+        (open ? `<div class="ww-hours">${hoursHtml(d, today)}</div>` : '') +
+        '</div>';
     }).join('');
     const f = new Date(data.fetchedAt);
-    $('weatherNote').textContent = data.sample
+    $('weatherNote').textContent = (data.sample
       ? 'おためし用の天気です'
-      : `${f.getMonth() + 1}月${f.getDate()}日 ${f.getHours()}:${String(f.getMinutes()).padStart(2, '0')} に取ってきた予報です（Open-Meteo）`;
+      : `${f.getMonth() + 1}月${f.getDate()}日 ${f.getHours()}:${String(f.getMinutes()).padStart(2, '0')} に取ってきた予報です（Open-Meteo）`) +
+      '。日を押すと、1時間ごとの天気が見られます';
   }
+  $('weekWeather').addEventListener('click', (e) => {
+    const row = e.target.closest('.ww-row');
+    if (!row) return;
+    openDay = openDay === row.dataset.day ? '' : row.dataset.day;
+    renderWeekWeather();
+    const opened = $('weekWeather').querySelector('.ww-wrap.open');
+    if (opened) opened.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  });
 
   const PAW = '<svg viewBox="0 0 20 20" width="16" height="16" fill="#2b2b2b"><ellipse cx="10" cy="13" rx="5" ry="4.2"/><circle cx="4" cy="8" r="2.2"/><circle cx="8" cy="4.5" r="2.2"/><circle cx="12" cy="4.5" r="2.2"/><circle cx="16" cy="8" r="2.2"/></svg>';
 
@@ -518,6 +547,7 @@
     openSheet('diarySheet');
   });
   $('weatherPill').addEventListener('click', () => {
+    openDay = null;
     renderWeekWeather();
     openSheet('weatherSheet');
   });
