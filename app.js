@@ -780,7 +780,22 @@
     addQty = 1;
     save(); renderTodo();
   }
-  $('todoAdd').addEventListener('click', addTodo);
+  // 入力中にボタンを押しても、キーボードを閉じない
+  function tapKeep(el, fn) {
+    let sx = 0, sy = 0, moved = false;
+    el.addEventListener('touchstart', (e) => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; moved = false; }, { passive: true });
+    el.addEventListener('touchmove', (e) => { if (Math.abs(e.touches[0].clientX - sx) > 10 || Math.abs(e.touches[0].clientY - sy) > 10) moved = true; }, { passive: true });
+    el.addEventListener('touchend', (e) => {
+      if (moved || !e.target.closest('button')) return;
+      const input = $('todoInput'), had = document.activeElement === input;
+      e.preventDefault(); // これで入力欄からフォーカスが外れない
+      fn(e);
+      if (had) input.focus();
+    });
+    el.addEventListener('mousedown', (e) => { if (e.target.closest('button')) e.preventDefault(); });
+    el.addEventListener('click', fn);
+  }
+  tapKeep($('todoAdd'), addTodo);
   $('todoInput').addEventListener('keydown', (e) => { if (e.key === 'Enter' && !e.isComposing) { e.preventDefault(); addTodo(); } });
   $('todoTabs').addEventListener('click', (e) => {
     const b = e.target.closest('.tt-tab');
@@ -807,11 +822,11 @@
     }
     save(); renderTodo();
   });
-  $('todoPinToggle').addEventListener('click', () => { pinsOpen = !pinsOpen; renderTodo(); });
+  tapKeep($('todoPinToggle'), () => { pinsOpen = !pinsOpen; renderTodo(); });
   // 個数：ふだんは1個。2個以上のときだけ「×2」と出す
-  $('todoQtyMinus').addEventListener('click', () => { addQty = Math.max(1, addQty - 1); renderTodo(); });
-  $('todoQtyPlus').addEventListener('click', () => { addQty = Math.min(99, addQty + 1); renderTodo(); });
-  $('todoPins').addEventListener('click', (e) => {
+  tapKeep($('todoQtyMinus'), () => { addQty = Math.max(1, addQty - 1); renderTodo(); });
+  tapKeep($('todoQtyPlus'), () => { addQty = Math.min(99, addQty + 1); renderTodo(); });
+  tapKeep($('todoPins'), (e) => {
     const t = todo();
     const pins = t.pins[t.current] || [];
     const add = e.target.closest('.tp-add'), x = e.target.closest('.tp-x');
