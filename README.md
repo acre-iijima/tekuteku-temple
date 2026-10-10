@@ -9,9 +9,10 @@
 - 季節の小物：ハロウィンの帽子、クリスマスの帽子、冬のマフラー、夏の麦わら帽子、春の桜の花びら
 - 日曜日は「今週のふりかえり」が出ます
 - 📰 ニュースの帯：絵の下に、経済・主なニュース・国際の見出しが流れます（スポーツは入れません）。押すと一覧が開き、見出しを押すと元の記事が開きます。見出しは GitHub が30分ごとに集めます（設定は下の「ニュースを流すための設定」）
+- 📈 マーケット：為替（ドル円・ユーロ円・ポンド円・豪ドル円・トルコリラ円・ユーロドル）、株価（日経平均・NYダウ・S&P500・ナスダック）、商品・金利（金・原油・米国10年金利・ビットコイン）を分類ごとの枠で表示。枠を押すと、その分類の前日比・1か月の動き・高値安値が見られます。値はニュースと同じく GitHub が集めます（リアルタイムではなく、だいたい1〜数時間おき）
 - ☂ 中野区の天気：右上に今日の天気・気温・降水確率が出て、空も雨・雪・くもりに変わります。天気に合わせたひとことも出ます。天気を押すと1週間の予報が見られ、日を押すと1時間ごとの天気が見られます（Open-Meteo の無料予報。電波がないときは、最後に取れた天気を出します）
 - てんぷるをタップすると、びっくりして立ち上がります
-- 📅 おさんぽ日記：歩いた日に肉球スタンプがつくカレンダー
+- 📅 おさんぽカレンダー（右上の「カレンダー」）：歩いた日に肉球スタンプがつくカレンダー
 - 設定：ねこの名前・お誕生日（当日はお祝いになります）・歩数の手入力
 - データはそのiPhoneの中だけに保存されます
 
@@ -94,7 +95,7 @@
 <details><summary>news.yml の中身</summary>
 
 ```yaml
-# 30分ごとにニュースの見出しを集めて news.json を更新する
+# 30分ごとにニュースの見出しと、為替・株価などの値を集めて news.json / market.json を更新する
 name: ニュースを集める
 on:
   schedule:
@@ -112,13 +113,18 @@ jobs:
         with:
           node-version: 24
       - run: node tools/news.mjs
+        continue-on-error: true
+      - run: node tools/market.mjs
+        continue-on-error: true
       - name: 変わっていたら保存
         run: |
-          if git diff --quiet -- news.json; then echo "変わりなし"; exit 0; fi
+          git add -N market.json 2>/dev/null || true
+          if git diff --quiet -- news.json market.json; then echo "変わりなし"; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
           git add news.json
-          git commit -m "ニュースを更新"
+          if [ -f market.json ]; then git add market.json; fi
+          git commit -m "ニュースと相場を更新"
           git push
 ```
 
@@ -143,6 +149,7 @@ jobs:
 | `poses.js` | てんぷるのポーズと季節の小物の絵 |
 | `weather.js` | 中野区の天気の取得と天気アイコン |
 | `news.js` / `news.json` | ニュースの帯と一覧 / 集めた見出し |
+| `market.js` / `tools/market.mjs` | マーケットのカード / 値を集めるしくみ（Yahoo! Finance、だめなら Stooq） |
 | `tools/news.mjs` / `.github/workflows/news.yml` | 30分ごとにニュースを集めるしくみ（GitHub が動かします） |
 | `holidays.js` | 日本の祝日・行事の計算 |
 | `manifest.webmanifest` / `sw.js` / `icons/` | ホーム画面用アイコンなど |

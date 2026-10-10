@@ -506,3 +506,129 @@ h1 { font-size: clamp(1.25rem, 6.4vw, 1.6rem); white-space: nowrap; }
 .sun, .moon { left: 92px; width: 34px; height: 34px; top: 10px; }
 .sun { box-shadow: 0 0 0 6px rgba(255, 233, 120, 0.45); }
 .moon::after { width: 30px; height: 30px; left: 10px; top: -7px; }
+
+/* ---------- 小さい画面（iPhone SE など）でも収まるレイアウト ---------- */
+.top { align-items: center; gap: 8px; }
+.top h1 { margin: 0; }
+.top-buttons { gap: 6px; flex: none; }
+.icon-btn { padding: 6px 10px; font-size: 0.8rem; }
+/* 日付・季節・天気は、日付の横に1行で */
+.info-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 6px 0 10px; }
+.info-row .date { margin: 0; font-size: 0.95rem; white-space: nowrap; }
+.info-row .chip, .info-row .weather-pill { position: static; }
+.info-row .chip { padding: 2px 10px; font-size: 13px; }
+.info-row .weather-pill { margin-left: auto; padding: 1px 10px 1px 3px; }
+
+/* 絵の箱は中身に合わせた高さに（はみ出さないように） */
+.stage { height: auto; min-height: 0; padding: 14px 10px 16px; justify-content: flex-start; }
+.stage.has-news { padding-bottom: 56px; }
+.bubble { margin-top: 0; }
+.cat-btn { width: min(54vw, 230px); margin: 6px 0 4%; }
+.stage.has-news .cat-btn { margin-bottom: 2%; }
+.sun, .moon { left: auto; right: 16px; top: 12px; }
+@media (max-height: 700px) {
+  .cat-btn { width: min(44vw, 190px); }
+  .bubble { font-size: 0.95rem; padding: 8px 14px; line-height: 1.55; }
+}
+.icon-btn { width: auto; height: auto; white-space: nowrap; line-height: 1.2; padding: 8px 11px; }
+.ground { height: 74px; }
+.stage.has-news { padding-bottom: 50px; }
+.stage.has-news .cat-btn { margin-bottom: 0; }
+.cat-btn { margin-bottom: 2px; }
+/* せまい画面では、天気の文字（晴れ・くもり など）を省いてアイコンだけに */
+@media (max-width: 400px) {
+  .info-row .weather-pill .w-label { display: none; }
+  .info-row { gap: 5px; }
+}
+@media (max-width: 400px) {
+  h1 { font-size: 5.6vw; }
+  .icon-btn { padding: 7px 9px; font-size: 0.74rem; }
+  .top-buttons { gap: 5px; }
+}
+.top { margin-bottom: 0; }
+.info-row { margin-top: 2px; }
+
+/* きょうのおさんぽ と これまでの道のり を横ならびに（これまでは小さめ） */
+.card-row { display: grid; grid-template-columns: 1.55fr 1fr; gap: 10px; align-items: stretch; margin-top: 14px; }
+.card-row .card { margin: 0; min-width: 0; padding: 12px 12px 12px 14px; }
+.card-row + .card { margin-top: 14px; }
+.card-row .steps { font-size: clamp(1.9rem, 9.5vw, 2.6rem); white-space: nowrap; }
+.card-row .steps small { font-size: 0.85rem; }
+.card-row .total-card .card-label { font-size: 0.76rem; line-height: 1.35; }
+.card-row .total { font-size: 1.25rem; white-space: nowrap; }
+.card-row .total-card .sub { font-size: 0.72rem; line-height: 1.45; }
+.card-row .steps-card { display: flex; flex-direction: column; justify-content: center; }
+.card-row .total-card { display: flex; flex-direction: column; justify-content: center; }
+.card-row .total-card .card-label { white-space: nowrap; font-size: min(0.76rem, 3.4vw); }
+/* 10-10 調整：見出しは左右同じ大きさ（入らないときだけ折り返す）。下の説明文は左右そろえて小さめ */
+.card-row .total-card .card-label { white-space: normal; font-size: 0.92rem; line-height: 1.35; }
+.card-row .sub, .card-row .total-card .sub { font-size: 0.74rem; line-height: 1.5; }
+.card-label .nb { display: inline-block; }
+.card-row { grid-template-columns: 1.4fr 1fr; }
+
+/* 下から出る画面：上のつまみ（下にスワイプで閉じる） */
+.grabber { width: 44px; height: 5px; border-radius: 999px; background: #c9bfae; margin: -6px auto 12px; }
+.sheet { transition: background 0.2s; }
+.sheet-inner { overscroll-behavior: contain; }
+
+/* ---------- マーケットのウィジェット ---------- */
+.market-card {
+  display: block; width: 100%; margin-top: 14px; text-align: left; cursor: pointer;
+  background: var(--blue); color: var(--ink); font-family: var(--pop); padding: 12px 12px 12px;
+  -webkit-tap-highlight-color: transparent;
+}
+.market-card[hidden] { display: none; }
+.market-card:active { transform: translate(2px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+.market-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.mk-time { font-size: 0.72rem; font-weight: 700; color: #3c4a5c; }
+.mt-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.mt-tile {
+  display: flex; flex-direction: column; align-items: flex-start; min-width: 0;
+  background: #fff; border: 2px solid var(--ink); border-radius: 12px; padding: 5px 7px;
+}
+.mt-name { font-size: 0.7rem; font-weight: 800; color: #4a4540; white-space: nowrap; }
+.mt-price { font-size: 0.95rem; font-weight: 800; white-space: nowrap; letter-spacing: -0.01em; }
+.mt-chg { font-size: 0.68rem; font-weight: 800; white-space: nowrap; }
+.up .mt-chg, .up .ml-chg { color: #e0453a; }
+.down .mt-chg, .down .ml-chg { color: #2f78c4; }
+.flat .mt-chg, .flat .ml-chg { color: #6a635b; }
+@media (max-width: 400px) { .mt-price { font-size: 0.86rem; } .mt-tile { padding: 4px 5px; } }
+
+.market-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+.ml-head { align-self: flex-start; margin: 8px 0 0; padding: 2px 12px; font-size: 0.8rem; font-weight: 900; border: 2px solid var(--ink); border-radius: 999px; background: var(--yellow); font-family: var(--pop); }
+.ml-row {
+  display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  background: #fff; border: 2.5px solid var(--ink); border-radius: 16px; padding: 10px 12px;
+  font-family: var(--pop); box-shadow: 2px 3px 0 var(--ink);
+}
+.ml-left, .ml-right { display: flex; flex-direction: column; min-width: 0; }
+.ml-right { align-items: flex-end; flex: none; }
+.ml-name { font-size: 0.8rem; font-weight: 800; color: #4a4540; }
+.ml-price { font-size: 1.35rem; font-weight: 800; white-space: nowrap; }
+.ml-price small { font-size: 0.75rem; margin-left: 2px; }
+.ml-chg { font-size: 0.8rem; font-weight: 800; white-space: nowrap; }
+.ml-sub { font-size: 0.66rem; color: #6a635b; font-weight: 700; white-space: nowrap; }
+.spark polyline { stroke: #6a635b; }
+.spark.up polyline { stroke: #e0453a; }
+.spark.down polyline { stroke: #2f78c4; }
+/* マーケット：分類ごとの枠 */
+.market-card { cursor: default; }
+.market-card:active { transform: none; box-shadow: var(--pop-shadow); }
+.mg-list { display: flex; flex-direction: column; gap: 8px; }
+.mg-box {
+  display: block; width: 100%; padding: 7px 7px 8px; text-align: left; cursor: pointer;
+  background: rgba(255, 255, 255, 0.45); border: 2px solid var(--ink); border-radius: 16px;
+  font-family: var(--pop); color: var(--ink); -webkit-tap-highlight-color: transparent;
+}
+.mg-box:active { transform: translate(1px, 2px); background: rgba(255, 255, 255, 0.7); }
+.mg-head { display: flex; justify-content: space-between; align-items: baseline; margin: 0 2px 5px; font-size: 0.82rem; font-weight: 900; }
+.mg-more { font-size: 0.7rem; font-weight: 800; color: #3c4a5c; }
+.mt-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
+.mt-tile { display: flex; }
+.mt-tile { min-width: 0; overflow: hidden; }
+.mt-name, .mt-price { max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+.mt-price { overflow: visible; text-overflow: clip; letter-spacing: -0.02em; }
+.mt-grid { gap: 4px; }
+.mg-box { padding: 6px 5px 7px; }
+.mt-tile { padding: 4px 5px; }
+@media (max-width: 400px) { .mt-price { font-size: 0.8rem; } .mt-chg { font-size: 0.64rem; } }

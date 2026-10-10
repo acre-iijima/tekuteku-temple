@@ -326,7 +326,7 @@
     const w = info.weather;
     if (!w) { pill.hidden = true; return; }
     const t = w.temp != null ? `${w.temp}°` : `<small>最高</small>${w.max}°`;
-    pill.innerHTML = `${Weather.icon(w.kind, 28)}<span class="w-main">${Weather.SHORT[w.kind]} <b>${t}</b></span><span class="w-pop">☂ ${w.pop}%</span>`;
+    pill.innerHTML = `${Weather.icon(w.kind, 28)}<span class="w-main"><span class="w-label">${Weather.SHORT[w.kind]} </span><b>${t}</b></span><span class="w-pop">☂ ${w.pop}%</span>`;
     pill.hidden = false;
   }
 
@@ -404,8 +404,8 @@
     const reached = MILESTONES.filter(([d]) => totalKm >= d).pop();
     const days = Object.keys(state.days).length;
     $('totalNote').textContent = reached
-      ? `${reached[1]}くらい、いっしょに歩きました（${days}日ぶん）`
-      : 'これから、のんびり歩いていきましょう';
+      ? `${reached[1]}くらい（${days}日ぶん）`
+      : 'のんびり歩いていきましょう';
   }
 
   function showBubble(text) {
@@ -532,14 +532,66 @@
   $('nextMonth').addEventListener('click', () => { calMonth.setMonth(calMonth.getMonth() + 1); renderCalendar(); });
 
   // ---------- シート ----------
-  function openSheet(id) { $(id).hidden = false; }
+  function openSheet(id) {
+    const sheet = $(id);
+    sheet.querySelector('.sheet-inner').style.transform = '';
+    sheet.style.background = '';
+    sheet.hidden = false;
+  }
+  function closeSheet(sheet) {
+    sheet.hidden = true;
+    sheet.querySelector('.sheet-inner').style.transform = '';
+    sheet.style.background = '';
+    render();
+  }
   document.querySelectorAll('.sheet').forEach((sheet) => {
     sheet.addEventListener('click', (e) => {
-      if (e.target === sheet || e.target.hasAttribute('data-close')) {
-        sheet.hidden = true;
-        render();
-      }
+      if (e.target === sheet || e.target.hasAttribute('data-close')) closeSheet(sheet);
     });
+    // 下にスワイプして閉じる（いちばん上までスクロールしているときだけ）
+    const inner = sheet.querySelector('.sheet-inner');
+    const grab = document.createElement('div');
+    grab.className = 'grabber';
+    inner.prepend(grab);
+    let startY = 0, startX = 0, startT = 0, dy = 0, mode = null;
+    inner.addEventListener('touchstart', (e) => {
+      const t = e.touches[0];
+      startY = t.clientY; startX = t.clientX; startT = Date.now(); dy = 0;
+      mode = inner.scrollTop <= 0 ? 'maybe' : null;
+    }, { passive: true });
+    inner.addEventListener('touchmove', (e) => {
+      if (!mode) return;
+      const t = e.touches[0];
+      const y = t.clientY - startY, x = t.clientX - startX;
+      if (mode === 'maybe') {
+        if (Math.abs(y) < 8 && Math.abs(x) < 8) return;
+        // 横の動き（1時間ごとの天気の横スクロールなど）や上へのスクロールは、ふつうに動かす
+        mode = y > 0 && Math.abs(y) > Math.abs(x) ? 'drag' : null;
+        if (!mode) return;
+        inner.style.transition = 'none';
+      }
+      dy = Math.max(0, y);
+      e.preventDefault();
+      inner.style.transform = `translateY(${dy}px)`;
+      sheet.style.background = `rgba(43, 43, 43, ${0.3 * Math.max(0, 1 - dy / inner.offsetHeight)})`;
+    }, { passive: false });
+    const end = () => {
+      if (mode !== 'drag') { mode = null; return; }
+      mode = null;
+      const fast = dy / Math.max(1, Date.now() - startT) > 0.6;
+      inner.style.transition = 'transform 0.22s ease-out';
+      if (dy > Math.min(140, inner.offsetHeight * 0.3) || (fast && dy > 30)) {
+        inner.style.transform = `translateY(${inner.offsetHeight + 40}px)`;
+        sheet.style.background = 'rgba(43, 43, 43, 0)';
+        setTimeout(() => { inner.style.transition = ''; closeSheet(sheet); }, 220);
+      } else {
+        inner.style.transform = '';
+        sheet.style.background = '';
+        setTimeout(() => { inner.style.transition = ''; }, 220);
+      }
+    };
+    inner.addEventListener('touchend', end);
+    inner.addEventListener('touchcancel', end);
   });
   $('openDiary').addEventListener('click', () => {
     calMonth = new Date(); calMonth.setDate(1);
@@ -619,6 +671,8 @@
   Weather.refresh(render);
   // ニュースの帯
   News.init();
+  // マーケットのウィジェット
+  Market.init();
 
   // 開きっぱなしで日付や時間帯が変わっても追いつく
   let lastKey = ymd(new Date()) + timeOfDay(new Date().getHours());

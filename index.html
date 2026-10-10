@@ -20,23 +20,22 @@
 <body>
   <div id="app">
     <header class="top">
-      <div>
-        <h1 aria-label="テクテクてんぷる"><span>テ</span><span>ク</span><span>テ</span><span>ク</span><span>て</span><span>ん</span><span>ぷ</span><span>る</span></h1>
-        <p class="date" id="dateLabel"></p>
-      </div>
+      <h1 aria-label="テクテクてんぷる"><span>テ</span><span>ク</span><span>テ</span><span>ク</span><span>て</span><span>ん</span><span>ぷ</span><span>る</span></h1>
       <div class="top-buttons">
-        <button class="icon-btn" id="openDiary" aria-label="おさんぽ日記">日記</button>
+        <button class="icon-btn" id="openDiary" aria-label="おさんぽカレンダー">カレンダー</button>
         <button class="icon-btn" id="openSettings" aria-label="せってい">設定</button>
       </div>
     </header>
+    <div class="info-row">
+      <p class="date" id="dateLabel"></p>
+      <div class="chip" id="dayChip" hidden></div>
+      <button class="weather-pill" id="weatherPill" aria-label="中野区の天気" hidden></button>
+    </div>
 
     <main class="stage" id="stage">
       <div class="weather-fx" id="weatherFx"></div>
       <div class="sky-deco" id="skyDeco"></div>
       <div class="particles" id="particles"></div>
-      <div class="chip" id="dayChip" hidden></div>
-      <button class="weather-pill" id="weatherPill" aria-label="中野区の天気" hidden></button>
-
       <div class="bubble" id="bubble"><p id="bubbleText"></p></div>
 
       <button class="cat-btn" id="catBtn" aria-label="なでる">
@@ -60,22 +59,28 @@
       </button>
     </main>
 
-    <section class="card steps-card">
-      <p class="card-label">きょうのおさんぽ</p>
-      <p class="steps"><span id="stepsNum">—</span><small>歩</small></p>
-      <p class="sub" id="stepsSub">ショートカットから歩数を届けてね</p>
+    <div class="card-row">
+      <section class="card steps-card">
+        <p class="card-label">きょうのおさんぽ</p>
+        <p class="steps"><span id="stepsNum">—</span><small>歩</small></p>
+        <p class="sub" id="stepsSub">ショートカットから歩数を届けてね</p>
+      </section>
+      <section class="card total-card">
+        <p class="card-label"><span class="nb">これまでの</span><span class="nb">道のり</span></p>
+        <p class="total" id="totalKm">0 km</p>
+        <p class="sub" id="totalNote"></p>
+      </section>
+    </div>
+
+    <section class="card market-card" id="marketCard" hidden>
+      <div class="market-head"><span class="card-label">マーケット</span><span class="mk-time" id="marketTime"></span></div>
+      <div class="mg-list" id="marketGroups"></div>
     </section>
 
     <section class="card review-card" id="reviewCard" hidden>
       <p class="card-label">今週のふりかえり</p>
       <div class="week-bars" id="weekBars"></div>
       <p class="sub" id="reviewNote"></p>
-    </section>
-
-    <section class="card total-card">
-      <p class="card-label">これまで一緒に歩いた道のり</p>
-      <p class="total" id="totalKm">0 km</p>
-      <p class="sub" id="totalNote"></p>
     </section>
   </div>
 
@@ -110,6 +115,16 @@
       <h2>ニュース</h2>
       <div class="news-list" id="newsList"></div>
       <p class="sub center" id="newsNote"></p>
+      <button class="close" data-close>とじる</button>
+    </div>
+  </div>
+
+  <!-- マーケットのくわしい値 -->
+  <div class="sheet" id="marketSheet" hidden>
+    <div class="sheet-inner">
+      <h2 id="marketTitle">マーケット</h2>
+      <div class="market-list" id="marketList"></div>
+      <p class="sub center" id="marketNote"></p>
       <button class="close" data-close>とじる</button>
     </div>
   </div>
@@ -154,6 +169,7 @@
   <script src="poses.js"></script>
   <script src="weather.js"></script>
   <script src="news.js"></script>
+  <script src="market.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
