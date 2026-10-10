@@ -23,7 +23,7 @@
       <h1 aria-label="テクテクてんぷる"><span>テ</span><span>ク</span><span>テ</span><span>ク</span><span>て</span><span>ん</span><span>ぷ</span><span>る</span></h1>
       <div class="top-buttons">
         <button class="icon-btn" id="openDiary" aria-label="おさんぽカレンダー">カレンダー</button>
-        <button class="icon-btn" id="openSettings" aria-label="せってい">設定</button>
+        <button class="icon-btn" id="openTodo" aria-label="ToDoリスト">ToDo</button>
       </div>
     </header>
     <div class="info-row">
@@ -82,6 +82,7 @@
       <div class="week-bars" id="weekBars"></div>
       <p class="sub" id="reviewNote"></p>
     </section>
+    <button class="settings-link" id="openSettings" aria-label="せってい">⚙ 設定</button>
   </div>
 
   <!-- おさんぽ日記 -->
@@ -95,6 +96,11 @@
       <div class="cal-week"><span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span></div>
       <div class="cal" id="calendar"></div>
       <p class="sub center" id="monthSum"></p>
+      <div class="memo-box">
+        <div class="memo-head"><span id="memoLabel"></span><span class="memo-steps" id="memoSteps"></span></div>
+        <textarea id="memoText" class="memo-text" rows="4" maxlength="1000" placeholder="日付を押すと、その日のメモが書けます"></textarea>
+        <p class="memo-hint">書いたメモは、自動で保存されます</p>
+      </div>
       <button class="close" data-close>とじる</button>
     </div>
   </div>
@@ -125,6 +131,33 @@
       <h2 id="marketTitle">マーケット</h2>
       <div class="market-list" id="marketList"></div>
       <p class="sub center" id="marketNote"></p>
+      <button class="close" data-close>とじる</button>
+    </div>
+  </div>
+
+  <!-- ToDo -->
+  <div class="sheet" id="todoSheet" hidden>
+    <div class="sheet-inner">
+      <div class="todo-head"><h2>ToDo</h2><button class="small ghost" id="todoEditBtn">編集</button></div>
+      <div class="todo-tabs" id="todoTabs"></div>
+      <div id="todoMain">
+        <div class="row todo-add-row">
+          <input id="todoInput" type="text" maxlength="100" enterkeyhint="done" placeholder="買い物に足す">
+          <button class="small" id="todoAdd">足す</button>
+        </div>
+        <div class="todo-sub-row">
+          <button class="tp-toggle" id="todoPinToggle" hidden></button>
+          <div class="todo-qty"><span class="tq-label">個数</span><button id="todoQtyMinus" aria-label="へらす">－</button><span id="todoQtyVal">1</span><button id="todoQtyPlus" aria-label="ふやす">＋</button></div>
+        </div>
+        <div class="todo-pins" id="todoPins" hidden></div>
+        <ul class="todo-list" id="todoList"></ul>
+        <button class="small ghost todo-clear" id="todoClearDone" hidden>終わったものを消す</button>
+      </div>
+      <div id="todoEdit" hidden>
+        <p class="sub">ジャンルの名前を書きかえたり、↑↓で並べかえたりできます。いちばん上のジャンルが、開いたときに出ます。</p>
+        <div class="tg-list" id="todoGenreList"></div>
+        <button class="small" id="todoNewGenre">＋ ジャンルを足す</button>
+      </div>
       <button class="close" data-close>とじる</button>
     </div>
   </div>

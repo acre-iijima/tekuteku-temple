@@ -632,3 +632,103 @@ h1 { font-size: clamp(1.25rem, 6.4vw, 1.6rem); white-space: nowrap; }
 .mg-box { padding: 6px 5px 7px; }
 .mt-tile { padding: 4px 5px; }
 @media (max-width: 400px) { .mt-price { font-size: 0.8rem; } .mt-chg { font-size: 0.64rem; } }
+
+/* ---------- ToDo ボタン・設定（下） ---------- */
+#openTodo { background: var(--yellow); }
+.settings-link {
+  display: block; margin: 22px auto 8px; padding: 8px 18px;
+  background: #fff; border: 2.5px solid var(--ink); border-radius: 999px; box-shadow: 2px 3px 0 var(--ink);
+  font-family: var(--pop); font-weight: 800; font-size: 0.85rem; color: var(--ink); cursor: pointer;
+}
+.settings-link:active { transform: translate(2px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+
+/* ---------- カレンダー：日付を押せる・メモ ---------- */
+button.day { font: inherit; font-family: var(--pop); color: var(--ink); cursor: pointer; padding: 0; -webkit-tap-highlight-color: transparent; }
+.day.sel { outline: 3px solid var(--blue); outline-offset: 1px; z-index: 1; }
+.day.has-memo::after {
+  content: ""; position: absolute; top: 3px; right: 3px; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--pink); border: 1.5px solid var(--ink);
+}
+.memo-box { margin: 6px 0 14px; padding: 12px; background: #fff; border: 2.5px solid var(--ink); border-radius: 18px; box-shadow: 2px 3px 0 var(--ink); }
+.memo-head { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--pop); font-weight: 800; font-size: 0.95rem; }
+.memo-steps { font-size: 0.8rem; color: #6a635b; }
+.memo-text {
+  font-family: var(--pop); font-size: 16px; line-height: 1.6; min-height: 6.5em; resize: vertical;
+  background: #fffdf5; border-width: 2px;
+}
+.memo-hint { margin: 6px 0 0; font-size: 0.72rem; color: #6a635b; }
+
+/* ---------- ToDo ---------- */
+.todo-head { display: flex; align-items: center; justify-content: center; position: relative; margin-bottom: 8px; }
+.todo-head h2 { margin: 0; }
+.todo-head .small { position: absolute; right: 0; padding: 6px 12px; }
+.todo-tabs { display: flex; gap: 6px; overflow-x: auto; padding: 2px 2px 8px; margin-bottom: 4px; -webkit-overflow-scrolling: touch; }
+.todo-tabs[hidden] { display: none; }
+.tt-tab {
+  flex: none; display: inline-flex; align-items: center; gap: 5px; padding: 6px 14px;
+  background: #fff; border: 2.5px solid var(--ink); border-radius: 999px;
+  font-family: var(--pop); font-weight: 800; font-size: 0.9rem; color: var(--ink); cursor: pointer;
+}
+.tt-tab.on { background: var(--mint); box-shadow: 2px 3px 0 var(--ink); }
+.tt-n { min-width: 1.4em; padding: 0 5px; border-radius: 999px; background: var(--pink); border: 1.5px solid var(--ink); font-size: 0.7rem; text-align: center; }
+.todo-add-row { gap: 6px; margin: 4px 0 10px; }
+.todo-add-row input { margin-top: 0; font-family: var(--pop); }
+.todo-add-row .small { flex: none; }
+.todo-list { list-style: none; margin: 0 0 10px; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.td-item {
+  display: flex; align-items: center; gap: 10px; padding: 8px 8px 8px 10px;
+  background: #fff; border: 2.5px solid var(--ink); border-radius: 14px; font-family: var(--pop);
+}
+.td-check {
+  flex: none; width: 28px; height: 28px; border-radius: 50%; border: 2.5px solid var(--ink); background: #fff;
+  font-weight: 900; font-size: 0.95rem; color: var(--ink); padding: 0; cursor: pointer;
+}
+.td-text { flex: 1; min-width: 0; font-weight: 700; font-size: 0.95rem; line-height: 1.45; word-break: break-word; }
+.td-del { flex: none; width: 28px; height: 28px; border: none; background: none; font-size: 1.1rem; color: #9a9188; cursor: pointer; }
+.td-item.done { background: #f3efe6; }
+.td-item.done .td-check { background: var(--mint); }
+.td-item.done .td-text { text-decoration: line-through; color: #8a8278; font-weight: 500; }
+.td-empty { text-align: center; color: #8a8278; font-size: 0.85rem; padding: 14px 0; font-family: var(--pop); }
+.todo-clear { display: block; margin: 0 auto 12px; }
+.todo-clear[hidden] { display: none; }
+#todoMain[hidden], #todoEdit[hidden] { display: none; }
+.tg-list { display: flex; flex-direction: column; gap: 6px; margin: 8px 0 12px; }
+.tg-row { display: flex; gap: 5px; align-items: center; }
+.tg-name { margin-top: 0; flex: 1; min-width: 0; font-family: var(--pop); font-weight: 700; }
+.tg-btn {
+  flex: none; min-width: 36px; height: 40px; padding: 0 8px; border: 2px solid var(--ink); border-radius: 10px;
+  background: #fff; font-family: var(--pop); font-weight: 800; color: var(--ink); cursor: pointer;
+}
+.tg-btn:disabled { opacity: 0.3; }
+.tg-btn.del { background: var(--pink); }
+#todoEdit .small { display: block; margin: 0 auto 12px; }
+@media (max-width: 400px) { .mt-name { font-size: 0.64rem; letter-spacing: -0.03em; } }
+/* ToDo：よく使う（ピン止め） */
+.td-pin { flex: none; width: 30px; height: 30px; border: none; background: none; font-size: 1rem; cursor: pointer; filter: grayscale(1); opacity: 0.35; padding: 0; }
+.td-pin.on { filter: none; opacity: 1; }
+.todo-pins { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: -2px 0 10px; }
+.todo-pins[hidden] { display: none; }
+.tp-label { font-family: var(--pop); font-weight: 800; font-size: 0.75rem; color: #6a635b; margin-right: 2px; }
+.tp-chip { display: inline-flex; align-items: stretch; border: 2px solid var(--ink); border-radius: 999px; background: var(--yellow); overflow: hidden; }
+.tp-chip.in { background: #f3efe6; }
+.tp-add { border: none; background: none; padding: 5px 4px 5px 11px; font-family: var(--pop); font-weight: 800; font-size: 0.85rem; color: var(--ink); cursor: pointer; }
+.tp-chip.in .tp-add { color: #8a8278; }
+.tp-x { border: none; border-left: 1.5px solid rgba(0,0,0,0.2); background: none; padding: 0 9px; font-size: 0.85rem; color: #6a635b; cursor: pointer; }
+/* よく使う：ふだんは閉じておく */
+.todo-pins { display: block; }
+.tp-toggle { border: 2px solid var(--ink); border-radius: 999px; background: #fff; padding: 5px 12px; font-family: var(--pop); font-weight: 800; font-size: 0.82rem; color: var(--ink); cursor: pointer; }
+.todo-pins.open .tp-toggle { background: var(--yellow); }
+.tp-arrow { font-size: 0.65rem; margin-left: 6px; }
+.tp-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.tp-chips[hidden] { display: none; }
+/* ToDo：よく使うボタンと個数 */
+.todo-sub-row { display: flex; align-items: center; gap: 8px; margin: -2px 0 10px; }
+.tp-toggle.open { background: var(--yellow); }
+.tp-toggle[hidden] { display: none; }
+.todo-pins { display: flex; flex-wrap: wrap; gap: 6px; margin: -2px 0 10px; }
+.todo-qty { margin-left: auto; display: flex; align-items: center; gap: 4px; font-family: var(--pop); font-weight: 800; }
+.tq-label { font-size: 0.75rem; color: #6a635b; margin-right: 2px; }
+.todo-qty button { width: 32px; height: 32px; border: 2px solid var(--ink); border-radius: 50%; background: #fff; font-size: 1rem; font-weight: 800; color: var(--ink); cursor: pointer; padding: 0; line-height: 1; }
+.todo-qty button:disabled { opacity: 0.3; }
+#todoQtyVal { min-width: 1.6em; text-align: center; font-size: 1.05rem; }
+.td-qty { margin-left: 8px; padding: 1px 8px; border-radius: 999px; background: var(--yellow); border: 1.5px solid var(--ink); font-size: 0.82em; white-space: nowrap; }

@@ -510,10 +510,13 @@
       const date = new Date(y, m, d);
       const k = ymd(date);
       const s = state.days[k];
-      const el = document.createElement('div');
+      const el = document.createElement('button');
       el.className = 'day';
+      el.dataset.date = k;
       if (JpCalendar.holiday(date) || date.getDay() === 0) el.classList.add('holiday');
       if (k === todayKey) el.classList.add('today');
+      if (k === selDay) el.classList.add('sel');
+      if (state.memos && state.memos[k]) el.classList.add('has-memo');
       let html = `<span class="n">${d}</span>`;
       if (s != null) {
         sum += s; count++;
@@ -527,7 +530,37 @@
     $('monthSum').textContent = count
       ? `この月は ${count}日ぶん、あわせて ${fmtKm(km(sum))} km でした`
       : 'この月の記録は、まだありません';
+    renderMemo();
   }
+
+  // ---------- 日付ごとのメモ ----------
+  let selDay = ymd(new Date());
+  function renderMemo() {
+    const d = parseYmd(selDay);
+    const s = state.days[selDay];
+    $('memoLabel').textContent = `${d.getMonth() + 1}月${d.getDate()}日（${WD[d.getDay()]}）のメモ`;
+    $('memoSteps').textContent = s != null ? `${s.toLocaleString()}歩` : '';
+    const box = $('memoText');
+    if (document.activeElement !== box) box.value = (state.memos && state.memos[selDay]) || '';
+  }
+  $('calendar').addEventListener('click', (e) => {
+    const cell = e.target.closest('.day[data-date]');
+    if (!cell) return;
+    selDay = cell.dataset.date;
+    $('memoText').blur();
+    renderCalendar();
+  });
+  let memoTimer = null;
+  function saveMemo() {
+    state.memos = state.memos || {};
+    const v = $('memoText').value.replace(/\s+$/, '');
+    if (v) state.memos[selDay] = v; else delete state.memos[selDay];
+    save();
+    const cell = $('calendar').querySelector(`.day[data-date="${selDay}"]`);
+    if (cell) cell.classList.toggle('has-memo', !!v);
+  }
+  $('memoText').addEventListener('input', () => { clearTimeout(memoTimer); memoTimer = setTimeout(saveMemo, 400); });
+  $('memoText').addEventListener('blur', () => { clearTimeout(memoTimer); saveMemo(); });
   $('prevMonth').addEventListener('click', () => { calMonth.setMonth(calMonth.getMonth() - 1); renderCalendar(); });
   $('nextMonth').addEventListener('click', () => { calMonth.setMonth(calMonth.getMonth() + 1); renderCalendar(); });
 
@@ -595,6 +628,7 @@
   });
   $('openDiary').addEventListener('click', () => {
     calMonth = new Date(); calMonth.setDate(1);
+    selDay = ymd(new Date());
     renderCalendar();
     openSheet('diarySheet');
   });
@@ -625,7 +659,7 @@
   // ---------- バックアップ ----------
   const BACKUP_PREFIX = 'TEKUTEKU1:';
   function makeBackup() {
-    const json = JSON.stringify({ days: state.days, settings: state.settings });
+    const json = JSON.stringify({ days: state.days, settings: state.settings, memos: state.memos || {}, todo: state.todo || null });
     return BACKUP_PREFIX + btoa(unescape(encodeURIComponent(json)));
   }
   $('backupCopy').addEventListener('click', () => {
@@ -649,12 +683,208 @@
         n++;
       });
       Object.entries(data.settings || {}).forEach(([k, v]) => { if (!state.settings[k]) state.settings[k] = v; });
+      // メモは、いまのメモが無い日だけもどす
+      state.memos = state.memos || {};
+      Object.entries(data.memos || {}).forEach(([d, v]) => { if (parseYmd(d) && typeof v === 'string' && !state.memos[d]) state.memos[d] = v; });
+      // ToDo は、まだ無いジャンルと項目を足す
+      if (data.todo && Array.isArray(data.todo.genres)) {
+        // いまの ToDo が空なら、バックアップのものをそのまま使う
+        if (!state.todo || !(state.todo.items || []).length) state.todo = { genres: [], items: [], current: null };
+        const t = todo();
+        data.todo.genres.forEach((g) => { if (g && g.id && !t.genres.some((x) => x.id === g.id)) t.genres.push({ id: g.id, name: String(g.name || '') }); });
+        (data.todo.items || []).forEach((it) => { if (it && it.id && !t.items.some((x) => x.id === it.id)) t.items.push(it); });
+        Object.entries(data.todo.pins || {}).forEach(([g, list]) => {
+          if (!Array.isArray(list)) return;
+          const mine = (t.pins[g] = t.pins[g] || []);
+          list.forEach((p) => { if (typeof p === 'string' && !mine.includes(p)) mine.push(p); });
+        });
+      }
       save();
       $('backupText').value = '';
       toast(`${n}日ぶんの記録を、もどしました`);
     } catch (e) {
       toast('バックアップの文字を、まるごと貼ってください');
     }
+  });
+
+  // ---------- ToDo（ジャンル別） ----------
+  function todo() {
+    if (!state.todo || !Array.isArray(state.todo.genres)) {
+      state.todo = { genres: [{ id: 'g-shop', name: '買い物' }, { id: 'g-do', name: 'やること' }], items: [], current: 'g-shop' };
+    }
+    state.todo.items = state.todo.items || [];
+    state.todo.pins = state.todo.pins || {}; // ジャンルごとの「よく使う」
+    return state.todo;
+  }
+  const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+  const escHtml = (t) => String(t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  let todoEditing = false;
+
+  let addQty = 1; // 足すときの個数
+  let pinsOpen = false; // 「よく使う」は、タップしたときだけ開く
+  function renderTodo() {
+    const t = todo();
+    if (!t.genres.some((g) => g.id === t.current)) t.current = t.genres[0] ? t.genres[0].id : null;
+    $('todoTabs').hidden = todoEditing;
+    $('todoMain').hidden = todoEditing || !t.current;
+    $('todoEdit').hidden = !todoEditing;
+    $('todoEditBtn').textContent = todoEditing ? '完了' : '編集';
+    if (todoEditing) {
+      $('todoGenreList').innerHTML = t.genres.map((g, i) =>
+        `<div class="tg-row" data-id="${g.id}">` +
+        `<input class="tg-name" value="${escHtml(g.name)}" maxlength="12" aria-label="ジャンルの名前">` +
+        `<button class="tg-btn" data-act="up" ${i === 0 ? 'disabled' : ''} aria-label="上へ">↑</button>` +
+        `<button class="tg-btn" data-act="down" ${i === t.genres.length - 1 ? 'disabled' : ''} aria-label="下へ">↓</button>` +
+        `<button class="tg-btn del" data-act="del" aria-label="削除">削除</button></div>`).join('') ||
+        '<p class="sub center">ジャンルがありません。下から足してください</p>';
+      return;
+    }
+    $('todoTabs').innerHTML = t.genres.map((g) => {
+      const left = t.items.filter((x) => x.genre === g.id && !x.done).length;
+      return `<button class="tt-tab${g.id === t.current ? ' on' : ''}" data-id="${g.id}">${escHtml(g.name)}${left ? `<span class="tt-n">${left}</span>` : ''}</button>`;
+    }).join('');
+    const list = t.items.filter((x) => x.genre === t.current);
+    const pins = t.pins[t.current] || [];
+    // よく使う：押すとそのまま足せる（もう入っているものは薄く）
+    $('todoPinToggle').hidden = !pins.length;
+    $('todoPinToggle').classList.toggle('open', pinsOpen);
+    $('todoPinToggle').setAttribute('aria-expanded', pinsOpen);
+    $('todoPinToggle').innerHTML = `📌 よく使う（${pins.length}）<span class="tp-arrow">${pinsOpen ? '▲' : '▼'}</span>`;
+    $('todoQtyVal').textContent = addQty;
+    $('todoQtyMinus').disabled = addQty <= 1;
+    $('todoPins').hidden = !pins.length || !pinsOpen;
+    $('todoPins').innerHTML = pins.map((p, i) => {
+      const inList = list.some((x) => !x.done && x.text === p);
+      return `<span class="tp-chip${inList ? ' in' : ''}"><button class="tp-add" data-i="${i}">${inList ? '✓ ' : '＋ '}${escHtml(p)}</button>` +
+        `<button class="tp-x" data-i="${i}" aria-label="よく使うから外す">×</button></span>`;
+    }).join('');
+    const sorted = [...list.filter((x) => !x.done), ...list.filter((x) => x.done)];
+    $('todoList').innerHTML = sorted.map((x) =>
+      `<li class="td-item${x.done ? ' done' : ''}" data-id="${x.id}">` +
+      `<button class="td-check" data-act="toggle" aria-label="${x.done ? 'もどす' : 'おわった'}">${x.done ? '✓' : ''}</button>` +
+      `<span class="td-text">${escHtml(x.text)}${x.qty > 1 ? `<span class="td-qty">×${x.qty}</span>` : ''}</span>` +
+      `<button class="td-pin${pins.includes(x.text) ? ' on' : ''}" data-act="pin" aria-label="よく使うに${pins.includes(x.text) ? '入っています' : '入れる'}">📌</button>` +
+      `<button class="td-del" data-act="remove" aria-label="消す">×</button></li>`).join('') ||
+      '<li class="td-empty">まだ何もありません</li>';
+    $('todoClearDone').hidden = !list.some((x) => x.done);
+    const g = t.genres.find((x) => x.id === t.current);
+    $('todoInput').placeholder = g ? `${g.name}に足す` : '';
+  }
+
+  function addTodo() {
+    const t = todo();
+    const v = $('todoInput').value.trim();
+    if (!v || !t.current) return;
+    t.items.push({ id: uid(), genre: t.current, text: v.slice(0, 100), qty: addQty, done: false });
+    $('todoInput').value = '';
+    addQty = 1;
+    save(); renderTodo();
+  }
+  $('todoAdd').addEventListener('click', addTodo);
+  $('todoInput').addEventListener('keydown', (e) => { if (e.key === 'Enter' && !e.isComposing) { e.preventDefault(); addTodo(); } });
+  $('todoTabs').addEventListener('click', (e) => {
+    const b = e.target.closest('.tt-tab');
+    if (!b) return;
+    todo().current = b.dataset.id; save(); renderTodo();
+  });
+  $('todoList').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-act]');
+    if (!b) return;
+    const t = todo();
+    const id = b.closest('.td-item').dataset.id;
+    const it = t.items.find((x) => x.id === id);
+    if (!it) return;
+    if (b.dataset.act === 'pin') {
+      const pins = (t.pins[it.genre] = t.pins[it.genre] || []);
+      const i = pins.indexOf(it.text);
+      if (i >= 0) pins.splice(i, 1);
+      else { pins.push(it.text); toast('「よく使う」に入れました'); }
+    } else if (b.dataset.act === 'toggle') {
+      it.done = !it.done;
+      if (it.done && M.todoDone) toast(pickRandom(M.todoDone));
+    } else {
+      t.items = t.items.filter((x) => x.id !== id);
+    }
+    save(); renderTodo();
+  });
+  $('todoPinToggle').addEventListener('click', () => { pinsOpen = !pinsOpen; renderTodo(); });
+  // 個数：ふだんは1個。2個以上のときだけ「×2」と出す
+  $('todoQtyMinus').addEventListener('click', () => { addQty = Math.max(1, addQty - 1); renderTodo(); });
+  $('todoQtyPlus').addEventListener('click', () => { addQty = Math.min(99, addQty + 1); renderTodo(); });
+  $('todoPins').addEventListener('click', (e) => {
+    const t = todo();
+    const pins = t.pins[t.current] || [];
+    const add = e.target.closest('.tp-add'), x = e.target.closest('.tp-x');
+    if (add) {
+      const text = pins[+add.dataset.i];
+      if (!text) return;
+      const done = t.items.find((it) => it.genre === t.current && it.text === text);
+      if (done && !done.done) return; // もう入っている
+      if (done) { done.done = false; done.qty = addQty; } // 終わったものに残っていたら、もどす
+      else t.items.push({ id: uid(), genre: t.current, text, qty: addQty, done: false });
+      addQty = 1;
+    } else if (x) {
+      pins.splice(+x.dataset.i, 1);
+    } else return;
+    save(); renderTodo();
+  });
+  $('todoClearDone').addEventListener('click', () => {
+    const t = todo();
+    t.items = t.items.filter((x) => !(x.genre === t.current && x.done));
+    save(); renderTodo();
+  });
+  $('todoEditBtn').addEventListener('click', () => {
+    if (todoEditing) {
+      // 名前を保存（空なら、もとの名前のまま）
+      const t = todo();
+      $('todoGenreList').querySelectorAll('.tg-row').forEach((row) => {
+        const g = t.genres.find((x) => x.id === row.dataset.id);
+        const v = row.querySelector('.tg-name').value.trim();
+        if (g && v) g.name = v.slice(0, 12);
+      });
+      save();
+    }
+    todoEditing = !todoEditing;
+    renderTodo();
+  });
+  $('todoGenreList').addEventListener('input', (e) => {
+    const row = e.target.closest('.tg-row');
+    if (!row) return;
+    const g = todo().genres.find((x) => x.id === row.dataset.id);
+    const v = e.target.value.trim();
+    if (g && v) { g.name = v.slice(0, 12); save(); }
+  });
+  $('todoGenreList').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-act]');
+    if (!b) return;
+    const t = todo();
+    const id = b.closest('.tg-row').dataset.id;
+    const i = t.genres.findIndex((x) => x.id === id);
+    if (b.dataset.act === 'up' && i > 0) [t.genres[i - 1], t.genres[i]] = [t.genres[i], t.genres[i - 1]];
+    if (b.dataset.act === 'down' && i < t.genres.length - 1) [t.genres[i + 1], t.genres[i]] = [t.genres[i], t.genres[i + 1]];
+    if (b.dataset.act === 'del') {
+      const n = t.items.filter((x) => x.genre === id).length;
+      if (n && !confirm(`「${t.genres[i].name}」には ${n}個 入っています。いっしょに消しますか？`)) return;
+      t.genres.splice(i, 1);
+      t.items = t.items.filter((x) => x.genre !== id);
+    }
+    save(); renderTodo();
+  });
+  $('todoNewGenre').addEventListener('click', () => {
+    const t = todo();
+    const g = { id: 'g-' + uid(), name: '新しいジャンル' };
+    t.genres.push(g);
+    t.current = g.id;
+    save(); renderTodo();
+    const inputs = $('todoGenreList').querySelectorAll('.tg-name');
+    const last = inputs[inputs.length - 1];
+    if (last) { last.focus(); last.select(); }
+  });
+  $('openTodo').addEventListener('click', () => {
+    todoEditing = false; pinsOpen = false; addQty = 1;
+    todo().current = todo().genres[0] ? todo().genres[0].id : null; // 開いたときは、いちばん上のジャンル（買い物）
+    renderTodo();
+    openSheet('todoSheet');
   });
 
   // ---------- 起動 ----------
