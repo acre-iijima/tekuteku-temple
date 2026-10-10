@@ -720,7 +720,6 @@
   const escHtml = (t) => String(t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   let todoEditing = false;
 
-  let addQty = 1; // 足すときの個数
   let pinsOpen = false; // 「よく使う」は、タップしたときだけ開く
   function renderTodo() {
     const t = todo();
@@ -750,8 +749,6 @@
     $('todoPinToggle').classList.toggle('open', pinsOpen);
     $('todoPinToggle').setAttribute('aria-expanded', pinsOpen);
     $('todoPinToggle').innerHTML = `📌 よく使う（${pins.length}）<span class="tp-arrow">${pinsOpen ? '▲' : '▼'}</span>`;
-    $('todoQtyVal').textContent = addQty;
-    $('todoQtyMinus').disabled = addQty <= 1;
     $('todoPins').hidden = !pins.length || !pinsOpen;
     $('todoPins').innerHTML = pins.map((p, i) => {
       const inList = list.some((x) => !x.done && x.text === p);
@@ -762,7 +759,7 @@
     $('todoList').innerHTML = sorted.map((x) =>
       `<li class="td-item${x.done ? ' done' : ''}" data-id="${x.id}">` +
       `<button class="td-check" data-act="toggle" aria-label="${x.done ? 'もどす' : 'おわった'}">${x.done ? '✓' : ''}</button>` +
-      `<span class="td-text">${escHtml(x.text)}${x.qty > 1 ? `<span class="td-qty">×${x.qty}</span>` : ''}</span>` +
+      `<span class="td-text">${escHtml(x.text)}</span>` +
       `<button class="td-pin${pins.includes(x.text) ? ' on' : ''}" data-act="pin" aria-label="よく使うに${pins.includes(x.text) ? '入っています' : '入れる'}">📌</button>` +
       `<button class="td-del" data-act="remove" aria-label="消す">×</button></li>`).join('') ||
       '<li class="td-empty">まだ何もありません</li>';
@@ -775,12 +772,11 @@
     const t = todo();
     const v = $('todoInput').value.trim();
     if (!v || !t.current) return;
-    t.items.push({ id: uid(), genre: t.current, text: v.slice(0, 100), qty: addQty, done: false });
+    t.items.push({ id: uid(), genre: t.current, text: v.slice(0, 100), done: false });
     $('todoInput').value = '';
-    addQty = 1;
     save(); renderTodo();
   }
-  // 入力中にボタンを押しても、キーボードを閉じない
+  // 「足す」を押しても、キーボードを閉じない（続けて入力できるように）
   function tapKeep(el, fn) {
     let sx = 0, sy = 0, moved = false;
     el.addEventListener('touchstart', (e) => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; moved = false; }, { passive: true });
@@ -822,11 +818,8 @@
     }
     save(); renderTodo();
   });
-  tapKeep($('todoPinToggle'), () => { pinsOpen = !pinsOpen; renderTodo(); });
-  // 個数：ふだんは1個。2個以上のときだけ「×2」と出す
-  tapKeep($('todoQtyMinus'), () => { addQty = Math.max(1, addQty - 1); renderTodo(); });
-  tapKeep($('todoQtyPlus'), () => { addQty = Math.min(99, addQty + 1); renderTodo(); });
-  tapKeep($('todoPins'), (e) => {
+  $('todoPinToggle').addEventListener('click', () => { pinsOpen = !pinsOpen; renderTodo(); });
+  $('todoPins').addEventListener('click', (e) => {
     const t = todo();
     const pins = t.pins[t.current] || [];
     const add = e.target.closest('.tp-add'), x = e.target.closest('.tp-x');
@@ -835,9 +828,8 @@
       if (!text) return;
       const done = t.items.find((it) => it.genre === t.current && it.text === text);
       if (done && !done.done) return; // もう入っている
-      if (done) { done.done = false; done.qty = addQty; } // 終わったものに残っていたら、もどす
-      else t.items.push({ id: uid(), genre: t.current, text, qty: addQty, done: false });
-      addQty = 1;
+      if (done) done.done = false; // 終わったものに残っていたら、もどす
+      else t.items.push({ id: uid(), genre: t.current, text, done: false });
     } else if (x) {
       pins.splice(+x.dataset.i, 1);
     } else return;
@@ -896,7 +888,7 @@
     if (last) { last.focus(); last.select(); }
   });
   $('openTodo').addEventListener('click', () => {
-    todoEditing = false; pinsOpen = false; addQty = 1;
+    todoEditing = false; pinsOpen = false;
     todo().current = todo().genres[0] ? todo().genres[0].id : null; // 開いたときは、いちばん上のジャンル（買い物）
     renderTodo();
     openSheet('todoSheet');
