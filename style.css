@@ -721,14 +721,8 @@ button.day { font: inherit; font-family: var(--pop); color: var(--ink); cursor: 
 .tp-arrow { font-size: 0.65rem; margin-left: 6px; }
 .tp-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 .tp-chips[hidden] { display: none; }
-/* ToDo：よく使うボタンと個数 */
+/* ToDo：よく使うボタン */
 .todo-sub-row { display: flex; align-items: center; gap: 8px; margin: -2px 0 10px; }
 .tp-toggle.open { background: var(--yellow); }
 .tp-toggle[hidden] { display: none; }
 .todo-pins { display: flex; flex-wrap: wrap; gap: 6px; margin: -2px 0 10px; }
-.todo-qty { margin-left: auto; display: flex; align-items: center; gap: 4px; font-family: var(--pop); font-weight: 800; }
-.tq-label { font-size: 0.75rem; color: #6a635b; margin-right: 2px; }
-.todo-qty button { width: 32px; height: 32px; border: 2px solid var(--ink); border-radius: 50%; background: #fff; font-size: 1rem; font-weight: 800; color: var(--ink); cursor: pointer; padding: 0; line-height: 1; }
-.todo-qty button:disabled { opacity: 0.3; }
-#todoQtyVal { min-width: 1.6em; text-align: center; font-size: 1.05rem; }
-.td-qty { margin-left: 8px; padding: 1px 8px; border-radius: 999px; background: var(--yellow); border: 1.5px solid var(--ink); font-size: 0.82em; white-space: nowrap; }
