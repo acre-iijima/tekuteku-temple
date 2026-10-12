@@ -726,3 +726,14 @@ button.day { font: inherit; font-family: var(--pop); color: var(--ink); cursor: 
 .tp-toggle.open { background: var(--yellow); }
 .tp-toggle[hidden] { display: none; }
 .todo-pins { display: flex; flex-wrap: wrap; gap: 6px; margin: -2px 0 10px; }
+/* カレンダー：幅がせまい・文字が大きい端末でも、はみ出さない */
+.cal-week, .cal { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.day { min-width: 0; }
+.day .n { font-size: min(1em, 4.8vw); }
+button.day { -webkit-appearance: none; appearance: none; margin: 0; line-height: 1.15; }
+.day .s { max-width: 100%; white-space: nowrap; letter-spacing: -0.03em; font-size: min(0.55rem, 2.7vw); }
+.cal { margin-bottom: 10px; }
+/* 文字を大きくしている端末でも、横にはみ出さない */
+html, body { overflow-x: clip; max-width: 100%; }
+header { min-width: 0; }
+header h1 { min-width: 0; overflow: hidden; white-space: nowrap; }
