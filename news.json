@@ -1,12 +1,19 @@
 {
- "updatedAt": "2026-10-15T18:35:44.273Z",
+ "updatedAt": "2026-10-15T21:44:10.642Z",
  "items": [
   {
    "cat": "経済",
-   "title": "道の駅整備事業で便宜図り接待受けた容疑、３２歳の南魚沼市職員を逮捕…コンサル会社社員２人は贈賄容疑",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1OT3Bxd1Rtck9lakpyMTFfb3FoSFdhakZpNUI4Rm02VzNhNVUycWlVbUFJY0ZxNFNWNDlkWHFsSGZZbF9ieUtiVjBISHlabEZTNG1ST29IUjlMSnM5QmI0Yk5XSFpMZw?oc=5",
+   "title": "市場揺らすコアウィーブとは AI設備レンタルで拡大、NVIDIAが後ろ盾",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBCNVpVVzRpNjBPOHliUW5fYlc4dlRlMU40RTg3di1EYUxBSEUtMTFTd3lOZkpxcU1vY1ZPejlWeHJrNEdpLUJQaUpWMTM1dWFBbk9ZV2tOQlRpeVdQcG9IQmdzbHFuR084SkhiMg?oc=5",
+   "source": "日本経済新聞",
+   "time": "2026-10-15T20:35:07.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "後期高齢者の医療費窓口負担や保険料へ金融所得反映、２０２９年８月から…厚労省方針",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1IV0FBWU1fNUh3V2MzZVB6eUVvekR5SC00VFpUZE9Denk3UlpXYng3LUx3bGNzdXJBQ1V2OHBQbDZWYXZJeVkxRDZKM0lXZU0zSVNTbFdrTy1qS3M2a1JGd1lIRDJ6QQ?oc=5",
    "source": "読売新聞",
-   "time": "2026-10-15T14:48:00.000Z"
+   "time": "2026-10-15T20:00:00.000Z"
   },
   {
    "cat": "経済",
@@ -31,13 +38,6 @@
   },
   {
    "cat": "経済",
-   "title": "【市場反応】米9月PPIは加速し4年ぶり高水準、小売売上高は予想上回る、ドル売りは継続｜FX・為替ニュース",
-   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE01Q3ZQRUZ6eGp6RTUxclJ2YWhLaHEyVUhpUjhkdWZpT0tVRFh0RjVhQWRvR1N2SzNlMmRHb20yVUJzbEhIWkhJQWVvdnJPUk9FTFE?oc=5",
-   "source": "ザイFX！",
-   "time": "2026-10-15T13:44:00.000Z"
-  },
-  {
-   "cat": "経済",
    "title": "洗濯機が発火恐れ パナがリコール",
    "link": "https://news.yahoo.co.jp/pickup/6598928?source=rss",
    "source": "Yahoo!ニュース",
@@ -45,10 +45,24 @@
   },
   {
    "cat": "経済",
+   "title": "【市場反応】米9月PPIは加速し4年ぶり高水準、小売売上高は予想上回る、ドル売りは継続(フィスコ)",
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPV1dianZtblJYMlpfamVVdHJCVkFtQnowOV8wUjR4U0pMczFCOHF2RGZBQXhQMnQ3bTRtSHAwcFg1S2gyY0daMUZaMzNoQkZhc2NkSXUzVTBmS0RmMmkzRGw4NHFYLWtXV0ZrUEt1U0VqNzZ5djZ2MDBhMlZsVmRMUDR0ZllYV1k?oc=5",
+   "source": "Yahoo!ファイナンス",
+   "time": "2026-10-15T13:34:59.000Z"
+  },
+  {
+   "cat": "経済",
    "title": "ソースネクストで最大2252万件流出、ベネッセに次ぐ「歴代2位」 パスワードも流出か？（1/2 ページ）",
    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9aQVFrY3IwQjJ3c3pYMmdMVlE5S291d1Q5ZEpoZWRiZHJQWV8xRDVjWVBWTGRYUmxmeUdPNUJMZ0hNbW5NTGJEOERpaG4xaEotbDl5bXpGaC1CcTZlWGdkODJmdVhoRi1rYUV2YkFjRFhLdw?oc=5",
    "source": "ITmedia",
    "time": "2026-10-15T13:02:00.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "南魚沼市の道の駅整備巡り贈収賄容疑、南魚沼市職員と会社員2人を逮捕 飲食6回、約13万円の接待",
+   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBNOGQzMVdZeW9uQjdMRllvNWpfTWh1enN3VXJYbGFRZmlCb1JWZ0ZpNWkxY19UdXlNLVp6Z2xOWHJYV3BwZUxiNmxUT3ZSZzNpc20zMWg3TjdqS1NvVlE?oc=5",
+   "source": "新潟日報",
+   "time": "2026-10-15T12:35:00.000Z"
   },
   {
    "cat": "経済",
@@ -66,24 +80,45 @@
   },
   {
    "cat": "経済",
-   "title": "バーガーキング展開「ビーケー・ジャパン」１１１８万件情報漏えい、「ソースネクスト」最大２２５１万９９６０件流出か",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9GVVRMczc0VjRvaEktRjFjdDRmZHc4V2JPTV9yVl9CNEQ5cXREQ1NmMHdReTlucmVSYmtTT2EwR3JpUXFxa1NmMnp2ZzdQazlwcEs1SlpSTzV0cWhIdGFlSU9jRHlaUQ?oc=5",
-   "source": "読売新聞",
-   "time": "2026-10-15T11:53:00.000Z"
-  },
-  {
-   "cat": "経済",
    "title": "年金だけで暮らせず 毎日働く71歳",
    "link": "https://news.yahoo.co.jp/pickup/6598916?source=rss",
    "source": "Yahoo!ニュース",
    "time": "2026-10-15T11:29:05.000Z"
   },
   {
-   "cat": "経済",
-   "title": "SNS偽広告で詐欺被害 メタ社に賠償求めた訴え退ける 横浜地裁",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFAxMkRPaWQ2WU5oZ1UxTmQ1VUxSZEotbUhqQVBnTHB0QlpUQWRwUnAxV0JtTGN1Uy14dVo0Z2hPTGltVTJGbHppOVdFNFZLeFJHWXRDYUI2UGVueTJzQ19n?oc=5",
-   "source": "NHKニュース",
-   "time": "2026-10-15T10:53:54.000Z"
+   "cat": "主なニュース",
+   "title": "ウォーターボーイズ新作 放送へ",
+   "link": "https://news.yahoo.co.jp/pickup/6598937?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-15T21:28:40.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "トランプ氏 銃殺刑の配信計画中止",
+   "link": "https://news.yahoo.co.jp/pickup/6598936?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-15T21:21:48.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "鈴木福 役作りで人生初の金髪に",
+   "link": "https://news.yahoo.co.jp/pickup/6598935?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-15T21:09:16.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "風俗店勤務を要求した疑い、元ホストら２人逮捕…「ＩＴ業界の関係者」と偽り交際しホストと明かして店へ案内",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBNdFdKNUdnUDJQbEFGZUkwY1FVVTlHZ0Jpcl9rYVFjYTRxVGtaLTNXUEcwWXZFYzN3MFd6Y2NFQThkLTc1TFJCSERXa0kxdlI5S0tObTlDZnBVanRpZkc5bjhNTW9MZw?oc=5",
+   "source": "読売新聞",
+   "time": "2026-10-15T20:00:00.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "6年で49件ずさんな衛生管理…新潟の温泉施設“レジオネラ菌”基準超えも停止せず",
+   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBKQzFiNnRJRTlNVGs5ZmRJelRLRWItZTlrRlRKR2NqLS0tdy1KU29DMlFDZWtYOW1qcklxNW1QaVRWcDVLWmFLSVJ1ekFNeVZ5dTNqdU5yTXlGcnp2QWZsU1RjMjhDVWoxdWhLWF9JUzlPZw?oc=5",
+   "source": "テレ朝NEWS",
+   "time": "2026-10-15T15:51:00.000Z"
   },
   {
    "cat": "主なニュース",
@@ -122,20 +157,6 @@
   },
   {
    "cat": "主なニュース",
-   "title": "櫻井翔 難民報道ディレクター就任",
-   "link": "https://news.yahoo.co.jp/pickup/6598923?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-15T12:51:20.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "ヤンバルクイナの人工授精 初成功",
-   "link": "https://news.yahoo.co.jp/pickup/6598918?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-15T12:02:28.000Z"
-  },
-  {
-   "cat": "主なニュース",
    "title": "中学生、毒キノコで食中毒 道端に生えていたオオシロカラカサタケを採取し食べる 神戸|社会",
    "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE16NUpUTGhVNmI5Tk1zUW1udk92ZGFFc1pfM2tNazctcVpzMXo2dEtJOEdheUM1S0I2amYwczFkVF80eWxVTlgxbDBvR3l0M2VVWGgzOTJRRFhxWnZTMWgyaEozRDc2ZU01TXRMZWx0QQ?oc=5",
    "source": "神戸新聞",
@@ -149,25 +170,32 @@
    "time": "2026-10-15T11:36:34.000Z"
   },
   {
-   "cat": "主なニュース",
-   "title": "静岡・伊東のメガソーラー許可取り消し 静岡地裁「住民軽視、本末転倒の事務処理」と非難",
-   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9LQUpENHFGRGN5N2MwV09RUzRyTzZwQ29pMmFlZzI0V0NyNmswX0p6aDhJV3FscHQ4OW5VemNFdjNpemhoUF9IdE1PWE5lbXVMQjl5eUhocWxYQmJxVFhCNzhaVzNrLWxpQlRzNmZWTXZkVXZaSEE?oc=5",
-   "source": "産経ニュース",
-   "time": "2026-10-15T11:09:06.000Z"
+   "cat": "国際",
+   "title": "フーシ派との戦闘をためらうトランプ…サウジアラビアは米国一辺倒から安全保障関係の「多極化」へ（Wedge（ウェッジ））",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9sMFJ0TmVkTE9JdmpOTTkxaWNBcUdMZlktaV9jUm1mSHNzTHpBV3NPeFNvb3VLRTVDbGtvdlpDOVhpNHdfSF9uUGVJNkNOdXFtaTcyQi1lMDV1Tkdray12RkQ0VlllNmxKTy1HTU40OHl6VmhKMGU0OENXMFc5ZzQ?oc=5",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-15T20:03:15.000Z"
   },
   {
-   "cat": "主なニュース",
-   "title": "軽乗用車が路線バスと正面衝突、運転の７３歳男性死亡・同乗の５歳孫娘が意識不明…広島・尾道",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9SXzhoaXBCT05RWnhTRXhOWXA0OUVKQ0dQaGlHRDM0RmJGYWZwTm9oZjFycGdwdTRGTWs3OTR6Sm40bUNMZ09ReE9yZnJDQWJod3F2QmQ4LTI2RE1wbFNLQ1l4cmNJUQ?oc=5",
-   "source": "読売新聞",
-   "time": "2026-10-15T10:33:00.000Z"
+   "cat": "国際",
+   "title": "プーチン氏、ウクライナによる製油所攻撃に報復表明＝インタファクス通信（ロイター）",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5GYU1jd1ZVOVdBSDBrNFB4TnBKRmdmeEJqSGZwcHBuQlBQY1BFLXdFY2c3X3g0Nk5VQkczNHN0RDRVR3NhcFBaRXdjRlBDc3pWSF9NSm5memh5N1BfNks1Vm5IR2dCWTA3elRSYUdQNDZuUVNYNXdUZWdMam5oN0k?oc=5",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-15T18:13:01.000Z"
   },
   {
-   "cat": "主なニュース",
-   "title": "［社説］富山の国勢調査不正は罪深い",
-   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBLamN0RmY4c0tBakJ1WGRnNmVMTGdJVXQxRTZ2VEV5TlRkNllWM1pkRnJib2tCVWRSa3dvLUppREpfcHlPbjJxdHBEOEI0elFnY29WSUJaOWhXTWZPSm5sODdNblJlNzJNajhGSg?oc=5",
+   "cat": "国際",
+   "title": "ペルー、公立校男子は短髪義務 ケイコ・フジモリ大統領「学校に秩序」",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9zdy1vbFJMSDYxR25Xa052d2haT3hvMm9pRl9HVkxlXzlsX1JscFdVMU9xVkRTeE1yOUFSVEFoaGRMano4bEFCU1ZTb0VzekRQSkI5LXFwWkgzY2s5Nnk3bEw3OFBOZDNIT3Z3UQ?oc=5",
    "source": "日本経済新聞",
-   "time": "2026-10-15T10:00:00.000Z"
+   "time": "2026-10-15T16:09:48.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "黒海で再び民間の船舶が炎上 乗組員7人行方不明「無人機による攻撃」 2日前にも11人が行方不明に",
+   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5zcWxpNkJUMmtlcVV3X1BLUXdKY25neDJmZGt3NktFUnhyamR1d202bExGc1ZNMWVrYmpfRjd1c0VJMWMtTTQwWXR0ZUNzd01CNFV4ZTlTN1RyX181b0xSNjNiaklsN0VzWXVCeldR0gFzQVVfeXFMTmNIS0RYMU9oMWU3aTF6VU5ZWWM3M0IxOVNYanRjZklFNVF5WnFtQmhYaWtyaV9OYU5kbk5BcVF4dDZHR0hRZ1JSNl85UEx5RkhxVTBZZDhvZEpGcUhybEc2S1NtYkxpRTZvSkxNaWJEck5Mcw?oc=5",
+   "source": "ｄメニューニュース",
+   "time": "2026-10-15T15:59:19.000Z"
   },
   {
    "cat": "国際",
@@ -199,10 +227,17 @@
   },
   {
    "cat": "国際",
-   "title": "ルーマニア領海でタンカー2隻火災、乗組員7人が行方不明",
-   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOallUdUZ0LWQwUl9NSHhVakY2ckw3cXJuUXp1THBmc2EyVGVLdHllemc4dzZwWG5UN2w3RkhWY3JhaF9NeGNYYmJuSGVyOW5SQVFSWU8tdnN5aWJzTFBncGxva093SzNFeGhjaS1kV1lwcU1WRDUzYlZjMEN5cGpTVlQ5SnlLUQ?oc=5",
-   "source": "Reuters",
-   "time": "2026-10-15T10:04:44.000Z"
+   "title": "530億円かけた中国の古都風施設、チケットは1日13枚、乱立の背景に迫る (2026年10月15日掲載)",
+   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE0tRVlWS1l3cVlPY2RXczZFM3V1UGlSSzlEVU41alkwZXEzVnkxUDZWMFBEbU1UdXVWWXlNOF9IWS1tMUhFanhtU3dHRXRWd2VjdFFXMFh0WTdhRkZEY3c?oc=5",
+   "source": "ライブドアニュース",
+   "time": "2026-10-15T11:15:00.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "戦時作戦権移譲巡り対立＝米司令官発言に韓国報道官反発",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1Dcll4ZGhuVXJxYU5FbjJtVVRkN1ZqTFZFRWVsS2pVQWJpRnNjRXB4SG8xQXdHblF4VlNNQlRQWEhSalllNk5ySi1fUkxXNXBub2VWcWQyczhrZzBtaVpGRWNoRnZpUdIBa0FVX3lxTE9qay1YWWN2OWJ3c2FDUUpwemhWNVNReFVDdUpNNURfTXY3RHhQSmkyZFpyNWh1dno3bU9Fc1ptaHNVazF0WTJPUWc3b3d4QkM3MWVqRHBadTBERFF0Y1R1a21Xc2p2VDNETjVN?oc=5",
+   "source": "Infoseek",
+   "time": "2026-10-15T09:12:05.000Z"
   },
   {
    "cat": "国際",
@@ -217,41 +252,6 @@
    "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5KdmpuUjhHczducTRxWDJxVHBSa1VyZl8yU1pRam9XVU9QZDI5UTBvajEzdkkzOEhreEIzU2FJSmxhcEhJM1hxNlNEanpkZFo3RU01d3dWUGVrX0VuOHBlNDBKRy11M3pFcEtBckVuYWpwb0Q5T3c?oc=5",
    "source": "産経ニュース",
    "time": "2026-10-15T09:00:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "米軍がイランに大規模爆風弾使用も 核施設標的トランプ大統領の作戦再開命令に備える",
-   "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1QY2M2LVNIcGVLVm1mYlhnUmJpcGtKempOTDBxVWVhaTl4aURPeTF0MS1RYmlILUpfVkRLajRSWmQ3WmdzZTBzcnBNeE1xWUFqMDVfOG4xOUZlZTlOeHl4THVoLWNGWVZraHI3Rkc1emhTYTlDc2hDNzZR?oc=5",
-   "source": "テレ朝NEWS",
-   "time": "2026-10-15T08:37:37.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "イスラエル情報機関の前長官 ネタニヤフ首相を提訴",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBPc0xtVmxQQVhyTjNCdDJ5c2QxMFpQM3hXUUR6a01RR2RPQ3MySGVaSVN4VFlpallJY1hQbnJadlFvMHNYQTFFbVpaMW1UN0hmZF9QcGtGQ2M1anZmaDJv?oc=5",
-   "source": "NHKニュース",
-   "time": "2026-10-15T08:10:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "米名門大で同僚のお茶に毒、中国出身・微生物専攻の大学院生を逮捕 研究成果ねたんだか",
-   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1Ca1k1M2dBWm5ZdEVGaUlVdlhyeGV2blNtVmhIbTNNeFVuN1VUMUw1ZEFVUGIwZ0s0SEFNeEcwUWRjLTMtc1ZCZEVzdDh2X1NGSWxCUF8zUGpENjN1V1hlRzJnekV6UERFYnh1RVdEX1J4R2tHbGc?oc=5",
-   "source": "産経ニュース",
-   "time": "2026-10-15T07:48:16.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "米の新報道官 弁護士経歴に疑念",
-   "link": "https://news.yahoo.co.jp/pickup/6598880?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-15T07:21:43.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "米大統領の新報道官、経歴詐称か 弁護士名乗るも試験不合格",
-   "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5iYjRCY0JHMUFieHQtUFd6Wk0zSnFCaW83elA2V1UydnBuWnY1djZzZWFhSUhfdmRrQWY4SmVjWWswYjRVYXhRQzREVQ?oc=5",
-   "source": "47NEWS",
-   "time": "2026-10-15T06:45:00.000Z"
   }
  ]
 }
