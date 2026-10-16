@@ -1,180 +1,222 @@
 {
- "updatedAt": "2026-10-16T09:40:13.393Z",
+ "updatedAt": "2026-10-16T14:44:58.553Z",
  "items": [
   {
    "cat": "経済",
-   "title": "東海道新幹線「のぞみ」指定席を値上げ、東京―新大阪700円 JR東海が民営化後初",
-   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBsUGFkSnhjQTkxRFRyblR5eUoxWFFCT3dyVWZUYnhKcGR1Q3hKVl9EYW1mU1JMRFZsQnMwRWVyYWF2dDdwSDdTZmhDQVRGQVExS1dMTklXRnFTdWloamx0MzBlQU5NTDZfMkNlMQ?oc=5",
-   "source": "日本経済新聞",
-   "time": "2026-10-16T09:05:37.000Z"
+   "title": "ニデック 永守氏らへの訴訟を検討",
+   "link": "https://news.yahoo.co.jp/pickup/6599040?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-16T13:20:06.000Z"
   },
   {
    "cat": "経済",
-   "title": "世界の機関投資家、AI利用を監視 管理不十分なら取締役の選任に反対",
-   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5qRUVGLVlxWkFYSFZ3SldmWEs3Uk5WRzlDWlZBOXVwNWtMQnZjWDlMQVNWbmdpOF93VUgzZ1V1MU54bGpteUZ5V2RHY2VPU1dqZFlFV3NpbVBhNjg5T1BaLVRndmVUaXk2Y0QzRA?oc=5",
-   "source": "日本経済新聞",
-   "time": "2026-10-16T09:00:00.000Z"
+   "title": "銀座に鳴り響いたＭ９・９の緊急地震速報「頭が真っ白」、防災無線は「大地震です」…新幹線も一時運休",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBlMnpFNl9CR2VFQU1wY29JeHNTcUVVVGFTRUFkQnBzcXNmeFRleFg4QlR3LUVFSVYyN1h3NE1Qa25wM1NzczR0dm5Ra0tTUVlpTDAzdkxtRTlvM2lwMThiOWtUa0p4QQ?oc=5",
+   "source": "読売新聞",
+   "time": "2026-10-16T13:00:00.000Z"
   },
   {
    "cat": "経済",
-   "title": "ソースネクスト パスワード暗号化がない状態で流出 再設定を",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9FY1U1NGdGZWhKY0w0NHlOaW1kOTRaZUZma1JQX3ZDOW54Zk9YajlFd29CR0MxNm92YjlPN1hoRWkxdkpiYW8xd29SUGNQdjRLeWNZbnJhNjRxeHp3UFdr?oc=5",
+   "title": "不正会計のニデック、責任調査委から「永守重信氏含む歴代５社長全員に法的責任」と報告書",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFB2Tm1ZMlFDTmJvaFRWQ2gxMVFHMG5IZmE4NkRIRmgxWWJJY25TRG1rSGFWS0NiaFIzUkc0a3RuenZIb3JJYWR5Yk5GNmRXX3dmdnhXUzV1QjFJNFdkV290MjZZLVdQdw?oc=5",
+   "source": "読売新聞",
+   "time": "2026-10-16T12:59:39.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "EUのEV優遇制度案、日本車を除外 独仏が合意",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9DenZlUldxX1VNT084OVpNdVcyc21pcWh4NzdCYl9lWmpYUlhaNTZPbWlPal9yTU5Zc3RkS29zcWlrazJrTVFPU3h6ZVhwa1U4a0RMRkJNU0FYRU5zaURxNTJ0QmtvU1loVkRLag?oc=5",
+   "source": "日本経済新聞",
+   "time": "2026-10-16T12:39:04.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "植田日銀総裁、物価上昇｢これ以上の上げ容認できず｣ 利上げ継続強調",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE43TWxzd25JMmh0bXVncDc4NC1aQTExM054blFvaVYtZDBmQnMweU9MV000U0xyQ3hVdXB3SlNlaUVNZFVkZG5JMEpUdzlPZ1FTLUNpUkE3TFZnYlNBY1RJTktRWE9BMWRJZ2tScg?oc=5",
+   "source": "日本経済新聞",
+   "time": "2026-10-16T12:28:43.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "ガスト・サイゼ・ロイホ 戦略比較",
+   "link": "https://news.yahoo.co.jp/pickup/6599029?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-16T12:27:10.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "【笠原一輝のユビキタス情報局】フロンティアモデルAIを出先でも！NVIDIA RTX Spark搭載Surface実機レビュー",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5pZjlxQ3d5VENqRG0xYWZjcDgzVEx5UDJ4b0hGcjNEV24wU0x4MUpQWmgyUGR5cWhPYk5QUzYzM3VSVkFEWUN0RTRzcGN0NEtBdUtvWHdUQUVHY0FMUFRzS09NY050QlNxTm16bw?oc=5",
+   "source": "PC Watch",
+   "time": "2026-10-16T12:00:00.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "ECサイトシステム運営会社の情報漏えい 2335万件を確認",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9pbl9mYU9MSE1WeVhUZmJjYW1pcFRid2ZvbnJsQVN2NVIzWnJkTENHemZjX2R2eWYwUjFaclNNRmYwN3g0WGVtSGRrNEhNUWN5ekt0UWk5T0ZVYlZDQ1A0?oc=5",
    "source": "NHKニュース",
-   "time": "2026-10-16T08:56:43.000Z"
+   "time": "2026-10-16T11:43:00.000Z"
   },
   {
    "cat": "経済",
-   "title": "トヨタが全50車種をSDVに、独自ソフトで性能向上 30年に年1000万台",
-   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE0xcEI3bWdta093dVJ6WkJPUlZsOHN0RHQ4NTZUOXROMmNtaUR6eUxYM1AxcTlMemZTVU1jTi1mUXJKMjl3S25aaTNVZTBxdkZKdHdaeHV6clcxM25xT3FsTC1tTlpfS3ZnVjhJaQ?oc=5",
-   "source": "日本経済新聞",
-   "time": "2026-10-16T08:25:03.000Z"
+   "title": "ファンケルとアテニアのＥＣサイトに不正アクセス 会員情報８３万件流出",
+   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9udGx6SDJMWWwtS0lLOEpDVk95ckdNQXBkUlRQMjdUdkhRTW5WbXlJN1dYMEdSOXg5VlhIaHhxX3ZfSDhUYkxPMjZQN3pDUDFmbnFIU3QtalF5cFZ0V0VWRUtNZFRqY082?oc=5",
+   "source": "カナロコ",
+   "time": "2026-10-16T11:40:00.000Z"
   },
   {
    "cat": "経済",
-   "title": "生活文化分野から初の人間国宝、「立花」池坊専永さん・「吟醸造り」農口尚彦さん・「京料理」高橋英一さんを認定へ",
-   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5VRjRpMW9hWGF0d2d4aEc1LTVUTXdkcHdWSFR3WDhKZm9nZnRHdk1GeS1SRzNZblFMbEhYVU9DQUFDRlJWZFp4WjBIMXA0NkZhc2dOSFNpZkZGaTRHbXBEbmhGNnlOUzZTQVdaNHlR?oc=5",
+   "title": "日経新聞、クラウド保管の個人情報１８３万件漏えい…ヤマト運輸・ファンケル・コミックシーモアも被害",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1LMWdUcm5qdDVUMk1tcm9Ed0FXME0wUlZuQ01lMWZHODBqeE5ta1hlNjc3TzBNNHM1U0FGbmotNHJXQ1lIR0ZReW8zZU5iaVVkdkZIQXRieXdyaWtyUEtkaC1jYllIQQ?oc=5",
    "source": "読売新聞",
-   "time": "2026-10-16T08:00:00.000Z"
+   "time": "2026-10-16T11:32:00.000Z"
   },
   {
    "cat": "経済",
-   "title": "ソニー、ウォークマン「ZX900」。フラグシップ機の技術継承で高音質化",
-   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9wMkVGcHgzdlp4X1JJSGh0TWFOdVpyTm5sTW4zck5VMWRULUhwczAxdkNnN3BsS0dic2lpMGlQN1B6T1M5RVZNY0lNRnRyaWNJTkZBTFdMR0NrNGpIRXJOWUZqbHk1ellFZHc?oc=5",
-   "source": "PHILE WEB",
-   "time": "2026-10-16T07:35:05.000Z"
-  },
-  {
-   "cat": "経済",
-   "title": "タイムズカーWebシステムへの不正アクセスに関する対応について（タイムズカーWebシステムへの不正アクセスによる情報漏えい関連・第4報）｜パーク２４株式会社",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9DWk1OMks1UTFha050aC1KbnFqRi1JOFBwOWNOSlIySk9GV0xHSk9RdGxFMU16dEJ6M0Q5bldsd3JWeFE5RU5XaGZ3ZkwzMmRwYXFKSFdnQ2FYS19sWUo1bHo2bw?oc=5",
-   "source": "パーク２４株式会社",
-   "time": "2026-10-16T07:16:19.000Z"
-  },
-  {
-   "cat": "経済",
-   "title": "東京都職員の大卒初任給、初の３０万円超えへ…都人事委が月額給与３・３０％引き上げを勧告",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9yRWlYX3JHMGFRc3FwbjZtU2xmVXJDSDlVdnp3MTB6anljakJCbldKUHYwVUF0MTRMU0VSN1BPWFFFOXNaN3FKVWJWV0RsNjVxem83MmhXNzlDNnBWZUFqeFRtS1VRQQ?oc=5",
+   "title": "「菊姫」で吟醸酒ブームの先駆者に…農口尚彦さん、人間国宝として「日本酒本来の味を守っていきたい」",
+   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9MUExXTHRIV3ZRR0JmYWJaSzRRZUxUUG1jVDFqZXYyT2JuSHhlUW51Z3hUeWNYM1c2V3NiMTdSckkxeXNRcjBhUmVzU2xDZzQxRVk0Mko2T2I4TTQxWXpGeFlOYnZyblI3VWdNUXBB?oc=5",
    "source": "読売新聞",
-   "time": "2026-10-16T07:16:00.000Z"
+   "time": "2026-10-16T11:01:00.000Z"
   },
   {
    "cat": "経済",
-   "title": "JR東海 新幹線の新型車両を発表",
-   "link": "https://news.yahoo.co.jp/pickup/6598995?source=rss",
+   "title": "高市総理「Go To Eatやプレミアム商品券検討」",
+   "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9QZFhXY2xJM2ZWQkprQ2dMbkNyMFZBallRR1NIY05pN1FWSWdQaFdvajN1Y2ZZbDBIdnQ2Vi1FbktianNfdGxRemtDeVJuUVdSMG96dzVRNUtzNjdkX2Y2Qm50LUJDUkdMU2oyenFJZ1F4Vnc?oc=5",
+   "source": "テレ朝NEWS",
+   "time": "2026-10-16T10:50:57.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "猪苗代湖事故 判決受け両親が心境",
+   "link": "https://news.yahoo.co.jp/pickup/6599047?source=rss",
    "source": "Yahoo!ニュース",
-   "time": "2026-10-16T07:10:03.000Z"
-  },
-  {
-   "cat": "経済",
-   "title": "ファンケルで会員情報83万件漏洩 ECサイトが不正アクセス受ける 社内調査で発覚しクレカ情報の漏洩はなし",
-   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5zR1BoZTRlaDZVRURjLTl0NVU0eWxDUENXQ0xkanlLcGNpQzZ5R0dVSHZtVHhYSWpsY1RfV1ZGTXh5YnVTOWVScktnWE9BWS1QN0hudEx6VmpQWVBCN3ItbHVDQTN6TThyYXBaZzRiRkdXQQ?oc=5",
-   "source": "ｄメニューニュース",
-   "time": "2026-10-16T07:00:00.000Z"
-  },
-  {
-   "cat": "経済",
-   "title": "新型車両は「S0系」 東海道新幹線、令和11年投入 9年ぶりのフルモデルチェンジ",
-   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE03RjdMQm5hVDZkeEJWUG1Za0t6M3Qyakt0aDB4bVBBV3NINUdLRl9EWWJ1VEJCWnRqZnF5QmlHQ2pwQlpwZjNKU3QzVktPWEIxUXhqOVU3QUZqeUdoRG5XaVVlZlVHSDNOcjFhSTgwWGV6UEJLYmc?oc=5",
-   "source": "産経ニュース",
-   "time": "2026-10-16T06:47:34.000Z"
-  },
-  {
-   "cat": "経済",
-   "title": "話題株ピックアップ【夕刊】（1）：ベイカレント、ＳＨＩＦＴ、Ｇセキュリ",
-   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFA4R0hCa29Gdmt3Q0lsT3JwMEhfbG1FOVVjRlVyR2xPRUJvSlpaeG9RMnhoUW9CZEM4T2hJdzhqaVNsZWpORS0xQm9HbHFhbDg4NFU1MXg4UnVQVVFiU3BESQ?oc=5",
-   "source": "株探",
-   "time": "2026-10-16T06:44:32.000Z"
+   "time": "2026-10-16T14:34:32.000Z"
   },
   {
    "cat": "主なニュース",
-   "title": "印旛沼の堤防 緊急復旧が完了",
-   "link": "https://news.yahoo.co.jp/pickup/6599013?source=rss",
+   "title": "記者拘束 露国民との交換狙いか",
+   "link": "https://news.yahoo.co.jp/pickup/6599046?source=rss",
    "source": "Yahoo!ニュース",
-   "time": "2026-10-16T09:08:45.000Z"
+   "time": "2026-10-16T14:05:39.000Z"
   },
   {
    "cat": "主なニュース",
-   "title": "速報CSファイナル 阪神vs.DeNA",
-   "link": "https://news.yahoo.co.jp/pickup/6599007?source=rss",
+   "title": "緊急地震速報取り消し 2つの要因",
+   "link": "https://news.yahoo.co.jp/pickup/6599044?source=rss",
    "source": "Yahoo!ニュース",
-   "time": "2026-10-16T09:00:15.000Z"
+   "time": "2026-10-16T13:54:50.000Z"
   },
   {
    "cat": "主なニュース",
-   "title": "簗前農相 運動員への支払い指示か",
-   "link": "https://news.yahoo.co.jp/pickup/6599011?source=rss",
+   "title": "浜田雅功 単独バンドライブ開催へ",
+   "link": "https://news.yahoo.co.jp/pickup/6599043?source=rss",
    "source": "Yahoo!ニュース",
-   "time": "2026-10-16T08:58:39.000Z"
+   "time": "2026-10-16T13:41:02.000Z"
   },
   {
    "cat": "主なニュース",
-   "title": "攻撃受け 県メアドから迷惑メール",
-   "link": "https://news.yahoo.co.jp/pickup/6599003?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-16T08:42:36.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "台風30号、進路予測が割れる 「非常に強い」勢力で日本の南へ",
-   "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE8xMmZFdnZXa1JlQzBhQkZNWUZ1UFI1SVdzMWIzSElZU0NuM25zX0E0bGdDcUU3MG5SNlNYZU5UMVpCWVpFVGh3WHZjVVZSTFFFZk14bE1R?oc=5",
-   "source": "西日本新聞me",
-   "time": "2026-10-16T08:36:23.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "緊急地震速報取り消し 各地混乱",
-   "link": "https://news.yahoo.co.jp/pickup/6599005?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-16T08:20:17.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "日経新聞 個人情報が183万件流出",
-   "link": "https://news.yahoo.co.jp/pickup/6599004?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-16T08:13:11.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "倖田來未に第2子 出産は14年ぶり",
-   "link": "https://news.yahoo.co.jp/pickup/6599002?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-16T08:02:38.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "バット直撃の川上審判員 意識回復",
-   "link": "https://news.yahoo.co.jp/pickup/6599000?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-16T07:46:37.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "“詐欺撲滅”YouTuber「KENZO 新宿109」池田実貴容疑者（28）逮捕…「動画がなかったら生きていたかも」死亡男性の母親が涙の訴え【news23】（TBS NEWS DIG Powered by JNN）",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9zUGV1b1N2ZTZsVFpjTmFkZlROVU5FNV96RWpzQUE4WXo2bVQwV2hvOTlWVExFbVBvbktmOEdqRC1TWHR5eUZFdlRTNmNURGRTZDNhWUU5OE1HOXFWR3dRaDd1N2ljYXg2NVRvcEhsenVUekptX1JTR2V1ZDlVcVU?oc=5",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-16T07:36:17.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "猪苗代湖ボート死傷事故、禁錮２年の１審・福島地裁判決が確定へ…逆転無罪とした２審判決を最高裁が破棄",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1xNUxBZEtZblFJQWRkT0dVRk9LWVllaGRINkdaNm1ZNFRGNlAyaTlIWDF2LXJzN2VtNzE3bVBEVjZaeHp1MmRnMjFYY09hWWVnUllnaS1MN3duUGRqcTRQNUl6RXl5QQ?oc=5",
+   "title": "ＮＴＴドコモ、「Ｍ９・９」の緊急地震速報で「エリアメール」配信されず…２０１２年からの不具合発覚",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE52dHBFUElCb3g1QnlvNWdGaU9yOE1vUDBRMDNEZ2VUSmlNQVJGVV9pTWNjcERGNjdlcVpES3VDOTktS1QzR2p2Q1hGYXBYRGxvQXVJN1MyM05FRVdfbWN2X2JiaXNMQQ?oc=5",
    "source": "読売新聞",
-   "time": "2026-10-16T06:13:00.000Z"
+   "time": "2026-10-16T13:31:00.000Z"
   },
   {
    "cat": "主なニュース",
-   "title": "「別人物が被告を陥れた可能性ある」 王将社長射殺で京都地裁",
-   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9zUDJPR0ZiUWotVEpRcmcydTdUM3VtQnNSaVdBQ0hQSFVXRS1aelVGd21oMjAwUVRyMDFHT0dWdkpia01OZW9rOGhwdHJWOHJCVTQxMThUTjlwQXQxelBFV0tWQi02S3Jw?oc=5",
-   "source": "毎日新聞",
-   "time": "2026-10-16T05:45:35.000Z"
+   "title": "ショップサーブの流出 2335万人分",
+   "link": "https://news.yahoo.co.jp/pickup/6599039?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-16T13:04:45.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "阪神悪夢 死球の前川右京は骨折",
+   "link": "https://news.yahoo.co.jp/pickup/6599036?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-16T12:30:38.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "自公再連立巡り 斉藤元代表が含み",
+   "link": "https://news.yahoo.co.jp/pickup/6599028?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-16T11:50:10.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "栃木高校の体育館で火災",
+   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE0wYlJWd1FjUEd6ZXRCYVBCTWl2bnlhalZ3NElKQUFDSExrM1l5VjU0NHlkSnIzaDRJM1RQVWxNVDU5dWNsbVFQU0xqRzJzUTN5UG56dExYSnJ0Skk?oc=5",
+   "source": "下野新聞社",
+   "time": "2026-10-16T11:42:00.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "【倒産】創業40年の貨物運送会社が破産開始決定 負債総額は約1億2000万円【東京商工リサーチ】",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE05WVBGUm9TdDg3U3hacEdTeWVSeDFiLWpaWmZOYnNlYk5idVItRVpRbXA0a2ZhZWp1TXRtaVNzV3U4Q1NmTHVIZjFpajJITFpiZURpTWgtMWstZGNMQ2VyYmZuaExtdDg?oc=5",
+   "source": "TBS NEWS DIG",
+   "time": "2026-10-16T11:00:00.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "【台風情報】台風30号の進路予想 21日に日本の南まで北上のおそれ 世界各国のシミュレーションは 最新の天気情報にも注意を",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1hYndnYTFHelBBdWJWUzRIU2h5dFFKMDNpOTNVT1lJZ2gtWFlDSXczX2dXS0FkR0dCeHM0Uy1XVm1lSEJwU3IwRlJnN0JVWkplUGdsb3RKMmdvNUhMcmZYdWdiQ3lESUMtY2pVUXhITjN4MDdOZ3lJZkdCRmxrM00?oc=5",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-16T10:32:20.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "元会社役員の実刑確定へ ３人死傷、二審逆転無罪破棄―猪苗代湖ボート事故・最高裁",
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5MdTV6LUNoR20xWHJzMlR1Nl83WEo5Q0tiN3pIVlBLeTliUHIyMzdvS2pOSl9sRHpuN3pUY2NXZlJOQVd4ZmEtR3BRTUt4R3F5dFlONFZYcDAwMVpzenRlQ0l6OA?oc=5",
+   "source": "時事ドットコム",
+   "time": "2026-10-16T10:07:00.000Z"
   },
   {
    "cat": "国際",
-   "title": "ウクライナ大統領、ロシア製油所攻撃「再開」 トランプ氏「恥ずべきこと」",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5wWDdlUGw3b29rXzRjaUF6V3ZVMG9Rd3ozQUZkLTRkVno0MGtGOHBvcmtxY3FHT2lqVkUtRHc0cnNhUzBZUnJpdTlFSjA1WUxxRXFKT2R3aWxTYlZCUmJYUEJwSQ?oc=5",
-   "source": "時事ドットコム",
-   "time": "2026-10-16T09:05:00.000Z"
+   "title": "ウクライナのスターリンク通信制限、「エネルギー停戦」に続くトランプの裏切りか（ニューズウィーク日本版）",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1uN3JNR1dhV0x5VThTZGpmN1Y3dks5eW9VSVdITU4tWEVyeW5NenZfZ2hvZW1UTFY0dmdQWEtSSzNXbnN5cFo3YTZnZEtXck1wM0o2MEpCbmVxa1FyU1kzXzd6aklKZTVsRElMR3Z2a194dWxDaHM0OU1LZHVKVU0?oc=5",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-16T11:16:31.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "イスラエル人入植者、ヨルダン川西岸でオリーブ収穫中の村人襲撃",
+   "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9pS245ZURjVUJ1ZkpkRjRteGtya280bllxeDE4eDlKeWUyRmI1eGFFOG0xMmxONTRhMFlsNWl6UE9HejNRTU83WE84T3VRTXlzS0RXQ1ZsZ21xVy04WDNFekFBOVZtbkY3elEyODNRaWtZelQwUDh5MFVseFdKUQ?oc=5",
+   "source": "Reuters",
+   "time": "2026-10-16T10:47:43.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "ウクライナ、迎撃用「パトリオット」ミサイル枯渇か…ロシアからの攻撃に「無防備」状態",
+   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5WS01rRi1hSUdQU3VwTFFYY3lLZWtyOVluejFGa0RnSlRyY1B0SS1iaVhVSjNEZDBSUnN3QTRSNkNyM1QxRFdJcDNOMF9ycFZ3cGVTXzAzY2Zzd2Nocmk5NXl3?oc=5",
+   "source": "読売新聞",
+   "time": "2026-10-16T09:18:00.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "欧州で「影の戦争」始まる プーチン氏の危険な賭け 中露朝が結託、日本は「弱い環」に？",
+   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBLZ2RPMlVmMHJEbGMyMjAwdWlicXBkLWVqeUNDNzBtQkRmNm5ROUlGVnBjVFF6WVM5MlNZZ1ltT3Jjdk9uazI2ZXg4aldsQndGSk5pempvc1lFSjJJTjd3bXFDdEVqTERKc1NqckdxUTJnQjZCeFE?oc=5",
+   "source": "産経ニュース",
+   "time": "2026-10-16T09:00:00.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "水位低下の湖で見つかったドラム缶詰めの遺体、DNA鑑定で身元特定 マフィア説は否定 米ラスベガス警察(1/2)",
+   "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE0zakpLWjQ4NDZaWFhPZTdyUkVrVjhsQm15dWVEZFFrWjRMY3I1ZGh5Wjh0a2hOLVhXcjNQd1RsTlRkLWoxZlpvVXc4NTlPSjRo?oc=5",
+   "source": "CNN.co.jp",
+   "time": "2026-10-16T08:46:00.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "中国が11月に孫文生誕記念行事、台湾が不参加呼びかけ",
+   "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOTEI2WmFSaU8weXJidGs1MU5ZMjJqMlNDZlg4Um93TElHc2xPWF9PSW5sQktHaHlHU1hDbFlYRktNOEdzQVd2bTM2WGxueGM3bE5iOWZMRllRbF9yakNHdjE1V0FiblBNWF9CckFFel9rcFFkWE5sY1JOTktDUzEtUjFyYTE?oc=5",
+   "source": "Reuters",
+   "time": "2026-10-16T07:15:43.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "ロシア、欧州企業資産を管理下に ゼレンスキー氏のＥＵ首脳会議出席控え",
+   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQOHUyYTZabFFPUVhraThfQnNuZTZrcTVGVzBjeVhWeGQzVk1zMTMtS2wwaW9fOXBEM2NrZGJ6cGI1VW5VU3Fxd1R3TDh5dUFBQlkwS0pCcFo2MEpQdkFLcWU4bkNfNzBwZ1ducm1rTUY1VDZDa21nVExETkxBaDltWmZ3TUp4dw?oc=5",
+   "source": "Reuters",
+   "time": "2026-10-16T06:42:00.000Z"
   },
   {
    "cat": "国際",
@@ -192,66 +234,24 @@
   },
   {
    "cat": "国際",
+   "title": "欧州の記録的猛暑で仏「特産チーズ」消滅危機、乳牛向けの牧草育たず…影響はワインやビールにも",
+   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE0zXzkxUFdfQ0pIUnplM0dZcl9OR0VyX2phX1ZJUDVlQ3MxYUNiZXlJbEVESWFhLW8wSXlyLVIxalhQd0o3cHp4MUl3Z2RIa1VUMEJWNXhmaW5ILU1LXzFPcHRn?oc=5",
+   "source": "読売新聞",
+   "time": "2026-10-16T05:39:00.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "イエメンの大統領宮殿、フーシが弾道ミサイルで攻撃…治安部隊員ら５人死亡・１６人負傷",
+   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE16QUtvOUY4ZnYwRHVTakw5S1FVZGxJaEZ5WElwb2dtVmVFMHRTejZnTmJMREhpOUJXOUlNY1ZfS1FyT3FTSGVTUzEzUEc4WXBBY0FYR3gzeHdOMVltRE5JMHVB?oc=5",
+   "source": "読売新聞",
+   "time": "2026-10-16T03:56:00.000Z"
+  },
+  {
+   "cat": "国際",
    "title": "米報道官 弁護士資格なしを認める",
    "link": "https://news.yahoo.co.jp/pickup/6598974?source=rss",
    "source": "Yahoo!ニュース",
    "time": "2026-10-16T03:19:08.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "マスク氏 ウ大統領に退陣呼びかけ",
-   "link": "https://news.yahoo.co.jp/pickup/6598972?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-16T03:06:21.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "トランプ氏、銃殺刑のライブ配信を中止　米軍基地乱射事件の死刑囚について",
-   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5fYVpMSnhJei1leFNGY1VvRXhZMWIwOHYwZnc1VEltVnFDT1B3VVk5YkRnSkJoMXZ3U2FuQ245V1VRVHNmeTdKU2NXa1NycXpWYm1xbDN4MVpkamFOaHdwbtIBZkFVX3lxTFBGamp3Zm1USG1EMEFOTWRlQms4ZWk0R2s4OFpXM2dmNjNXQUdEZnhuZlZSQzFmeXNzLUNDUThpNXoyVm85ZzhHTENmZzZCOVIzcEg3YVJ4ZmwzTnNQaXA0dEFIamZuUQ?oc=5",
-   "source": "BBC",
-   "time": "2026-10-16T02:47:27.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "タイ王妃 自ら航空機を操縦し来日",
-   "link": "https://news.yahoo.co.jp/pickup/6598965?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-16T02:42:20.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "米大統領報道官、弁護士試験での不合格認める 経歴の詐称疑惑巡り",
-   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5XSWFXUWZEbWlHVkU0TU13NWhraWozSTZpRXBmYTBaNnh6dVllb2VQNG9PT0wzc0RtU1paSjRGYnE1RDgwbFNWQ3FnSUpfQmRjNjlSOGVCanc3dTdFdHBraklBX0lBZGdwVnJicg?oc=5",
-   "source": "日本経済新聞",
-   "time": "2026-10-16T02:18:58.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "米小学校で銃撃 16歳の容疑者死亡",
-   "link": "https://news.yahoo.co.jp/pickup/6598962?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-16T02:13:11.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "中国、ヨルダン川西岸入植地の建設停止をイスラエルに要求",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE95UEZxMjJKOXBCV0VadHQyLUZLTmlkakFsamY2RzFhYW5Kd2dtVXItM3NpVTB3Q3o1TmpqV08yR0Z1S0tjeGxkUlR2eVpPMG5aZFRkaGV6UzdFZDJGdFZZbGRXTUdndVd6N0FZbnh5X1Y5Vk5CZ1ZHYzJGSkliLXc?oc=5",
-   "source": "Reuters",
-   "time": "2026-10-16T01:55:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "米オレゴン州の小学校で銃撃、子供３人を含む４人死亡…１６歳容疑者は通行人が射殺か",
-   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1CUGczbVhmVF9NdE91M1lCMmZlYVhYSERXQm1UNWFmUk5CTlUxLWpaVDVCTFlqdjNNak1iTTJad1VKajdLZ01sNFpSOEd3NnNMdXltS0R2aHhyQ2lpbERicGJB?oc=5",
-   "source": "読売新聞",
-   "time": "2026-10-16T01:15:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "トランプ氏「オクトーバー・サプライズ」はあるか？中間選挙の起死回生狙い異例の発表予告",
-   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBZM1Nrbk54RW1oOXNJNC1KclY1SUgxTVcyYndnU1JHQWtiS3RKbVB1OFBTMS1SVmV6eGpVQ2pnR1VSeFFyNkZiVklnSzItSU8zNDVYZy12Q0VxM1NZOTJaT1JQWGdWTTVvVElvYXhIVDE1aWRjcGc?oc=5",
-   "source": "産経ニュース",
-   "time": "2026-10-16T00:56:32.000Z"
   }
  ]
 }
