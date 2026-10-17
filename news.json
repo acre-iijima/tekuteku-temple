@@ -1,6 +1,55 @@
 {
- "updatedAt": "2026-10-17T04:55:26.608Z",
+ "updatedAt": "2026-10-17T09:12:15.593Z",
  "items": [
+  {
+   "cat": "経済",
+   "title": "レタス高騰 ファミレス対応追われ",
+   "link": "https://news.yahoo.co.jp/pickup/6599138?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-17T09:02:46.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "米テスラ、空飛ぶ「ロードスター」の試作車公開…招待制での販売・実用性は不透明",
+   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBCNmNjYktIS3RiVWNIYlFvSmltMkY5RlgxbE44RFlFQklPWmhjXzRaUWhsaFA5aFlKWGNucmFpZ0NMT0FSMHdzZHJtOHhyOFpzeWozV0dYMFJLV3RJQjQ4Q1ptaFQ?oc=5",
+   "source": "読売新聞",
+   "time": "2026-10-17T07:45:33.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "データセンターが「中国に行ってしまう」とトランプ政権が危機感…でも推進に住民「待った」、支持者にも反発及ぶ",
+   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5Jb2tEbHR1bjVyX2FXcmRlQ3RxdlFxZ0E5OFpqWGRoRmJOeE5zQUNUREVOLXNlX1NpNjd6X1NVN0g3NVlYa09LR2ZlZ1otYW5wakQwUGwxMlZMdE00LVJlMi1R?oc=5",
+   "source": "読売新聞",
+   "time": "2026-10-17T07:42:44.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "【写真たっぷり】沖縄そば、記者が全15店食べ歩き 人気店は訪問3度目でようやく実食かなう",
+   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8zdUowTUlqMkxIenJBaHdiR2pIWUhzRXBLRUoyX25LVDgyU0U3b2NJLUV2VUJCWVp4aE04c3J1dDl6QUR6YmNUbEZRcEtiRE9tTDN6QkprbURZbDRnb1kzYVJ5VHZmYnE2Qnc?oc=5",
+   "source": "琉球新報デジタル",
+   "time": "2026-10-17T07:21:48.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "IMF高官評価 日本の消費減税法案",
+   "link": "https://news.yahoo.co.jp/pickup/6599121?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-17T07:20:56.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "「鞄に入れていないかと思うほどコンパクト」 中川政七商店の“薄マチミニ財布”が高評価 「理想の薄さと軽さです」「小さいバッグにも収まる」",
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBBUUh3bUFodGhDTjBtRXJDT2JaSGV0aEl1NDlYSkxXWDNHVmpaOGNvTl9FSjNfdVFXRkRvaFhacDZfVlo4VEQ5cEFTemhsQzZreGRBQ3N5b0dtVVd0d2d4TWpRVQ?oc=5",
+   "source": "ねとらぼ",
+   "time": "2026-10-17T06:03:01.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "メタのAI「Muse」、6分で約11万円分のアマゾン用クレジットを発見──料金交渉から返金まで代行",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBHU216MFp0NXpTTF96M0F2VGlRdTVIMFRKaExKWFZOekdGVkk2R3cwOTBVSmFoTGduYkJLbWlYcG8xQzhOSFAxNklGRV82Q2JBVlFtbTBHV2ttdw?oc=5",
+   "source": "Forbes JAPAN",
+   "time": "2026-10-17T05:00:00.000Z"
+  },
   {
    "cat": "経済",
    "title": "住宅ローン金利上昇 今できること",
@@ -24,24 +73,10 @@
   },
   {
    "cat": "経済",
-   "title": "米テスラ、空飛ぶ「ロードスター」の試作車公開…招待制での販売・実用性は不透明",
-   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBCNmNjYktIS3RiVWNIYlFvSmltMkY5RlgxbE44RFlFQklPWmhjXzRaUWhsaFA5aFlKWGNucmFpZ0NMT0FSMHdzZHJtOHhyOFpzeWozV0dYMFJLV3RJQjQ4Q1ptaFQ?oc=5",
-   "source": "読売新聞",
-   "time": "2026-10-17T03:40:00.000Z"
-  },
-  {
-   "cat": "経済",
    "title": "スカイチケット運営会社 クレカ情報も最大6000人余流出",
    "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE0wYjNLT2VkeWJKQ0JOd0RqV3Z0bDVMMUYxSUhWbzhVYkFrRjRZZG9yMGs2SmdrZTJWQ1dyWEJFWU95bUpkQk9CamFPNHVhdExmeENqUXNNQzVaQnphX1NF?oc=5",
    "source": "NHKニュース",
    "time": "2026-10-17T02:58:00.000Z"
-  },
-  {
-   "cat": "経済",
-   "title": "専門学校で寿司職人養成 特化の訳",
-   "link": "https://news.yahoo.co.jp/pickup/6599088?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-17T02:57:40.000Z"
   },
   {
    "cat": "経済",
@@ -51,123 +86,151 @@
    "time": "2026-10-17T02:40:00.000Z"
   },
   {
-   "cat": "経済",
-   "title": "スマートグラスに安保リスク 中国へのデータ流出懸念、豪州で規制",
-   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFByWTByMDdaRlZKTkVuUzE2cVBBMmQ3NDEtU0Utd3lqUi0yaWZ4Z3M3dE1jQ3hNYWcxRG5zUXAwZVJWenp1Rk9pUjJPY29ITzh1bldkd05pSDNUSUExejFsUUJKYVdYUUVpandzOA?oc=5",
+   "cat": "主なニュース",
+   "title": "DeNA 2年ぶりの日本S進出決定",
+   "link": "https://news.yahoo.co.jp/pickup/6599139?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-17T08:59:57.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "中2で性被害 法廷立つ元入所女性",
+   "link": "https://news.yahoo.co.jp/pickup/6599136?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-17T08:44:48.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "新給付制度巡り平均3万円案 政府",
+   "link": "https://news.yahoo.co.jp/pickup/6599130?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-17T08:10:40.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "ガリチュウ福島 無念の一本負け",
+   "link": "https://news.yahoo.co.jp/pickup/6599124?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-17T07:38:43.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "台風30号(チャンパー) 明日はグアム接近 来週は沖縄に影響か",
+   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1GSDBXdmlKZGEtNmlldVBXOXBLc3I2eW04dlV6VEszTTR5WkZJclJJdGZzTi1Ja1VCQTFhaS14MExaOHVSTWFmOEplb1BfRHdYb1RacA?oc=5",
+   "source": "ウェザーニュース",
+   "time": "2026-10-17T06:50:00.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "廃棄車両置き場で火事 山林に延焼し消火活動続く 福岡 久山町",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1iR21pR3ZJcFB6cVF5Z1R3VDJMLVd1UW1YLV8xMVZYNXVLV3ZKeXJ4N1BpV3RjV1BEeXpUa2M4RGY0N19hSGZmWUczeENNb1RMN011RzI5NG1oQjlfNkxJ?oc=5",
+   "source": "NHKニュース",
+   "time": "2026-10-17T06:45:59.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "APECホスト役中国 監視態勢徹底",
+   "link": "https://news.yahoo.co.jp/pickup/6599115?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-17T06:14:42.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "首相防戦 立民が簗氏更迭巡り追及",
+   "link": "https://news.yahoo.co.jp/pickup/6599109?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-17T05:56:21.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "週間天気予報 週明けは雨風強まるおそれ 台風30号は来週後半に沖縄の南へ",
+   "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1CaHZMd0FFMjh1VmNHSG5zYm5EMzRka0xjNE04RnhfQllfYlpDSDRYOVB0eElDX09jX1hVY2VvdUJiX2lOUTFXb3FCX1ZuM2ZnZnV6MQ?oc=5",
+   "source": "ウェザーニュース",
+   "time": "2026-10-17T05:30:00.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "東大教授の差別的投稿に口をつぐむ左派メディア 皇族への侮辱は許されるのか 風を読む 論説副委員長・川瀬弘至",
+   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9hYWo1aUk3azJXRFJLdUh2ZWZldC1ROF93emwyT01kUU5UbzhFSGhSUkRMM285MmpSODlGN0d4RlhSQmtnai1Kc29ZaFRUejhvTW05MjJNU3N6UVBHa01JQW1ZS1VfZmM3VUpmbU9UbHJfbHZjY1E?oc=5",
+   "source": "産経ニュース",
+   "time": "2026-10-17T05:00:00.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "「都内駅チカなのに落ち着いた雰囲気」 “首都圏で立地の評価が高い大学”ランキング！ 上位に「偏差値的にも入学しやすい」「安心して通える」の声",
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5seGstYkV6TDV5bG90V2tLVTFNMnFpZ2R6a1dqUWpoQzVvYlhEYWtETnhaekJLOEM4aS1ZSVBXZWN6aFc4Tm1zRVJzNHhtRUh5eS1zNFU5dnBsR0hZUEVNLXlWNA?oc=5",
+   "source": "ねとらぼ",
+   "time": "2026-10-17T04:46:38.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "「わが国の誇り」高市首相が殉職自衛隊員を追悼 「国民の命守り抜くため全力尽くす」",
+   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9ZNmVMRndSMEpyQkNCT3Z5amdZNF9sZXlyNjNUVWRRMDFIay1vT3lKUzRTekdxcDhpbm5CZGo4d2stWHdzUFpiZWlpdDQ3WXlZM1lvRzhVX3V4YTk3YnNtcnFHOHpfcHEyREtxYjh2TlJuRnNlZnc?oc=5",
+   "source": "産経ニュース",
+   "time": "2026-10-17T04:40:18.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "靖国に首相が真榊奉納 韓国は遺憾",
+   "link": "https://news.yahoo.co.jp/pickup/6599131?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-17T08:19:09.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "生理だから2500円と値切り…》17歳少女買春殺人「罪悪感はありません」被告が法廷で語った“犯行動機”「彼女は私の喉元にナイフを…」（NEWSポストセブン",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9YLXlaSGtqVmJfZ24yRXRoV3hvNmlzbEFwN01Kb1VPU2xrWXJBdGpaQjBSdEpENFNTMG9WNHVfVVdFQ3lHSHByMDhyZGhZVUdobmpBYkhUZ0I1c1JqUk1Bb3hOZlV3eUFvb2Y5TkxONm9sZEZCRG03QWJUSENxNFU?oc=5",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-17T07:15:00.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "いら立つトランプ氏、報道官を更迭 側近補佐官にも退任論、ホワイトハウス混乱",
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE81Z0hodE5PQkR6d2d5MzkxTVNnMXczYTdKYXkzN0YydUdOQzRqVkgxRk9ta3gwdTlzYnk3dlQ4MHR4bC1uNlB2d1J4SlpwMTFZN216ellmNmN6VHl6STRZekdXSQ?oc=5",
+   "source": "時事ドットコム",
+   "time": "2026-10-17T05:55:00.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "ローマ教皇 プーチン氏に停戦要請",
+   "link": "https://news.yahoo.co.jp/pickup/6599108?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-17T05:46:19.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "トランプ氏やプーチン氏が出席見込みのＡＰＥＣ、中国当局がカメラやドローンで警戒・厳しい行動制限も（読売新聞オンライン）",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1sSUlhbUsxWF83aDhFeHZ4Wl83ZmlPZVpfOTZnaHcwWTg5d0hNbnR2Q2syVzhwTWJCbmFHRE1kcXNWdVNrZnEyVEF4YWFzeWpfN2Flc3dzOE5tSWpxemVfT2ZBNU9nMUZLUWJrWGtMVXUzTUZNZUVhYkFpT0ZIWGc?oc=5",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-17T05:12:55.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "トランプ氏、ロシア産原油の新関税発動せず 原油高騰で対ロ融和路線",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1DZ0c1Wnh0WThRZmMzcms3NFBtNnEyNUtSVUxnYU90ZWg0NDlWMmk3N1FYdk9lUnJMcHlNeGZPNVdweGNOOGEyMzV6cDVhQW5qVmcydjlnS0tPUU1yMFRqbElRVFlWdEFEU2thNg?oc=5",
    "source": "日本経済新聞",
-   "time": "2026-10-17T02:00:00.000Z"
+   "time": "2026-10-17T04:36:31.000Z"
   },
   {
-   "cat": "経済",
-   "title": "Amazonプライム感謝祭、まず買うべきは「欠かせないもの」。ギズモード編集部の必需品",
-   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBWa2ZsdWVmSXVScC1JWDcyaFMxeGhLcVZTOE9pT2k4bDVIcmIwUHNVeERzR1pVSWNWSkktb1E2b2lwdlNWNVVOT2pDYWFjdENmaFd3S2pYUDZYV3BmN1hPYTA0ckpFaFZRX05FWURMVVpqdkVVSXc?oc=5",
-   "source": "Gizmodo",
-   "time": "2026-10-17T01:30:00.000Z"
+   "cat": "国際",
+   "title": "400年以上の歴史を誇るパリ最古の市場が未明に全焼、けが人なし (2026年10月17日掲載)",
+   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5HNmZCYUJGZVgxZzhlaTJ0MzNQRnh3dndDYXcteld1cEhvX0RkT3pLY1VDM3A5Y0k5QWpGVWJrZjB5SG9IYW9kZUhuNjZNQlJMLTJjQndYdUY4UTZNVXc?oc=5",
+   "source": "ライブドアニュース",
+   "time": "2026-10-17T04:02:00.000Z"
   },
   {
-   "cat": "経済",
-   "title": "サイゼ値上げ「安さの王者」異変",
-   "link": "https://news.yahoo.co.jp/pickup/6599078?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-17T01:01:46.000Z"
-  },
-  {
-   "cat": "経済",
-   "title": "タイムズカー 免許画像すぐ削除へ",
-   "link": "https://news.yahoo.co.jp/pickup/6599073?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-17T00:53:22.000Z"
-  },
-  {
-   "cat": "経済",
-   "title": "売上高の7倍近い負債を抱えるコアウィーブ、AIバブル崩壊の予兆か",
-   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5oRy1ZbGZ6QV9kUFgzeUotZEJOTFY2LWFpZmpLaGUtUlFnejZZQ1RLTGdsSnJibkNWYUtPNEVVcWNiWkpYbjNYczlRNjF1bHN6bE9mTHlvTVRGUQ?oc=5",
-   "source": "Forbes JAPAN",
-   "time": "2026-10-17T00:45:00.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "榮倉奈々驚き 12年ぶりドラマ主演",
-   "link": "https://news.yahoo.co.jp/pickup/6599102?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-17T04:28:36.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "ONE 安保瑠輝也戦の中止を発表",
-   "link": "https://news.yahoo.co.jp/pickup/6599096?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-17T03:55:11.000Z"
-  },
-  {
-   "cat": "主なニュース",
+   "cat": "国際",
    "title": "米大統領 対露制裁関税適用を免除",
    "link": "https://news.yahoo.co.jp/pickup/6599098?source=rss",
    "source": "Yahoo!ニュース",
    "time": "2026-10-17T03:54:30.000Z"
   },
   {
-   "cat": "主なニュース",
-   "title": "子の変顔募集に賛否 しまむら見解",
-   "link": "https://news.yahoo.co.jp/pickup/6599095?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-17T03:43:28.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "車にトラック追突 1人死亡1人重体",
-   "link": "https://news.yahoo.co.jp/pickup/6599092?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-17T03:27:05.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "北朝鮮が新型魚雷にAI使用 実験",
-   "link": "https://news.yahoo.co.jp/pickup/6599089?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-17T03:20:59.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "未明の東北道で大型トラックと衝突、軽乗用車に乗車とみられる女性が死亡…男女３人けが・うち１人は意識なし",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9WcU5oU1BkRzhtOE5XV2xOV2lRZ2h5RE9uSVNmWUNGb01QSmJpTWd5ajg2Z2dvWVQyUTdrd2NwN0RBZ3F2NS0wYVdhUFhya0IyamFMbDNKVjktYVFTS0pZYUVmWW40UQ?oc=5",
-   "source": "読売新聞",
-   "time": "2026-10-17T02:24:00.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "高市首相、靖国神社の秋季例大祭に合わせ真榊を奉納…中国や韓国との関係に配慮し参拝は見送る見通し",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9udUVwX05MUlE0UERRYWNIRmx0dXlzaWV1YzJxY0ZEX1lCUHcwV2tsSF9qMS1RY3FZZWVybXI0bFBxTFhQeUdSR2xQa0o0Q2otc2VrYnlSYjhXVThpWmM4Sjg1NkozUQ?oc=5",
-   "source": "読売新聞",
-   "time": "2026-10-17T01:42:00.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "あす投開票の横浜市長選挙、候補者７人が「最後の訴え」へ…市政「継続」か「刷新」か",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1tcElFRlpDdTROb2RsZTFWNlIxU1o2WmwwWXJLSmdranlDVVZJZ19QYUNmemlrNHdFZmlCOUJQT0hLa292RThGYUpxb21sVDVxMVpHZkpJNWVHT1k2aHNxcXQ4dFJ3UQ?oc=5",
-   "source": "読売新聞",
-   "time": "2026-10-17T01:32:00.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "避難所で飛び交うにぎやかな会話や笑い声、それなのに顔は土気色…震災後に教授が見た住民たちの「危うさ」",
-   "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE94Y2RnZjE4YXBFVEdyaEZTYUQ4dnpwMFVudnVRN0VGNXUxNTM4M2U3NUhNbzhMdm9ya3VTU3AzTXRQbjliaGFmNk9IcUFVY1VfeEhnWm56aDN0R3FYbmMzbTd5UEt5NTdEY1hFNnJOUUtIRFU?oc=5",
-   "source": "読売新聞",
-   "time": "2026-10-17T01:12:00.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "「お金が欲しかった」 12歳、中1女子がコンビニ襲撃 強盗致傷容疑で児相に送致 大阪",
-   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9QLWl6WWtTcE5pX25YRk5QQm0yLS1rdGNBT2NBWUpWaXA5UThoOG1EcjczTjJwem0xcWhyRzFmMjhDWFJpcjBuVFVIN3lxMm1zTlZXRElTV0htaThTanFqQjhCT2NUclBTeU5aVnVJdE9TeVJqeGc?oc=5",
-   "source": "産経ニュース",
-   "time": "2026-10-17T01:01:03.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "高市政権1年、あの石破政権から激変「株高」「実質賃金上昇」「衆院選圧勝」 高橋洋一 日本の解き方",
-   "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPRWJUaDM4WWpkZTgwQmt6dmNld0JpRXpxTS1zazBtcWVMYldNckNvRDJsOGZPdDJRM3RlaGpvOXRGeFZ6SHUyTl9fVy0tWElhT05KQXhSczJwcjFtWTV3Y2p1b1IyM0VjUjVpQTc4WVlXV2pIclFBeUFuLXJtSWlhRjRCV3I0UEMwVFplUWlxcnY1ZEZEZkUzRUhJeFA?oc=5",
-   "source": "産経ニュース",
-   "time": "2026-10-17T01:00:00.000Z"
+   "cat": "国際",
+   "title": "中国、イスラエルに入植地の「強制的建設」停止を要求　ヨルダン川西岸",
+   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBNel9IcVA5cDVnOWQ4Q3o5RFlaN2I2SzItaGdibXVWd3dETmdTZ2JQN19oQUZQN05KY1VCQ0xUdmhqcWotb1VRNlczd3Y1N1BqNTJzTDVpN0lYcjllYlF3V9IBZkFVX3lxTFBUOVBSUDkyRlhLc2t3c3VCMmoyd1VIWEotTjJveXpIT3cxNU13ZVlzdXVyUWpkVHptSnZyTE96bnFGY1hVanZRYjdjQXBZRTRHbWdjZlZzOXRyb2ZMQTM1YTQ4bHdmdw?oc=5",
+   "source": "BBC",
+   "time": "2026-10-17T03:28:07.000Z"
   },
   {
    "cat": "国際",
@@ -178,80 +241,17 @@
   },
   {
    "cat": "国際",
+   "title": "戦時作戦統制権の韓国軍移管、慎重論を唱える在韓米軍司令官に与党圏が攻勢",
+   "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNeFVVU0x4Q0lGYXBMLXEtU3FFcGhWSXpKd1VycmxNRldIQ0Q5bXFsY2lNeEMtb2RwV1ZOYTdLcUhsbHlNWDhTaFZYb0RJNW1FRm8zOXlUZHZLZGM2V0EtSnNlcW9TSzBfZUw2a3dCbWRCN3J2QUNXcGFnUFB4LTc4Z25Dc9IBfEFVX3lxTE9ZVWtKNHBYaUVVX21nRm5ldW90XzFSUE05Ym1zakNkVUdFZFpkc0lycXVWSlYtZG9wV2k5eXBIRWpjMHV5QThkWmN3aHhKZU04T3NrNHdPTWZTaTBteUcwWll4X1pjbHdpNHFweHFyWE8ya3ZEM2pWWTVHemQ?oc=5",
+   "source": "朝鮮日報",
+   "time": "2026-10-17T01:57:00.000Z"
+  },
+  {
+   "cat": "国際",
    "title": "アメリカ中部〜南部で冷え込み強まる 霜や凍結などに注意",
    "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9lcHQyZTdlcjh4QnkzUl9pZUpQX2xBblJNU3NKOU9JSmRVODhHZ3BSVEJNRzkxZ1ZIV1dyYW9PM21LT1FmRkdWUjBidGlKbjJMWWhTVw?oc=5",
    "source": "ウェザーニュース",
    "time": "2026-10-17T01:02:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "国連事務総長選、全候補に常任理事国が「不支持」",
-   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1mUlM0NFp6d3E1WWgyek91cUZsQlhvbkZ2OHBJdHk2YXlKZHRxRmloYnEyQVBlSU9jalJSVWFkaVFUTWM0TERSRzVVb09JckREVHRzSjF5RUVmYW54WndlR2haOU1nV3FQdG5UMw?oc=5",
-   "source": "日本経済新聞",
-   "time": "2026-10-17T00:47:58.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "ゼレンスキー大統領「ロシアのドローンを迎撃できなくなった」アメリカ衛星通信「スターリンク」の利用制限で民間人保護に支障 完全復旧せず（FNNプライムオンライン（フジテレビ系））",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE0tR3REdW9lamFLSWQyY3JEQlNLb0R2NFIwSjE2bU9zcDAtWTdMWkRrZmJZZTBsWVVXdTItR2tiZkd3M0FtbW5lTzlPeS1kOTV5T2RCOWFLX2E2bk5LLTVWVTFwamNvMTl1SnBrT0RPSUplbUFRVk0xQ25udk44M0k?oc=5",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-17T00:28:17.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "米軍で“今まで配備のなかった”方式の「自走砲」候補公開！ ついに世界の動きに合わせる形に",
-   "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOb1o2MHBYUDBQSFQ2UTFkal9xMXFoQzVRSE1seThFX1ZMQ1E3c3R5U0RkMWh0eFlhYUlYczZPem5Rc3hUd1dNQUxxeTRxaW83TS1aRUZZb1dyb20tcmlWU1QzdDdURzRjeGVua3UteDhkWUROeF9PMjREUURxZ3oxaE51SnNzbVVr?oc=5",
-   "source": "carview!",
-   "time": "2026-10-16T23:42:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "露拘束の記者と領事面会できず",
-   "link": "https://news.yahoo.co.jp/pickup/6599059?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-16T23:01:18.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "600年間、誰も読めない奇書「ヴォイニッチ手稿」最新AIで判明した驚きの真実 世界で最も「謎めいた本」の謎にAIが挑む",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9MLUdkcGl0allBWkM3MUFPeUJWODF0SUxRTXVqcjFOVEg5YmlDdk0tWkdVeWlYY2o5a3JaTUhXY0U0Y19GaWl2QVpScGlER2ZlR0Jn?oc=5",
-   "source": "ビジネス+IT",
-   "time": "2026-10-16T23:00:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "ウクライナ、情報機関幹部の暗殺実行犯を9年後に殺害 ロシア支配地域で秘密作戦",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5yaUMxaVBzdmkzU1ZzcW9iTnhFemJfZUM5WXd3NUdKay1XOEE5QU1xM0R3X2x3MVhwS1ZlREpHd2k4ZXBWc25wWmtxbjVMNmlDamwyT1ZzeXZPVDBiaV9CbkFmSlMxV01NR1hIWFRMaVdHUWhZNm16YXJHRkVsZ1U?oc=5",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-16T23:00:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "トランプ氏の「身代わり」？ 記者の質問にニヤリ―ウクライナ大統領：時事ドットコム",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBMNGFDZG4zVV83WnJUWk9tZ2dHVFBHUjY2bUFsalBDVUdRSWhEX3MxdzNfSzhmcVVwaWVpQXQyMnVIQ2pVY2RySHY1cXVpWWZWR09jaElWeVhMZzZTVHZ1dzNyRQ?oc=5",
-   "source": "時事ドットコム",
-   "time": "2026-10-16T22:40:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "米大統領報道官 わずか5日で解任",
-   "link": "https://news.yahoo.co.jp/pickup/6599054?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-16T22:35:11.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "米大統領報道官、早くも退任 弁護士詐称疑惑などで：時事ドットコム",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE81Z0hodE5PQkR6d2d5MzkxTVNnMXczYTdKYXkzN0YydUdOQzRqVkgxRk9ta3gwdTlzYnk3dlQ4MHR4bC1uNlB2d1J4SlpwMTFZN216ellmNmN6VHl6STRZekdXSQ?oc=5",
-   "source": "時事ドットコム",
-   "time": "2026-10-16T22:25:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "入院中の教皇レオ14世がプーチン大統領と電話会談、停戦と支援を要請 (2026年10月17日掲載)",
-   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9PWWJYcVdYUldyd3dUeWY4b2Z2M3RfcXpUbElLNHpuamdXSjVsQlRLd3dCOTFxcDdGcDM1UW5GN0hVcGxyR2JwWlVBallIUjhwal84bFZKUS0xdVFMUVE?oc=5",
-   "source": "ライブドアニュース",
-   "time": "2026-10-16T22:14:08.000Z"
   }
  ]
 }
