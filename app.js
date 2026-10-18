@@ -157,6 +157,8 @@
     } else {
       // 時間帯・季節・曜日のどれかから。時間帯がいちばん多めに出る
       const pools = [M.greet[info.tod], M.greet[info.tod], M.season[now.getMonth() + 1], M.weekday[now.getDay()]];
+      // シュールなひとことも、ときどき
+      if (M.surreal && M.surreal.length) pools.push(M.surreal, M.surreal);
       // 雨や雪、暑い寒いの日は、天気の話が出やすい
       const wk = weatherKey(info.weather);
       if (wk && M.weather && M.weather[wk]) {
@@ -172,11 +174,19 @@
   }
 
   // ---------- ポーズと小物 ----------
-  function poseFor(info, steps) {
-    if (info.tod === 'dawn' || info.tod === 'morning') return 'stretch';
-    if (info.tod === 'evening') return 'back';
-    if (info.tod === 'night' || info.tod === 'late') return 'loaf';
-    return steps >= 8000 ? 'stand' : 'sit';
+  function poseFor(info, steps, now = new Date()) {
+    // 時間帯ごとのポーズから、その時間帯のあいだは同じものを出す
+    const list = (window.DayPoses && DayPoses[info.tod]) || [];
+    let pose = list.length ? list[hash(ymd(now) + info.tod + 'pose') % list.length] : null;
+    if (!pose || !Poses[pose]) {
+      if (info.tod === 'dawn' || info.tod === 'morning') pose = 'stretch';
+      else if (info.tod === 'evening') pose = 'back';
+      else if (info.tod === 'night' || info.tod === 'late') pose = 'loaf';
+      else pose = 'sit';
+    }
+    // よく歩いた日のお昼は、横向きで立つ
+    if (pose === 'sit' && steps >= 8000) pose = 'stand';
+    return pose;
   }
 
   function propsFor(now) {
@@ -195,7 +205,7 @@
     const pose = Poses[poseName];
     let extra = '';
     props.forEach((p) => {
-      if (p === 'scarf') extra += `<g transform="translate(${pose.neck.x} ${pose.neck.y})">${Props.scarfOf(pose.neck.w)}</g>`;
+      if (p === 'scarf') { if (pose.neck) extra += `<g transform="translate(${pose.neck.x} ${pose.neck.y})">${Props.scarfOf(pose.neck.w)}</g>`; }
       else extra += `<g transform="translate(${pose.head.x} ${pose.head.y}) rotate(${pose.head.r})">${Props[p]}</g>`;
     });
     $('catPose').innerHTML = pose.svg + extra;
@@ -206,13 +216,35 @@
   // ---------- 歩数の受け取り（ショートカットから） ----------
   function receiveFromUrl() {
     const params = new URLSearchParams(location.search);
-    if (!params.has('steps')) return null;
-    const steps = Math.round(parseFloat(String(params.get('steps')).replace(/[,，\s]/g, '')));
-    const date = parseYmd(params.get('date')) ? params.get('date') : ymd(new Date());
+    if (!params.has('steps') && !params.has('days')) return null;
     history.replaceState(null, '', location.pathname); // URLをきれいに戻す
-    if (!Number.isFinite(steps)) return null;
-    recordSteps(date, steps);
-    return steps;
+    const today = ymd(new Date());
+    // 過去の何日ぶんか（days=2026-10-15:8159,2026-10-16:5021,…）。開かなかった日も埋まる
+    let pastCount = 0;
+    if (params.has('days')) {
+      // 日付から次の日付までのあいだにある数字を、その日の歩数として読む（「5,123」のような区切りがあっても読める）
+      const text = String(params.get('days'));
+      const re = /(\d{4})[-\/.年](\d{1,2})[-\/.月](\d{1,2})日?/g;
+      const found = [...text.matchAll(re)];
+      found.forEach((m, i) => {
+        const rest = text.slice(m.index + m[0].length, i + 1 < found.length ? found[i + 1].index : text.length);
+        const num = /\d[\d,，]*(?:\.\d+)?/.exec(rest);
+        if (!num) return;
+        const date = `${m[1]}-${m[2].padStart(2, '0')}-${m[3].padStart(2, '0')}`;
+        const n = Math.round(parseFloat(num[0].replace(/[,，]/g, '')));
+        if (!parseYmd(date) || date > today || !Number.isFinite(n) || n < 0) return;
+        if (date !== today && (state.days[date] == null || n > state.days[date])) pastCount++;
+        recordSteps(date, n);
+      });
+    }
+    let steps = null;
+    if (params.has('steps')) {
+      steps = Math.round(parseFloat(String(params.get('steps')).replace(/[,，\s]/g, '')));
+      const date = parseYmd(params.get('date')) ? params.get('date') : today;
+      if (Number.isFinite(steps)) recordSteps(date, steps); else steps = null;
+    }
+    if (steps == null && state.days[today] != null && params.has('days')) steps = state.days[today];
+    return steps == null ? null : { steps, pastCount };
   }
 
   // 1日のうちに何度か届いても、多いほうを残す（歩数は1日の中で増えていくだけなので）
@@ -444,7 +476,7 @@
     renderWeather(info);
     renderNumbers(steps);
     renderReview(now);
-    drawCat(poseFor(info, steps), propsFor(now));
+    drawCat(poseFor(info, steps, now), propsFor(now));
     showBubble(buildMessage(now, info, steps));
   }
 
@@ -898,7 +930,8 @@
   const received = receiveFromUrl();
   if (received != null) {
     render();
-    toast(fill(pickRandom(M.received), { steps: received.toLocaleString() }));
+    toast(fill(pickRandom(M.received), { steps: received.steps.toLocaleString() }) +
+      (received.pastCount ? `（前の${received.pastCount}日ぶんも入れました）` : ''));
     setTimeout(cheer, 400);
   } else {
     render();
