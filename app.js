@@ -230,6 +230,7 @@
         const rest = text.slice(m.index + m[0].length, i + 1 < found.length ? found[i + 1].index : text.length);
         const num = /\d[\d,，]*(?:\.\d+)?/.exec(rest);
         if (!num) return;
+        if (+m[2] < 1 || +m[2] > 12 || +m[3] < 1 || +m[3] > 31) return; // 「mm（分）」などで、ありえない日付になったものは使わない
         const date = `${m[1]}-${m[2].padStart(2, '0')}-${m[3].padStart(2, '0')}`;
         const n = Math.round(parseFloat(num[0].replace(/[,，]/g, '')));
         if (!parseYmd(date) || date > today || !Number.isFinite(n) || n < 0) return;
@@ -499,7 +500,78 @@
     poseTimer = setTimeout(() => drawCat(back, propsFor(new Date())), 2200);
     return pose;
   }
+  // ---------- 派手な動き（ときどき） ----------
+  const MOVES = ['roll', 'spin', 'fly', 'melt', 'stretch', 'clone', 'dash', 'giant', 'tiny', 'upside', 'bounce',
+    'sidestep', 'flip', 'slide', 'box', 'wind', 'warp', 'headspin', 'ceiling', 'sparkle', 'paper', 'sink'];
+  // 動きに合わせて、ポーズも変える（書いていないものは今のポーズのまま）
+  const MOVE_POSE = { roll: 'roll', melt: 'melt', stretch: 'upright', upside: 'stare', bounce: 'blink', flip: 'freeze',
+    slide: 'stare', box: 'box', wind: 'freeze', warp: 'cosmos', ceiling: 'stare', sparkle: 'cosmos', sink: 'stare', spin: 'freeze', tiny: 'stare' };
+  const MOVE_MS = { fly: 2600, dash: 2200, sink: 2800, ceiling: 2600, upside: 2200, box: 2400, wind: 2400, clone: 1800, giant: 1800, melt: 2200 };
+  let moveTimer = null, lastMove = null, moving = false;
+  const reduceMotion = () => window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function bigMove(name) {
+    const btn = $('catBtn'), stage = $('stage');
+    const choices = MOVES.filter((m) => m !== lastMove && (M.moves ? M.moves[m] : true));
+    name = name || pickRandom(choices);
+    lastMove = name;
+    clearTimeout(poseTimer); clearTimeout(moveTimer);
+    stage.querySelectorAll('.mv-extra').forEach((n) => n.remove());
+    const back = window.TapPoses.includes(currentPose) || moving ? (cheer.back || currentPose) : currentPose;
+    cheer.back = back;
+    moving = true;
+    if (name === 'headspin' && window.PoseParts) {
+      const PP = window.PoseParts;
+      $('catPose').innerHTML = PP.sitTorso() + `<g class="mv-head">${PP.headG('open')}</g>`;
+      currentPose = 'headspin';
+    } else if (MOVE_POSE[name] && Poses[MOVE_POSE[name]]) drawCat(MOVE_POSE[name], propsFor(new Date()));
+    btn.className = 'cat-btn';
+    void btn.offsetWidth;
+    btn.classList.add('mv', 'mv-' + name);
+    stage.classList.toggle('mv-sinking', name === 'sink');
+    // おまけの絵（分身・箱・星・風）
+    const add = (cls, html, style = '') => {
+      const d = document.createElement('div');
+      d.className = 'mv-extra ' + cls; d.innerHTML = html; d.style.cssText = style;
+      stage.appendChild(d); return d;
+    };
+    if (name === 'clone') {
+      [-1, 1].forEach((side) => {
+        const c = btn.cloneNode(true);
+        c.removeAttribute('id'); c.querySelectorAll('[id]').forEach((n) => n.removeAttribute('id'));
+        c.className = 'cat-btn mv-extra mv-ghost ' + (side < 0 ? 'left' : 'right');
+        c.setAttribute('aria-hidden', 'true'); c.tabIndex = -1;
+        btn.parentNode.insertBefore(c, btn);
+      });
+    }
+    if (name === 'box') add('mv-boxdrop', '<svg viewBox="0 0 140 90"><path d="M8 18 L132 18 L126 86 L14 86 Z" fill="#f1d9a0" stroke="#2b2b2b" stroke-width="3" stroke-linejoin="round"/><path d="M8 18 L-6 4 L4 0 L20 14 M132 18 L146 4 L136 0 L120 14" fill="#f1d9a0" stroke="#2b2b2b" stroke-width="3" stroke-linejoin="round"/><path d="M50 52 h40" stroke="#2b2b2b" stroke-width="2.5" stroke-linecap="round"/></svg>');
+    if (name === 'sparkle') for (let i = 0; i < 16; i++) {
+      add('mv-star', pickRandom(['✦', '✧', '★', '・']), `left:${10 + Math.random() * 80}%;top:${12 + Math.random() * 70}%;animation-delay:${(Math.random() * 0.9).toFixed(2)}s;font-size:${14 + Math.random() * 16}px`);
+    }
+    if (name === 'wind') for (let i = 0; i < 6; i++) {
+      add('mv-gust', '', `top:${20 + i * 11}%;animation-delay:${(i * 0.12).toFixed(2)}s`);
+    }
+    const ms = MOVE_MS[name] || 1600;
+    moveTimer = setTimeout(() => {
+      btn.className = 'cat-btn';
+      stage.classList.remove('mv-sinking');
+      stage.querySelectorAll('.mv-extra').forEach((n) => n.remove());
+      moving = false;
+      drawCat(back, propsFor(new Date()));
+    }, ms);
+    return name;
+  }
+
+  // おためし用（プレビューで動きを選んで見る）
+  window.bigMove = (name) => { const mv = bigMove(name); if (M.moves && M.moves[mv]) showBubble(pickRandom(M.moves[mv])); return mv; };
+
   $('catBtn').addEventListener('click', (e) => {
+    // 3回に1回くらい、派手に動く
+    if (M.moves && !reduceMotion() && Math.random() < 0.34) {
+      const mv = bigMove();
+      showBubble(pickRandom(M.moves[mv]));
+      return;
+    }
+    if (moving) return;
     const pose = cheer();
     showBubble(pickRandom(M.tap[pose]));
     const heart = document.createElement('span');
@@ -932,7 +1004,7 @@
     render();
     toast(fill(pickRandom(M.received), { steps: received.steps.toLocaleString() }) +
       (received.pastCount ? `（前の${received.pastCount}日ぶんも入れました）` : ''));
-    setTimeout(cheer, 400);
+    setTimeout(() => { if (M.moves && !reduceMotion() && Math.random() < 0.4) bigMove(); else cheer(); }, 400);
   } else {
     render();
   }

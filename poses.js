@@ -339,6 +339,8 @@
   };
 
   window.Poses = P;
+  // 派手な動き用（頭だけ回すときなどに使う）
+  window.PoseParts = { sitTorso, headG };
   // なでたときに出てくるポーズ
   window.TapPoses = ['upright', 'groom', 'sideeye', 'blink', 'roll', 'freeze', 'stare', 'tilt', 'maneki', 'yawn', 'cosmos', 'plank', 'bow', 'sneeze', 'hide'];
   // 時間帯ごとに、ときどき出てくるポーズ（いつものポーズが多め）

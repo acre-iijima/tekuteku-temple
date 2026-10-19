@@ -737,3 +737,68 @@ button.day { -webkit-appearance: none; appearance: none; margin: 0; line-height:
 html, body { overflow-x: clip; max-width: 100%; }
 header { min-width: 0; }
 header h1 { min-width: 0; overflow: hidden; white-space: nowrap; }
+
+/* ---------- 派手な動き（なでたとき、ときどき） ---------- */
+.cat-btn.mv { animation-duration: 1.6s; animation-fill-mode: both; animation-timing-function: ease-in-out; transform-origin: 50% 85%; }
+.mv-roll { animation-name: mv-roll; }
+.mv-spin { animation-name: mv-spin; animation-timing-function: cubic-bezier(.3,0,.3,1); transform-origin: 50% 60% !important; }
+.mv-fly { animation-name: mv-fly; animation-duration: 2.6s !important; }
+.mv-melt { animation-name: mv-melt; animation-duration: 2.2s !important; transform-origin: 50% 100% !important; }
+.mv-stretch { animation-name: mv-stretch; transform-origin: 50% 100% !important; }
+.mv-clone { animation-name: mv-shake; animation-duration: 1.8s !important; }
+.mv-dash { animation-name: mv-dash; animation-duration: 2.2s !important; animation-timing-function: linear; }
+.mv-giant { animation-name: mv-giant; animation-duration: 1.8s !important; transform-origin: 50% 70% !important; z-index: 4; }
+.mv-tiny { animation-name: mv-tiny; transform-origin: 50% 100% !important; }
+.mv-upside { animation-name: mv-upside; animation-duration: 2.2s !important; transform-origin: 50% 55% !important; }
+.mv-bounce { animation-name: mv-bounce; animation-timing-function: linear; }
+.mv-sidestep { animation-name: mv-sidestep; animation-timing-function: steps(1, end); }
+.mv-flip { animation-name: mv-flip; transform-origin: 50% 55% !important; }
+.mv-slide { animation-name: mv-slide; animation-timing-function: ease-in-out; }
+.mv-box { animation-name: mv-boxed; animation-duration: 2.4s !important; }
+.mv-wind { animation-name: mv-wind; animation-duration: 2.4s !important; transform-origin: 50% 55% !important; }
+.mv-warp { animation-name: mv-warp; animation-timing-function: steps(1, end); }
+.mv-headspin .mv-head { transform-box: view-box; transform-origin: 121px 92px; animation: mv-turn 1.2s ease-in-out 0.2s both; }
+.mv-ceiling { animation-name: mv-ceiling; animation-duration: 2.6s !important; transform-origin: 50% 50% !important; }
+.mv-sparkle { animation-name: mv-glow; }
+.mv-paper { animation-name: mv-paper; }
+.mv-sink { animation-name: mv-sink; animation-duration: 2.8s !important; }
+.stage.mv-sinking .ground { z-index: 2; }
+.stage.mv-sinking .cat-btn { z-index: 1; }
+
+@keyframes mv-roll { 0% { transform: none; } 40% { transform: translateX(120%) rotate(540deg); } 45% { transform: translateX(120%) rotate(540deg); } 100% { transform: translateX(0) rotate(0deg); } }
+@keyframes mv-spin { 0% { transform: rotate(0); } 80% { transform: rotate(1800deg); } 90% { transform: rotate(1790deg); } 100% { transform: rotate(1800deg); } }
+@keyframes mv-fly { 0% { transform: none; } 10% { transform: translateY(6%) scaleY(0.9); } 45% { transform: translateY(-260%) rotate(-12deg); opacity: 1; } 46% { opacity: 0; } 60% { transform: translateY(-260%); opacity: 0; } 61% { transform: translateY(-200%); opacity: 1; } 85% { transform: translateY(0) scaleY(0.85); } 92% { transform: translateY(-6%); } 100% { transform: none; } }
+@keyframes mv-melt { 0% { transform: none; } 35% { transform: scale(1.5, 0.18); } 70% { transform: scale(1.55, 0.15); } 85% { transform: scale(0.9, 1.15); } 100% { transform: none; } }
+@keyframes mv-stretch { 0% { transform: none; } 30% { transform: scale(0.75, 1.9); } 55% { transform: scale(0.8, 1.8); } 75% { transform: scale(1.1, 0.85); } 100% { transform: none; } }
+@keyframes mv-shake { 0%, 100% { transform: none; } 10%, 30%, 50%, 70% { transform: translateX(-4px); } 20%, 40%, 60%, 80% { transform: translateX(4px); } }
+@keyframes mv-dash { 0% { transform: none; } 8% { transform: translateX(-6%) scaleX(1.05); } 40% { transform: translateX(170%); } 41% { transform: translateX(-170%); } 85% { transform: translateX(4%); } 100% { transform: none; } }
+@keyframes mv-giant { 0% { transform: none; } 35% { transform: scale(3.2); } 70% { transform: scale(3.2); } 78% { transform: scale(0.8); } 88% { transform: scale(1.1); } 100% { transform: none; } }
+@keyframes mv-tiny { 0% { transform: none; } 30% { transform: scale(0.08); } 75% { transform: scale(0.08); } 90% { transform: scale(1.12); } 100% { transform: none; } }
+@keyframes mv-upside { 0% { transform: none; } 20% { transform: translateY(-30%) rotate(180deg); } 80% { transform: translateY(-30%) rotate(180deg); } 100% { transform: none; } }
+@keyframes mv-bounce { 0%, 20%, 40%, 60%, 80%, 100% { transform: translateY(0) scale(1.08, 0.9); } 10%, 30%, 50%, 70%, 90% { transform: translateY(-38%) scale(0.95, 1.05); } }
+@keyframes mv-sidestep { 0% { transform: none; } 10% { transform: translateX(-40%); } 20% { transform: none; } 30% { transform: translateX(40%); } 40% { transform: none; } 50% { transform: translateX(-40%); } 60% { transform: none; } 70% { transform: translateX(40%); } 80% { transform: none; } 90% { transform: translateX(-40%); } 100% { transform: none; } }
+@keyframes mv-flip { 0% { transform: none; } 15% { transform: translateY(4%) scaleY(0.85); } 50% { transform: translateY(-80%) rotate(-360deg); } 80% { transform: translateY(0) rotate(-360deg) scaleY(0.88); } 100% { transform: rotate(-360deg); } }
+@keyframes mv-slide { 0% { transform: none; } 35% { transform: translateX(-60%); } 70% { transform: translateX(60%); } 100% { transform: none; } }
+@keyframes mv-boxed { 0%, 30% { transform: none; } 38% { transform: scale(1.05, 0.92); } 100% { transform: none; } }
+@keyframes mv-wind { 0% { transform: none; } 12% { transform: translateX(-8%) rotate(-10deg); } 50% { transform: translateX(-190%) translateY(-60%) rotate(-720deg); opacity: 1; } 51% { opacity: 0; } 55% { transform: translateX(190%) translateY(-40%); opacity: 0; } 56% { opacity: 1; } 90% { transform: translateX(-4%) rotate(20deg); } 100% { transform: none; } }
+@keyframes mv-warp { 0% { opacity: 1; transform: none; } 15% { opacity: 0; } 30% { opacity: 1; transform: translateX(-55%) translateY(-30%); } 45% { opacity: 0; } 60% { opacity: 1; transform: translateX(50%) translateY(-45%); } 75% { opacity: 0; transform: none; } 90%, 100% { opacity: 1; transform: none; } }
+@keyframes mv-turn { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+@keyframes mv-ceiling { 0% { transform: none; } 30% { transform: translateY(-235%) rotate(180deg); } 75% { transform: translateY(-235%) rotate(180deg); } 92% { transform: translateY(0) rotate(360deg); } 100% { transform: rotate(360deg); } }
+@keyframes mv-glow { 0%, 100% { transform: none; filter: none; } 50% { transform: scale(1.06); filter: drop-shadow(0 0 10px #ffe066); } }
+@keyframes mv-paper { 0% { transform: none; } 25% { transform: scaleX(0.04) rotate(-6deg); } 50% { transform: scaleX(-1); } 75% { transform: scaleX(0.04) rotate(6deg); } 100% { transform: scaleX(1); } }
+@keyframes mv-sink { 0% { transform: none; } 40% { transform: translateY(78%); } 70% { transform: translateY(78%); } 85% { transform: translateY(-8%); } 100% { transform: none; } }
+
+/* 分身・箱・星・風 */
+.mv-ghost { position: absolute !important; bottom: 0; opacity: 0.35; pointer-events: none; z-index: 0 !important; animation: mv-ghost 1.8s ease-in-out both; }
+.stage .mv-ghost { margin-bottom: inherit; }
+.mv-ghost.left { --dx: -48%; }
+.mv-ghost.right { --dx: 48%; }
+@keyframes mv-ghost { 0% { transform: none; opacity: 0; } 25%, 75% { transform: translateX(var(--dx)); opacity: 0.4; } 100% { transform: none; opacity: 0; } }
+.mv-extra.mv-boxdrop { position: absolute; left: 50%; bottom: 9%; width: min(56vw, 220px); margin-left: calc(min(56vw, 220px) / -2); z-index: 3; pointer-events: none; animation: mv-boxdrop 2.4s ease-in both; }
+.mv-boxdrop svg { display: block; width: 100%; height: auto; overflow: visible; }
+@keyframes mv-boxdrop { 0% { transform: translateY(-420%); } 30% { transform: translateY(0); } 36% { transform: translateY(-6%); } 42%, 85% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(0); opacity: 0; } }
+.mv-star { position: absolute; z-index: 3; pointer-events: none; color: #f5b800; text-shadow: 0 0 2px #2b2b2b; opacity: 0; animation: mv-star 1.2s ease-out both; }
+@keyframes mv-star { 0% { opacity: 0; transform: scale(0.2) rotate(0); } 40% { opacity: 1; transform: scale(1.2) rotate(90deg); } 100% { opacity: 0; transform: scale(0.6) rotate(180deg) translateY(-20px); } }
+.mv-gust { position: absolute; right: -40%; width: 40%; height: 0; border-top: 2.5px solid rgba(43, 43, 43, 0.5); border-radius: 50%; z-index: 3; pointer-events: none; animation: mv-gustline 0.9s linear 2 both; }
+@keyframes mv-gustline { from { transform: translateX(0); } to { transform: translateX(-360%); } }
+@media (prefers-reduced-motion: reduce) { .cat-btn.mv, .mv-extra { animation: none !important; } }
