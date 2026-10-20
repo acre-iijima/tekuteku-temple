@@ -1,19 +1,19 @@
 {
- "updatedAt": "2026-10-20T16:49:29.049Z",
+ "updatedAt": "2026-10-20T20:27:54.342Z",
  "items": [
+  {
+   "cat": "経済",
+   "title": "岩井コスモ証券 不正アクセスで顧客が意図しない売買注文",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1DbHN2WUVvZklWbURsTEo4aVVvSW4xWlFGQ1dfUU5sVVVBSlNJQk5Rcl9QeWRrZHpmb0NXNjJ4ZEczMEo0MTFpdk1yVnNOQVpVdU55MG9kTGViRVBKY1ZV?oc=5",
+   "source": "NHKニュース",
+   "time": "2026-10-20T15:26:19.000Z"
+  },
   {
    "cat": "経済",
    "title": "ニデック調査委「永守重信氏ら９人に賠償責任」、損害額２７６億円…提訴含む法的措置を検討",
    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE4xWVNQTEYtR2xWRWdjYkJLTW9RQllGUzluR0dkOWNpLUkzSWRfZzhpSm10cU4tLTFVVHNCSV9VdkJNSXhsQTBNUkFHXzBHQUlKYkJhMU8tYjdpU1dMN1REZDdIRlY?oc=5",
    "source": "読売新聞",
    "time": "2026-10-20T15:07:00.000Z"
-  },
-  {
-   "cat": "経済",
-   "title": "サイバー攻撃受け意図しない売買注文「成立」、岩井コスモ証券…５０００人弱の個人情報が流出",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBxNVpnTXFOSktTWEphU1JTNW1BeU13Tk82ZDhmWUNNUTZrZFFqd3EweFVvX2liV3BkQy1tbEdheWVXN0tIS3o3REgwR3BDbVNjdjVOUktSb2NFcEdxcEZwLVgwQXVNdw?oc=5",
-   "source": "読売新聞",
-   "time": "2026-10-20T14:40:00.000Z"
   },
   {
    "cat": "経済",
@@ -28,6 +28,13 @@
    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5QVUgxR1lNNlF4OTI5aFBKQnhPRTdheWJMZE5memN5eUE4UkJjTWtfQ0M3NjFvbElYRHRFVFlzWXVvWHhtWkJvWkI3OUFKd1BOWnc?oc=5",
    "source": "ザイFX！",
    "time": "2026-10-20T13:59:00.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "消費税減税後の支援金、高市首相「年収３５０万円上限で２０００万人に支給」…衆院本会議で参考額答弁",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE51MG9NTTlkSzBXOEUtMXhiMGhoUlFJVklGRzF1TWZkbGpBUkctNEVqTjNIUVBnMV9oVUNiTnhaOXdxUndOMXJ2UExhSV9ka1QtSFBqTlMtNlRyUFVBVklXX1Boci1yQQ?oc=5",
+   "source": "読売新聞",
+   "time": "2026-10-20T13:06:00.000Z"
   },
   {
    "cat": "経済",
@@ -59,13 +66,6 @@
   },
   {
    "cat": "経済",
-   "title": "「サイバー有事前夜」「飽和攻撃の懸念」警告、ＡＩで対策強化など自民部会提言…相次ぐ個人情報漏えい受け",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1BTGRac3Bza3k2VWNhTUdLNGRUdnJiZ0hlSnp4RjVMQzNUNWdNSzMza1JXQ3dHSHpsX0lQcTVITUpxVjJlTWlONl9jRzZldGFJeHpCSGdRY2FPYU9LeUZ4c3JRbF9LQQ?oc=5",
-   "source": "読売新聞",
-   "time": "2026-10-20T12:08:00.000Z"
-  },
-  {
-   "cat": "経済",
    "title": "「布団乾燥機でダニ死滅」根拠なし 消費者庁が措置命令",
    "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9YaEpPN0tTV2Vjb3RTeFk2RUFIVjBFRDZCZkt3dVJ0bzZKMVEzT0FKaVNKZzVlVmNUR2hXX0k5ZE45TWpuV0htc2hNd1p2YUg0SFNvazdnaFJHSW5jMWFV?oc=5",
    "source": "NHKニュース",
@@ -84,13 +84,6 @@
    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9lRDlvNlpmaGVLeENUQ3dGZDZKNnlDR0xLaFB0TnRjNUI3dUdWUXNYaGdFV1M2eU14N2Vxd0NrNUZNa1ZVYmdybTBHakFHLXhPMEZjNXBLWnJpTGgyTVVEaldZSV9UZEROSHYtQXlOenM2UQ?oc=5",
    "source": "テレ朝NEWS",
    "time": "2026-10-20T11:54:11.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "新名神６人死亡事故で拘禁刑７年、遺族「ながらスマホも危険運転に」「納得できない」…法改正による厳罰化求める",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1iVXBaODBHOUdna1VJTFpZa3Y0MGctMzIwSnBFVDgtUE5VakFXMW1vM0hWeUJGRnN0cHFvNDBJbzBVYzNDTlloa1ljVXk3VUFiRnVaYkdCV0ZxZXRzNFhDMmhkdzNnUQ?oc=5",
-   "source": "読売新聞",
-   "time": "2026-10-20T15:32:25.000Z"
   },
   {
    "cat": "主なニュース",
@@ -115,10 +108,10 @@
   },
   {
    "cat": "主なニュース",
-   "title": "韓国2棟ビル火災19人負傷 男拘束",
-   "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBLTElENjlXcWRVN3ZQOEJxSFFhY0VJMGpFOUt1eFQ0alJMOENWTVQ2UXY5U3RCY0dxWjg5MEtERHJkV3l0LXNRdl9EdXBCWksw?oc=5",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-20T14:15:34.000Z"
+   "title": "新名神６人死亡事故で拘禁刑７年、遺族「ながらスマホも危険運転に」「納得できない」…法改正による厳罰化求める",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1iVXBaODBHOUdna1VJTFpZa3Y0MGctMzIwSnBFVDgtUE5VakFXMW1vM0hWeUJGRnN0cHFvNDBJbzBVYzNDTlloa1ljVXk3VUFiRnVaYkdCV0ZxZXRzNFhDMmhkdzNnUQ?oc=5",
+   "source": "読売新聞",
+   "time": "2026-10-20T14:25:00.000Z"
   },
   {
    "cat": "主なニュース",
@@ -126,13 +119,6 @@
    "link": "https://news.yahoo.co.jp/pickup/6599523?source=rss",
    "source": "Yahoo!ニュース",
    "time": "2026-10-20T13:57:57.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "名誉毀損容疑で作家らを書類送検 兵庫知事会見の発言巡り―県警：時事ドットコム",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5CN29vOHdKZ2NlcXpQNXducWwyQmtUME0wQ3ppYXloZm1yV0tIQXBid3UtckFBS2FncXY4bjB6a3pPUWMzYmNIblpNSkpfVzN4bURKVXNaTGZrYTNENTZEQUJvTQ?oc=5",
-   "source": "時事ドットコム",
-   "time": "2026-10-20T13:47:00.000Z"
   },
   {
    "cat": "主なニュース",
@@ -150,17 +136,24 @@
   },
   {
    "cat": "主なニュース",
-   "title": "遺体なき妻への傷害致死事件 被告に求刑超えの懲役12年6月判決 大阪地裁（産経新聞）",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9MclRmUmZ3dkU1eGFPSmUzVm5mT25WSkV3ajRKVmU3MGJIVnQ0V3JQclRua29QczBDemctZVpoNy0xczlSRmxuM3dlazJQLVlkZk9sSnBJbnp6Q3J0Q0Nsb3ViVUFMd292amJuRlJKWVJoMlJBWXRIZUJzV2pHLU0?oc=5",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-20T13:02:41.000Z"
+   "title": "上皇后さま９２歳の誕生日、上皇さまとともに祝賀行事に…両陛下ら祝賀のあいさつ",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAwV0E3UkdVWWdFa2dUTEZiTktsbGJBRmRjRDVYXzNlMTZMRmstc2poTzNaQXhLNC02V3FwM2N1Y1I0UXlFUERMV0V4NVVHQnJibVZjSHpITWFXX0x4M1NyTVE3Rl83cnM?oc=5",
+   "source": "読売新聞",
+   "time": "2026-10-20T13:14:00.000Z"
   },
   {
    "cat": "主なニュース",
-   "title": "【速報】歌舞伎俳優・中村小三郎さんを不起訴処分 ひき逃げなどの疑いで書類送検",
-   "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFAxYUoycXdRbXRYZVVTMl9XTXl0M0VGNmRKbWFPMEg0UWtqOTc1NnRkclZRVzFwazQwSzRrc2RBRUZyRWltTTlEUlV1SEw1YTZ1?oc=5",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-20T12:51:05.000Z"
+   "title": "斎藤知事に「人殺し」発言のフリー記者を書類送検 名誉毀損の疑いで兵庫県警|事件・事故",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE02dVQ0VWhDcDl6SHNVaUtOYTZOOEx5RF9WRU96b2VXS29oM1NJdi1vdnNUMWFuQTN5YTg4ZlVqY0RmTDBvMGtEck1Ob3BiMzJVcGYwMWZmamFUeHJDVGhILTNTdGRTSjVRM2lmQg?oc=5",
+   "source": "神戸新聞",
+   "time": "2026-10-20T13:14:00.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "原沢敦美・横浜市長が就任後初の会見 「ハラスメントをなくす条例つくる」",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5uQ0cwS01DaTIzcHhaN1pfLXhDQmVuczZzOHQtaW1nbHN1cjlIMWVpRDRGdzJWV2E0cnVwanBpU09wUUROeDQzX1NfQkNrWGVLcnJQRTlVelFyTHl4UEZ3c25FQ1hfdzMtS0JGSw?oc=5",
+   "source": "カナロコ",
+   "time": "2026-10-20T13:10:00.000Z"
   },
   {
    "cat": "主なニュース",
@@ -170,11 +163,39 @@
    "time": "2026-10-20T12:46:00.000Z"
   },
   {
+   "cat": "主なニュース",
+   "title": "遺体なき傷害致死事件 夫に懲役12年6か月の判決 大阪地裁",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9iR2JDMmNRc19SendRaHh4QzZzMUJleVZrZEtHMFpBYkFmUy14ZDMwdmxEX1JLbjFQYUlFYnNIcElMU0tTSXgwTVRFUndBSVlERXpITldVRUhSQk9lSFBJ?oc=5",
+   "source": "NHKニュース",
+   "time": "2026-10-20T11:39:00.000Z"
+  },
+  {
    "cat": "国際",
-   "title": "トランプ政策「ほとんど阻止できない」、民主が下院奪還でも＝財務長官（ロイター）",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBfNlVNZUZHLXdUNVFEc0QwY0d5NWF4YlJmd2tzaEQ1cnJPV1ZkZ1JmbWpaLVYzN1pzX0haWnBKMWp1b0ZEQ054SHBTQ1ljQm9kUUh1cjJHcTBvRDNIVlVTbV9NMlNqaldFVFJqRlNkWU5QRzNYbDljbmlKWV9pRUE?oc=5",
+   "title": "トランプ氏、ウクライナに和平合意促す ロシア拘束の米国人巡る進展示唆（ロイター）",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5JQzN6Z0VxTnBrSE43ZUpoUGloUVUyREpNYl80U3g2bDN1TXZmN1NtSmtaVVpvYlJDVXI5WlBpb1hZMVJJRDkwRmlHUG1FTXBrSUlXb2o0UzVvSnVTaGtMVE1YaG1rRE1pTUMxbktScExSTGNWNGZENy1KdS1hMlE?oc=5",
    "source": "Yahoo!ニュース",
-   "time": "2026-10-20T14:33:48.000Z"
+   "time": "2026-10-20T19:17:01.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "無人機攻撃で多数死亡か　南北スーダン係争地",
+   "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNY3JnNW5ZVjIyUjV6NkwyWjR5UU5YNmZWWFBQOTVwNENmM002eDVNaTBJUU9qZ2dYRm1pMnk2Z05vUklZNkJsRjZWR2xRY3pvRnY0ZDJLWXhWcVVzd19UeU92S3JkaURkX24ybXNCcV83SlNFbExDRWFyMElld01WMHRacUNrZGkwWHfSAY8BQVVfeXFMTnFidlMtaEpaenF6Qy13ekdRblhxbGh3Q1RSRlJVdjVzeGZrN0lDVUllQkhXLUc3SndQRDJKYlJBaFNwTGkxT19VUVpoMzEwSXY0MVVvaDRJVzcxdmRDSmxzSXBRMUdjb1NUS1lhcUhXdGhRTUJpakRFX3ptYWdNVEExLWluN01SbkFKdlRKUkE?oc=5",
+   "source": "ｄメニューニュース",
+   "time": "2026-10-20T16:14:12.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "トランプ政策「ほとんど阻止できない」、民主が下院奪還でも＝財務長官",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5IVDhaUENSdGFMSFRrTlJiNi1qSGlZWmRDVDhtWGdnYnJ1dzlfZ3pyb1Rrb2xrSXdjajZYTUR3SWgwemRCSzJmUVd6YUZDU1h6SGxrQjdDZzM2dUtkMzJNbjh0ZWZzcXFSaWt5MkFHcnh4WlEwb2NhZmV6b3BpVU0?oc=5",
+   "source": "Reuters",
+   "time": "2026-10-20T15:24:53.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "韓国2棟ビル火災19人負傷 男拘束",
+   "link": "https://news.yahoo.co.jp/pickup/6599526?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-20T14:15:34.000Z"
   },
   {
    "cat": "国際",
@@ -189,6 +210,13 @@
    "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5EV0d6UFp3MGtfdFpNS1hqazd4VnB2V2tubzVxaXpNdGRRa2dNa1FBc3BaRVNMNVNsUnlzMFNOUkpFc1RIR2l0MndXaFFnTzVnRmkwbkNhZmRaS3RDaUdNcUxB?oc=5",
    "source": "読売新聞",
    "time": "2026-10-20T12:26:00.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "福岡に「米軍の最強戦闘機」が複数来た！ 沖縄からも懐かしい機体が飛来の予定（乗りものニュース） | 自動車情報・ニュース",
+   "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNRGcyNTZEMjVvamNzQ0Z3SERqNmFJQ3gwNHVwWUVfWk1xUnhuVF9EaW5sUFcyTUo5SzFrd0pMT0ZtdjQwLTFPN3dfZnRqQkpwNmZSazI5NFh6b3g2bzd0cS1vdGhXRThqVmRIUjJZN01wMGUyVlRQSW1OOHdIbHd5SnM5alNaM2Y2?oc=5",
+   "source": "carview!",
+   "time": "2026-10-20T12:12:00.000Z"
   },
   {
    "cat": "国際",
@@ -224,34 +252,6 @@
    "link": "https://news.yahoo.co.jp/pickup/6599496?source=rss",
    "source": "Yahoo!ニュース",
    "time": "2026-10-20T09:31:37.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "韓国、駐ウクライナ大使に続き館員も一部撤収 北朝鮮捕虜巡り対立",
-   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE13Z2FqbTgzbVFoR0lhdnhsSXl0YVFjUFA5eDhEdzRxM3hzRXE5cnRkRVRIUzdSd29lTk0ydl8zSWE3MzQ2NERnc0dTV0RKcjNVbDJMSlZldUdjazFXVGdfSmp3YTJOemotLXpzUw?oc=5",
-   "source": "日本経済新聞",
-   "time": "2026-10-20T09:27:26.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "韓国軍、金与正氏名指しで懸念を表明「軍事的威嚇で緊張高めた」 地雷事故巡り対立",
-   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1FaTVTX1lISkliX1BWMDNVbnRXdG9EV3gzWklZeWJXNHhnSFUwdmRwWmdGYnREeHU1UFZtMmFKUDhhTEtwNzVHYXBiQUxySk9IVFVGelcxd0ptaS1MWVJWNDZKWkNVN0taMEFUYzdLOUlJeE5xeGc?oc=5",
-   "source": "産経ニュース",
-   "time": "2026-10-20T07:32:11.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "海水浴客にひょいっと抱えられた異物に驚愕！ 海岸に漂着したロシア製兵器の正体が明らかに",
-   "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOYkhSQzZpTzh6eUpFbVlCYmpMZVRTWUcyaWVoSWNqSzNBbU5iRlVDZ1JJaTZLakp3cThyWDN5VzI5X1g0RnFndVJ3Z0cwNzdLUnpMZnF1c3RuN2dxQnVZWGJCN2hpUk53S0czT1NMcU42STJsbmxrblZKVDZCbzJoTnZFcVNVYWE2?oc=5",
-   "source": "carview!",
-   "time": "2026-10-20T07:12:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "ゼレンスキー氏、トランプ氏への反発鮮明に 識者「芝居続けられぬ」",
-   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBZR1ZHY2czVFpreHl0S2RncGhsdXJxa083QkFZeFBVOFNKdTNTYTRhX0VCZWpXeHpfTW95MWhKLUdvdnM1a3hiTG11ZHUxSF9UVU9xRHJZTmFDc056RWdMT3ZWbzJmQ2s?oc=5",
-   "source": "朝日新聞",
-   "time": "2026-10-20T07:09:21.000Z"
   }
  ]
 }
