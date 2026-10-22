@@ -23,6 +23,7 @@
       <h1 aria-label="テクテクてんぷる"><span>テ</span><span>ク</span><span>テ</span><span>ク</span><span>て</span><span>ん</span><span>ぷ</span><span>る</span></h1>
       <div class="top-buttons">
         <button class="icon-btn" id="openDiary" aria-label="おさんぽカレンダー">カレンダー</button>
+        <button class="icon-btn" id="openMemo" aria-label="メモの一覧">メモ</button>
         <button class="icon-btn" id="openTodo" aria-label="ToDoリスト">ToDo</button>
       </div>
     </header>
@@ -97,9 +98,9 @@
       <div class="cal" id="calendar"></div>
       <p class="sub center" id="monthSum"></p>
       <div class="memo-box">
-        <div class="memo-head"><span id="memoLabel"></span><span class="memo-steps" id="memoSteps"></span></div>
-        <textarea id="memoText" class="memo-text" rows="4" maxlength="1000" placeholder="日付を押すと、その日のメモが書けます"></textarea>
-        <p class="memo-hint">書いたメモは、自動で保存されます</p>
+        <div class="memo-head"><span class="memo-title"><span id="memoLabel"></span><span class="memo-steps" id="memoSteps"></span></span><button class="mm-add" id="dayMemoAdd">＋ 書く</button></div>
+        <ul class="mm-list" id="dayMemoList"></ul>
+        <p class="memo-hint">日付を押すと、その日のメモが見られます</p>
       </div>
       <button class="close" data-close>とじる</button>
     </div>
@@ -161,6 +162,44 @@
     </div>
   </div>
 
+  <!-- メモの一覧 -->
+  <div class="sheet" id="memoSheet" hidden>
+    <div class="sheet-inner">
+      <div class="todo-head"><h2>メモ</h2><button class="small ghost" id="memoEditBtn">ジャンル</button></div>
+      <div id="memoMain">
+        <div class="row mm-search-row">
+          <input id="memoSearch" type="search" enterkeyhint="search" autocomplete="off" placeholder="🔍 さがす">
+          <button class="small" id="memoNew">＋ 書く</button>
+        </div>
+        <div class="todo-tabs" id="memoTabs"></div>
+        <p class="mm-count" id="memoCount"></p>
+        <ul class="mm-list" id="memoAll"></ul>
+      </div>
+      <div id="memoGenreEdit" hidden>
+        <p class="sub">メモのジャンルの名前を書きかえたり、↑↓で並べかえたりできます。ジャンルを消しても、メモは消えません。</p>
+        <div class="tg-list" id="memoGenreList"></div>
+        <button class="small" id="memoNewGenre">＋ ジャンルを足す</button>
+      </div>
+      <button class="close" data-close>とじる</button>
+    </div>
+  </div>
+
+  <!-- メモを書く・なおす -->
+  <div class="sheet" id="memoEditSheet" hidden>
+    <div class="sheet-inner">
+      <div class="me-head">
+        <button class="mm-star me-star" id="meStar" aria-label="星をつける">☆</button>
+        <h2 id="meTitle"></h2>
+        <button class="me-trash" id="meDelete" aria-label="このメモを消す">🗑</button>
+      </div>
+      <div class="me-genres" id="meGenres"></div>
+      <textarea id="meText" class="memo-text" rows="5" maxlength="1000" placeholder="ここにメモを書きます"></textarea>
+      <label class="me-date">日付をかえる<input id="meDate" type="date"></label>
+      <button class="me-cal" id="meCal" hidden>📅 カレンダーで見る</button>
+      <button class="close" data-close>できた</button>
+    </div>
+  </div>
+
   <!-- せってい -->
   <div class="sheet" id="settingsSheet" hidden>
     <div class="sheet-inner">
@@ -180,7 +219,17 @@
       </div>
       <hr>
       <p class="field-title">記録のバックアップ</p>
-      <p class="sub">「コピー」を押して、メモ帳アプリなどに貼っておいてください。記録が消えたときは、その文字を下の欄に貼って「もどす」を押します。</p>
+      <div class="backup-file">
+        <div class="backup-btns">
+          <button class="small" id="backupSave">ファイルに保存</button>
+          <button class="small ghost" id="backupLoad">ファイルから戻す</button>
+        </div>
+        <input type="file" id="backupFile" accept=".txt,text/plain,application/json" hidden>
+        <p class="sub">共有の画面が出たら「“ファイル”に保存」→「iCloud Drive」をえらびます。iPhoneを替えても、控えが残ります。</p>
+        <p class="backup-last" id="backupLast">まだ保存していません</p>
+        <button class="small ghost backup-undo" id="backupUndo" hidden>戻す前の状態にもどす</button>
+      </div>
+      <p class="sub">文字でとっておく方法：「コピー」を押して、メモ帳アプリなどに貼っておきます。記録が消えたときは、その文字を下の欄に貼って「もどす」を押します。</p>
       <div class="row">
         <button class="small" id="backupCopy">コピー</button>
         <button class="small ghost" id="backupRestore">もどす</button>

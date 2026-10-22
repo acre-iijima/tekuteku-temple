@@ -245,6 +245,16 @@ textarea { resize: vertical; font-family: ui-monospace, Menlo, monospace; font-s
 }
 .small.ghost { background: var(--card); }
 hr { border: none; border-top: 2px dashed #d6ccbb; margin: 16px 0; }
+/* バックアップ：ファイルに保存 */
+.backup-file { margin-bottom: 14px; }
+.backup-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.backup-btns .small { width: 100%; min-width: 0; padding: 12px 4px; white-space: nowrap; }
+.backup-file .sub { margin-top: 10px; }
+.backup-last { margin: 6px 0 0; font-size: 0.85rem; font-weight: 700; }
+.backup-undo { display: block; margin-top: 10px; padding: 8px 12px; font-size: 0.85rem; }
+.backup-undo[hidden], .backup-file input[type="file"] { display: none; }
+.backup-file + .sub { padding-top: 12px; border-top: 1.5px dotted #d6ccbb; }
+@media (max-width: 360px) { .backup-btns .small { font-size: 0.85rem; letter-spacing: 0; } }
 .url { display: block; word-break: break-all; background: var(--card); border: 1.5px dashed var(--ink-soft); padding: 10px; border-radius: 10px; font-size: 0.8rem; margin-top: 6px; }
 .close {
   display: block; width: 100%; margin-top: 16px; padding: 12px; border: 2px solid var(--ink); border-radius: var(--sketch-radius);
@@ -657,6 +667,79 @@ button.day { font: inherit; font-family: var(--pop); color: var(--ink); cursor: 
   background: #fffdf5; border-width: 2px;
 }
 .memo-hint { margin: 6px 0 0; font-size: 0.72rem; color: #6a635b; }
+/* ---------- メモ（いくつでも・ジャンル・星） ---------- */
+#openMemo { background: var(--blue); }
+/* 上のボタンが3つ：入りきらない幅では、ボタンを題名の下の行へ */
+.top { flex-wrap: wrap; row-gap: 10px; }
+.top h1 { flex: none; }
+.top-buttons { flex: 1 0 auto; justify-content: flex-end; }
+.top-buttons .icon-btn { flex: 1 1 auto; max-width: 9.5em; }
+.day.memo-many::after { width: 9px; height: 9px; top: 2px; right: 2px; background: var(--orange); }
+.memo-head { align-items: center; gap: 8px; }
+.memo-title { flex: 1; min-width: 0; display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 8px; }
+.mm-add {
+  flex: none; padding: 6px 12px; border: 2.5px solid var(--ink); border-radius: 999px; background: var(--pink);
+  box-shadow: 2px 3px 0 var(--ink); font-family: var(--pop); font-weight: 800; font-size: 0.85rem; color: var(--ink); cursor: pointer;
+}
+.mm-add:active, .me-trash:active, .me-cal:active { transform: translate(2px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+.mm-list { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+.mm-item {
+  display: flex; align-items: flex-start; gap: 4px; padding: 6px 8px 6px 4px;
+  background: #fff; border: 2.5px solid var(--ink); border-radius: 14px; font-family: var(--pop);
+}
+.mm-item.starred { background: #fff8d6; }
+.mm-star {
+  flex: none; width: 36px; height: 36px; padding: 0; border: none; background: none; cursor: pointer;
+  font-size: 1.35rem; line-height: 1; color: #b5ab9c;
+}
+.mm-star.on { color: #f5b400; -webkit-text-stroke: 1px var(--ink); }
+.mm-body {
+  flex: 1; min-width: 0; display: block; text-align: left; padding: 4px 0; border: none; background: none; cursor: pointer;
+  font: inherit; color: var(--ink);
+}
+.mm-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin-bottom: 3px; }
+.mm-date { font-weight: 800; font-size: 0.8rem; color: #6a635b; }
+.mm-tag {
+  display: inline-block; padding: 0 8px; border: 2px solid var(--ink); border-radius: 999px;
+  font-weight: 800; font-size: 0.72rem; line-height: 1.5; white-space: nowrap;
+}
+.mm-text {
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; overflow: hidden;
+  font-weight: 700; font-size: 0.95rem; line-height: 1.5; white-space: pre-wrap; word-break: break-word;
+}
+#memoAll .mm-text { -webkit-line-clamp: 3; }
+.mm-empty { text-align: center; color: #8a8278; font-size: 0.85rem; padding: 12px 0; font-family: var(--pop); }
+.mm-search-row { margin: 0 0 10px; }
+.mm-search-row input { font-family: var(--pop); -webkit-appearance: none; appearance: none; }
+.mm-count { margin: 0 0 2px; font-family: var(--pop); font-weight: 800; font-size: 0.78rem; color: #6a635b; }
+#memoAll { margin-bottom: 4px; }
+#memoMain[hidden], #memoGenreEdit[hidden] { display: none; }
+#memoGenreEdit .small { display: block; margin: 0 auto 12px; }
+.mg-dot { flex: none; width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--ink); }
+/* 1つのメモを書く画面 */
+#memoEditSheet { z-index: 12; }
+.me-head { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+.me-head h2 { flex: 1; min-width: 0; margin: 0; }
+.me-star { width: 44px; height: 44px; font-size: 1.7rem; }
+.me-trash {
+  flex: none; width: 44px; height: 44px; padding: 0; border: 2.5px solid var(--ink); border-radius: 14px;
+  background: #fff; box-shadow: 2px 3px 0 var(--ink); font-size: 1.15rem; cursor: pointer;
+}
+.me-genres { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.me-g {
+  padding: 5px 12px; border: 2.5px solid var(--ink); border-radius: 999px; background: #fff;
+  font-family: var(--pop); font-weight: 800; font-size: 0.85rem; color: var(--ink); cursor: pointer;
+}
+.me-g.on { background: var(--gc, #e9e3d8); box-shadow: 2px 3px 0 var(--ink); }
+.me-g.on::before { content: "✓ "; }
+#meText { margin-top: 0; min-height: 8.5em; }
+.me-date { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-family: var(--pop); font-weight: 800; font-size: 0.82rem; color: #6a635b; }
+.me-date input { flex: 1; min-width: 0; width: auto; margin-top: 0; padding: 6px 10px; font-family: var(--pop); }
+.me-cal {
+  display: block; margin: 12px auto 0; padding: 7px 16px; border: 2.5px solid var(--ink); border-radius: 999px;
+  background: var(--mint); box-shadow: 2px 3px 0 var(--ink); font-family: var(--pop); font-weight: 800; font-size: 0.88rem; color: var(--ink); cursor: pointer;
+}
+.me-cal[hidden] { display: none; }
 
 /* ---------- ToDo ---------- */
 .todo-head { display: flex; align-items: center; justify-content: center; position: relative; margin-bottom: 8px; }
@@ -1275,3 +1358,780 @@ html.mvp-quake #app { animation: mvp-quake 2.8s linear both; }
 @keyframes mvx-spring { 0% { opacity: 0; transform: scaleY(0); } 6% { opacity: 1; transform: scaleY(1); } 18% { transform: scaleY(0.35); } 24% { transform: scaleY(1.7); } 30% { transform: scaleY(0.85); } 36%, 74% { transform: scaleY(1); } 78% { transform: scaleY(0.4); } 85% { transform: scaleY(1.25); } 91% { opacity: 1; transform: scaleY(1); } 100% { opacity: 0; transform: scaleY(1); } }
 
 @media (prefers-reduced-motion: reduce) { .cat-btn.mv, .cat-btn.mv > .cat, .mv-extra, .mv-extra *, .stage[class*="mvs-"], .stage[class*="mvs-"] *, html[class*="mvp-"] #app { animation: none !important; } }
+
+/* ===== 第3弾 66種 ===== */
+/* 共通 */
+.mvx-fixed.mvx-backdrop { inset: 0; z-index: -1; background: var(--dk); opacity: 0; animation: mvx-dark var(--mvd, 2s) ease-in-out both; }
+.mvx-smoke { width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; background: #e4e4ea; border: 2px solid #2b2b2b; opacity: 0; z-index: 2; animation: mvx-smoke 0.9s ease-out both; }
+@keyframes mvx-smoke { 0% { opacity: 0; transform: scale(0.3); } 15% { opacity: 0.9; } 100% { opacity: 0; transform: translateY(16px) scale(var(--s)); } }
+@keyframes mvx-shake { 0%, 100% { transform: translateX(-2%); } 50% { transform: translateX(2%); } }
+.mvx-label { z-index: 6; font-family: var(--pop); font-weight: 900; font-size: 15px; line-height: 1.3; color: #fff; background: #2b2b2b; padding: 2px 8px; border-radius: 6px; opacity: 0; animation: mvx-label var(--mvd) steps(1, end) both; }
+@keyframes mvx-label { 0%, 4% { opacity: 0; } 5%, 92% { opacity: 1; } 100% { opacity: 0; } }
+
+/* 火山 */
+.cat-btn.mv-volcano { animation-name: mv-volcano; transform-origin: 50% 60%; }
+.stage.mvs-volcano { animation: mvs-rumble 0.4s linear calc(var(--mvd) * 0.08) 3, mvs-jolt 0.6s ease-out calc(var(--mvd) * 0.33), mvs-jolt 0.5s ease-out calc(var(--mvd) * 0.84); }
+@keyframes mv-volcano {
+  0%, 8% { transform: translateY(0) rotate(0) scale(1, 1); }
+  25% { transform: translateY(-80%) rotate(0) scale(1, 1); }
+  29% { transform: translateY(-78%) rotate(-6deg) scale(1.1, 0.9); }
+  33% { transform: translateY(-76%) rotate(6deg) scale(1.15, 0.85); animation-timing-function: cubic-bezier(.2,.8,.3,1); }
+  50% { transform: translateY(-430%) rotate(540deg) scale(0.8, 0.8); }
+  62% { transform: translateY(-430%) rotate(720deg) scale(0.8, 0.8); animation-timing-function: ease-in; }
+  84% { transform: translateY(0) rotate(1080deg) scale(1.25, 0.75); }
+  91% { transform: translateY(-10%) rotate(1080deg) scale(0.95, 1.05); }
+  100% { transform: translateY(0) rotate(1080deg) scale(1, 1); }
+}
+.mvx-volcano { z-index: 2; transform-origin: 50% 100%; transform: translateY(105%); animation: mvx-volcano var(--mvd) ease-out both; }
+.mvx-volcano svg { height: 100%; }
+@keyframes mvx-volcano { 0%, 8% { transform: translateY(105%) scale(1, 1); } 25% { transform: translateY(0) scale(1, 1); } 30% { transform: translateY(0) scale(1.06, 0.94); } 34% { transform: translateY(0) scale(0.96, 1.08); } 40%, 70% { transform: translateY(0) scale(1, 1); } 84%, 100% { transform: translateY(105%) scale(1, 1); } }
+.mvx-lava { width: 56px; z-index: 2; border: 3px solid #2b2b2b; border-bottom: 0; border-radius: 28px 28px 0 0; background: linear-gradient(to top, #ff4f2b, #ffa95e 60%, #ffd94a); transform-origin: 50% 100%; transform: scaleY(0); animation: mvx-lava var(--mvd) ease-out both; }
+@keyframes mvx-lava { 0%, 33% { transform: scale(1, 0); } 38% { transform: scale(1.25, 1); } 44% { transform: scale(0.9, 1); } 50% { transform: scale(1.15, 1); } 58% { transform: scale(0.9, 1); } 68%, 100% { transform: scale(0.6, 0); } }
+.mvx-ember { width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; border: 2px solid #2b2b2b; z-index: 4; opacity: 0; animation: mvx-ember 1.1s cubic-bezier(.2,.6,.4,1) both; }
+@keyframes mvx-ember { 0% { opacity: 1; transform: translate(0, 0) scale(0.6); } 50% { opacity: 1; transform: translate(calc(var(--ex) * 0.6), var(--ey)) scale(1.2); } 100% { opacity: 0; transform: translate(var(--ex), calc(var(--ey) * -0.3)) scale(0.8); } }
+
+/* サーフィン */
+.cat-btn.mv-surf { animation-name: mv-surf; transform-origin: 50% 90%; }
+@keyframes mv-surf {
+  0%, 8% { transform: translate(0, 0) rotate(0); }
+  18% { transform: translate(0, var(--sy)) rotate(-12deg); }
+  30% { transform: translate(-45%, calc(var(--sy) - 12%)) rotate(-18deg); }
+  42% { transform: translate(35%, calc(var(--sy) + 4%)) rotate(14deg); }
+  50% { transform: translate(10%, calc(var(--sy) - 45%)) rotate(-180deg); }
+  58% { transform: translate(-20%, var(--sy)) rotate(-360deg); }
+  70% { transform: translate(40%, calc(var(--sy) - 6%)) rotate(-345deg); }
+  80% { transform: translate(0, var(--sy)) rotate(-372deg); }
+  90% { transform: translate(0, 0) rotate(-360deg); }
+  100% { transform: translate(0, 0) rotate(-360deg); }
+}
+.mvx-sea { left: 0; z-index: 2; transform: translateY(100%); animation: mvx-sea var(--mvd) ease-in-out both; }
+.mvx-sea svg { height: 100%; animation: mvx-seaw 0.9s linear infinite; }
+@keyframes mvx-seaw { to { transform: translateX(-50%); } }
+@keyframes mvx-sea { 0%, 6% { transform: translateY(100%); } 18%, 84% { transform: translateY(0); } 94%, 100% { transform: translateY(100%); } }
+.mvx-curl { left: 0; z-index: 1; transform: translateX(-110%); animation: mvx-curl var(--mvd) ease-in-out both; }
+@keyframes mvx-curl { 0%, 10% { transform: translate(-110%, 30%); } 26% { transform: translate(-40%, 0); } 64% { transform: translate(var(--cw), 0); } 100% { transform: translate(var(--cw), 0); } }
+.mvx-board { left: 4%; width: 92%; bottom: -5%; z-index: 2; opacity: 0; animation: mvx-board var(--mvd) linear both; }
+@keyframes mvx-board { 0%, 12% { opacity: 0; transform: scale(0.4); } 16%, 86% { opacity: 1; transform: scale(1); } 90%, 100% { opacity: 0; transform: scale(1); } }
+
+/* 流れ星 */
+.cat-btn.mv-meteor { animation-name: mv-meteor; transform-origin: 50% 100%; }
+@keyframes mv-meteor { 0%, 100% { transform: none; } 20% { transform: translateY(-4%) rotate(-6deg); } 50% { transform: translateY(-8%) rotate(5deg); } 75% { transform: translateY(-3%) rotate(-4deg); } }
+.mvx-meteor { width: 0; height: 0; z-index: 41; opacity: 0; animation: mvx-meteor 0.7s linear both; }
+.mvx-meteor i { position: absolute; left: 0; top: -2px; width: var(--len); height: 4px; border-radius: 4px; transform-origin: 0 50%; transform: rotate(-35deg); background: linear-gradient(to right, var(--mc), rgba(255, 255, 255, 0)); }
+.mvx-meteor i::before { content: ""; position: absolute; left: -5px; top: -3px; width: 10px; height: 10px; border-radius: 50%; background: #fff; box-shadow: 0 0 8px 3px var(--mc); }
+.mvx-meteor.big i { height: 7px; top: -3.5px; }
+.mvx-meteor.big i::before { width: 18px; height: 18px; left: -9px; top: -5.5px; border: 2.5px solid #2b2b2b; background: #fff6c2; }
+@keyframes mvx-meteor { 0% { opacity: 0; transform: translate(0, 0); } 10% { opacity: 1; } 80% { opacity: 1; } 100% { opacity: 0; transform: translate(-560px, 392px); } }
+
+/* 龍 */
+.cat-btn.mv-dragon { animation-name: mv-dragon; }
+@keyframes mv-dragon { 0% { transform: translateY(0) scale(1, 1); } 4% { transform: translateY(6%) scale(1.12, 0.88); } 12% { transform: translateY(-380%) scale(0.9, 1.1); } 12.1%, 80% { transform: translateY(-380%) scale(0, 0); } 80.1% { transform: translateY(-380%) scale(1, 1); animation-timing-function: ease-in; } 90% { transform: translateY(0) scale(1.2, 0.8); } 95% { transform: translateY(-6%) scale(0.96, 1.04); } 100% { transform: translateY(0) scale(1, 1); } }
+.mvx-dseg, .mvx-dhead { left: 0; top: 0; offset-rotate: auto; offset-distance: 0%; animation: mvx-dpath 2s linear both; }
+.mvx-dseg { border-radius: 50%; border: 3.5px solid #2b2b2b; z-index: 2; }
+.mvx-dseg::before { content: ""; position: absolute; inset: 20% 22% 34% 22%; border-bottom: 3px solid rgba(43, 43, 43, 0.45); border-radius: 50%; }
+.mvx-dseg::after { content: ""; position: absolute; left: 26%; top: -12px; border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 13px solid #ff6b6b; }
+.mvx-dseg.tail::after { top: -4px; left: -16px; border-bottom: 8px solid transparent; border-top: 8px solid transparent; border-left: 0; border-right: 22px solid #ffd94a; }
+.mvx-dhead { width: 104px; z-index: 3; }
+.mvx-rider { position: absolute; left: 6px; bottom: 58%; width: 72px; }
+@keyframes mvx-dpath { from { offset-distance: 0%; } to { offset-distance: 100%; } }
+.mvx-cloudlet { width: 70px; height: 28px; border-radius: 30px; background: #fff; border: 3px solid #2b2b2b; z-index: 1; opacity: 0; animation: mvx-cloudlet 1.6s ease-in-out both; }
+.mvx-cloudlet::before { content: ""; position: absolute; left: 14px; top: -17px; width: 32px; height: 30px; border-radius: 50%; background: #fff; border: 3px solid #2b2b2b; border-bottom-color: transparent; border-left-color: transparent; transform: rotate(-45deg); }
+@keyframes mvx-cloudlet { 0% { opacity: 0; transform: translateX(40px) scale(0.6); } 20%, 80% { opacity: 0.95; } 100% { opacity: 0; transform: translateX(-60px) scale(1); } }
+
+/* 怪獣 */
+.cat-btn.mv-kaiju { animation-name: mv-kaiju; transform-origin: 50% 100%; }
+@keyframes mv-kaiju {
+  0% { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  6% { transform: translate(0, -6%) rotate(0) scale(1.05, 1.05); }
+  18% { transform: translate(0, 0) rotate(0) scale(1.9, 1.9); }
+  20% { transform: translate(0, 0) rotate(0) scale(2, 1.8); }
+  24% { transform: translate(0, 0) rotate(0) scale(1.9, 1.9); }
+  28% { transform: translate(-8%, -5%) rotate(-7deg) scale(1.9, 1.9); animation-timing-function: ease-in; }
+  32% { transform: translate(-12%, 0) rotate(-3deg) scale(1.95, 1.85); }
+  40% { transform: translate(0, -5%) rotate(4deg) scale(1.9, 1.9); animation-timing-function: ease-in; }
+  47% { transform: translate(12%, 0) rotate(3deg) scale(1.95, 1.85); }
+  55% { transform: translate(0, -5%) rotate(-4deg) scale(1.9, 1.9); animation-timing-function: ease-in; }
+  62% { transform: translate(-10%, 0) rotate(-3deg) scale(1.95, 1.85); }
+  70% { transform: translate(0, -5%) rotate(5deg) scale(1.9, 1.9); animation-timing-function: ease-in; }
+  77% { transform: translate(8%, 0) rotate(2deg) scale(1.95, 1.85); }
+  86% { transform: translate(0, 0) rotate(0) scale(1.9, 1.9); }
+  94% { transform: translate(0, 0) rotate(0) scale(0.92, 1.06); }
+  100% { transform: translate(0, 0) rotate(0) scale(1, 1); }
+}
+html.mvp-kaiju #app { animation: mvp-kaiju var(--mvd) linear both; }
+@keyframes mvp-kaiju { 0%, 31%, 37%, 46%, 52%, 61%, 67%, 76%, 82%, 100% { transform: none; } 32%, 47%, 62%, 77% { transform: translate(-6px, 6px) rotate(-0.4deg); } 33.5%, 48.5%, 63.5%, 78.5% { transform: translate(-1px, -5px) rotate(0.3deg); } 35%, 50%, 65%, 80% { transform: translate(-3px, 3px); } }
+.mvx-city { left: 0; z-index: 4; transform-origin: 50% 100%; transform: scaleY(0); animation: mvx-city var(--mvd) ease-out both; }
+.mvx-city svg { height: 100%; }
+@keyframes mvx-city { 0%, 4% { transform: scaleY(0) skewX(0); } 12% { transform: scaleY(1.1) skewX(0); } 16% { transform: scaleY(1) skewX(0); } 33%, 48%, 63%, 78% { transform: scaleY(0.9) skewX(4deg); } 36%, 51%, 66%, 81% { transform: scaleY(1) skewX(-2deg); } 40%, 55%, 70%, 88% { transform: scaleY(1) skewX(0); } 96%, 100% { transform: scaleY(0) skewX(0); } }
+.mvx-tinyword { font-family: var(--pop); font-weight: 900; font-size: 12px; color: #fff; -webkit-text-stroke: 2.5px #2b2b2b; paint-order: stroke fill; z-index: 5; opacity: 0; animation: mvx-tinyword 0.9s ease-out both; }
+@keyframes mvx-tinyword { 0% { opacity: 0; transform: translateY(6px); } 20%, 70% { opacity: 1; transform: translateY(-4px); } 100% { opacity: 0; transform: translateY(-14px); } }
+
+/* ワープ空間 */
+.cat-btn.mv-hyperspace { animation-name: mv-hyper; }
+@keyframes mv-hyper { 0% { transform: none; opacity: 1; } 8% { transform: translateY(8%) scale(1.12, 0.86); opacity: 1; } 12% { transform: scale(0.9, 1.12); opacity: 1; } 13%, 76% { opacity: 0; transform: scale(0.9); } 77% { opacity: 1; transform: scale(3.2); animation-timing-function: cubic-bezier(.2,.8,.3,1); } 88% { opacity: 1; transform: scale(0.92); } 94% { opacity: 1; transform: scale(1.04); } 100% { opacity: 1; transform: none; } }
+.mvx-hyper { inset: 0; overflow: hidden; background: radial-gradient(circle at 50% 50%, #3b2f8a 0, #141033 45%, #05030f 100%); opacity: 0; animation: mvx-hyper var(--mvd) ease-in-out both; }
+@keyframes mvx-hyper { 0%, 10% { opacity: 0; } 16%, 74% { opacity: 1; } 84%, 100% { opacity: 0; } }
+.mvx-hyper b { position: absolute; left: 50%; top: 50%; width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 50%; background: #fff; box-shadow: 0 0 30px 16px #c9a7ff; animation: mvx-hycore var(--mvd) ease-in both; }
+@keyframes mvx-hycore { 0%, 30% { transform: scale(0.2); } 60% { transform: scale(1.2); } 64%, 100% { transform: scale(8); } }
+.mvx-hyper i { position: absolute; left: 50%; top: 50%; width: var(--len); height: 3px; margin-top: -1.5px; border-radius: 3px; transform-origin: 0 50%; animation: mvx-hs 0.5s linear infinite; }
+@keyframes mvx-hs { 0% { opacity: 0; transform: rotate(var(--a)) translateX(var(--r0)) scaleX(0.2); } 20% { opacity: 1; } 100% { opacity: 1; transform: rotate(var(--a)) translateX(calc(var(--r0) + 70vmax)) scaleX(1.6); } }
+.mvx-hycat { opacity: 0; animation: mvx-hycat var(--mvd) ease-in both; }
+@keyframes mvx-hycat { 0%, 12% { opacity: 0; transform: translate(0, 0) scale(1) rotate(0); } 13% { opacity: 1; transform: translate(0, 0) scale(1) rotate(0); } 60% { opacity: 1; transform: translate(var(--tx), var(--ty)) scale(0.08) rotate(720deg); } 62%, 100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(0) rotate(720deg); } }
+
+/* ステージライト */
+.cat-btn.mv-stagelight { animation-name: mv-stagelight; transform-origin: 50% 100%; }
+@keyframes mv-stagelight { 0%, 100% { transform: none; } 10%, 30%, 50%, 70% { transform: translateY(-14%) rotate(-10deg) scale(0.96, 1.05); } 20%, 40%, 60% { transform: translateY(0) rotate(10deg) scale(1.06, 0.94); } 80% { transform: translateY(-24%) rotate(0) scale(1, 1); } 88% { transform: translateY(0) rotate(0) scale(1.1, 0.9); } }
+.mvx-spotc { top: 0; z-index: 2; background: linear-gradient(rgba(255, 246, 194, 0.9), rgba(255, 246, 194, 0.25)); clip-path: polygon(42% 0, 58% 0, 100% 100%, 0 100%); opacity: 0; animation: mvx-spotc var(--mvd) ease-in-out both; }
+.mvx-floor { width: 220px; height: 44px; border-radius: 50%; background: radial-gradient(rgba(255, 246, 194, 0.9), rgba(255, 246, 194, 0) 70%); z-index: 2; opacity: 0; animation: mvx-spotc var(--mvd) ease-in-out both; }
+@keyframes mvx-spotc { 0%, 8% { opacity: 0; } 12% { opacity: 1; } 14% { opacity: 0.3; } 16%, 86% { opacity: 1; } 100% { opacity: 0; } }
+.mvx-cbeam { left: -10px; bottom: 0; width: 80px; margin-left: -40px; z-index: 2; mix-blend-mode: screen; background: linear-gradient(to top, var(--bc), rgba(255, 255, 255, 0)); clip-path: polygon(42% 100%, 58% 100%, 100% 0, 0 0); transform-origin: 50% 100%; opacity: 0; animation: mvx-cbeamin var(--mvd) linear both, mvx-cbeam 1.6s ease-in-out infinite alternate; }
+.mvx-cbeam.r { left: auto; right: -50px; animation-name: mvx-cbeamin, mvx-cbeamr; }
+@keyframes mvx-cbeamin { 0%, 8% { opacity: 0; } 16%, 86% { opacity: 0.8; } 100% { opacity: 0; } }
+@keyframes mvx-cbeam { from { transform: rotate(40deg); } to { transform: rotate(-6deg); } }
+@keyframes mvx-cbeamr { from { transform: rotate(-40deg); } to { transform: rotate(6deg); } }
+.mvx-crowd { left: 0; bottom: 0; z-index: 5; transform: translateY(100%); animation: mvx-crowd var(--mvd) ease-out both; }
+.mvx-crowd svg { height: 100%; }
+@keyframes mvx-crowd { 0%, 8% { transform: translateY(100%); } 16%, 88% { transform: translateY(0); } 96%, 100% { transform: translateY(100%); } }
+.mvx-stick { animation: mvx-stick 0.5s ease-in-out infinite alternate; }
+@keyframes mvx-stick { from { transform: rotate(-25deg); } to { transform: rotate(25deg); } }
+
+/* 大砲 */
+.cat-btn.mv-cannon { animation-name: mv-cannon; transform-origin: 50% 50%; }
+@keyframes mv-cannon {
+  0% { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  6% { transform: translate(0, -20%) rotate(0) scale(1, 1); }
+  16% { transform: translate(var(--mx), var(--my)) rotate(-200deg) scale(0.35, 0.35); }
+  17%, 23% { transform: translate(var(--mx), var(--my)) rotate(-200deg) scale(0, 0); }
+  24% { transform: translate(var(--mx), var(--my)) rotate(0) scale(0.6, 0.6); animation-timing-function: ease-out; }
+  34% { transform: translate(60%, -190%) rotate(540deg) scale(0.6, 0.6); animation-timing-function: ease-in; }
+  46% { transform: translate(230%, -60%) rotate(1080deg) scale(0.6, 0.6); }
+  46.1%, 56% { transform: translate(-230%, -260%) rotate(0) scale(0.6, 0.6); animation-timing-function: ease-in; }
+  74% { transform: translate(0, 0) rotate(720deg) scale(1.15, 0.85); }
+  82% { transform: translate(0, -12%) rotate(720deg) scale(0.95, 1.05); }
+  90%, 100% { transform: translate(0, 0) rotate(720deg) scale(1, 1); }
+}
+.mvx-cannon { z-index: 4; transform-origin: 30% 90%; animation: mvx-cannon var(--mvd) ease-out both; }
+@keyframes mvx-cannon { 0% { transform: scale(0); } 6% { transform: scale(1.1); } 9%, 23% { transform: scale(1); } 24% { transform: translateX(-14px) rotate(-6deg) scale(1.05, 0.95); } 30%, 86% { transform: none; } 94%, 100% { transform: scale(0); } }
+
+/* トランポリン */
+.cat-btn.mv-trampoline { animation-name: mv-tramp; transform-origin: 50% 70%; }
+@keyframes mv-tramp {
+  0% { transform: translateY(0) rotate(0) scale(1, 1); }
+  6% { transform: translateY(-40%) rotate(0) scale(1, 1); animation-timing-function: ease-in; }
+  10% { transform: translateY(-20%) rotate(0) scale(1.15, 0.85); animation-timing-function: ease-out; }
+  16% { transform: translateY(-100%) rotate(0) scale(0.95, 1.08); animation-timing-function: ease-in; }
+  22% { transform: translateY(-20%) rotate(0) scale(1.2, 0.8); animation-timing-function: ease-out; }
+  33% { transform: translateY(-130%) rotate(0) scale(0.95, 1.1); animation-timing-function: ease-in; }
+  44% { transform: translateY(-20%) rotate(0) scale(1.25, 0.75); animation-timing-function: ease-out; }
+  56% { transform: translateY(-165%) rotate(0) scale(0.92, 1.1); animation-timing-function: ease-in; }
+  68% { transform: translateY(-20%) rotate(0) scale(1.3, 0.7); animation-timing-function: ease-out; }
+  78% { transform: translateY(-150%) rotate(-200deg) scale(1, 1); animation-timing-function: ease-in; }
+  88% { transform: translateY(0) rotate(-360deg) scale(1.2, 0.8); }
+  94% { transform: translateY(-6%) rotate(-360deg) scale(0.96, 1.04); }
+  100% { transform: translateY(0) rotate(-360deg) scale(1, 1); }
+}
+.mvx-tramp { z-index: 2; transform-origin: 50% 100%; animation: mvx-tramp var(--mvd) linear both; }
+.mvx-tramp svg { height: 100%; }
+@keyframes mvx-tramp { 0% { transform: scale(0, 0); } 5% { transform: scale(1, 1); } 10%, 22%, 44%, 68% { transform: scale(1.04, 0.8); } 13%, 26%, 48%, 72% { transform: scale(1, 1.08); } 16%, 30%, 52%, 76%, 80% { transform: scale(1, 1); } 86%, 100% { transform: scale(0, 0); } }
+
+/* ジェットパック */
+.cat-btn.mv-jetpack { animation-name: mv-jet; animation-timing-function: linear; transform-origin: 50% 50%; }
+@keyframes mv-jet {
+  0% { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  8% { transform: translate(0, -15%) rotate(0) scale(1, 1); }
+  20% { transform: translate(-75%, -66%) rotate(-18deg) scale(1, 1); }
+  32% { transform: translate(60%, -90%) rotate(20deg) scale(1, 1); }
+  44% { transform: translate(85%, -30%) rotate(8deg) scale(1, 1); }
+  56% { transform: translate(-80%, -54%) rotate(-22deg) scale(1, 1); }
+  68% { transform: translate(-20%, -90%) rotate(10deg) scale(1, 1); }
+  80% { transform: translate(40%, -48%) rotate(14deg) scale(1, 1); }
+  90% { transform: translate(0, 0) rotate(0) scale(1.15, 0.85); }
+  95% { transform: translate(0, -6%) rotate(0) scale(0.96, 1.04); }
+  100% { transform: translate(0, 0) rotate(0) scale(1, 1); }
+}
+.mvx-pack { left: 18%; width: 64%; top: 44%; z-index: -1; }
+.mvx-jflame { transform-box: fill-box; transform-origin: 50% 0; animation: mvx-flame 0.1s linear infinite alternate; }
+
+/* オーロラ */
+.cat-btn.mv-aurora { animation-name: mv-aurora; transform-origin: 50% 100%; }
+@keyframes mv-aurora { 0%, 100% { transform: none; } 30% { transform: translateY(-5%) rotate(-5deg); } 60% { transform: translateY(-5%) rotate(5deg); } 85% { transform: translateY(-2%); } }
+.mvx-aur { z-index: 1; mix-blend-mode: screen; opacity: 0; transform-origin: 50% 0; animation: mvx-aurin var(--mvd) ease-in-out both, mvx-aurw 1.6s ease-in-out infinite alternate; }
+.mvx-aur svg { height: 100%; }
+@keyframes mvx-aurin { 0% { opacity: 0; } 25%, 82% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes mvx-aurw { 0% { transform: translateX(-8%) skewX(-12deg) scaleY(0.85); } 50% { transform: translateX(4%) skewX(10deg) scaleY(1.2); } 100% { transform: translateX(10%) skewX(-4deg) scaleY(1); } }
+.mvx-fixed.mvx-aurpage { inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(109, 255, 192, 0.55), rgba(201, 167, 255, 0.45) 35%, rgba(11, 20, 51, 0) 70%); opacity: 0; animation: mvx-aurin var(--mvd) ease-in-out both; }
+
+/* 吹雪 */
+.cat-btn.mv-snowstorm { animation-name: mv-snow; }
+.cat-btn.mv-snowstorm > .cat { animation: mvx-snowhide var(--mvd) linear both; }
+@keyframes mvx-snowhide { 0%, 51% { opacity: 1; } 52%, 83% { opacity: 0; } 84%, 100% { opacity: 1; } }
+@keyframes mv-snow { 0%, 46%, 80%, 100% { transform: none; } 10%, 14%, 18%, 22%, 26%, 30%, 34%, 38%, 42% { transform: translateX(-3%); } 12%, 16%, 20%, 24%, 28%, 32%, 36%, 40%, 44% { transform: translateX(3%); } 84% { transform: scale(1.1, 0.9); } 90% { transform: translateY(-10%); } }
+.mvx-flake { border-radius: 50%; background: #fff; border: 1.5px solid #9ab0c8; z-index: 41; opacity: 0; animation: mvx-flake 0.6s linear both; }
+@keyframes mvx-flake { 0% { opacity: 0; transform: translate(0, 0); } 10%, 85% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--fx), var(--fy)); } }
+.mvx-fixed.mvx-whiteout { inset: 0; z-index: 40; background: #f4f9ff; opacity: 0; animation: mvx-whiteout var(--mvd) ease-in-out both; }
+@keyframes mvx-whiteout { 0%, 20% { opacity: 0; } 46%, 56% { opacity: 0.95; } 72%, 100% { opacity: 0; } }
+.mvx-snowman { left: 0; top: 0; width: 100%; z-index: 2; opacity: 0; transform-origin: 50% 100%; animation: mvx-snowman var(--mvd) linear both; }
+@keyframes mvx-snowman { 0%, 51% { opacity: 0; transform: none; } 52%, 70% { opacity: 1; transform: none; } 74% { opacity: 1; transform: rotate(-6deg); } 78% { opacity: 1; transform: rotate(6deg); } 82% { opacity: 1; transform: rotate(0); } 84%, 100% { opacity: 0; transform: scale(1.3); } }
+
+/* 桜吹雪 */
+.cat-btn.mv-sakura { animation-name: mv-sakura; transform-origin: 50% 100%; }
+@keyframes mv-sakura { 0%, 100% { transform: none; } 20%, 60% { transform: rotate(-6deg) translateY(-4%); } 40%, 80% { transform: rotate(6deg) translateY(-4%); } }
+.mvx-branch { z-index: 1; transform-origin: 0 0; animation: mvx-branch var(--mvd) ease-out both; }
+@keyframes mvx-branch { 0% { transform: translateX(-105%) rotate(-10deg); } 14% { transform: none; } 50% { transform: rotate(2deg); } 86% { transform: none; } 100% { transform: translateX(-105%); } }
+.mvx-petal { z-index: 41; opacity: 0; animation: mvx-petal 1.4s ease-in-out both; }
+.mvx-petal i { display: block; width: 100%; height: 100%; background: #ffc4d6; border: 1.5px solid #2b2b2b; border-radius: 100% 0 100% 15%; animation: mvx-petflip 0.6s linear infinite alternate; }
+.mvx-petal:nth-child(3n) i { background: #ffe0ea; }
+.mvx-petal:nth-child(5n) i { background: #ff9fbb; }
+@keyframes mvx-petal { 0% { opacity: 0; transform: translate(0, 0) rotate(0); } 10%, 85% { opacity: 1; } 50% { transform: translate(calc(var(--px) * 0.5), calc(var(--py) * 0.5 - 40px)) rotate(calc(var(--pr) * 0.5)); } 100% { opacity: 0; transform: translate(var(--px), var(--py)) rotate(var(--pr)); } }
+@keyframes mvx-petflip { from { transform: scaleY(1); } to { transform: scaleY(0.2) skewX(20deg); } }
+
+/* ワープホール */
+.cat-btn.mv-portal { animation-name: mv-portal; }
+@keyframes mv-portal {
+  0%, 11% { transform: translateY(0) scale(1, 1); clip-path: inset(-60% -60% -60% -60%); }
+  12% { transform: translateY(0) scale(1, 1); clip-path: inset(-60% -60% 5% -60%); animation-timing-function: ease-in; }
+  30% { transform: translateY(105%) scale(1, 1); clip-path: inset(-60% -60% 110% -60%); }
+  30.1%, 50% { transform: translateY(var(--pt)) scale(1, 1); clip-path: inset(var(--pc) -60% -60% -60%); animation-timing-function: ease-in; }
+  64% { transform: translateY(0) scale(1, 1); clip-path: inset(var(--pc2) -60% -60% -60%); }
+  68% { transform: translateY(0) scale(1.2, 0.8); clip-path: inset(-60% -60% -60% -60%); }
+  76% { transform: translateY(-8%) scale(0.96, 1.04); clip-path: inset(-60% -60% -60% -60%); }
+  84%, 100% { transform: translateY(0) scale(1, 1); clip-path: inset(-60% -60% -60% -60%); }
+}
+.mvx-portal { width: var(--pw); height: 34px; margin-left: calc(var(--pw) / -2); margin-top: -17px; z-index: 4; border-radius: 50%; border: 4px solid #2b2b2b; transform: scale(0); animation: mvx-portala var(--mvd) ease-out both; }
+.mvx-portal.a { background: radial-gradient(ellipse at 50% 50%, #0d1433 0 40%, #4a5aa8 62%, #8fd0ff 82%); box-shadow: 0 0 0 5px #8fd0ff, 0 0 0 7px #2b2b2b, 0 0 22px 10px rgba(143, 208, 255, 0.7); }
+.mvx-portal.b { background: radial-gradient(ellipse at 50% 50%, #33140d 0 40%, #a85a2a 62%, #ffa95e 82%); box-shadow: 0 0 0 5px #ffa95e, 0 0 0 7px #2b2b2b, 0 0 22px 10px rgba(255, 169, 94, 0.7); animation-name: mvx-portalb; }
+.mvx-portal i { position: absolute; inset: 7px 18%; border-radius: 50%; border: 3px dashed rgba(255, 255, 255, 0.8); animation: mvx-ppulse 0.3s ease-in-out infinite alternate; }
+@keyframes mvx-ppulse { from { transform: scale(0.7); } to { transform: scale(1.05); } }
+@keyframes mvx-portala { 0%, 6% { transform: scale(0); } 12% { transform: scale(1.15); } 15%, 32% { transform: scale(1); } 40%, 100% { transform: scale(0); } }
+@keyframes mvx-portalb { 0%, 40% { transform: scale(0); } 47% { transform: scale(1.15); } 50%, 64% { transform: scale(1); } 72%, 100% { transform: scale(0); } }
+
+/* バグ */
+.cat-btn.mv-glitch { animation-name: mv-glitch; animation-timing-function: steps(1, end); }
+@keyframes mv-glitch { 0% { transform: none; } 8% { transform: translateX(-12%) skewX(20deg); } 12% { transform: translateX(10%) scaleY(0.8); } 16% { transform: none; } 26% { transform: translate(6%, -10%) skewX(-30deg) scaleX(1.2); } 30% { transform: scaleX(-1); } 36% { transform: translateX(-20%); } 40% { transform: none; } 52% { transform: translateY(-14%) skewY(8deg); } 56% { transform: translateX(18%) scale(1.2, 0.6); } 60% { transform: scaleX(-1) translateX(10%); } 66% { transform: none; } 76% { transform: skewX(40deg); } 80% { transform: translateX(-8%) scaleY(1.3); } 84%, 100% { transform: none; } }
+html.mvp-glitch #app { animation: mvp-glitch var(--mvd) steps(1, end) both; }
+@keyframes mvp-glitch { 0% { transform: none; filter: none; } 6% { transform: translateX(-6px); filter: hue-rotate(90deg) saturate(2); } 9% { transform: none; filter: none; } 18% { transform: translateX(-9px); filter: invert(1) hue-rotate(180deg); } 20% { transform: translateY(-4px); filter: none; } 24% { transform: none; } 34% { filter: hue-rotate(200deg) contrast(1.6); } 38% { transform: translateX(-10px) scaleY(0.98); filter: none; } 41% { transform: none; } 50% { transform: translateY(5px); filter: saturate(4) hue-rotate(-60deg); } 53% { transform: none; filter: none; } 62% { filter: invert(1); } 63% { filter: none; transform: translateX(-6px); } 66% { transform: none; } 74% { transform: translateY(6px); filter: hue-rotate(120deg); } 78%, 100% { transform: none; filter: none; } }
+.mvx-rgb { left: 0; top: 0; width: 100%; z-index: -1; opacity: 0; animation: mvx-rgb 0.3s steps(2, end) infinite; }
+.mvx-rgb.r { --gx: -7px; }
+.mvx-rgb.c { --gx: 7px; animation-delay: -0.15s; }
+.mvx-rgb.r .b, .mvx-rgb.r .l { fill: #ff2bd6; stroke: #ff2bd6; }
+.mvx-rgb.c .b, .mvx-rgb.c .l { fill: #00f0ff; stroke: #00f0ff; }
+@keyframes mvx-rgb { 0% { opacity: 0.85; transform: translate(var(--gx), 0); } 50% { opacity: 0.6; transform: translate(calc(var(--gx) * -0.6), 3px); } 100% { opacity: 0.85; transform: translate(var(--gx), -2px); } }
+.mvx-gband { left: 0; right: 0; z-index: 41; mix-blend-mode: difference; opacity: 0; animation: mvx-gband 0.4s steps(3, end) infinite, mvx-gshow var(--mvd) steps(1, end) both; }
+@keyframes mvx-gband { 0% { transform: translateX(-20px) scaleY(1); } 33% { transform: translateX(30px) scaleY(0.4); } 66% { transform: translateX(-8px) scaleY(1.4); } 100% { transform: translateX(14px) scaleY(1); } }
+@keyframes mvx-gshow { 0% { opacity: 0; } 5% { opacity: 0.9; } 10% { opacity: 0; } 18% { opacity: 0.9; } 24% { opacity: 0; } 34% { opacity: 0.9; } 41% { opacity: 0; } 50% { opacity: 0.9; } 54% { opacity: 0; } 62% { opacity: 0.9; } 66% { opacity: 0; } 74% { opacity: 0.9; } 80%, 100% { opacity: 0; } }
+.mvx-fixed.mvx-scan { inset: 0; z-index: 41; background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0 2px, transparent 2px 5px); opacity: 0; animation: mvx-scan var(--mvd) steps(1, end) both; }
+@keyframes mvx-scan { 0%, 4% { opacity: 0; } 5%, 80% { opacity: 1; } 81%, 100% { opacity: 0; } }
+.mvx-gblock { z-index: 5; opacity: 0; animation: mvx-gblock 0.5s steps(4, end) both; }
+@keyframes mvx-gblock { 0% { opacity: 1; transform: translateX(0); } 25% { opacity: 1; transform: translateX(14px); } 50% { opacity: 1; transform: translateX(-10px) scaleX(2); } 75% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+
+/* テレビを消す */
+.cat-btn.mv-tvoff { animation-name: mv-tvoffcat; transform-origin: 50% 100%; }
+@keyframes mv-tvoffcat { 0%, 78% { transform: none; } 86% { transform: translateY(-14%) scale(0.95, 1.06); } 92% { transform: scale(1.06, 0.94); } 100% { transform: none; } }
+html.mvp-tvoff #app { transform-origin: 50% 50vh; animation: mvp-tvoff var(--mvd) ease-in both; }
+@keyframes mvp-tvoff { 0%, 8% { transform: scale(1, 1); filter: none; } 18% { transform: scale(1, 0.004); filter: brightness(4); } 24% { transform: scale(0.003, 0.004); filter: brightness(4); } 25%, 61% { transform: scale(0, 0); filter: brightness(4); } 62% { transform: scale(0.003, 0.004); filter: brightness(4); } 67% { transform: scale(1, 0.004); filter: brightness(4); } 74% { transform: scale(1, 1.03); filter: brightness(1.6) contrast(1.2); } 78% { transform: scale(1, 1); filter: none; } 81% { transform: scale(1, 1); filter: brightness(1.4); } 84%, 100% { transform: scale(1, 1); filter: none; } }
+.mvx-fixed.mvx-tvdot { left: 50%; top: 50%; width: 16px; height: 16px; margin: -8px 0 0 -8px; border-radius: 50%; background: #fff; box-shadow: 0 0 20px 10px #fff; z-index: 41; opacity: 0; animation: mvx-tvdot var(--mvd) linear both; }
+@keyframes mvx-tvdot { 0%, 22% { opacity: 0; transform: scale(1); } 24% { opacity: 1; transform: scale(1.4); } 34% { opacity: 1; transform: scale(0.6); } 42%, 100% { opacity: 0; transform: scale(0); } }
+.mvx-fixed.mvx-static { inset: 0; z-index: 41; opacity: 0; background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.35) 0 1px, rgba(0, 0, 0, 0.25) 1px 3px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0 2px, transparent 2px 5px); animation: mvx-static var(--mvd) steps(1, end) both, mvx-staticm 0.12s steps(2) infinite; }
+@keyframes mvx-static { 0%, 63% { opacity: 0; } 66%, 80% { opacity: 0.8; } 82% { opacity: 0.3; } 84%, 100% { opacity: 0; } }
+@keyframes mvx-staticm { from { background-position: 0 0, 0 0; } to { background-position: 0 3px, 4px 0; } }
+
+/* 万華鏡 */
+.cat-btn.mv-kaleido { animation-name: mv-kaleido; transform-origin: 50% 50%; }
+@keyframes mv-kaleido { 0% { transform: rotate(0) scale(1); } 12% { transform: rotate(-30deg) scale(0.6); } 80% { transform: rotate(720deg) scale(0.6); } 92% { transform: rotate(720deg) scale(1.08); } 100% { transform: rotate(720deg) scale(1); } }
+.mvx-kal { width: 720px; height: 720px; margin: -360px 0 0 -360px; border-radius: 50%; z-index: 1; opacity: 0; background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0 6%, transparent 7% 14%, rgba(255, 255, 255, 0.6) 15% 16%, transparent 17% 28%, rgba(255, 255, 255, 0.6) 29% 30%, transparent 31%), repeating-conic-gradient(#ff9fbb 0 10deg, #ffd94a 10deg 20deg, #8fe8c8 20deg 30deg, #8fd0ff 30deg 40deg, #c9a7ff 40deg 50deg, #ffa95e 50deg 60deg); animation: mvx-kal var(--mvd) ease-in-out both; }
+@keyframes mvx-kal { 0% { opacity: 0; transform: rotate(0) scale(0.2); } 14% { opacity: 0.9; transform: rotate(60deg) scale(1); } 50% { transform: rotate(-60deg) scale(1.2); } 84% { opacity: 0.9; transform: rotate(120deg) scale(1); } 100% { opacity: 0; transform: rotate(180deg) scale(0.2); } }
+.mvx-kring { width: 0; height: 0; z-index: 1; animation: mvx-kring var(--mvd) ease-in-out both; }
+.mvx-kring.i { animation-name: mvx-kringi; }
+.mvx-kcat { position: absolute; left: 0; top: 0; }
+@keyframes mvx-kring { 0% { opacity: 0; transform: rotate(0) scale(0); } 14% { opacity: 1; transform: rotate(90deg) scale(1); } 50% { transform: rotate(270deg) scale(1.15); } 84% { opacity: 1; transform: rotate(450deg) scale(1); } 100% { opacity: 0; transform: rotate(540deg) scale(0); } }
+@keyframes mvx-kringi { 0% { opacity: 0; transform: rotate(0) scale(0); } 16% { opacity: 1; transform: rotate(-90deg) scale(1); } 50% { transform: rotate(-270deg) scale(0.8); } 84% { opacity: 1; transform: rotate(-450deg) scale(1); } 100% { opacity: 0; transform: rotate(-540deg) scale(0); } }
+
+/* 銀河 */
+.cat-btn.mv-galaxy { animation-name: mv-galaxy; transform-origin: 50% 50%; }
+@keyframes mv-galaxy { 0% { transform: translate(0, 0) rotate(0) scale(1); } 14% { transform: translate(0, -30%) rotate(20deg) scale(0.85); } 50% { transform: translate(-8%, -42%) rotate(180deg) scale(0.8); } 84% { transform: translate(6%, -30%) rotate(340deg) scale(0.85); animation-timing-function: ease-in; } 92% { transform: translate(0, 0) rotate(360deg) scale(1.1, 0.9); } 100% { transform: translate(0, 0) rotate(360deg) scale(1); } }
+.mvx-galaxy { width: 340px; margin: -170px 0 0 -170px; z-index: 1; opacity: 0; animation: mvx-galaxy var(--mvd) ease-in-out both; }
+@keyframes mvx-galaxy { 0% { opacity: 0; transform: rotate(0) scale(0.3); } 18% { opacity: 1; transform: rotate(-40deg) scale(1); } 84% { opacity: 1; transform: rotate(-160deg) scale(1.1); } 100% { opacity: 0; transform: rotate(-200deg) scale(1.4); } }
+.mvx-planet { z-index: 1; opacity: 0; animation: mvx-planet var(--mvd) ease-in-out both; }
+.mvx-planet.p1 { width: 90px; }
+.mvx-planet.p2 { width: 40px; animation-name: mvx-planet2; }
+@keyframes mvx-planet { 0% { opacity: 0; transform: translate(-40px, 20px) rotate(-20deg); } 16%, 84% { opacity: 1; } 50% { transform: translate(10px, 10px) rotate(-10deg); } 100% { opacity: 0; transform: translate(40px, 0) rotate(0); } }
+@keyframes mvx-planet2 { 0% { opacity: 0; transform: translateY(30px); } 16%, 84% { opacity: 1; } 100% { opacity: 0; transform: translateY(-30px); } }
+.mvx-floaty { width: 32px; z-index: 4; opacity: 0; animation: mvx-floatyin var(--mvd) ease-in-out both, mvx-floaty 1.4s ease-in-out infinite alternate; }
+@keyframes mvx-floatyin { 0%, 12% { opacity: 0; } 22%, 82% { opacity: 1; } 92%, 100% { opacity: 0; } }
+@keyframes mvx-floaty { from { transform: translate(-6px, 6px) rotate(-30deg); } to { transform: translate(8px, -10px) rotate(40deg); } }
+
+/* クジラ */
+.cat-btn.mv-whale { animation-name: mv-whale; transform-origin: 50% 100%; }
+@keyframes mv-whale { 0%, 100% { transform: none; } 20% { transform: translateY(-3%) rotate(4deg); } 50% { transform: translateY(-10%) rotate(-3deg) scale(1.03); } 54% { transform: translateY(0) scale(1.06, 0.94); } 80% { transform: rotate(-5deg); } }
+.mvx-whale { z-index: 1; animation: mvx-whale var(--mvd) linear both; }
+@keyframes mvx-whale { 0%, 6% { transform: translateX(0); } 94%, 100% { transform: translateX(calc(var(--ww) * -1)); } }
+.mvx-wbob { position: relative; animation: mvx-wbob 1.4s ease-in-out infinite alternate; }
+@keyframes mvx-wbob { from { transform: translateY(-6px) rotate(-2deg); } to { transform: translateY(8px) rotate(2deg); } }
+.mvx-wtail { transform-box: fill-box; transform-origin: 0 50%; animation: mvx-wtail 0.7s ease-in-out infinite alternate; }
+@keyframes mvx-wtail { from { transform: rotate(-12deg); } to { transform: rotate(12deg); } }
+.mvx-spout { position: absolute; left: 34%; top: 9%; width: 0; height: 0; }
+.mvx-spout::before { content: ""; position: absolute; left: -11px; bottom: 0; width: 22px; height: 120px; background: linear-gradient(to top, #8fd0ff, #e8f6ff); border: 2.5px solid #2b2b2b; border-radius: 11px 11px 4px 4px; transform-origin: 50% 100%; transform: scaleY(0); animation: mvx-spoutc 1s ease-out calc(var(--mvd) * 0.42) both; }
+@keyframes mvx-spoutc { 0% { transform: scaleY(0); } 30%, 60% { transform: scaleY(1); } 100% { transform: scaleY(0); } }
+.mvx-spout i { position: absolute; left: -8px; top: -110px; width: 16px; height: 22px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: #bfe6ff; border: 2.5px solid #2b2b2b; opacity: 0; animation: mvx-spout 1s ease-out calc(var(--mvd) * 0.46) both; }
+.mvx-spout i:nth-child(1) { --sx: -70px; --sy: -20px; }
+.mvx-spout i:nth-child(2) { --sx: -45px; --sy: -50px; animation-delay: calc(var(--mvd) * 0.46 + 0.05s); }
+.mvx-spout i:nth-child(3) { --sx: -16px; --sy: -66px; animation-delay: calc(var(--mvd) * 0.46 + 0.1s); }
+.mvx-spout i:nth-child(4) { --sx: 16px; --sy: -66px; animation-delay: calc(var(--mvd) * 0.46 + 0.15s); }
+.mvx-spout i:nth-child(5) { --sx: 45px; --sy: -50px; animation-delay: calc(var(--mvd) * 0.46 + 0.2s); }
+.mvx-spout i:nth-child(6) { --sx: 70px; --sy: -20px; animation-delay: calc(var(--mvd) * 0.46 + 0.25s); }
+.mvx-spout i:nth-child(7) { --sx: 0px; --sy: -80px; animation-delay: calc(var(--mvd) * 0.46 + 0.3s); }
+@keyframes mvx-spout { 0% { opacity: 1; transform: translate(0, 0) scale(0.4); } 50% { opacity: 1; transform: translate(var(--sx), var(--sy)) scale(1); } 100% { opacity: 0; transform: translate(calc(var(--sx) * 1.4), calc(var(--sy) * -0.6)) scale(0.8); } }
+
+/* 電車 */
+.cat-btn.mv-train { animation-name: mv-train; }
+.stage.mvs-train { animation: mvs-rumble 0.3s linear calc(var(--mvd) * 0.15) 7; }
+@keyframes mv-train { 0%, 10% { transform: translateY(0) scale(1, 1); } 15% { transform: translateY(-30%) scale(1, 1); } 19% { transform: translateY(-10%) scale(0, 0); } 19.1%, 78% { transform: translateY(-10%) scale(0, 0); } 82% { transform: translateY(-20%) scale(1.1, 1.1); } 90% { transform: translateY(0) scale(1.1, 0.9); } 100% { transform: translateY(0) scale(1, 1); } }
+.mvx-train { z-index: 4; animation: mvx-train var(--mvd) linear both; }
+@keyframes mvx-train { 0%, 12% { transform: translateX(0); } 82%, 100% { transform: translateX(calc(var(--tw) * -1)); } }
+.mvx-train > svg { animation: mvx-tbob 0.18s steps(2) infinite; }
+@keyframes mvx-tbob { 50% { transform: translateY(-2px); } }
+.mvx-wincat { position: absolute; overflow: hidden; border-radius: 6px; background: #d9f1ff; border: 3px solid #2b2b2b; }
+.mvx-wincat svg { width: 110%; margin: -2% 0 0 -5%; animation: mvx-wave2 0.5s ease-in-out infinite alternate; transform-origin: 50% 100%; }
+@keyframes mvx-wave2 { from { transform: rotate(-6deg); } to { transform: rotate(6deg); } }
+.mvx-steam { position: absolute; top: 0; width: 0; height: 0; }
+.mvx-steam i { position: absolute; left: -12px; top: -12px; width: 24px; height: 20px; border-radius: 50%; background: #fff; border: 2.5px solid #2b2b2b; opacity: 0; animation: mvx-steam 0.8s ease-out infinite; }
+.mvx-steam i:nth-child(2) { animation-delay: 0.2s; }
+.mvx-steam i:nth-child(3) { animation-delay: 0.4s; }
+.mvx-steam i:nth-child(4) { animation-delay: 0.6s; }
+@keyframes mvx-steam { 0% { opacity: 1; transform: scale(0.4); } 100% { opacity: 0; transform: translate(34px, -40px) scale(1.5); } }
+.mvx-rail { left: 0; right: 0; height: 10px; z-index: 2; border-top: 3px solid #2b2b2b; border-bottom: 3px solid #2b2b2b; background: repeating-linear-gradient(90deg, #8d5a3c 0 6px, transparent 6px 18px); opacity: 0; animation: mvx-rail var(--mvd) linear both; }
+@keyframes mvx-rail { 0%, 4% { opacity: 0; } 10%, 88% { opacity: 1; } 96%, 100% { opacity: 0; } }
+
+/* マジック */
+.cat-btn.mv-magic { animation-name: mv-magic; transform-origin: 50% 100%; }
+@keyframes mv-magic { 0% { transform: translateY(0) rotate(0) scale(1, 1); } 4% { transform: translateY(-30%) rotate(0) scale(1, 1); animation-timing-function: ease-in; } 9% { transform: translateY(10%) rotate(0) scale(0.3, 0.3); } 9.1%, 39% { transform: translateY(10%) rotate(0) scale(0, 0); } 40% { transform: translateY(0) rotate(0) scale(0.6, 0.6); animation-timing-function: ease-out; } 50% { transform: translateY(-150%) rotate(360deg) scale(1.1, 1.1); } 58% { transform: translateY(-160%) rotate(360deg) scale(1, 1); animation-timing-function: ease-in; } 72% { transform: translateY(0) rotate(360deg) scale(1.2, 0.8); } 78% { transform: translateY(-8%) rotate(360deg) scale(0.96, 1.04); } 84%, 100% { transform: translateY(0) rotate(360deg) scale(1, 1); } }
+.mvx-tophat { z-index: 4; transform-origin: 50% 100%; animation: mvx-tophat var(--mvd) ease-out both; }
+@keyframes mvx-tophat { 0% { opacity: 1; transform: translateY(-300px) rotate(-20deg) scale(1, 1); } 6% { opacity: 1; transform: translateY(0) rotate(0) scale(1.1, 0.9); } 9% { transform: translateY(0) rotate(0) scale(1, 1); } 14%, 24%, 34% { transform: translateY(0) rotate(-6deg) scale(1.03, 1.03); } 19%, 29% { transform: translateY(0) rotate(6deg) scale(1, 1); } 38% { transform: translateY(0) rotate(0) scale(0.9, 1.1); } 41% { transform: translateY(0) rotate(0) scale(1.15, 0.85); } 46%, 62% { opacity: 1; transform: translateY(0) rotate(0) scale(1, 1); } 68%, 100% { opacity: 0; transform: translateY(0) rotate(0) scale(0, 0); } }
+.mvx-wand { width: 70px; z-index: 5; transform-origin: 100% 50%; opacity: 0; animation: mvx-wand var(--mvd) ease-in-out both; }
+.mvx-wand svg { transform: scaleX(-1); }
+@keyframes mvx-wand { 0%, 10% { opacity: 0; transform: rotate(40deg); } 12% { opacity: 1; } 14%, 24%, 34% { transform: rotate(-20deg); } 19%, 29% { transform: rotate(30deg); } 38% { opacity: 1; transform: rotate(30deg); } 42%, 100% { opacity: 0; transform: rotate(30deg); } }
+.mvx-dove { width: 48px; z-index: 5; opacity: 0; animation: mvx-dove 1.3s ease-out both; }
+.mvx-dove svg { transform: scaleX(var(--fl, 1)); }
+@keyframes mvx-dove { 0% { opacity: 0; transform: translate(0, 0) scale(0.3); } 10% { opacity: 1; } 80% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(1.1); } }
+.mvx-wing { transform-box: fill-box; transform-origin: 50% 100%; animation: mvx-wing 0.18s linear infinite alternate; }
+@keyframes mvx-wing { from { transform: scaleY(1); } to { transform: scaleY(-0.6); } }
+.mvx-card { width: 26px; height: 36px; z-index: 5; border-radius: 4px; background: #fff; border: 2.5px solid #2b2b2b; display: flex; align-items: center; justify-content: center; font-size: 17px; line-height: 1; opacity: 0; animation: mvx-card 1.4s ease-out both; }
+@keyframes mvx-card { 0% { opacity: 0; transform: translate(0, 0) rotate(0) scale(0.3); } 8% { opacity: 1; } 45% { transform: translate(var(--dx), var(--dy)) rotate(calc(var(--rot) * 0.5)) scale(1); } 85% { opacity: 1; } 100% { opacity: 0; transform: translate(calc(var(--dx) * 1.2), calc(var(--dy) + 160px)) rotate(var(--rot)) scale(1); } }
+
+/* ペンキ */
+.cat-btn.mv-paint { animation-name: mv-paint; transform-origin: 50% 100%; }
+@keyframes mv-paint { 0%, 100% { transform: none; } 8%, 22%, 36% { transform: translateY(4%) scale(1.06, 0.92); } 14%, 28%, 42% { transform: translateY(-6%) rotate(-5deg); } 60% { transform: rotate(4deg); } 80% { transform: translateY(-10%); } }
+.mvx-splat { z-index: 40; opacity: 0; transform-origin: 40% 40%; animation: mvx-splat 0.35s cubic-bezier(.2,1.6,.4,1) both, mvx-splatout 0.5s ease-in both; }
+.mvx-splat svg { transform: rotate(var(--rot)); }
+@keyframes mvx-splat { 0% { opacity: 1; transform: scale(0); } 100% { opacity: 1; transform: scale(1); } }
+@keyframes mvx-splatout { 100% { opacity: 0; transform: translateY(70px) scale(1, 1.1); } }
+.mvx-splat i { position: absolute; top: 46%; width: 14px; height: 10px; margin-left: -7px; z-index: -1; border: 3px solid #2b2b2b; border-top: 0; border-radius: 0 0 8px 8px; animation: mvx-drip 1.2s ease-in var(--dd) both; }
+@keyframes mvx-drip { 0% { height: 10px; } 100% { height: 90px; } }
+.mvx-catsplat { left: 30%; top: 20%; width: 40%; z-index: 2; opacity: 0; animation: mvx-catsplat var(--mvd) ease-out both; }
+@keyframes mvx-catsplat { 0%, 20% { opacity: 0; transform: scale(0); } 24% { opacity: 1; transform: scale(1.2); } 28%, 76% { opacity: 1; transform: scale(1); } 86%, 100% { opacity: 0; transform: translateY(20px) scale(1); } }
+
+/* ドミノ */
+.cat-btn.mv-domino { animation-name: mv-domino; transform-origin: 80% 95%; }
+@keyframes mv-domino { 0% { transform: translateX(0) rotate(0) scale(1); } 10% { transform: translateX(-70%) rotate(0) scale(0.62); } 16% { transform: translateX(-70%) rotate(-8deg) scale(0.62); } 20% { transform: translateX(-70%) rotate(0) scale(0.62); animation-timing-function: ease-in; } 26% { transform: translateX(-70%) rotate(78deg) scale(0.62); } 28% { transform: translateX(-70%) rotate(70deg) scale(0.62); } 30%, 66% { transform: translateX(-70%) rotate(74deg) scale(0.62); } 74% { transform: translateX(-70%) rotate(0) scale(0.62); } 88% { transform: translateX(0) rotate(0) scale(1); } 100% { transform: translateX(0) rotate(0) scale(1); } }
+.mvx-domi { z-index: 3; transform-origin: 50% 100%; animation: mvx-domiin var(--mvd) ease-out both; }
+.mvx-domi > div { transform-origin: 82% 95%; animation: mvx-domifall 0.22s ease-in var(--fd) both, mvx-domirise 0.45s cubic-bezier(.3,1.6,.5,1) var(--rd) both; }
+@keyframes mvx-domiin { 0%, 2% { transform: scale(0); } 8% { transform: scale(1.1); } 10%, 86% { transform: scale(1); } 94%, 100% { transform: scale(0); } }
+@keyframes mvx-domifall { from { transform: rotate(0); } to { transform: rotate(70deg); } }
+@keyframes mvx-domirise { to { transform: rotate(0); } }
+
+/* 日の出 */
+.cat-btn.mv-sunrise { animation-name: mv-sunrise; transform-origin: 50% 100%; }
+.cat-btn.mv-sunrise > .cat { animation: mvx-silh var(--mvd) linear both; }
+@keyframes mvx-silh { 0%, 20% { filter: brightness(1); } 32%, 52% { filter: brightness(0.15); } 60%, 100% { filter: brightness(1); } }
+@keyframes mv-sunrise { 0%, 100% { transform: none; } 30% { transform: translateY(-4%) scale(1.03); } 56% { transform: translateY(-14%) rotate(-6deg); } 62% { transform: rotate(6deg) scale(1.08, 0.94); } 70% { transform: none; } }
+.mvx-skyglow { inset: 0; z-index: 0; background: linear-gradient(#ff8a5c, #ffcf6b 60%, #fff6c2); --dko: 0.9; opacity: 0; animation: mvx-dark var(--mvd) ease-in-out both; }
+.mvx-sun { z-index: 0; transform: translateY(var(--sr)); animation: mvx-sun var(--mvd) ease-out both; }
+@keyframes mvx-sun { 0%, 6% { opacity: 1; transform: translateY(var(--sr)) scale(1); } 50% { transform: translateY(0) scale(1); } 60% { transform: translateY(0) scale(1.06); } 86% { opacity: 1; transform: translateY(0) scale(1.02); } 100% { opacity: 0; transform: translateY(calc(var(--sr) * 0.3)) scale(1); } }
+.mvx-srays { width: 900px; height: 900px; margin: -450px 0 0 -450px; border-radius: 50%; z-index: 0; background: repeating-conic-gradient(rgba(255, 233, 120, 0.8) 0 8deg, rgba(255, 255, 255, 0) 8deg 20deg); opacity: 0; animation: mvx-srays var(--mvd) ease-out both; }
+@keyframes mvx-srays { 0%, 30% { opacity: 0; transform: translateY(var(--sr)) rotate(0); } 50% { opacity: 1; transform: translateY(0) rotate(40deg); } 86% { opacity: 1; transform: translateY(0) rotate(120deg); } 100% { opacity: 0; transform: translateY(0) rotate(140deg); } }
+.mvx-fixed.mvx-glare { inset: 0; z-index: 40; background: radial-gradient(circle at 50% 45%, #fff 0 20%, #fff6c2 50%, rgba(255, 246, 194, 0.6)); opacity: 0; animation: mvx-glare var(--mvd) ease-in-out both; }
+@keyframes mvx-glare { 0%, 46% { opacity: 0; } 58%, 64% { opacity: 0.92; } 80%, 100% { opacity: 0; } }
+
+/* ハート大爆発 */
+.cat-btn.mv-heartburst { animation-name: mv-heartb; transform-origin: 50% 100%; }
+@keyframes mv-heartb { 0% { transform: none; } 10%, 22%, 34% { transform: scale(1.08); } 16%, 28% { transform: scale(0.97); } 42% { transform: translateY(-20%) scale(1.15); } 50% { transform: translateY(0) scale(0.95, 1.05); } 60% { transform: none; } 70%, 90% { transform: translateY(-6%) rotate(-5deg); } 80% { transform: translateY(-6%) rotate(5deg); } 100% { transform: none; } }
+.mvx-bigheart { width: 120px; z-index: 2; opacity: 0; animation: mvx-bigheart var(--mvd) ease-out both; }
+@keyframes mvx-bigheart { 0% { opacity: 0; transform: scale(0); } 8% { opacity: 1; transform: scale(1.2); } 12% { opacity: 1; transform: scale(1); } 18%, 30% { opacity: 1; transform: scale(1.35); } 24%, 36% { opacity: 1; transform: scale(1.05); } 41% { opacity: 1; transform: scale(2.6); } 43%, 100% { opacity: 0; transform: scale(3.2); } }
+.mvx-hfly { z-index: 41; opacity: 0; animation: mvx-hfly 1.1s cubic-bezier(.15,.7,.3,1) both; }
+@keyframes mvx-hfly { 0% { opacity: 1; transform: translate(0, 0) scale(0.3) rotate(0); } 75% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--hx), var(--hy)) scale(1) rotate(var(--rot)); } }
+.mvx-hrise { z-index: 41; opacity: 0; animation: mvx-hrise 1.4s ease-in-out both; }
+@keyframes mvx-hrise { 0% { opacity: 0; transform: translate(0, 0) rotate(-10deg); } 10%, 80% { opacity: 1; } 50% { transform: translate(20px, calc(var(--hh) * 0.5)) rotate(10deg); } 100% { opacity: 0; transform: translate(-10px, var(--hh)) rotate(-10deg); } }
+
+/* ステージがゼリー */
+.stage.mvs-stagejelly { transform-origin: 50% 100%; animation: mvs-jelly var(--mvd) ease-in-out both; }
+@keyframes mvs-jelly { 0% { transform: none; } 8% { transform: scale(1.08, 0.84) skewX(0); } 16% { transform: scale(0.92, 1.12) skewX(5deg); } 24% { transform: scale(1.06, 0.9) skewX(-1deg); } 32% { transform: scale(0.94, 1.08) skewX(4deg); } 40% { transform: scale(1.06, 0.92) skewX(-1deg); } 48% { transform: scale(0.96, 1.06) skewX(2deg); } 56% { transform: scale(1.06, 0.88) skewX(0); } 62% { transform: scale(0.9, 1.14) skewX(-6deg); } 70% { transform: scale(1.05, 0.95) skewX(1deg); } 78% { transform: scale(0.98, 1.03) skewX(-2deg); } 86% { transform: scale(1.02, 0.98) skewX(0); } 94%, 100% { transform: none; } }
+html.mvp-stagejelly .card { transform-origin: 50% 100%; animation: mvp-cardjelly 0.8s ease-out 3; }
+html.mvp-stagejelly .card-row .card + .card { animation-delay: 0.12s; }
+@keyframes mvp-cardjelly { 0% { transform: none; } 20% { transform: scale(1.04, 0.9); } 40% { transform: scale(0.97, 1.06); } 60% { transform: scale(1.02, 0.97); } 80% { transform: scale(0.99, 1.01); } 100% { transform: none; } }
+.mvx-jellyglaze { inset: 0; z-index: 5; background: linear-gradient(160deg, rgba(255, 159, 187, 0.28), rgba(143, 232, 200, 0.28)); --dko: 1; opacity: 0; animation: mvx-dark var(--mvd) ease-in-out both; }
+.mvx-jellyglaze i { position: absolute; left: 6%; top: 34%; width: 20%; height: 9%; border-radius: 50%; background: rgba(255, 255, 255, 0.75); transform: rotate(-30deg); }
+.mvx-jellyglaze i + i { left: 16%; top: 48%; width: 7%; height: 4%; }
+.cat-btn.mv-stagejelly { animation-name: mv-jellycat; transform-origin: 50% 100%; }
+@keyframes mv-jellycat { 0%, 100% { transform: none; } 10% { transform: scale(1.2, 0.8); } 20% { transform: scale(0.85, 1.2); } 30% { transform: scale(1.12, 0.9); } 40% { transform: scale(0.94, 1.08); } 50% { transform: scale(1.05, 0.95); } 62% { transform: scale(0.8, 1.25); } 72% { transform: scale(1.1, 0.9); } 82% { transform: scale(0.97, 1.03); } }
+
+/* おばけ */
+.cat-btn.mv-haunted { animation-name: mv-haunt; transform-origin: 50% 100%; }
+.cat-btn.mv-haunted > .cat { animation: mvx-shake 0.12s linear infinite; }
+@keyframes mv-haunt { 0%, 100% { transform: none; } 10%, 86% { transform: translateY(4%) scale(1.04, 0.94); } }
+.mvx-ghostf { z-index: 41; opacity: 0; animation: mvx-ghostf 2s linear both; }
+@keyframes mvx-ghostf { 0% { opacity: 0; transform: translateX(0); } 10%, 88% { opacity: 0.88; } 100% { opacity: 0; transform: translateX(var(--gx)); } }
+.mvx-ghostf > div { animation: mvx-gwave 0.8s ease-in-out infinite alternate; }
+@keyframes mvx-gwave { from { transform: translateY(-14px) rotate(-8deg); } to { transform: translateY(14px) rotate(8deg); } }
+.mvx-wisp { width: 0; height: 0; z-index: 4; animation: mvx-rot 2.4s linear infinite; }
+.mvx-wisp i { position: absolute; left: var(--wr); top: -13px; width: 18px; height: 26px; margin-left: -9px; border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%; background: radial-gradient(circle at 50% 70%, #fff 0 25%, #8fd0ff 60%); border: 2px solid #2b2b2b; box-shadow: 0 0 12px 4px rgba(143, 208, 255, 0.7); opacity: 0; animation: mvx-wispi var(--mvd) ease-in-out both; }
+@keyframes mvx-wispi { 0%, 8% { opacity: 0; } 18%, 86% { opacity: 1; } 100% { opacity: 0; } }
+
+/* ロボット */
+.cat-btn.mv-robot { animation-name: mv-robot; }
+@keyframes mv-robot { 0% { transform: none; } 4% { transform: scaleX(-1); } 8% { transform: scaleX(1); } 11% { transform: scaleX(-1); } 14% { transform: translateY(-12%) scaleX(1); } 17% { transform: translateY(-12%) scaleX(-1); } 20% { transform: none; } 27% { transform: translateY(4%) scale(1.06, 0.94); } 31%, 40% { transform: none; } 44% { transform: translateX(-12%); } 50% { transform: translateX(-12%) rotate(-4deg); } 54% { transform: translateX(12%); } 60% { transform: translateX(12%) rotate(4deg); } 64%, 80% { transform: none; } 84% { transform: translateY(-8%); } 90%, 100% { transform: none; } }
+.cat-btn.mv-robot > .cat { animation: mvx-robhide var(--mvd) linear both; }
+@keyframes mvx-robhide { 0%, 25% { opacity: 1; } 26%, 82% { opacity: 0; } 83%, 100% { opacity: 1; } }
+.mvx-rpart { left: 0; top: 0; width: 100%; z-index: 2; opacity: 0; animation: mvx-rpart var(--mvd) ease-out both; }
+.mvx-rpart.arml { animation: mvx-rpart var(--mvd) ease-out both, mvx-rarm 0.3s steps(2, end) 4 alternate; }
+.mvx-rpart.armr { animation: mvx-rpart var(--mvd) ease-out both, mvx-rarmr 0.3s steps(2, end) 4 alternate; }
+@keyframes mvx-rpart { 0%, 15.9% { opacity: 0; transform: translate(var(--fx), var(--fy)) rotate(-90deg); } 16% { opacity: 1; transform: translate(var(--fx), var(--fy)) rotate(-90deg); } 26% { opacity: 1; transform: none; } 82% { opacity: 1; transform: none; } 90% { opacity: 0; transform: translate(var(--fx), var(--fy)) rotate(90deg); } 100% { opacity: 0; transform: translate(var(--fx), var(--fy)) rotate(90deg); } }
+@keyframes mvx-rarm { to { transform: rotate(-40deg); } }
+@keyframes mvx-rarmr { to { transform: rotate(40deg); } }
+.mvx-visor { animation: mvx-blink 0.3s steps(2) infinite; }
+
+/* ガチャ */
+.cat-btn.mv-gacha { animation-name: mv-gacha; transform-origin: 50% 70%; }
+@keyframes mv-gacha { 0%, 51% { transform: translateY(0) rotate(0) scale(0); } 56% { transform: translateY(0) rotate(-10deg) scale(1.25); } 62% { transform: translateY(0) rotate(4deg) scale(0.94); } 68% { transform: translateY(0) rotate(0) scale(1.04); } 74% { transform: translateY(0) rotate(0) scale(1); } 82% { transform: translateY(-10%) rotate(0) scale(1); } 90%, 100% { transform: translateY(0) rotate(0) scale(1); } }
+.mvx-capsule { z-index: 4; transform-origin: 50% 100%; animation: mvx-capsule var(--mvd) ease-in both; }
+@keyframes mvx-capsule { 0% { transform: translateY(var(--fall)) rotate(-30deg) scale(1, 1); } 12% { transform: translateY(0) rotate(0) scale(1.08, 0.92); animation-timing-function: ease-out; } 16% { transform: translateY(-22%) rotate(10deg) scale(1, 1); animation-timing-function: ease-in; } 20% { transform: translateY(0) rotate(0) scale(1.04, 0.96); animation-timing-function: ease-out; } 23% { transform: translateY(-6%) rotate(0) scale(1, 1); animation-timing-function: ease-in; } 26% { transform: translateY(0) rotate(0) scale(1, 1); } 30%, 38%, 46% { transform: translateY(0) rotate(-14deg) scale(1, 1); } 34%, 42%, 49% { transform: translateY(0) rotate(14deg) scale(1, 1); } 51%, 100% { transform: translateY(0) rotate(0) scale(1, 1); } }
+.mvx-ctop, .mvx-cbot { position: absolute; left: 0; width: 100%; height: 50%; }
+.mvx-ctop { top: 0; animation: mvx-ctop var(--mvd) ease-out both; }
+.mvx-cbot { bottom: 0; animation: mvx-cbot var(--mvd) ease-out both; }
+@keyframes mvx-ctop { 0%, 52% { opacity: 1; transform: none; } 66% { opacity: 1; transform: translate(-60%, -140%) rotate(-160deg); } 76%, 100% { opacity: 0; transform: translate(-80%, -160%) rotate(-200deg); } }
+@keyframes mvx-cbot { 0%, 52% { opacity: 1; transform: none; } 64% { opacity: 1; transform: translate(70%, 30%) rotate(120deg); } 74%, 100% { opacity: 0; transform: translate(90%, 50%) rotate(160deg); } }
+.mvx-grays { width: 640px; height: 640px; margin: -320px 0 0 -320px; border-radius: 50%; z-index: 1; background: repeating-conic-gradient(rgba(255, 159, 187, 0.75) 0 10deg, rgba(255, 217, 74, 0.75) 10deg 20deg, rgba(143, 232, 200, 0.75) 20deg 30deg, rgba(143, 208, 255, 0.75) 30deg 40deg, rgba(201, 167, 255, 0.75) 40deg 50deg, rgba(255, 255, 255, 0) 50deg 60deg); opacity: 0; animation: mvx-grays var(--mvd) ease-out both; }
+@keyframes mvx-grays { 0%, 51% { opacity: 0; transform: scale(0.1) rotate(0); } 56% { opacity: 1; transform: scale(1) rotate(30deg); } 86% { opacity: 1; transform: scale(1) rotate(140deg); } 100% { opacity: 0; transform: scale(1) rotate(170deg); } }
+
+/* ビッグバン */
+html.mvp-bigbang #app { transform-origin: 50% 50vh; animation: mvp-bigbang var(--mvd) both; }
+@keyframes mvp-bigbang { 0% { transform: none; animation-timing-function: linear; } 3% { transform: translateY(-3px); } 6% { transform: translateY(3px); } 9% { transform: none; animation-timing-function: cubic-bezier(.6,0,.9,.4); } 30% { transform: rotate(540deg) scale(0.01); } 30.1%, 44% { transform: rotate(0) scale(0); } 44.1% { transform: rotate(-360deg) scale(0); animation-timing-function: cubic-bezier(.2,.9,.3,1.15); } 72% { transform: rotate(0) scale(1); } 100% { transform: none; } }
+.cat-btn.mv-bigbang { animation-name: mv-bigbangcat; transform-origin: 50% 100%; }
+@keyframes mv-bigbangcat { 0%, 72% { transform: none; } 80% { transform: translateY(-16%) scale(0.95, 1.06); } 88% { transform: scale(1.08, 0.92); } 100% { transform: none; } }
+.mvx-fixed.mvx-bbcore { width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%; background: #fff; box-shadow: 0 0 20px 10px #fff6c2, 0 0 60px 30px #c9a7ff; z-index: 41; opacity: 0; animation: mvx-bbcore var(--mvd) ease-in both; }
+@keyframes mvx-bbcore { 0%, 20% { opacity: 0; transform: scale(0); } 28% { opacity: 1; transform: scale(0.6); } 31% { opacity: 1; transform: scale(0.3); } 33% { opacity: 1; transform: scale(30); } 40%, 100% { opacity: 0; transform: scale(40); } }
+.mvx-fixed.mvx-universe { width: 0; height: 0; z-index: 41; }
+.mvx-universe i { position: absolute; left: 0; top: 0; margin: -4px 0 0 -4px; border-radius: 50%; border: 1.5px solid #2b2b2b; opacity: 0; animation: mvx-uni 1.4s cubic-bezier(.1,.7,.3,1) both; }
+@keyframes mvx-uni { 0% { opacity: 1; transform: rotate(var(--a)) translateX(0) scale(0.4); } 70% { opacity: 1; } 100% { opacity: 0; transform: rotate(calc(var(--a) + 60deg)) translateX(var(--d)) scale(1.4); } }
+.mvx-fixed.mvx-bbring { width: 80px; height: 80px; margin: -40px 0 0 -40px; border-radius: 50%; border: 8px solid; z-index: 41; opacity: 0; box-shadow: 0 0 0 2px #2b2b2b, inset 0 0 0 2px #2b2b2b; animation: mvx-bbring 1.2s ease-out both; }
+@keyframes mvx-bbring { 0% { opacity: 1; transform: scale(0.1); } 100% { opacity: 0; transform: scale(12); } }
+
+/* ===== 第3弾：ちょっと変な ===== */
+/* ペンギン歩き */
+.cat-btn.mv-penguin { animation-name: mv-penguin; animation-timing-function: linear; }
+@keyframes mv-penguin { 0%, 4% { transform: translateX(0) scaleX(1); } 40% { transform: translateX(-55%) scaleX(1); } 46% { transform: translateX(-55%) scaleX(-1); } 84% { transform: translateX(45%) scaleX(-1); } 90% { transform: translateX(45%) scaleX(1); } 100% { transform: translateX(0) scaleX(1); } }
+.cat-btn.mv-penguin > .cat { animation: mvx-waddle 0.26s ease-in-out infinite alternate; transform-origin: 50% 100%; }
+@keyframes mvx-waddle { from { transform: rotate(-10deg) translateY(0); } to { transform: rotate(10deg) translateY(-3%); } }
+.mvx-flip2 { left: 0; top: 0; width: 100%; height: 100%; z-index: 1; }
+.mvx-flip2 i { position: absolute; top: 60%; width: 11%; height: 22%; background: #4a5aa8; border: 3px solid #2b2b2b; border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%; animation: mvx-flap 0.2s ease-in-out infinite alternate; }
+.mvx-flip2 .l { left: 24%; transform-origin: 80% 10%; }
+.mvx-flip2 .r { right: 24%; transform-origin: 20% 10%; animation-name: mvx-flapr; }
+@keyframes mvx-flap { from { transform: rotate(10deg); } to { transform: rotate(50deg); } }
+@keyframes mvx-flapr { from { transform: rotate(-10deg); } to { transform: rotate(-50deg); } }
+
+/* カンガルー */
+.cat-btn.mv-kangaroo { animation-name: mv-kanga; transform-origin: 50% 100%; }
+@keyframes mv-kanga {
+  0% { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  4% { transform: translate(0, 0) rotate(0) scale(1.1, 0.88); }
+  12% { transform: translate(12%, -90%) rotate(14deg) scale(0.95, 1.08); }
+  20% { transform: translate(25%, 0) rotate(0) scale(1.12, 0.88); }
+  23% { transform: translate(25%, 0) rotate(0) scale(1.1, 0.9); }
+  31% { transform: translate(38%, -100%) rotate(14deg) scale(0.95, 1.08); }
+  40% { transform: translate(50%, 0) rotate(0) scale(1.12, 0.88); }
+  43% { transform: translate(50%, 0) rotate(0) scale(1.1, 0.9); }
+  51% { transform: translate(62%, -110%) rotate(14deg) scale(0.95, 1.08); }
+  60% { transform: translate(75%, 0) rotate(0) scale(1.12, 0.88); }
+  64% { transform: translate(75%, 0) rotate(0) scale(-1, 1); }
+  68% { transform: translate(75%, 0) rotate(0) scale(-1.1, 0.88); }
+  77% { transform: translate(38%, -150%) rotate(-14deg) scale(-1, 1); }
+  86% { transform: translate(0, 0) rotate(0) scale(-1.15, 0.85); }
+  90% { transform: translate(0, -8%) rotate(0) scale(-1, 1); }
+  95%, 100% { transform: translate(0, 0) rotate(0) scale(1, 1); }
+}
+
+/* へび */
+.cat-btn.mv-snake { animation-name: mv-snakebtn; }
+@keyframes mv-snakebtn { 0%, 100% { transform: none; } 50% { transform: translateY(-4%); } }
+.cat-btn.mv-snake > .cat { opacity: 0; }
+.mvx-sslice { left: 0; top: 0; width: 100%; z-index: 1; animation: mvx-snk 0.5s ease-in-out infinite alternate; }
+@keyframes mvx-snk { from { transform: translateX(-12%); } to { transform: translateX(12%); } }
+
+/* フラフープ */
+.cat-btn.mv-hula { animation-name: mv-hulabtn; }
+@keyframes mv-hulabtn { 0%, 100% { transform: none; } 10%, 90% { transform: translateY(-3%); } }
+.cat-btn.mv-hula > .cat { animation: mvx-hips 0.4s ease-in-out infinite alternate; transform-origin: 50% 60%; }
+@keyframes mvx-hips { from { transform: translateX(-4%) rotate(-3deg); } to { transform: translateX(4%) rotate(3deg); } }
+.mvx-hoop { left: 6%; width: 88%; top: 60%; animation: mvx-hoop 0.4s ease-in-out infinite alternate; }
+.mvx-hoop.back { z-index: -1; }
+.mvx-hoop.front { z-index: 2; clip-path: inset(50% -10% -40% -10%); }
+@keyframes mvx-hoop { from { transform: translateX(14%) rotate(-8deg); } to { transform: translateX(-14%) rotate(8deg); } }
+
+/* ジャグリング */
+.cat-btn.mv-juggle { animation-name: mv-jugbtn; transform-origin: 50% 100%; }
+@keyframes mv-jugbtn { 0%, 100% { transform: none; } 25%, 75% { transform: translateY(-2%) rotate(-2deg); } 50% { transform: rotate(2deg); } }
+.mvx-jug { left: 0; top: 0; width: 100%; height: 100%; z-index: 2; }
+.mvx-jug i { position: absolute; left: 18%; top: 45%; width: 17%; animation: mvx-jug 0.9s linear infinite; }
+.mvx-jug svg { animation: mvx-rot 0.6s linear infinite; }
+@keyframes mvx-jug { 0% { left: 18%; top: 45%; animation-timing-function: ease-out; } 25% { left: 41%; top: -45%; animation-timing-function: ease-in; } 50% { left: 65%; top: 45%; animation-timing-function: linear; } 75% { left: 41%; top: 30%; } 100% { left: 18%; top: 45%; } }
+
+/* ヨガ */
+.cat-btn.mv-yoga { animation-name: mv-yoga; transform-origin: 50% 100%; }
+@keyframes mv-yoga { 0% { transform: translateY(0) rotate(0) scale(1, 1); } 15% { transform: translateY(0) rotate(0) scale(0.96, 1.08); } 30% { transform: translateY(-3%) rotate(-3deg) scale(0.96, 1.08); } 38% { transform: translateY(-3%) rotate(2deg) scale(0.96, 1.08); } 44% { transform: translateY(-3%) rotate(-1deg) scale(0.96, 1.08); } 50%, 62% { transform: translateY(-4%) rotate(0) scale(0.96, 1.1); } 68% { transform: translateY(-4%) rotate(4deg) scale(0.96, 1.1); } 72% { transform: translateY(-4%) rotate(-5deg) scale(0.96, 1.1); } 76% { transform: translateY(-4%) rotate(3deg) scale(0.96, 1.1); } 86% { transform: translateY(0) rotate(0) scale(0.96, 1.08); } 100% { transform: translateY(0) rotate(0) scale(1, 1); } }
+.mvx-mat { height: 14px; z-index: 2; border-radius: 6px; background: #c9a7ff; border: 3px solid #2b2b2b; transform: scaleX(0); animation: mvx-mat var(--mvd) ease-out both; }
+@keyframes mvx-mat { 0% { transform: scaleX(0); } 10%, 90% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
+.mvx-calm { width: 80px; height: 80px; margin: -40px 0 0 -40px; border-radius: 50%; border: 3px solid rgba(143, 232, 200, 0.95); box-shadow: 0 0 0 2px rgba(43, 43, 43, 0.25); z-index: 2; opacity: 0; animation: mvx-calm 1.4s ease-out both; }
+@keyframes mvx-calm { 0% { opacity: 0; transform: scale(0.5); } 30% { opacity: 1; } 100% { opacity: 0; transform: scale(3.2); } }
+
+/* 四股 */
+.cat-btn.mv-sumo { animation-name: mv-sumo; transform-origin: 50% 100%; }
+.stage.mvs-sumo { animation: mvs-jolt 0.45s ease-out calc(var(--mvd) * 0.34), mvs-jolt 0.45s ease-out calc(var(--mvd) * 0.66); }
+@keyframes mv-sumo { 0% { transform: translate(0, 0) rotate(0) scale(1, 1); } 8% { transform: translate(0, -6%) rotate(0) scale(1, 1); } 14% { transform: translate(0, 0) rotate(0) scale(1, 1); } 20% { transform: translate(-6%, -4%) rotate(-16deg) scale(1, 1); } 28% { transform: translate(-8%, -6%) rotate(-20deg) scale(1, 1); animation-timing-function: ease-in; } 34% { transform: translate(0, 0) rotate(0) scale(1.12, 0.86); } 40% { transform: translate(0, 0) rotate(0) scale(1.04, 0.96); } 46% { transform: translate(0, 0) rotate(0) scale(1, 1); } 52% { transform: translate(6%, -4%) rotate(16deg) scale(1, 1); } 60% { transform: translate(8%, -6%) rotate(20deg) scale(1, 1); animation-timing-function: ease-in; } 66% { transform: translate(0, 0) rotate(0) scale(1.12, 0.86); } 72% { transform: translate(0, 0) rotate(0) scale(1.04, 0.96); } 80%, 100% { transform: translate(0, 0) rotate(0) scale(1, 1); } }
+
+/* 空手チョップ */
+.cat-btn.mv-karate { animation-name: mv-karate; transform-origin: 50% 100%; }
+@keyframes mv-karate { 0% { transform: translateX(0) rotate(0) scale(1, 1); } 14% { transform: translateX(-6%) rotate(-8deg) scale(1, 1); } 30% { transform: translateX(-10%) rotate(-12deg) scale(1.02, 1.02); } 36% { transform: translateX(14%) rotate(12deg) scale(1.06, 0.96); } 40%, 62% { transform: translateX(14%) rotate(10deg) scale(1, 1); } 76%, 100% { transform: translateX(0) rotate(0) scale(1, 1); } }
+.mvx-plank { width: 40px; z-index: 4; opacity: 0; animation: mvx-plankl var(--mvd) ease-in both; }
+.mvx-plank.r { animation-name: mvx-plankr; }
+@keyframes mvx-plankl { 0% { opacity: 0; transform: translateY(-20px); } 8%, 37% { opacity: 1; transform: none; } 50% { opacity: 1; transform: translate(-40px, -50px) rotate(-120deg); } 70% { opacity: 1; transform: translate(-70px, 120px) rotate(-260deg); } 76%, 100% { opacity: 0; transform: translate(-70px, 140px) rotate(-280deg); } }
+@keyframes mvx-plankr { 0% { opacity: 0; transform: translateY(-20px); } 8%, 37% { opacity: 1; transform: none; } 50% { opacity: 1; transform: translate(40px, -60px) rotate(130deg); } 70% { opacity: 1; transform: translate(70px, 120px) rotate(270deg); } 76%, 100% { opacity: 0; transform: translate(70px, 140px) rotate(290deg); } }
+
+/* 忍者 */
+.cat-btn.mv-ninja { animation-name: mv-ninja; animation-timing-function: steps(1, end); }
+@keyframes mv-ninja { 0% { opacity: 1; transform: none; } 10% { opacity: 0; transform: none; } 32% { opacity: 1; transform: translateX(-90%); } 48% { opacity: 0; transform: translateX(-90%); } 62% { opacity: 1; transform: translateX(90%) scaleX(-1); } 74% { opacity: 0; transform: translateX(90%) scaleX(-1); } 86%, 100% { opacity: 1; transform: none; } }
+.mvx-shuri { left: 0; width: 30px; z-index: 4; opacity: 0; animation: mvx-shuri 0.7s linear both; }
+@keyframes mvx-shuri { 0% { opacity: 1; transform: translateX(-40px) rotate(0); } 100% { opacity: 1; transform: translateX(420px) rotate(1440deg); } }
+
+/* スローモーション */
+.cat-btn.mv-slowmo { animation-name: mv-slowmo; transform-origin: 50% 85%; }
+@keyframes mv-slowmo { 0% { transform: translate(0, 0) rotate(0) scale(1, 1); } 10% { transform: translate(0, 4%) rotate(0) scale(1.05, 0.95); } 50% { transform: translate(-10%, -80%) rotate(-30deg) scale(1, 1); } 75% { transform: translate(10%, -40%) rotate(20deg) scale(1, 1); } 92% { transform: translate(0, 0) rotate(0) scale(1.05, 0.95); } 100% { transform: translate(0, 0) rotate(0) scale(1, 1); } }
+.mvx-slowg { z-index: 2; transform-origin: 50% 85%; animation: mv-slowmo var(--mvd) ease-in-out both; }
+.mvx-slowg .b { fill: #c9a7ff; }
+.mvx-lbox { left: 0; right: 0; height: 0; background: #2b2b2b; z-index: 1; animation: mvx-lbox var(--mvd) ease-in-out both; }
+.mvx-lbox.t { top: 0; }
+.mvx-lbox.b { bottom: 0; }
+@keyframes mvx-lbox { 0% { height: 0; } 10%, 90% { height: 18px; } 100% { height: 0; } }
+
+/* まきもどし */
+.cat-btn.mv-rewind { animation-name: mv-rewind; animation-timing-function: linear; transform-origin: 50% 60%; }
+@keyframes mv-rewind { 0% { transform: translate(0, 0) rotate(0); } 10% { transform: translate(20%, -30%) rotate(10deg); } 18% { transform: translate(40%, 0) rotate(0); } 28% { transform: translate(55%, -40%) rotate(180deg); } 38%, 46% { transform: translate(70%, 0) rotate(360deg); } 52% { transform: translate(55%, -40%) rotate(180deg); } 58% { transform: translate(40%, 0) rotate(0); } 64% { transform: translate(20%, -30%) rotate(10deg); } 70%, 76% { transform: translate(0, 0) rotate(0); } 82% { transform: translate(0, -12%) rotate(0); } 88%, 100% { transform: translate(0, 0) rotate(0); } }
+.stage.mvs-rewind { animation: mvs-rewind var(--mvd) linear both; }
+@keyframes mvs-rewind { 0%, 45% { filter: none; } 46%, 70% { filter: saturate(0.3) contrast(1.3) hue-rotate(-20deg); } 72%, 100% { filter: none; } }
+.mvx-label.rw { animation-name: mvx-rwl; }
+.mvx-label.pl { animation-name: mvx-pll; }
+@keyframes mvx-rwl { 0%, 45% { opacity: 0; } 46%, 70% { opacity: 1; } 71%, 100% { opacity: 0; } }
+@keyframes mvx-pll { 0%, 3% { opacity: 0; } 4%, 44% { opacity: 1; } 45%, 73% { opacity: 0; } 74%, 92% { opacity: 1; } 100% { opacity: 0; } }
+.mvx-vhs { inset: 0; z-index: 5; opacity: 0; overflow: hidden; background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.14) 0 2px, transparent 2px 6px); animation: mvx-rwl var(--mvd) steps(1, end) both; }
+.mvx-vhs i { position: absolute; left: 0; right: 0; height: 22px; background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)); animation: mvx-vhsband 0.5s linear infinite; }
+@keyframes mvx-vhsband { from { top: 100%; } to { top: -10%; } }
+
+/* 一時停止 */
+.cat-btn.mv-pause { animation-name: mv-pause; }
+@keyframes mv-pause { 0% { transform: translate(0, 0) rotate(0) scale(1, 1); } 6% { transform: translate(0, 4%) rotate(0) scale(1.1, 0.9); animation-timing-function: ease-out; } 20%, 62% { transform: translate(0, -70%) rotate(-12deg) scale(0.95, 1.06); } 74% { transform: translate(0, -90%) rotate(0) scale(1, 1); animation-timing-function: ease-in; } 84% { transform: translate(0, 0) rotate(0) scale(1.15, 0.85); } 92% { transform: translate(0, -6%) rotate(0) scale(0.97, 1.03); } 100% { transform: translate(0, 0) rotate(0) scale(1, 1); } }
+.stage.mvs-pause { animation: mvs-pause var(--mvd) steps(1, end) both; }
+@keyframes mvs-pause { 0%, 19% { filter: none; } 20%, 61% { filter: grayscale(0.85) contrast(1.1); } 62%, 100% { filter: none; } }
+.mvx-pausei, .mvx-playi { width: 90px; height: 90px; margin: -45px 0 0 -45px; border-radius: 50%; background: rgba(43, 43, 43, 0.78); border: 4px solid #fff; box-shadow: 0 0 0 3px #2b2b2b; z-index: 6; display: flex; align-items: center; justify-content: center; opacity: 0; }
+.mvx-pausei { animation: mvx-pausei var(--mvd) ease-out both; }
+.mvx-pausei b { width: 34px; height: 38px; border-left: 12px solid #fff; border-right: 12px solid #fff; }
+.mvx-playi { animation: mvx-playi var(--mvd) ease-out both; }
+.mvx-playi b { width: 0; height: 0; margin-left: 8px; border-left: 32px solid #fff; border-top: 20px solid transparent; border-bottom: 20px solid transparent; }
+@keyframes mvx-pausei { 0%, 19% { opacity: 0; transform: scale(0.5); } 22% { opacity: 1; transform: scale(1.1); } 25%, 58% { opacity: 1; transform: scale(1); } 61%, 100% { opacity: 0; transform: scale(1.3); } }
+@keyframes mvx-playi { 0%, 60% { opacity: 0; transform: scale(0.5); } 63% { opacity: 1; transform: scale(1.1); } 66%, 70% { opacity: 1; transform: scale(1); } 76%, 100% { opacity: 0; transform: scale(1.4); } }
+.mvx-label.ps { animation-name: mvx-psl; }
+@keyframes mvx-psl { 0%, 19% { opacity: 0; } 20%, 61% { opacity: 1; } 62%, 100% { opacity: 0; } }
+
+/* 鏡 */
+.cat-btn.mv-mirror { animation-name: mv-mirror; transform-origin: 50% 100%; }
+@keyframes mv-mirror { 0% { transform: translateX(0) translateY(0) rotate(0); } 12% { transform: translateX(-38%) translateY(0) rotate(0); } 22% { transform: translateX(-38%) translateY(-14%) rotate(-10deg); } 32% { transform: translateX(-38%) translateY(0) rotate(0); } 42% { transform: translateX(-38%) translateY(0) rotate(12deg); } 52% { transform: translateX(-38%) translateY(0) rotate(-12deg); } 62% { transform: translateX(-38%) translateY(-26%) rotate(0); } 72% { transform: translateX(-38%) translateY(0) rotate(0); } 80% { transform: translateX(-38%) translateY(0) rotate(8deg); } 90%, 100% { transform: translateX(0) translateY(0) rotate(0); } }
+.mvx-mirror { z-index: 2; transform-origin: 50% 100%; animation: mvx-mirror var(--mvd) ease-out both; }
+@keyframes mvx-mirror { 0% { transform: scale(0); } 8% { transform: scale(1.05); } 12%, 90% { transform: scale(1); } 100% { transform: scale(0); } }
+.mvx-glass { position: absolute; inset: 0; border-radius: 50% 50% 12px 12px / 36% 36% 12px 12px; background: linear-gradient(160deg, #e8f6ff, #bfe0f5); border: 6px solid #e0a868; box-shadow: 0 0 0 3px #2b2b2b, inset 0 0 0 2px #2b2b2b; overflow: hidden; }
+.mvx-glass i { position: absolute; left: 12%; top: -10%; width: 18%; height: 130%; background: rgba(255, 255, 255, 0.55); transform: rotate(25deg); }
+.mvx-mircat { position: absolute; left: 5%; bottom: 0; transform-origin: 50% 100%; animation: mvx-mircat var(--mvd) ease-in-out 0.12s both; }
+@keyframes mvx-mircat { 0%, 12% { transform: scaleX(-1) translateY(0) rotate(0); } 22% { transform: scaleX(-1) translateY(-14%) rotate(-10deg); } 32% { transform: scaleX(-1) translateY(0) rotate(0); } 42% { transform: scaleX(-1) translateY(0) rotate(12deg); } 52% { transform: scaleX(-1) translateY(0) rotate(-12deg); } 62% { transform: scaleX(-1) translateY(-26%) rotate(0); } 72% { transform: scaleX(-1) translateY(0) rotate(0); } 80% { transform: scaleX(-1) translateY(0) rotate(8deg); } 90%, 100% { transform: scaleX(-1) translateY(0) rotate(0); } }
+
+/* くしゃみ */
+.cat-btn.mv-achoo { animation-name: mv-achoo; transform-origin: 50% 100%; }
+.stage.mvs-achoo { animation: mvs-jolt 0.5s ease-out calc(var(--mvd) * 0.33); }
+@keyframes mv-achoo { 0% { transform: translate(0, 0) rotate(0) scale(1, 1); } 8% { transform: translate(0, 0) rotate(-6deg) scale(1.04, 1.08); } 14% { transform: translate(0, 0) rotate(0) scale(1, 1); } 22% { transform: translate(0, 0) rotate(-10deg) scale(1.06, 1.12); } 30% { transform: translate(0, 0) rotate(-14deg) scale(1.08, 1.14); } 33% { transform: translate(4%, 0) rotate(10deg) scale(1.1, 0.9); } 46% { transform: translate(-120%, -30%) rotate(-380deg) scale(1, 1); animation-timing-function: ease-in; } 54% { transform: translate(-110%, 0) rotate(-360deg) scale(1.1, 0.9); } 60% { transform: translate(-110%, 0) rotate(-360deg) scale(1, 1); } 64% { transform: translate(-95%, -6%) rotate(-360deg) scale(1, 1); } 70% { transform: translate(-80%, 0) rotate(-360deg) scale(1, 1); } 76% { transform: translate(-60%, -6%) rotate(-360deg) scale(1, 1); } 82% { transform: translate(-40%, 0) rotate(-360deg) scale(1, 1); } 88% { transform: translate(-20%, -6%) rotate(-360deg) scale(1, 1); } 94%, 100% { transform: translate(0, 0) rotate(-360deg) scale(1, 1); } }
+.mvx-spray { width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: #d9f1ff; border: 2px solid #2b2b2b; z-index: 4; opacity: 0; animation: mvx-spray 0.6s ease-out both; }
+@keyframes mvx-spray { 0% { opacity: 1; transform: translate(0, 0) scale(0.5); } 100% { opacity: 0; transform: translate(var(--sx), var(--sy)) scale(1.2); } }
+
+/* しゃっくり */
+.cat-btn.mv-hiccup { animation-name: mv-hiccup; transform-origin: 50% 100%; }
+@keyframes mv-hiccup { 0%, 13%, 22%, 39%, 48%, 55%, 64%, 81%, 90%, 100% { transform: translateY(0) scale(1, 1); } 14%, 40%, 56%, 82% { transform: translateY(0) scale(1.1, 0.9); } 16%, 42%, 58%, 84% { transform: translateY(-28%) scale(0.94, 1.1); } 19%, 45%, 61%, 87% { transform: translateY(0) scale(1.06, 0.95); } }
+
+/* フグ */
+.cat-btn.mv-puff { animation-name: mv-puff; transform-origin: 50% 70%; }
+@keyframes mv-puff { 0% { transform: translate(0, 0) scale(1, 1); } 8% { transform: translate(0, 0) scale(0.95, 1.04); } 14% { transform: translate(0, -4%) scale(1.2, 1.15); } 20% { transform: translate(0, -6%) scale(1.15, 1.2); } 30% { transform: translate(0, -12%) scale(1.55, 1.45); } 34% { transform: translate(0, -12%) scale(1.5, 1.5); } 50% { transform: translate(-6%, -20%) scale(1.5, 1.5); } 66% { transform: translate(6%, -16%) scale(1.5, 1.5); } 72% { transform: translate(0, -14%) scale(1.55, 1.55); } 76% { transform: translate(20%, -40%) scale(1.2, 1.2); } 80% { transform: translate(-20%, -30%) scale(1, 1); } 84% { transform: translate(10%, -10%) scale(0.9, 0.9); } 90% { transform: translate(0, 0) scale(1.05, 0.95); } 100% { transform: translate(0, 0) scale(1, 1); } }
+.mvx-spikes { left: 0; top: 0; width: 100%; z-index: -1; opacity: 0; transform-origin: 50% 59%; animation: mvx-spikes var(--mvd) ease-out both; }
+@keyframes mvx-spikes { 0%, 26% { opacity: 0; transform: scale(0.6); } 32% { opacity: 1; transform: scale(1.08); } 36%, 72% { opacity: 1; transform: scale(1); } 76%, 100% { opacity: 0; transform: scale(0.6); } }
+
+/* しぼむ */
+.cat-btn.mv-deflate { animation-name: mv-deflate; transform-origin: 50% 100%; }
+@keyframes mv-deflate { 0% { transform: translate(0, 0) rotate(0) scale(1, 1); } 6% { transform: translate(0, 0) rotate(0) scale(1.05, 1.05); } 14% { transform: translate(-10%, -20%) rotate(-20deg) scale(0.85, 0.8); } 22% { transform: translate(15%, -30%) rotate(25deg) scale(0.7, 0.62); } 30% { transform: translate(-12%, -14%) rotate(-30deg) scale(0.6, 0.5); } 38% { transform: translate(8%, -6%) rotate(15deg) scale(0.55, 0.4); } 46%, 64% { transform: translate(0, 0) rotate(0) scale(0.9, 0.22); } 68% { transform: translate(0, 0) rotate(0) scale(0.85, 0.42); } 72% { transform: translate(0, 0) rotate(0) scale(0.9, 0.38); } 76% { transform: translate(0, 0) rotate(0) scale(0.88, 0.64); } 80% { transform: translate(0, 0) rotate(0) scale(0.92, 0.6); } 84% { transform: translate(0, 0) rotate(0) scale(0.98, 0.92); } 90% { transform: translate(0, 0) rotate(0) scale(1.08, 1.08); } 96% { transform: translate(0, 0) rotate(0) scale(0.98, 1.02); } 100% { transform: translate(0, 0) rotate(0) scale(1, 1); } }
+.mvx-air { width: 18px; height: 14px; margin: -7px 0 0 -9px; border-radius: 50%; background: #fff; border: 2px solid #2b2b2b; z-index: 4; opacity: 0; animation: mvx-air 0.7s ease-out both; }
+@keyframes mvx-air { 0% { opacity: 1; transform: scale(0.3); } 100% { opacity: 0; transform: translate(50px, -40px) scale(1.3); } }
+.mvx-pump { width: 44px; z-index: 4; opacity: 0; transform-origin: 50% 100%; animation: mvx-pump var(--mvd) linear both; }
+@keyframes mvx-pump { 0%, 60% { opacity: 0; transform: translateY(20px) scaleY(1); } 64%, 66%, 74%, 82% { opacity: 1; transform: translateY(0) scaleY(1); } 70%, 78%, 86% { opacity: 1; transform: translateY(0) scaleY(0.8); } 90% { opacity: 1; transform: translateY(0) scaleY(1); } 96%, 100% { opacity: 0; transform: translateY(0) scaleY(1); } }
+
+/* ゴム */
+.cat-btn.mv-rubber { animation-name: mv-rubber; transform-origin: 8% 80%; }
+@keyframes mv-rubber { 0% { transform: scale(1, 1) skewX(0); } 8% { transform: scale(1.05, 1) skewX(0); } 40% { transform: scale(2.2, 0.72) skewX(-6deg); } 44% { transform: scale(0.55, 1.3) skewX(10deg); } 50% { transform: scale(1.5, 0.8) skewX(-5deg); } 56% { transform: scale(0.8, 1.15) skewX(4deg); } 62% { transform: scale(1.2, 0.9) skewX(0); } 68% { transform: scale(0.92, 1.06) skewX(0); } 74% { transform: scale(1.05, 0.97) skewX(0); } 82%, 100% { transform: scale(1, 1) skewX(0); } }
+.mvx-glove { width: 50px; z-index: 4; opacity: 0; animation: mvx-glove var(--mvd) ease-in-out both; }
+.mvx-glove svg { transform: scaleX(-1); }
+@keyframes mvx-glove { 0% { opacity: 0; transform: translateX(30px) rotate(0); } 6%, 8% { opacity: 1; transform: translateX(0) rotate(0); } 40% { opacity: 1; transform: translateX(var(--gx)) rotate(0); } 44% { opacity: 1; transform: translateX(calc(var(--gx) + 20px)) rotate(30deg); } 56%, 100% { opacity: 0; transform: translateX(calc(var(--gx) + 60px)) rotate(60deg); } }
+
+/* 巻物 */
+.cat-btn.mv-scroll { animation-name: mv-scrollbtn; }
+@keyframes mv-scrollbtn { 0%, 40%, 58%, 100% { transform: none; } 45% { transform: translateX(-10%); } 52% { transform: translateX(8%); } }
+.cat-btn.mv-scroll > .cat { animation: mvx-scrollclip var(--mvd) ease-in-out both; }
+@keyframes mvx-scrollclip { 0%, 8% { clip-path: inset(0% -20% -20% -20%); } 40%, 58% { clip-path: inset(94% -20% -20% -20%); } 90%, 100% { clip-path: inset(0% -20% -20% -20%); } }
+.mvx-roll { left: 4%; width: 92%; height: 0; top: 0; z-index: 2; opacity: 0; animation: mvx-roll var(--mvd) ease-in-out both; }
+@keyframes mvx-roll { 0%, 6% { top: 0%; opacity: 0; } 8% { top: 0%; opacity: 1; } 40%, 58% { top: 94%; opacity: 1; } 90% { top: 0%; opacity: 1; } 94%, 100% { top: 0%; opacity: 0; } }
+.mvx-roll i { position: absolute; left: 0; right: 0; top: -10px; height: 20px; border-radius: 10px; background: linear-gradient(#fff6e0, #f1d9a0 60%, #c9a06a); border: 3px solid #2b2b2b; animation: mvx-rollthick var(--mvd) ease-in-out both; }
+.mvx-roll i::before, .mvx-roll i::after { content: ""; position: absolute; top: -5px; width: 10px; height: 24px; border-radius: 4px; background: #c98a4a; border: 3px solid #2b2b2b; }
+.mvx-roll i::before { left: -12px; }
+.mvx-roll i::after { right: -12px; }
+@keyframes mvx-rollthick { 0%, 8% { transform: scaleY(0.6); } 40%, 58% { transform: scaleY(1.7); } 90%, 100% { transform: scaleY(0.6); } }
+
+/* コイン */
+.cat-btn.mv-coin { animation-name: mv-coin; transform-origin: 50% 55%; }
+@keyframes mv-coin { 0% { transform: perspective(600px) translateY(0) rotateY(0); } 10% { transform: perspective(600px) translateY(4%) rotateY(0); animation-timing-function: ease-out; } 45% { transform: perspective(600px) translateY(-90%) rotateY(900deg); animation-timing-function: ease-in; } 80% { transform: perspective(600px) translateY(0) rotateY(1800deg); } 86% { transform: perspective(600px) translateY(-6%) rotateY(1800deg); } 100% { transform: perspective(600px) translateY(0) rotateY(1800deg); } }
+.mvx-coin { left: 14%; top: 10%; width: 72%; aspect-ratio: 1; z-index: -1; opacity: 0; animation: mvx-coinin var(--mvd) ease-out both; }
+.mvx-coin i { position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff6c2 0 12%, #ffd94a 30%, #f5b800 80%); border: 4px solid #2b2b2b; box-shadow: inset 0 0 0 8px #ffe680, inset 0 0 0 11px #2b2b2b; }
+@keyframes mvx-coinin { 0%, 6% { opacity: 0; transform: scale(0.4); } 12%, 84% { opacity: 1; transform: scale(1); } 92%, 100% { opacity: 0; transform: scale(0.6); } }
+
+/* 側転 */
+.cat-btn.mv-wheel { animation-name: mv-wheel; transform-origin: 50% 55%; }
+@keyframes mv-wheel { 0% { transform: translate(0, 0) rotate(0); } 8% { transform: translate(0, 4%) rotate(0); } 22% { transform: translate(45%, -30%) rotate(180deg); } 36%, 44% { transform: translate(90%, 0) rotate(360deg); } 58% { transform: translate(45%, -30%) rotate(180deg); } 72% { transform: translate(0, 0) rotate(0); } 82% { transform: translate(0, -10%) rotate(0); } 90%, 100% { transform: translate(0, 0) rotate(0); } }
+.mvx-arc { z-index: 2; opacity: 0; animation: mvx-arc var(--mvd) ease-in-out both; }
+@keyframes mvx-arc { 0%, 10% { opacity: 0; } 20%, 70% { opacity: 0.8; } 80%, 100% { opacity: 0; } }
+
+/* バレエ */
+.cat-btn.mv-ballet { animation-name: mv-ballet; transform-origin: 50% 100%; }
+@keyframes mv-ballet { 0% { transform: perspective(700px) translateY(0) rotateY(0) rotate(0) scale(1, 1); } 10% { transform: perspective(700px) translateY(-8%) rotateY(0) rotate(0) scale(0.95, 1.08); } 60% { transform: perspective(700px) translateY(-8%) rotateY(1440deg) rotate(0) scale(0.95, 1.08); } 68%, 80% { transform: perspective(700px) translateY(-8%) rotateY(1440deg) rotate(-14deg) scale(0.95, 1.08); } 88% { transform: perspective(700px) translateY(0) rotateY(1440deg) rotate(0) scale(1.04, 0.96); } 100% { transform: perspective(700px) translateY(0) rotateY(1440deg) rotate(0) scale(1, 1); } }
+.mvx-tutu { left: 18%; width: 64%; top: 64%; z-index: 2; }
+
+/* ロデオ */
+.cat-btn.mv-rodeo { animation-name: mv-rodeo; transform-origin: 50% 100%; }
+@keyframes mv-rodeo { 0%, 100% { transform: translate(0, 0) rotate(0) scale(1, 1); } 8% { transform: translate(0, -20%) rotate(-22deg) scale(1, 1); } 14% { transform: translate(0, 0) rotate(18deg) scale(1.08, 0.92); } 20% { transform: translate(8%, -28%) rotate(25deg) scale(1, 1); } 26% { transform: translate(0, 0) rotate(-20deg) scale(1.08, 0.92); } 32% { transform: translate(-8%, -16%) rotate(-28deg) scale(1, 1); } 38% { transform: translate(0, 0) rotate(22deg) scale(1.1, 0.9); } 44% { transform: translate(0, -30%) rotate(15deg) scale(1, 1); } 50% { transform: translate(0, 0) rotate(-25deg) scale(1.08, 0.92); } 56% { transform: translate(10%, -22%) rotate(28deg) scale(1, 1); } 62% { transform: translate(0, 0) rotate(-18deg) scale(1.1, 0.9); } 68% { transform: translate(-10%, -18%) rotate(-24deg) scale(1, 1); } 74% { transform: translate(0, 0) rotate(20deg) scale(1.08, 0.92); } 80% { transform: translate(0, -12%) rotate(-10deg) scale(1, 1); } 88% { transform: translate(0, 0) rotate(0) scale(1.06, 0.94); } }
+.mvx-lasso { left: 10%; width: 80%; top: -12%; z-index: 2; animation: mvx-lasso 0.35s linear infinite; }
+@keyframes mvx-lasso { 0% { transform: rotate(-8deg) scaleX(1); } 50% { transform: rotate(8deg) scaleX(0.8); } 100% { transform: rotate(-8deg) scaleX(1); } }
+.mvx-cowhat { width: 72px; z-index: 5; opacity: 0; animation: mvx-cowhat 1.2s ease-out both; }
+@keyframes mvx-cowhat { 0% { opacity: 1; transform: translate(0, -20px) rotate(0); } 100% { opacity: 0; transform: translate(-140px, -150px) rotate(-540deg); } }
+
+/* ウェーブ */
+.cat-btn.mv-wavecats { animation-name: mv-wavecats; transform-origin: 50% 97%; }
+@keyframes mv-wavecats { 0% { transform: translateY(0) scale(1); } 8%, 21.4% { transform: translateY(0) scale(0.52); } 28.9% { transform: translateY(-80%) scale(0.52); } 36.4%, 58.9% { transform: translateY(0) scale(0.52); } 66.4% { transform: translateY(-80%) scale(0.52); } 73.9%, 92% { transform: translateY(0) scale(0.52); } 100% { transform: translateY(0) scale(1); } }
+.mvx-wcat { z-index: 3; animation: mvx-wavej 1.2s ease-in-out 2 both; }
+@keyframes mvx-wavej { 0%, 40%, 100% { transform: translateY(0) scale(1, 1); } 5% { transform: translateY(0) scale(1.1, 0.9); } 20% { transform: translateY(-150%) scale(0.95, 1.08); } 36% { transform: translateY(0) scale(1.08, 0.92); } }
+
+/* 磁石 */
+.cat-btn.mv-magnet { animation-name: mv-magnet; transform-origin: 50% 100%; }
+@keyframes mv-magnet { 0%, 10% { transform: translateX(0) skewX(0) rotate(0); } 18% { transform: translateX(6%) skewX(-12deg) rotate(0); } 26% { transform: translateX(14%) skewX(-20deg) rotate(0); } 32% { transform: translateX(16%) skewX(-24deg) rotate(0); animation-timing-function: ease-in; } 37% { transform: translateX(52%) skewX(0) rotate(-8deg); } 40% { transform: translateX(48%) skewX(0) rotate(-6deg); } 42%, 46%, 50%, 54%, 58%, 62% { transform: translateX(49%) skewX(0) rotate(-7deg); } 44%, 48%, 52%, 56%, 60%, 64% { transform: translateX(48%) skewX(0) rotate(-5deg); } 70% { transform: translateX(49%) skewX(0) rotate(-6deg); } 76% { transform: translateX(34%) skewX(0) rotate(10deg); } 88%, 100% { transform: translateX(0) skewX(0) rotate(0); } }
+.mvx-magnet { width: 80px; z-index: 4; animation: mvx-magnet var(--mvd) ease-in-out both; }
+@keyframes mvx-magnet { 0% { transform: translateX(110%); } 8%, 66% { transform: translateX(0) rotate(0); } 70% { transform: translateX(10%) rotate(8deg); } 80%, 100% { transform: translateX(120%) rotate(0); } }
+.mvx-field { width: 50px; height: 70px; margin-top: -35px; border: 3px dashed #2b2b2b; border-right: 0; border-radius: 50% 0 0 50%; z-index: 2; opacity: 0; animation: mvx-field 0.9s ease-out 3 both; }
+@keyframes mvx-field { 0% { opacity: 0; transform: translateX(0) scale(0.4); } 40% { opacity: 0.7; } 100% { opacity: 0; transform: translateX(-60px) scale(1.4); } }
+.mvx-clip { width: 12px; z-index: 4; opacity: 0; animation: mvx-clip 0.9s ease-in both; }
+@keyframes mvx-clip { 0% { opacity: 1; transform: translate(0, 0) rotate(0); } 90% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--mx), -40px) rotate(400deg); } }
+
+/* バナナ */
+.cat-btn.mv-slip { animation-name: mv-slip; transform-origin: 50% 70%; }
+@keyframes mv-slip { 0% { transform: translate(0, 0) rotate(0); } 8% { transform: translate(8%, -5%) rotate(-3deg); } 16% { transform: translate(16%, 0) rotate(3deg); } 24% { transform: translate(24%, -5%) rotate(-3deg); } 27% { transform: translate(30%, 0) rotate(0); animation-timing-function: ease-out; } 32% { transform: translate(34%, -60%) rotate(-110deg); animation-timing-function: ease-in; } 38% { transform: translate(30%, 12%) rotate(-90deg); } 41% { transform: translate(30%, 5%) rotate(-92deg); } 44%, 58% { transform: translate(30%, 12%) rotate(-90deg); } 66% { transform: translate(30%, -20%) rotate(-10deg); } 70% { transform: translate(30%, 0) rotate(0); } 78% { transform: translate(20%, -5%) rotate(3deg); } 86% { transform: translate(10%, 0) rotate(-3deg); } 94%, 100% { transform: translate(0, 0) rotate(0); } }
+.mvx-peel { width: 44px; z-index: 4; animation: mvx-peel var(--mvd) ease-out both; }
+@keyframes mvx-peel { 0% { opacity: 0; transform: scale(0); } 6%, 26% { opacity: 1; transform: translate(0, 0) rotate(0) scale(1); } 34% { opacity: 1; transform: translate(40px, -110px) rotate(300deg) scale(1); } 44%, 86% { opacity: 1; transform: translate(80px, 0) rotate(540deg) scale(1); } 96%, 100% { opacity: 0; transform: translate(80px, 0) rotate(540deg) scale(1); } }
+.mvx-dstars { width: 0; height: 0; z-index: 5; opacity: 0; transform: scaleY(0.45); animation: mvx-dstars var(--mvd) linear both; }
+.mvx-dstars i { position: absolute; left: -10px; top: -12px; font-style: normal; font-size: 20px; color: #ffd94a; -webkit-text-stroke: 1.5px #2b2b2b; paint-order: stroke fill; animation: mvx-dsx 0.8s linear infinite; }
+.mvx-dstars i:nth-child(2) { animation-delay: -0.27s; color: #fff; }
+.mvx-dstars i:nth-child(3) { animation-delay: -0.53s; }
+@keyframes mvx-dsx { from { transform: rotate(0) translateX(34px) rotate(0); } to { transform: rotate(360deg) translateX(34px) rotate(-360deg); } }
+@keyframes mvx-dstars { 0%, 38% { opacity: 0; } 42%, 62% { opacity: 1; } 66%, 100% { opacity: 0; } }
+
+/* ねぼけ歩き */
+.cat-btn.mv-sleepwalk { animation-name: mv-sleepw; transform-origin: 50% 100%; }
+@keyframes mv-sleepw { 0% { transform: translate(0, 0) rotate(0); } 12% { transform: translate(-20%, -3%) rotate(-6deg); } 24% { transform: translate(-40%, 0) rotate(5deg); } 34% { transform: translate(-25%, -4%) rotate(-4deg); } 44% { transform: translate(10%, 0) rotate(7deg); } 50% { transform: translate(38%, 0) rotate(8deg); } 52% { transform: translate(34%, 0) rotate(-6deg); } 56% { transform: translate(30%, -6%) rotate(-10deg); } 66% { transform: translate(20%, 0) rotate(5deg); } 78% { transform: translate(-10%, -3%) rotate(-5deg); } 90% { transform: translate(0, 0) rotate(3deg); } 100% { transform: translate(0, 0) rotate(0); } }
+.cat-btn.mv-sleepwalk > .cat { animation: mvx-bobble 0.5s ease-in-out infinite alternate; }
+@keyframes mvx-bobble { from { transform: translateY(0); } to { transform: translateY(-3%); } }
+.mvx-zz { z-index: 5; font-family: var(--pop); font-weight: 900; font-size: 24px; color: #c9a7ff; -webkit-text-stroke: 2px #2b2b2b; paint-order: stroke fill; opacity: 0; animation: mvx-zz 1.4s ease-out both; }
+@keyframes mvx-zz { 0% { opacity: 0; transform: translate(0, 0) scale(0.5) rotate(0); } 20% { opacity: 1; } 100% { opacity: 0; transform: translate(40px, -70px) scale(1.4) rotate(15deg); } }
+
+/* ばたん */
+.cat-btn.mv-flop { animation-name: mv-flop; transform-origin: 38% 95%; }
+@keyframes mv-flop { 0% { transform: rotate(0) scale(1, 1); } 8% { transform: rotate(6deg) scale(1, 1); } 14% { transform: rotate(-4deg) scale(1, 1); } 18% { transform: rotate(2deg) scale(1, 1); animation-timing-function: ease-in; } 28% { transform: rotate(-90deg) scale(1, 1); } 32% { transform: rotate(-80deg) scale(1, 1); } 36% { transform: rotate(-90deg) scale(1, 1); } 39% { transform: rotate(-87deg) scale(1, 1); } 42%, 62% { transform: rotate(-90deg) scale(1, 1); } 66% { transform: rotate(-92deg) scale(1, 1); } 72% { transform: rotate(8deg) scale(0.95, 1.1); } 78% { transform: rotate(-4deg) scale(1.04, 0.96); } 86%, 100% { transform: rotate(0) scale(1, 1); } }
+
+/* ぶるぶる */
+.cat-btn.mv-shiver { animation-name: mv-shiver; transform-origin: 50% 100%; }
+@keyframes mv-shiver { 0%, 100% { transform: none; } 10%, 90% { transform: scale(0.94, 0.96); } }
+.cat-btn.mv-shiver > .cat { animation: mvx-shake 0.08s linear infinite; }
+.mvx-shiv { top: 30%; width: 7%; z-index: 2; opacity: 0; animation: mvx-shiv var(--mvd) linear both; }
+.mvx-shiv svg { animation: mvx-shake 0.1s linear infinite; }
+.mvx-shiv.l { left: 8%; }
+.mvx-shiv.r { right: 8%; }
+@keyframes mvx-shiv { 0%, 6% { opacity: 0; } 10%, 88% { opacity: 1; } 94%, 100% { opacity: 0; } }
+.mvx-frost { left: 18%; top: 14%; width: 64%; height: 84%; z-index: 1; border-radius: 45%; background: radial-gradient(rgba(143, 208, 255, 0) 35%, rgba(143, 208, 255, 0.45)); mix-blend-mode: multiply; opacity: 0; animation: mvx-shiv var(--mvd) linear both; }
+.mvx-snowdot { display: block; width: 100%; aspect-ratio: 1; border-radius: 50%; background: #fff; border: 1.5px solid #2b2b2b; }
+
+/* ハンコ */
+.cat-btn.mv-stamp { animation-name: mv-stamp; transform-origin: 50% 100%; }
+@keyframes mv-stamp { 0%, 20% { transform: translateX(0) scale(1, 1); } 24%, 40% { transform: translateX(0) scale(1.25, 0.5); } 46% { transform: translateX(0) scale(0.9, 1.12); } 50% { transform: translateX(0) scale(1.05, 0.95); } 54% { transform: translateX(0) scale(1, 1); } 64%, 84% { transform: translateX(-75%) scale(1, 1); } 96%, 100% { transform: translateX(0) scale(1, 1); } }
+.mvx-hanko { z-index: 4; animation: mvx-hanko var(--mvd) ease-in both; }
+@keyframes mvx-hanko { 0% { transform: translateY(-320px); } 14% { transform: translateY(-50px); } 20% { transform: translateY(-60px); animation-timing-function: ease-in; } 24%, 40% { transform: translateY(0); } 52%, 100% { transform: translateY(-340px); } }
+.mvx-seal { z-index: 2; opacity: 0; animation: mvx-seal var(--mvd) ease-out both; }
+@keyframes mvx-seal { 0%, 52% { opacity: 0; transform: scale(1); } 56% { opacity: 0.9; transform: scale(1.1); } 60%, 86% { opacity: 0.9; transform: scale(1); } 100% { opacity: 0; transform: scale(1); } }
+
+/* シール */
+.cat-btn.mv-sticker { animation-name: mv-sticker; transform-origin: 0% 100%; }
+.cat-btn.mv-sticker > .cat { filter: drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(2px 3px 0 rgba(43, 43, 43, 0.5)); }
+@keyframes mv-sticker { 0%, 6% { transform: perspective(500px) rotate3d(1, 1, 0, 0deg); } 16% { transform: perspective(500px) rotate3d(1, 1, 0, 30deg); } 26% { transform: perspective(500px) rotate3d(1, 1, 0, 52deg); } 32% { transform: perspective(500px) rotate3d(1, 1, 0, 46deg); } 40% { transform: perspective(500px) rotate3d(1, 1, 0, 56deg); } 48% { transform: perspective(500px) rotate3d(1, 1, 0, 44deg); } 56% { transform: perspective(500px) rotate3d(1, 1, 0, 54deg); } 64% { transform: perspective(500px) rotate3d(1, 1, 0, 46deg); } 72% { transform: perspective(500px) rotate3d(1, 1, 0, 40deg); } 80% { transform: perspective(500px) rotate3d(1, 1, 0, 0deg) scale(1.05); } 84% { transform: perspective(500px) rotate3d(1, 1, 0, 0deg) scale(0.98); } 90%, 100% { transform: perspective(500px) rotate3d(1, 1, 0, 0deg) scale(1); } }
+.mvx-residue { z-index: 2; opacity: 0; animation: mvx-residue var(--mvd) ease-out both; }
+.mvx-residue svg { filter: brightness(0); }
+@keyframes mvx-residue { 0%, 10% { opacity: 0; } 24%, 76% { opacity: 0.18; } 84%, 100% { opacity: 0; } }
+
+/* ポップコーン */
+.cat-btn.mv-popcorn { animation-name: mv-popcorn; transform-origin: 50% 80%; }
+@keyframes mv-popcorn { 0% { transform: translateY(0) rotate(0) scale(1, 1); } 6% { transform: translateY(0) rotate(0) scale(1.1, 0.9); } 11% { transform: translateY(-55%) rotate(-15deg) scale(0.95, 1.05); } 16% { transform: translateY(0) rotate(0) scale(1.1, 0.9); } 22% { transform: translateY(-90%) rotate(20deg) scale(0.95, 1.05); } 28% { transform: translateY(0) rotate(0) scale(1.12, 0.88); } 32% { transform: translateY(-35%) rotate(-10deg) scale(1, 1); } 36% { transform: translateY(0) rotate(0) scale(1.1, 0.9); } 44% { transform: translateY(-120%) rotate(-360deg) scale(1, 1); } 52% { transform: translateY(0) rotate(-360deg) scale(1.12, 0.88); } 57% { transform: translateY(-45%) rotate(-345deg) scale(1, 1); } 62% { transform: translateY(0) rotate(-360deg) scale(1.1, 0.9); } 70% { transform: translateY(-100%) rotate(-380deg) scale(1, 1); } 78% { transform: translateY(0) rotate(-360deg) scale(1.12, 0.88); } 84% { transform: translateY(-30%) rotate(-360deg) scale(1, 1); } 90% { transform: translateY(0) rotate(-360deg) scale(1.06, 0.94); } 100% { transform: translateY(0) rotate(-360deg) scale(1, 1); } }
+.mvx-corn { width: 34px; margin-left: -17px; z-index: 4; opacity: 0; animation: mvx-corn 1s ease-out both; }
+@keyframes mvx-corn { 0% { opacity: 0; transform: translate(0, 0) scale(0.2) rotate(0); } 10% { opacity: 1; transform: translate(calc(var(--cx) * 0.2), calc(var(--cy) * 0.5)) scale(1.2) rotate(calc(var(--rot) * 0.2)); } 45% { opacity: 1; transform: translate(calc(var(--cx) * 0.7), var(--cy)) scale(1) rotate(calc(var(--rot) * 0.6)); animation-timing-function: ease-in; } 100% { opacity: 1; transform: translate(var(--cx), var(--fy)) scale(1) rotate(var(--rot)); } }
+
+/* たましい */
+.cat-btn.mv-soulout { animation-name: mv-soul; transform-origin: 50% 100%; }
+@keyframes mv-soul { 0%, 10% { transform: translateY(0) rotate(0) scale(1, 1); } 20% { transform: translateY(0) rotate(-4deg) scale(1.04, 0.86); } 46% { transform: translateY(0) rotate(3deg) scale(1.05, 0.84); } 74% { transform: translateY(0) rotate(-4deg) scale(1.04, 0.86); } 80% { transform: translateY(-14%) rotate(0) scale(0.95, 1.1); } 88% { transform: translateY(0) rotate(0) scale(1.05, 0.95); } 100% { transform: translateY(0) rotate(0) scale(1, 1); } }
+.cat-btn.mv-soulout > .cat { animation: mvx-pale var(--mvd) linear both; }
+@keyframes mvx-pale { 0%, 12% { opacity: 1; } 22%, 74% { opacity: 0.55; } 82%, 100% { opacity: 1; } }
+.mvx-soul { width: 60px; z-index: 4; opacity: 0; transform-origin: 50% 100%; animation: mvx-soul var(--mvd) ease-in-out both; }
+@keyframes mvx-soul { 0%, 10% { opacity: 0; transform: translate(0, -10px) scale(0.2) rotate(0); } 18% { opacity: 0.9; transform: translate(0, -14px) scale(0.6) rotate(0); } 30% { opacity: 0.9; transform: translate(-36px, -24px) scale(1) rotate(-10deg); } 44% { opacity: 0.9; transform: translate(34px, -30px) scale(1) rotate(10deg); } 58% { opacity: 0.9; transform: translate(-24px, -30px) scale(1) rotate(-6deg); } 66% { opacity: 0.9; transform: translate(0, -24px) scale(1) rotate(0); } 76% { opacity: 0.9; transform: translate(0, -10px) scale(0.2) rotate(0); } 78%, 100% { opacity: 0; transform: translate(0, -10px) scale(0) rotate(0); } }
+
+/* ブーメラン */
+.cat-btn.mv-boomerang { animation-name: mv-boom; transform-origin: 50% 55%; }
+.cat-btn.mv-boomerang > .cat { animation: mvx-rot 0.3s linear infinite; transform-origin: 50% 55%; }
+@keyframes mv-boom { 0% { transform: translate(0, 0) scale(1, 1); } 8% { transform: translate(0, 0) scale(0.75, 0.75); } 18% { transform: translate(81%, -17%) scale(0.75, 0.75); } 28% { transform: translate(105%, -49%) scale(0.75, 0.75); } 38% { transform: translate(81%, -78%) scale(0.75, 0.75); } 48% { transform: translate(17%, -87%) scale(0.75, 0.75); } 58% { transform: translate(-57%, -70%) scale(0.75, 0.75); } 68% { transform: translate(-95%, -43%) scale(0.75, 0.75); } 78% { transform: translate(-81%, -16%) scale(0.75, 0.75); } 88% { transform: translate(0, 0) scale(1.15, 0.85); } 94% { transform: translate(0, -6%) scale(0.96, 1.04); } 100% { transform: translate(0, 0) scale(1, 1); } }
+.mvx-btrail { z-index: 2; opacity: 0; animation: mvx-btrail var(--mvd) ease-in-out both; }
+.mvx-btrail svg { height: 100%; }
+@keyframes mvx-btrail { 0%, 8% { opacity: 0; } 16%, 84% { opacity: 0.7; } 92%, 100% { opacity: 0; } }
+
+/* 座禅 */
+.cat-btn.mv-meditate { animation-name: mv-medi; }
+@keyframes mv-medi { 0%, 8% { transform: translateY(0) scale(1, 1); } 36% { transform: translateY(-45%) scale(1, 1); } 48% { transform: translateY(-50%) scale(1, 1); } 60% { transform: translateY(-42%) scale(1, 1); } 72% { transform: translateY(-50%) scale(1, 1); } 82% { transform: translateY(-45%) scale(1, 1); animation-timing-function: ease-in; } 92% { transform: translateY(0) scale(1.04, 0.96); } 100% { transform: translateY(0) scale(1, 1); } }
+.mvx-halo { left: 8%; top: -10%; width: 84%; aspect-ratio: 1; z-index: -1; border-radius: 50%; background: radial-gradient(circle, rgba(255, 246, 194, 0.95) 0 34%, #ffd94a 35% 38%, rgba(43, 43, 43, 0.8) 38.5% 39.5%, rgba(255, 217, 74, 0) 40%), repeating-conic-gradient(rgba(255, 217, 74, 0.75) 0 6deg, rgba(255, 217, 74, 0) 6deg 15deg); opacity: 0; animation: mvx-halo var(--mvd) ease-out both; }
+@keyframes mvx-halo { 0%, 14% { opacity: 0; transform: scale(0.3) rotate(0); } 34% { opacity: 1; transform: scale(1) rotate(40deg); } 84% { opacity: 1; transform: scale(1.05) rotate(160deg); } 94%, 100% { opacity: 0; transform: scale(0.6) rotate(200deg); } }
+.mvx-lotus { left: 4%; width: 92%; bottom: -12%; z-index: 2; opacity: 0; transform-origin: 50% 100%; animation: mvx-lotus var(--mvd) ease-out both; }
+@keyframes mvx-lotus { 0%, 6% { opacity: 0; transform: scale(0); } 14%, 88% { opacity: 1; transform: scale(1); } 96%, 100% { opacity: 0; transform: scale(0); } }
+
+/* ボウリング */
+.cat-btn.mv-bowling { animation-name: mv-bowl; transform-origin: 50% 60%; }
+@keyframes mv-bowl { 0% { transform: translate(0, 0) rotate(0) scale(1); } 10%, 14% { transform: translate(-75%, 8%) rotate(-200deg) scale(0.7); animation-timing-function: ease-in; } 36% { transform: translate(55%, 8%) rotate(500deg) scale(0.7); animation-timing-function: linear; } 46% { transform: translate(170%, 8%) rotate(900deg) scale(0.7); } 46.1%, 60% { transform: translate(-170%, 8%) rotate(0) scale(0.7); animation-timing-function: ease-out; } 80% { transform: translate(0, 8%) rotate(720deg) scale(0.7); } 86% { transform: translate(0, -14%) rotate(720deg) scale(1.05); } 92% { transform: translate(0, 0) rotate(720deg) scale(1.05, 0.95); } 100% { transform: translate(0, 0) rotate(720deg) scale(1); } }
+.mvx-pin { width: 20px; animation: mvx-pin 1s ease-out both; }
+@keyframes mvx-pin { 0% { transform: translate(0, 0) rotate(0); } 40% { transform: translate(calc(var(--px) * 0.6), var(--py)) rotate(calc(var(--rot) * 0.5)); } 100% { transform: translate(var(--px), 220px) rotate(var(--rot)); } }
+
+@media (prefers-reduced-motion: reduce) { html[class*="mvp-"] .card, .mvx-fixed, .mvx-fixed * { animation: none !important; } }
