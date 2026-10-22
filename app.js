@@ -495,13 +495,25 @@
     const choices = window.TapPoses.filter((p) => p !== lastTap);
     const pose = pickRandom(choices);
     lastTap = pose;
+    cat.classList.remove('pose-fade');
     drawCat(pose, propsFor(new Date()));
     cat.classList.remove('hop');
     void cat.getBoundingClientRect();
     cat.classList.add('hop');
     clearTimeout(poseTimer);
-    poseTimer = setTimeout(() => drawCat(back, propsFor(new Date())), 2200);
+    poseTimer = setTimeout(() => settleBack(back), 3400);
     return pose;
+  }
+  // 動きのあと、すこし余韻をのこしてから、ふわっと元のポーズに戻る
+  function settleBack(back) {
+    const cat = $('cat');
+    if (!cat || reduceMotion()) { drawCat(back, propsFor(new Date())); return; }
+    cat.classList.add('pose-fade');
+    clearTimeout(poseTimer);
+    poseTimer = setTimeout(() => {
+      drawCat(back, propsFor(new Date()));
+      cat.classList.remove('pose-fade');
+    }, 260);
   }
   // ---------- 派手な動き（ときどき） ----------
   // 名前は Messages.moves のキーと同じ。CSS は style.css の「派手な動き」
@@ -1701,6 +1713,7 @@
     if (!MOVES.includes(name)) return null;
     lastMove = name;
     clearTimeout(poseTimer); clearTimeout(moveTimer);
+    $('cat') && $('cat').classList.remove('pose-fade');
     document.querySelectorAll('.mv-extra').forEach((n) => n.remove());
     const back = window.TapPoses.includes(currentPose) ? (cheer.back || currentPose) : currentPose;
     cheer.back = back;
@@ -1753,7 +1766,9 @@
       btnVars.forEach((k) => btn.style.removeProperty(k)); btnVars = [];
       document.querySelectorAll('.mv-extra').forEach((n) => n.remove());
       moving = false;
-      drawCat(back, propsFor(new Date()));
+      // 動きのポーズのまま、すこし止まってから戻る
+      clearTimeout(poseTimer);
+      poseTimer = setTimeout(() => settleBack(back), 1600);
     }, ms);
     return name;
   }

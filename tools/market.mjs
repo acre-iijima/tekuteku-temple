@@ -15,7 +15,7 @@ const ITEMS = [
   { id: 'dji', name: 'NYダウ', short: 'ダウ', group: '株価', unit: 'ドル', digits: 0, main: true, yahoo: '^DJI', stooq: '^dji' },
   { id: 'spx', name: 'S&P500', group: '株価', unit: '', digits: 0, main: true, yahoo: '^GSPC', stooq: '^spx' },
   { id: 'ixic', name: 'ナスダック総合', short: 'NASDAQ', group: '株価', unit: '', digits: 0, main: true, yahoo: '^IXIC', stooq: '^ndq' },
-  { id: 'gold', name: '金（1グラム）', short: '金', group: '商品・金利', unit: '円', digits: 0, main: true, yahoo: 'GC=F', stooq: 'xauusd', perGramYen: true },
+  { id: 'gold', name: '金（1オンス）', short: '金', group: '商品・金利', unit: 'ドル', digits: 1, main: true, yahoo: 'GC=F', stooq: 'xauusd' },
   { id: 'oil', name: '原油（WTI・1バレル）', short: '原油', group: '商品・金利', unit: 'ドル', digits: 2, main: true, yahoo: 'CL=F', stooq: 'cl.f' },
   { id: 'us10y', name: '米国10年金利', short: '米10年', group: '商品・金利', unit: '%', digits: 3, main: true, yahoo: '^TNX', stooq: '10usy.b' },
   { id: 'btcjpy', name: 'ビットコイン', short: 'BTC', group: '商品・金利', unit: '円', digits: 0, main: true, yahoo: 'BTC-JPY', stooq: 'btcjpy' },
@@ -78,20 +78,9 @@ await Promise.all(ITEMS.map(async (item) => {
   catch (e) { console.log(`fail ${item.name}: ${e.message}`); }
 }));
 
-// 金は「1オンスのドル」を、ドル円で「1グラムの円」に直す
-const OZ = 31.1035;
-const usd = raw.usdjpy;
-if (raw.gold && usd) {
-  const rate = usd.price;
-  const conv = (v) => (v == null ? v : (v * rate) / OZ);
-  const byDate = Object.fromEntries(usd.history);
-  raw.gold = {
-    ...raw.gold,
-    price: conv(raw.gold.price), prev: raw.gold.prev == null ? null : (raw.gold.prev * (usd.prev || rate)) / OZ,
-    high: conv(raw.gold.high), low: conv(raw.gold.low),
-    history: raw.gold.history.map(([d, v]) => [d, (v * (byDate[d] || rate)) / OZ]),
-  };
-} else if (raw.gold) delete raw.gold; // ドル円が取れないと円に直せない
+// 金は「1オンスあたりのドル」のまま表示する（2026-10-22 円→ドルに変更）
+// 前回の market.json に円の値が残っていても、まぜて使わないようにする
+if (old.gold && old.gold.unit !== 'ドル') delete old.gold;
 
 const round = (v, n) => (v == null || isNaN(v) ? null : Math.round(v * 10 ** n) / 10 ** n);
 const items = ITEMS.map((item) => {

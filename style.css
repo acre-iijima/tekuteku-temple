@@ -2135,3 +2135,8 @@ html.mvp-bigbang #app { transform-origin: 50% 50vh; animation: mvp-bigbang var(-
 @keyframes mvx-pin { 0% { transform: translate(0, 0) rotate(0); } 40% { transform: translate(calc(var(--px) * 0.6), var(--py)) rotate(calc(var(--rot) * 0.5)); } 100% { transform: translate(var(--px), 220px) rotate(var(--rot)); } }
 
 @media (prefers-reduced-motion: reduce) { html[class*="mvp-"] .card, .mvx-fixed, .mvx-fixed * { animation: none !important; } }
+
+/* 動きのあと、ふわっと元のポーズに戻る */
+.cat { transition: opacity 0.26s ease; }
+.cat.pose-fade { opacity: 0.15; }
+@media (prefers-reduced-motion: reduce) { .cat { transition: none; } }
