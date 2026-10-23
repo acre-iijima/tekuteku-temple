@@ -1699,6 +1699,14 @@
   };
 
   // 動きのあいだだけ使う CSS の値（あとで消す）
+  // 別ファイル（moves-a.js / moves-b.js）で足した動きを合流させる
+  (window.MoreMoves || []).forEach((m) => {
+    if (!m || !m.name) return;
+    if (!MOVES.includes(m.name)) MOVES.push(m.name);
+    if (m.pose) MOVE_POSE[m.name] = m.pose;
+    if (m.ms) MOVE_MS[m.name] = m.ms;
+    if (m.extras) EXTRAS[m.name] = m.extras;
+  });
   let btnVars = [];
   function btnVar(k, v) { $('catBtn').style.setProperty(k, v); btnVars.push(k); }
 
