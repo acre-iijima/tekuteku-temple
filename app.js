@@ -96,7 +96,8 @@
     const holiday = JpCalendar.holiday(now);
     const event = JpCalendar.event(now);
     const season = seasonOf(now.getMonth() + 1);
-    return { holiday, event, season, tod: timeOfDay(now.getHours()), birthday: isBirthday(now), weather: todayWeather(now) };
+    const saijiki = JpCalendar.saijiki ? JpCalendar.saijiki(now) : null;
+    return { holiday, event, season, saijiki, tod: timeOfDay(now.getHours()), birthday: isBirthday(now), weather: todayWeather(now) };
   }
 
   // ---------- 天気 ----------
@@ -148,10 +149,19 @@
       days: week.days,
       wkm: week.wkm,
     };
+    // 歳時記（節気・候・雑節）
+    const sj = info.saijiki;
+    const zs = sj && sj.zassetsu.find((z) => M.zassetsu && M.zassetsu[z.name]);
+    if (sj) Object.assign(vars, { sekki: sj.sekki.name, kou: sj.kou.name, kouYomi: sj.kou.yomi, part: sj.kou.part, doyo: zs && zs.season ? zs.season : '' });
+    const kouPool = sj && M.kou && M.kou[sj.kou.name];
     let first;
     if (info.birthday) first = pickFresh(M.birthday, 'birthday', today);
     else if (info.holiday) first = pickFresh(M.holidayByName[info.holiday] || M.holiday, 'holiday', today);
     else if (info.event && M.event[info.event]) first = pickFresh(M.event[info.event], 'event', today);
+    // 節気のはじまり ＞ 雑節 ＞ 候のはじまり
+    else if (sj && sj.sekkiFirst && M.sekki && M.sekki[sj.sekki.name]) first = pickFresh(M.sekki[sj.sekki.name], 'sekki', today);
+    else if (zs) first = pickFresh(M.zassetsu[zs.name], 'zassetsu', today);
+    else if (sj && sj.kouFirst && kouPool) first = pickFresh(kouPool, 'kou', today);
     else if (now.getDay() === 0 && (info.tod === 'evening' || info.tod === 'night')) {
       first = pickFresh(week.days ? M.review : M.reviewNone, 'review', today);
     } else {
@@ -159,6 +169,8 @@
       const pools = [M.greet[info.tod], M.greet[info.tod], M.season[now.getMonth() + 1], M.weekday[now.getDay()]];
       // シュールなひとことも、ときどき
       if (M.surreal && M.surreal.length) pools.push(M.surreal, M.surreal);
+      // いまの候の話も、ときどき
+      if (kouPool) pools.push(kouPool.concat(M.kouAny || []));
       // 雨や雪、暑い寒いの日は、天気の話が出やすい
       const wk = weatherKey(info.weather);
       if (wk && M.weather && M.weather[wk]) {
@@ -202,6 +214,8 @@
 
   let currentPose = null;
   function drawCat(poseName, props) {
+    // 動き専用の絵（首のびる等）の名前が来たら、ふだんの絵にもどす
+    if (!Poses[poseName]) poseName = homePose();
     const pose = Poses[poseName];
     let extra = '';
     props.forEach((p) => {
@@ -350,8 +364,64 @@
     else if (info.holiday) text = `● ${info.holiday}`;
     else if (info.event) text = `★ ${info.event}`;
     chip.textContent = text;
-    chip.hidden = false;
+    // ふつうの日は、季節のチップのかわりに歳時記のタグを出す（タグが季節の色になる）
+    chip.hidden = !!info.saijiki && !info.birthday && !info.holiday && !info.event;
+    renderSaijikiTag(info);
   }
+
+  // ---------- 歳時記（二十四節気・七十二候・雑節） ----------
+  function renderSaijikiTag(info) {
+    const tag = $('saijikiTag');
+    const sj = info.saijiki;
+    if (!tag) return;
+    if (!sj) { tag.hidden = true; return; }
+    tag.className = 'saijiki-tag s-' + info.season + (sj.sekkiFirst || sj.kouFirst || sj.zassetsu.length ? ' new' : '');
+    tag.innerHTML = `${sj.sekki.name}<i>・</i>${sj.kou.name}`;
+    tag.setAttribute('aria-label', `今日の暦：${sj.sekki.name}、${sj.kou.name}。くわしく見る`);
+    tag.hidden = false;
+    renderSaijikiTag.sj = sj;
+  }
+  const sjMd = (d) => `${d.getMonth() + 1}月${d.getDate()}日`;
+  const sjRange = (a, b) => `${sjMd(a)}〜${sjMd(b)}`;
+  function renderSaijikiSheet(sj) {
+    const k = sj.kou, sk = sj.sekki;
+    const nextIdx = (sk.index + 1) % 24;
+    const next = new Date(sk.end.getFullYear(), sk.end.getMonth(), sk.end.getDate() + 1);
+    const today = (flag) => (flag ? '<span class="sj-today">今日から</span>' : '');
+    let html =
+      `<section class="sj-box sj-sekki s-${seasonOf(sk.start.getMonth() + 1)}">` +
+        `<p class="sj-label">二十四節気${today(sj.sekkiFirst)}</p>` +
+        `<p class="sj-name">${sk.name}<small>${sk.yomi}</small></p>` +
+        `<p class="sj-mean">${sk.mean}</p>` +
+        `<p class="sj-date">${sjRange(sk.start, sk.end)}</p>` +
+      '</section>' +
+      `<section class="sj-box sj-kou">` +
+        `<p class="sj-label">七十二候（${sk.name}の${k.part}）${today(sj.kouFirst)}</p>` +
+        `<p class="sj-name">${k.name}</p>` +
+        `<p class="sj-yomi">${k.yomi}</p>` +
+        `<p class="sj-mean">${k.mean}</p>` +
+        `<p class="sj-date">${sjRange(k.start, k.end)}</p>` +
+      '</section>';
+    // 雑節がある日は、いちばん上に
+    let zHtml = '';
+    sj.zassetsu.forEach((z) => {
+      const name = z.name === '土用入り' ? `${z.season}の土用入り` : z.name === '社日' || z.name.startsWith('彼岸') ? `${z.season}の${z.name}` : z.name;
+      zHtml +=
+        '<section class="sj-box sj-zassetsu">' +
+          '<p class="sj-label">今日の雑節</p>' +
+          `<p class="sj-name">${name}<small>${z.yomi}</small></p>` +
+          `<p class="sj-mean">${z.mean}</p>` +
+        '</section>';
+    });
+    html = zHtml + html;
+    html += `<p class="sub center sj-next">つぎの節気は ${JpCalendar.SEKKI[nextIdx][0]}（${sjMd(next)}）</p>`;
+    $('saijikiBody').innerHTML = html;
+  }
+  $('saijikiTag').addEventListener('click', () => {
+    if (!renderSaijikiTag.sj) return;
+    renderSaijikiSheet(renderSaijikiTag.sj);
+    openSheet('saijikiSheet');
+  });
 
   const WEATHER_WD = ['日', '月', '火', '水', '木', '金', '土'];
   function renderWeather(info) {
@@ -466,6 +536,15 @@
 
   // おためし用に時間帯だけ動かせるようにしておく
   let hourOverride = null;
+  // いまの時間帯のふだんの絵（動き専用の絵から戻るときに使う）
+  function homePose() {
+    try {
+      const now = new Date();
+      if (hourOverride != null) now.setHours(hourOverride, 0);
+      const p = poseFor(todayInfo(now), state.days[ymd(now)], now);
+      return Poses[p] ? p : 'sit';
+    } catch (e) { return 'sit'; }
+  }
   function render() {
     const now = new Date();
     if (hourOverride != null) now.setHours(hourOverride, 0);
@@ -490,7 +569,7 @@
   // なでると、ランダムにポーズが変わって、そのポーズに合ったひとことを言う
   function cheer() {
     const cat = $('cat');
-    const back = window.TapPoses.includes(currentPose) ? cheer.back : currentPose;
+    const back = window.TapPoses.includes(currentPose) || !Poses[currentPose] ? (Poses[cheer.back] ? cheer.back : homePose()) : currentPose;
     cheer.back = back;
     const choices = window.TapPoses.filter((p) => p !== lastTap);
     const pose = pickRandom(choices);
@@ -1723,7 +1802,7 @@
     clearTimeout(poseTimer); clearTimeout(moveTimer);
     $('cat') && $('cat').classList.remove('pose-fade');
     document.querySelectorAll('.mv-extra').forEach((n) => n.remove());
-    const back = window.TapPoses.includes(currentPose) ? (cheer.back || currentPose) : currentPose;
+    const back = window.TapPoses.includes(currentPose) || !Poses[currentPose] ? (Poses[cheer.back] ? cheer.back : homePose()) : currentPose;
     cheer.back = back;
     moving = true;
     if (say && M.moves && M.moves[name]) showBubble(pickRandom(M.moves[name]));

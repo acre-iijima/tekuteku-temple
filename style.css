@@ -2140,3 +2140,62 @@ html.mvp-bigbang #app { transform-origin: 50% 50vh; animation: mvp-bigbang var(-
 .cat { transition: opacity 0.26s ease; }
 .cat.pose-fade { opacity: 0.15; }
 @media (prefers-reduced-motion: reduce) { .cat { transition: none; } }
+
+/* ---------- 歳時記のタグとシート ---------- */
+.saijiki-tag {
+  display: inline-flex; align-items: center; max-width: 100%;
+  padding: 2px 11px; border: 2.5px solid var(--ink); border-radius: 999px;
+  background: #fff; box-shadow: 2px 3px 0 var(--ink);
+  font-family: var(--pop); font-weight: 800; font-size: 13px; line-height: 1.5; color: var(--ink);
+  white-space: nowrap; cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.saijiki-tag[hidden] { display: none; }
+.saijiki-tag:active { transform: translate(2px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+.saijiki-tag i { font-style: normal; margin: 0 1px; }
+.saijiki-tag.new::before { content: "✦"; margin-right: 3px; font-size: 0.9em; }
+.saijiki-tag.s-spring, .sj-box.s-spring { background: #ffd1de; }
+.saijiki-tag.s-summer, .sj-box.s-summer { background: #b8f2d6; }
+.saijiki-tag.s-autumn, .sj-box.s-autumn { background: #ffd08a; }
+.saijiki-tag.s-winter, .sj-box.s-winter { background: #c4e6ff; }
+
+.saijiki-body { display: flex; flex-direction: column; gap: 12px; margin-bottom: 14px; }
+.sj-box {
+  background: #fff; border: 2.5px solid var(--ink); border-radius: 20px; box-shadow: var(--pop-shadow);
+  padding: 10px 14px 12px; min-width: 0;
+}
+.sj-box p { margin: 0; overflow-wrap: anywhere; }
+.sj-zassetsu { background: #fff1b8; }
+.sj-label { font-size: 0.82rem; font-weight: 800; color: #4a4540; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.sj-today {
+  display: inline-block; padding: 0 8px; border: 2px solid var(--ink); border-radius: 999px;
+  background: var(--pink); color: var(--ink); font-size: 0.78rem;
+}
+.sj-box .sj-name { font-family: var(--pop); font-weight: 800; font-size: 1.6rem; line-height: 1.3; margin-top: 2px; }
+.sj-name small { font-size: 0.9rem; font-weight: 700; margin-left: 8px; color: #4a4540; }
+.sj-yomi { font-size: 0.9rem; font-weight: 700; color: #4a4540; }
+.sj-box .sj-mean { font-size: 1rem; font-weight: 600; margin-top: 4px; line-height: 1.5; }
+.sj-box .sj-date {
+  display: inline-block; margin-top: 8px; padding: 1px 10px;
+  border: 2px solid var(--ink); border-radius: 999px; background: #fff;
+  font-size: 0.85rem; font-weight: 800;
+}
+.sj-next { margin: 0; }
+/* 日付の行：1段めは「日付 … 天気」、2段めに行事のチップと歳時記のタグ */
+.info-row .weather-pill { order: 1; }
+.info-row::before { content: ""; order: 2; flex-basis: 100%; height: 0; }
+.info-row:has(.weather-pill[hidden])::before { display: none; }
+.info-row .chip, .info-row .saijiki-tag { order: 3; }
+.sj-box .sj-mean { text-wrap: pretty; }
+.sj-kou { background: #e9e4ff; }
+
+/* ---------- 上の段（2026-10-23）：タイトルの横に天気、日付の横に歳時記（右寄せ） ---------- */
+.top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; row-gap: 16px; column-gap: 8px; }
+.top h1 { flex: 0 1 auto; min-width: 0; }
+.top .weather-pill { position: static; flex: none; margin: 0; padding: 1px 10px 1px 3px; }
+.top .weather-pill .w-label { display: none; }
+.top .top-buttons { flex: 1 0 100%; justify-content: flex-end; }
+.info-row { flex-wrap: wrap; row-gap: 8px; margin-top: 12px; }
+.info-row::before { display: none; }
+.info-row .chip { order: 2; }
+.info-row .saijiki-tag { order: 3; margin-left: auto; }
+@media (max-width: 340px) { .top .weather-pill .w-pop { display: none; } }

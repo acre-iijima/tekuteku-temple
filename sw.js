@@ -1,5 +1,5 @@
 // 電波がないときも開けるようにするしくみ。ネットにつながるときは常に最新を取りにいく。
-const CACHE = 'tekuteku-temple-v32';
+const CACHE = 'tekuteku-temple-v34';
 const FILES = ['./', 'index.html', 'style.css', 'app.js', 'moves-a.js', 'moves-b.js', 'moves-a.css', 'moves-b.css', 'messages.js', 'holidays.js', 'poses.js', 'weather.js', 'news.js', 'market.js', 'manifest.webmanifest', 'icons/icon-180.png'];
 
 self.addEventListener('install', (e) => {
