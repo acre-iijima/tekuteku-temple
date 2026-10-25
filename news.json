@@ -1,19 +1,19 @@
 {
- "updatedAt": "2026-10-25T19:55:30.766Z",
+ "updatedAt": "2026-10-25T22:28:16.064Z",
  "items": [
-  {
-   "cat": "経済",
-   "title": "ＧＭＯ熊谷社長がブログで謝罪…社内技術者はセキュリティー課題指摘も「間隙つかれた」",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5hTEp3Ul9ObHBlN0NhUnRXVVpXM28yU0NNTnk5N3I3TEF4MC1hTHk1VFkxeHJOUlFRS1pkWjdiekwzZEVfUXB5SWxfaGIwZlB6RXlwVENTOEpJZU1WQURRSHRiS2thZw?oc=5",
-   "source": "読売新聞",
-   "time": "2026-10-25T14:03:00.000Z"
-  },
   {
    "cat": "経済",
    "title": "「5年ほど使ってます」　“1万円台のG-SHOCK”が大好評　「高見えしますね」「冬も使えそうなカラーリング」（1/2） | 腕時計 ねとらぼリサーチ",
    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE00WGx4RlB6Z21PWUNob3hhRXVCWkd1aTBWcXNaMUpHXzVvZHA0QW1OUWFtWDVxZTF3Y3ZLcVBXemZpZ0Q2SzZjWFZvM3hTQlZiMnpOU3ZMMENCSWFOV2FCbEVJONIBaEFVX3lxTE1yMHBLQ183YjhIaWhCR3JzRDNNdjlKN1RLMjg5a2hhZGE2ZXk0dm96RHpOcFh4Yl9NUzhLZHpjZUZXbXVqY1JzU2JMWm92RWVxeFllVjFic3k1OHFNMEhMT0VHN2UyQ0NZ?oc=5",
    "source": "ねとらぼ",
    "time": "2026-10-25T14:00:00.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "AI巨額投資、テック以外の米企業で「全く効果生んでおらず」－アポロ",
+   "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9nSWVDNzY5UWlUVnJVbkhrRGw2MW4zZGVpY1ZNSFh0YlpLNlY1djVYYXZGRjV0Y1hQM2dPaVgza2VvU080eTVMOWdzbGlILU1taDByRlBQeHc5Rjd0Zi10dTdGNnFzaEFUb0FrVm5kVGY2X0lZUHhF?oc=5",
+   "source": "Bloomberg.com",
+   "time": "2026-10-25T13:49:07.000Z"
   },
   {
    "cat": "経済",
@@ -24,10 +24,10 @@
   },
   {
    "cat": "経済",
-   "title": "トヨタ「GR GT」は早くも争奪戦!? 元LFAオーナーに優先案内か！ トヨタGRモデルの最新動向",
-   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9obm1FYmhxb1BobjZ1Sl9LX21mVTFjVGZuVld3QnFPSldGbmEzTEJhVUdNQmNGQUJMbXdtTk1xdVpCNWNDbXhHOTJWejdBN2Fvd1JYYVZBNA?oc=5",
-   "source": "ベストカーWeb",
-   "time": "2026-10-25T13:30:00.000Z"
+   "title": "GMO社長 能動的サイバー防御「国民生活への影響照らし検討を」",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5WUk0tajhWRXMwOFhfN1RVbmVSS1VKSHZaZ0laYVhISDV5X0pzMDZMdVVtb0c1Sk02TFpRaHRCOW5YRnZzNXRucW9xWHhVZzhabC1VRHMzY1duUnFPTERz?oc=5",
+   "source": "NHKニュース",
+   "time": "2026-10-25T13:07:00.000Z"
   },
   {
    "cat": "経済",
@@ -59,7 +59,14 @@
   },
   {
    "cat": "経済",
-   "title": "孫正義氏、マレーシアに500億ドル投資へ－AIやデータセンター対象",
+   "title": "名優「小林旭」が意外な「愛車」を公開！「子どものおもちゃみたい」「音がないから乗ってて楽」と大絶賛！ \"ロールス・ロイス\"所有の大御所がベタ褒めする「日産車」とは",
+   "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE9QWnptOFNHVkhhMjVmdlNCY1lLWWo4S05ZYlpRZ29fVkxRSVg2NDdzN19BMml4UFV5OFN0eXRsaW9pTGtOYW0xVElMZw?oc=5",
+   "source": "くるまのニュース",
+   "time": "2026-10-25T11:10:00.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "孫正義氏、マレーシアに500億ドル投資へ－AIデータセンターなど対象",
    "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFAzemoyd2VtVW9SVkZINlNwd0NxQnBkU09EV0dwSnV5TnZDRE95aW40VGYyTmpnS1BPWXBhZFFSTE1ocUdFTHljNmYxUW5ZNkRobG0xZ2pIcnd5Zm13M1FxVy0wNUltN3BOQUN0M3VrNGNpYmk4UjJB?oc=5",
    "source": "Bloomberg.com",
    "time": "2026-10-25T11:03:35.000Z"
@@ -79,18 +86,53 @@
    "time": "2026-10-25T10:16:48.000Z"
   },
   {
-   "cat": "経済",
-   "title": "今週の決算発表予定 キオクシア、アドテスト、レーザーテクなど (10月26日～30日)",
-   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE91MXdnMktLWWVYUHBSU1dxVjV4MmFBX3NOQVI5MHlvWVRFSEVINHgxQ1UzLVBGYXJCMFFiVVFZamtFcjFmVVlTb1dndGxSXzdWQTNldDBpNEJGbHQ1aVEtdg?oc=5",
-   "source": "株探",
-   "time": "2026-10-25T10:00:00.000Z"
+   "cat": "主なニュース",
+   "title": "次の首相「高市氏」27% 毎日調査",
+   "link": "https://news.yahoo.co.jp/pickup/6600130?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-25T21:58:20.000Z"
   },
   {
    "cat": "主なニュース",
-   "title": "「これは絶望感しかない…」九州自動車道〝大惨事〟に「またかよ、事故多すぎ」「イノシシが来そう」",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5GQVdUMkZ0UkN0cE1WMGc5LS05TXdRVFo1dEpRRUlNT2NRVTlQektlVG8yTTZpaFk3TjJfOU5Qb2ZKTmcxWk5uNXlqb0REZnpyMVNBWFdpcVFiaXJDQW5z?oc=5",
-   "source": "西スポWEB OTTO!",
-   "time": "2026-10-25T17:29:19.000Z"
+   "title": "VIVANTにダイアン津田 設計の妙",
+   "link": "https://news.yahoo.co.jp/pickup/6600129?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-25T21:51:14.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "関東-九州激しい雨 夜にピークも",
+   "link": "https://news.yahoo.co.jp/pickup/6600128?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-25T21:45:08.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "チャイルドシートの義務拡大 検討",
+   "link": "https://news.yahoo.co.jp/pickup/6600127?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-10-25T21:26:47.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "【台風30号】京都府、26日朝～夜に警報級大雨の可能性 強雨エリア、温帯低気圧の北東側に",
+   "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1TZmp5QlljYWZVd3dLeTYtTE5EVE5CdHlVNmlfd2xDQ19RaW9VeGRENEhBQ2I2c3A0TEpVQ0FSQXNtLVhHT3dZRHFzSG1sZjBONUVTQmVhNUg?oc=5",
+   "source": "京都新聞デジタル",
+   "time": "2026-10-25T21:09:40.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "「ビームス ジャパン」が“こんぴらさん”の参道に新店舗 “明日筋肉痛”Tシャツなど限定品も",
+   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5GZFhGaVJXb3UyMVd0a1dXdXZlRWFaRzVBMDRMekdKaTRuZV9uaDlOOHFwTVJ2TXBHT1M4Z3JMaWZMUHY1REpjWFJUOV9vTlk3cXpv?oc=5",
+   "source": "WWDJAPAN",
+   "time": "2026-10-25T20:03:23.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "「身長低い１３歳未満」チャイルドシート義務化検討…シートベルト着用の子、腹部圧迫で死亡も",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5oNi01UC1Na0tpVWRjRjlpemFleUFnN2cwMlVLY0RPQXF6MnR2Q2x1czBadEZzMm85SDJWWjFiNDhjQUl0Y2p3SUdiQUZkRHRUWkhpNjlOUVRTTGI0am5SUndDSWowQQ?oc=5",
+   "source": "読売新聞",
+   "time": "2026-10-25T20:00:00.000Z"
   },
   {
    "cat": "主なニュース",
@@ -98,13 +140,6 @@
    "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5JaEplQnVKSEJMVlpfdENNYlNKRlVmcU10TFNfOTllNEEzMmNIYnVkclhYM1JUSEZrNng5WjhPZEJ5b3RWOG1YQ3RiX2FJX2ZpcHk2eFhoamRMSGhwbGhiMVVR?oc=5",
    "source": "亀山市",
    "time": "2026-10-25T15:47:06.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "市議の大半が現職応援も、新人が初当選「市民から『まちを変えてほしい』との声いただいた」…栗東市長選挙で現新一騎打ち",
-   "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE0tMk1KNnByY29sUlB1cDlpZGR0Z1JBdlEwWjdpdVRla1JhZlpualV2NEczbzNtMXBTbEVlT0o3QVhFVVJ0RjE4Zm5TUUIwSnFRQUNSeTl6aFpnMmdnTzBLQm9ET21YWFFFQW83bWZzSm1qUQ?oc=5",
-   "source": "読売新聞",
-   "time": "2026-10-25T15:46:00.000Z"
   },
   {
    "cat": "主なニュース",
@@ -135,53 +170,39 @@
    "time": "2026-10-25T15:05:00.000Z"
   },
   {
-   "cat": "主なニュース",
-   "title": "「ビームス ジャパン」が“こんぴらさん”の参道に新店舗 “明日筋肉痛”Tシャツなど限定品も",
-   "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5GZFhGaVJXb3UyMVd0a1dXdXZlRWFaRzVBMDRMekdKaTRuZV9uaDlOOHFwTVJ2TXBHT1M4Z3JMaWZMUHY1REpjWFJUOV9vTlk3cXpv?oc=5",
-   "source": "WWDJAPAN",
-   "time": "2026-10-25T15:02:51.000Z"
+   "cat": "国際",
+   "title": "金正恩氏、謎を呼ぶ日帰り訪中 「対米」巡り分かれる見方",
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBsb0tOOEphZkRiVTRSQnF6OHE2VlBXT25TYVk0S0Rpdm00bmpQUGliZGM5ellrT25rYWJ1WnJzUTg5dG5UcnhMaG91RTJGakR6VmVJVmtSM3JvUXJ3Q1JSaHVYZw?oc=5",
+   "source": "時事ドットコム",
+   "time": "2026-10-25T21:53:00.000Z"
   },
   {
-   "cat": "主なニュース",
-   "title": "伊東純也 ゴールの内側からゴール",
-   "link": "https://news.yahoo.co.jp/pickup/6600123?source=rss",
+   "cat": "国際",
+   "title": "ブラジル大統領選、開票へ 日本時間26日午前にも大勢判明",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5BSk1Zd2x2eEhXWk52ak5Da1pnalVLZDVyMGNEQnZQdFJ3RXVFUUZtMV9CSGdGSmZqVURKYWxHVTFMaF9jYy1QYjdLRm5sS1dPS09kRGNCM0FiVDAyb0lOMTBQRXhIOGZfaElFRg?oc=5",
+   "source": "日本経済新聞",
+   "time": "2026-10-25T21:23:46.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "国連もIMFもWTOも機能不全に…“独裁者クラブ”が跋扈し「人類にとっての底線」が迫っている【国際政治学者・佐橋亮が解説】",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1IS2xkNWEzN2ZkTG5vXzVPNzNtS1MxS2Q2M2o0YkJaVTY0S0JrY01fQldISXE1UExSYXlrUFJlUHRSQ3ZQeVNZYkJxbmIzZGlYYlUtLUR0WG9YMlBYemd4RmlSMDRVRlRobnNMb2c0TlVMYkh0VUdmcmF4WWRpZU0?oc=5",
    "source": "Yahoo!ニュース",
-   "time": "2026-10-25T14:44:26.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "不正アクセス GMO代表が謝罪",
-   "link": "https://news.yahoo.co.jp/pickup/6600119?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-25T14:05:35.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "豊見城市議選、22人全員の当選決まる【一覧あり】",
-   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9lLV9jMkxYaG1FcUFZUUhEaFotaFAwMkRzRm9TLW5jcE9BdUZMUURBVV8zbnVKOC1mUVh2dmlBT1pkY2FreGlxeldpRkl3b0dwUUswcXVjN1FrajB1elE?oc=5",
-   "source": "沖縄タイムス社",
-   "time": "2026-10-25T13:56:00.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "わなにかかったクマ、殺処分せず放獣したら再び出没…専門家「ゾーニング検討する段階に」",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9KOWx3UnFOZW8xYmFUZDhrT28xX25TX3dPclMzVWp4dFNFVjNiNFJ1T1FkSV95NE5JcEVDRmRBYTJhZFJQbTJ3QzJ5SXIzTUdvMUE5NkljcnhnazN2THA3VHVRTTF6Zw?oc=5",
-   "source": "読売新聞",
-   "time": "2026-10-25T13:53:00.000Z"
+   "time": "2026-10-25T21:14:06.000Z"
   },
   {
    "cat": "国際",
    "title": "夜型人間は定年より前に障害年金を受給する傾向が強いとの研究結果",
    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE03WDhiMWhCdmxDbTlPOGFoNEJXR2VrTk1PSmwyVnItY3FVcXp0YnR3c19Tc283N3VOb1BKS011al95X1ZUSlFMUm1vcVlZbWdXc01lS1VfVklpemRGMDdUMjJBR1AzdHRLRVpxVDBnVXk5X3ZqdkhQeThR?oc=5",
    "source": "GIGAZINE",
-   "time": "2026-10-25T17:31:30.000Z"
+   "time": "2026-10-25T20:32:22.000Z"
   },
   {
    "cat": "国際",
-   "title": "金正恩氏 電撃“日帰り訪中”新映像 中国と蜜月関係アピール 死亡説流れる中…（テレビ朝日系（ANN））",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBlQlVDa1dNNnpTMVVLTUgyS3VWZWZGOVRWck5pVXJtTGJfUGlaamxmTkhEeEp4VFBPbEtCbXdKM2s3cHpTczhNWGc5Q3FMSzRJclJXOHBOSFJUWklNeDROVTdZdlJaVzVzZHlWWW04czNlc1pMOS11cjdIQmZyX3M?oc=5",
-   "source": "Yahoo!ニュース",
-   "time": "2026-10-25T16:00:35.000Z"
+   "title": "帰国できずにいたノーベル平和賞の野党指導者マチャド氏、ベネズエラに戻る…「私はここにいる」と投稿",
+   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1LbXc2VFdxN0dyQkxqZWpCYmNyYjJLSkpWc0FySFpFdHNDU05BTFhaTjY0NzFheTc4MmlJOElQNmItUWcxX3BjMWtDU3ZURks5SkNlYktnam1aREVPMWhveXhn?oc=5",
+   "source": "読売新聞",
+   "time": "2026-10-25T18:58:00.000Z"
   },
   {
    "cat": "国際",
@@ -231,27 +252,6 @@
    "link": "https://news.yahoo.co.jp/pickup/6600083?source=rss",
    "source": "Yahoo!ニュース",
    "time": "2026-10-25T09:20:38.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "フランス各地で２週連続の抗議デモ、４１万人参加…パリではデモ隊の一部が治安部隊と衝突",
-   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE0yNDkwcUxIX2FMT0oyZjBQeWxxaXFYdVl6NHp4aHAxOUpUaU1MZ1hyb0J2WXFpeFAzcVlmMXFILVF2YXFzbHZCaHVRV3puazdhdmpFOE9idWhXazg0RXVnWE93?oc=5",
-   "source": "読売新聞",
-   "time": "2026-10-25T08:41:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "《「やめて！」女性が叫んでも押さえつけ性的暴行》セレブ不動産3兄弟が“豪華イベント”エサに「ドラッグを飲み物に混入して」犯行、量刑算定は3人合わせて555年【米国】",
-   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBKTE5PdnFiQ2g0R2xkaHdBc1ExZU1CQzgxZ3o2dkZObjluRjVnelh0WTRsdU1UVUdxZTl2NmExcDFTcFdrY29CTTRWbWpTeUJPVERndzhEUVROZjg2NXVqb0RVZnZ1bEFLemZSUFhn?oc=5",
-   "source": "au Webポータル",
-   "time": "2026-10-25T07:13:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "ウクライナ軍の通信制限解除、スターリンクへの依存リスク浮き彫り",
-   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1keDZWMG1Da0RTLWoyTjV3Nkt2M2dCZ01wV05MRW9kbjU1cm5abkZvU1RJSWtuemt2UUtsOXBUWnYzQTZ3NDJ4ZnRkYm5JZVloQVFBMTQ1dk5sejZCSl83eXlLQkNHM2xZWDl5Vg?oc=5",
-   "source": "日本経済新聞",
-   "time": "2026-10-25T06:25:43.000Z"
   }
  ]
 }
