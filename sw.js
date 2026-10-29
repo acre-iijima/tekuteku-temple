@@ -1,6 +1,6 @@
 // 電波がないときも開けるようにするしくみ。ネットにつながるときは常に最新を取りにいく。
-const CACHE = 'tekuteku-temple-v34';
-const FILES = ['./', 'index.html', 'style.css', 'app.js', 'moves-a.js', 'moves-b.js', 'moves-a.css', 'moves-b.css', 'messages.js', 'holidays.js', 'poses.js', 'weather.js', 'news.js', 'market.js', 'manifest.webmanifest', 'icons/icon-180.png'];
+const CACHE = 'tekuteku-temple-v35';
+const FILES = ['./', 'index.html', 'style.css', 'app.js', 'moves-a.js', 'moves-b.js', 'moves-a.css', 'moves-b.css', 'moves-c.js', 'moves-d.js', 'moves-c.css', 'moves-d.css', 'messages.js', 'holidays.js', 'poses.js', 'weather.js', 'news.js', 'market.js', 'manifest.webmanifest', 'icons/icon-180.png'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(FILES)).then(() => self.skipWaiting()));

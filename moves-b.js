@@ -690,3 +690,5 @@ window.MoreMoves = window.MoreMoves || [];
     K.stars(6, 400, [10, 90, 50, 90]);
   });
 })();
+// 中くらいのしるし（超派手ではない）
+window.MoreMoves.forEach((m) => { if (!('big' in m)) m.big = false; });

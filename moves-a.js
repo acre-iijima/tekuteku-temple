@@ -1344,3 +1344,5 @@ window.MoreMoves = window.MoreMoves || [];
     fword(K, 'せかいが できた!', W * 0.18, H * 0.68, ms * 0.66, '#ff9fbb', 30, 6);
   });
 })();
+// 超派手のしるし（app.js で出やすくする）
+window.MoreMoves.forEach((m) => { if (!('big' in m)) m.big = true; });

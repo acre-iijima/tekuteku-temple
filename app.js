@@ -1779,9 +1779,11 @@
 
   // 動きのあいだだけ使う CSS の値（あとで消す）
   // 別ファイル（moves-a.js / moves-b.js）で足した動きを合流させる
+  const BIG_MOVES = new Set();
   (window.MoreMoves || []).forEach((m) => {
     if (!m || !m.name) return;
     if (!MOVES.includes(m.name)) MOVES.push(m.name);
+    if (m.big !== false) BIG_MOVES.add(m.name); // moves-a・c・d は超派手
     if (m.pose) MOVE_POSE[m.name] = m.pose;
     if (m.ms) MOVE_MS[m.name] = m.ms;
     if (m.extras) EXTRAS[m.name] = m.extras;
@@ -1794,7 +1796,10 @@
     if (moving) return null; // 動いている最中は、つぎの動きを始めない
     const btn = $('catBtn'), stage = $('stage');
     if (!name) {
-      const withLines = MOVES.filter((m) => m !== lastMove && (!M.moves || M.moves[m]));
+      let withLines = MOVES.filter((m) => m !== lastMove && (!M.moves || M.moves[m]));
+      // 半分くらいは超派手なものから選ぶ
+      const big = withLines.filter((m) => BIG_MOVES.has(m));
+      if (big.length && Math.random() < 0.5) withLines = big;
       name = pickRandom(withLines.length ? withLines : MOVES.filter((m) => m !== lastMove));
     }
     if (!MOVES.includes(name)) return null;
