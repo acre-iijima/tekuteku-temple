@@ -1,19 +1,47 @@
 {
- "updatedAt": "2026-11-06T20:31:51.135Z",
+ "updatedAt": "2026-11-07T00:15:53.008Z",
  "items": [
   {
    "cat": "経済",
-   "title": "米10月雇用16.5万人増、予想大幅に上回る 失業率4.1％に低下",
-   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQd2RuRy11VUpnVndfWWkwZDJnZEpRdHZYTmRWWklDcy1qT3I5cHBMZDhWQm15VDFxX0VVV0JyTnZ2ZUU2YWpIblJIWTRqYjEyRUdBdmt4Q0FKd2dNMDZWTEpsN1BwcUZua0xremhWVEozazdYeGpwd2NtXzZDdWdtV3kwNEdfQQ?oc=5",
+   "title": "米中間選挙後の株安から反発、ハイテク富豪の資産も一部回復",
+   "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB3eVZJTGwxVmFWMDN5c0s2YUpFb29BVUp6LUh2bUVLa084VDMzS3hjN2pwTnphRndOS092WDU5T3lNMWt1V2tRaENMbTBLQWZJQ3plVWF0MHB5QQ?oc=5",
+   "source": "Forbes JAPAN",
+   "time": "2026-11-06T23:00:00.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "ＮＹ外為市場＝ドル急伸、雇用統計で12月利上げ観測強まる",
+   "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBZaDNCcnQ5RTBmTUJLSXVRYzZnT0VyNS1CdTBSaXl5VENkRUVjNGVNVGJDYXRRU29OQnh3WnFuTjhVRVpqNjFaNUhzeVcyWFdoYUh4dDRvSzhEUjNmQjNTcDc0dlJJSGJuV1lqZzVPalpld3E2ODVOMkV1azB4dw?oc=5",
    "source": "Reuters",
-   "time": "2026-11-06T20:08:24.000Z"
+   "time": "2026-11-06T22:04:02.000Z"
   },
   {
    "cat": "経済",
    "title": "アングル：マスク氏の共和党大盤振る舞いは空振り 下院3勝33敗 上院全敗か",
    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9QT3FJaEJ5dkdueDlwYWJ3NXdCNm1BUWxEMWhTdVFvMWxXOEV4cTh4cDBkQWtaeGFHTGhESkxKNGhXODB1YnpuV2RVdUlmeEpmb0JaTDFfUjRqWHFjUC1tdlhaR0p5b1ZDV09FaUw4MFU5b2M4SGRwazBEblJlZlU?oc=5",
    "source": "Reuters",
-   "time": "2026-11-06T19:06:14.000Z"
+   "time": "2026-11-06T21:58:56.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "外務省幹部がロシア訪問 JT子会社への措置に抗議し撤回要求",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFA1aDRfNVZXQTNhOENWbU5WLS1VQ1hjZUEwQXczZVRqX2lPeUNJLWpNRlUxbzM5RzNVT253dkMxb0FJMU9MU1BkSDJwTW96Zm5uZG5Ka1k1UGNILVc0Umdz?oc=5",
+   "source": "NHKニュース",
+   "time": "2026-11-06T21:53:06.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "テスラ「サイバートラック」の生産を段階的に終了へ",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB1b2FycjBWdnlOc3FLTWlrbndPeGtTaW5nRUVIVVVQNEttOTNHajB6NTVBdFhmR1djckxpUjJKLTBEV1hHRVh3OXhjVXN6cGhIUFA3UlBqYmlpaHpGMEZZ?oc=5",
+   "source": "NHKニュース",
+   "time": "2026-11-06T20:54:09.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "国税庁装う偽メールが急増「メールで還付手続き案内しない」",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBjbjVrQ3ZUYWN2Vk9acE93TGw4aEtvdzF3SVVsbjgtMThVTDBMUWY3SmFER2F2bXE1Z3FiNDFjZkY0QS1WZ3YwRzZCcElIR2ZpQ2c1ZVNZWTdaMnIxQ01B?oc=5",
+   "source": "NHKニュース",
+   "time": "2026-11-06T20:05:13.000Z"
   },
   {
    "cat": "経済",
@@ -21,6 +49,13 @@
    "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE55MEQ0Q0ZwQXRpOUpiWVFQQWFXTzRZM1EyOEhlRExNZHlxemJBWVN6Y0xUb3RDLW9saG5WeFM5Rno0NUMwNHhud3h4cVFsbm56eG9DY2UtV3l2U01NYy1nNFFBSTh1Zw?oc=5",
    "source": "読売新聞",
    "time": "2026-11-06T16:13:00.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "NTTドコモが会見 不正アクセスで顧客の口座番号など流出…見舞金検討（2026年11月6日掲載）｜日テレNEWS NNN",
+   "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE41cHNYemtLVEtIMnJVSnNFSEgtLXZyQk1kNzhQS0pzQXFMYU1UOEVtZ2hqMG1aSEFHYnZ0aXM0Mmw1WkRFN21GbTNwNUU1TmdBWHlsaEpXM3AyRUpzMVVjSDhxN3lrb1MtRHJNSHlWQVUybTB3aVg3YndDQjQ?oc=5",
+   "source": "日テレNEWS NNN",
+   "time": "2026-11-06T16:08:01.000Z"
   },
   {
    "cat": "経済",
@@ -38,150 +73,171 @@
   },
   {
    "cat": "経済",
+   "title": "【市場反応】米10月雇用統計はポジティブサプライズ、ドル高｜FX・為替ニュース",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFA3bG1heVoyZGVKUTctUmZvMEdFZDNiS1UyWFVQVWxlOFBSdVZKcE44dXo0Nk1yS1lSM3ZON2p2ajFyM2lSYVZ1cDBHVW1lU2o1MUE?oc=5",
+   "source": "ザイFX！",
+   "time": "2026-11-06T14:14:00.000Z"
+  },
+  {
+   "cat": "経済",
    "title": "東京～羽田が直行18分「羽田空港アクセス線」トンネル工事いよいよスタート！ 地中40mまで掘り進む巨大マシン「はるとん」の拠点を見てきた",
    "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFAxbWV1TWRtNmtiMVdpXzBsUkpYclNVWG9lTHZCM3hQRW9FMUxuYVN6bGktRng5NS1BWjF3Y0NCUWJETU90VndwYmhndkh6WDB4ZXZxajNNSFhBTzRnYWZXOEhYMkRYZDlu?oc=5",
    "source": "トラベル Watch",
    "time": "2026-11-06T13:49:59.000Z"
   },
   {
-   "cat": "経済",
-   "title": "KDDI社長 決算会見で2つのおわび",
-   "link": "https://news.yahoo.co.jp/pickup/6601580?source=rss",
+   "cat": "主なニュース",
+   "title": "RIZEのJESSE フェス出演見合わせ",
+   "link": "https://news.yahoo.co.jp/pickup/6601608?source=rss",
    "source": "Yahoo!ニュース",
-   "time": "2026-11-06T13:44:06.000Z"
+   "time": "2026-11-07T00:08:09.000Z"
   },
   {
-   "cat": "経済",
-   "title": "任天堂、部材価格高騰で価格改定の可能性に言及―「中長期で吸収できなければ検討」",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFAzSkhJTkRLTVRjWUxPc2VPaDFQdnVuUC1DODZpY3FjX19LcDRENlpVMGh0RDREbVkyUklpMEgtZG1WRUZhY29yekpWQWotTHdVaEVXX2hMVzQ5NVdPQmRsTzdkbWVEQQ?oc=5",
-   "source": "Game*Spark",
-   "time": "2026-11-06T12:39:18.000Z"
+   "cat": "主なニュース",
+   "title": "迷惑行為ショウリンジ 7歳も補導",
+   "link": "https://news.yahoo.co.jp/pickup/6601602?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-06T23:53:35.000Z"
   },
   {
-   "cat": "経済",
-   "title": "ＪＴ子会社の資産がロシア政府「管理下」に、日本政府は措置撤回を要求…経営権を事実上奪われ悪影響避けられず",
-   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE02bF9Zb2NKVkVHOGhOS2oyUWQ5MnhUc1dXcmhwVWRYeW8zaEVfejlmS0cwNkVNR1gwdzRkUkpvRG5UTFlzRnppMUNMM2R1QmstTXgtQV8tVHRBSXdUNEdseHJIQUo?oc=5",
+   "cat": "主なニュース",
+   "title": "阪神 FA3人獲りへ24億円超を用意",
+   "link": "https://news.yahoo.co.jp/pickup/6601605?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-06T23:50:11.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "寂しい 地震被災で工場の復旧断念",
+   "link": "https://news.yahoo.co.jp/pickup/6601601?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-06T23:41:06.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "駅のホームから転落させ、頸髄損傷など「治癒の見込みないけが」負わせた被告に執行猶予付き有罪判決",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5vLXZBX0VwcW9pVWVpdlVRODU5ZnBQek5CODlSWE1nQU9uXzF5VnplQzRKMHNDYmsyOEY0cGFUX0huZHFaVmRfRXE4cGdxNnZHNjlGS1o4RFNFSFBBMlFXQ0c5SHlDZw?oc=5",
    "source": "読売新聞",
-   "time": "2026-11-06T12:27:00.000Z"
+   "time": "2026-11-06T23:40:00.000Z"
   },
   {
-   "cat": "経済",
-   "title": "信金のシステム障害 すべて復旧",
-   "link": "https://news.yahoo.co.jp/pickup/6601571?source=rss",
+   "cat": "主なニュース",
+   "title": "【独自】コメリに未払い残業代など計1700万円支払い命令…元社員の「管理監督者」扱い認めず 新潟地裁",
+   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFByVVhJbUczNGxlWFFibmxVLXViMlhFSWJzRHlLbjJaSzN0ZnVrT3lkVkl4S0hMYU5iWm9YTnRIVVdJUDZ6TTk0X0kyWVkwM1ZXWkd4b3Q2QV9rVHBQLXc?oc=5",
+   "source": "新潟日報",
+   "time": "2026-11-06T23:34:25.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "花ざかりの君たちへ 新ドラマ化",
+   "link": "https://news.yahoo.co.jp/pickup/6601604?source=rss",
    "source": "Yahoo!ニュース",
-   "time": "2026-11-06T12:19:34.000Z"
+   "time": "2026-11-06T23:19:04.000Z"
   },
   {
-   "cat": "経済",
-   "title": "外国人留学生 日本で就職望む理由",
-   "link": "https://news.yahoo.co.jp/pickup/6601570?source=rss",
+   "cat": "主なニュース",
+   "title": "高市首相「中国は重要な隣国」",
+   "link": "https://news.yahoo.co.jp/pickup/6601599?source=rss",
    "source": "Yahoo!ニュース",
-   "time": "2026-11-06T12:13:47.000Z"
-  },
-  {
-   "cat": "経済",
-   "title": "アララで新たなメールアドレスの流出確認 計8132万件に",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFA2NTB0THFNa2lGT09udjZ1TXhJalNsQVdVNDRudUpFQUFqSXJleXhSYXF3cGVCZWNndGlCS2toRnFlQzJPLTItX3F4ZHh2TFRiTm1rcnlmT3ZteXhBdmE4?oc=5",
-   "source": "NHKニュース",
-   "time": "2026-11-06T11:59:38.000Z"
+   "time": "2026-11-06T23:10:00.000Z"
   },
   {
    "cat": "主なニュース",
-   "title": "RIZEボーカル JESSE容疑者逮捕",
-   "link": "https://news.yahoo.co.jp/pickup/6601588?source=rss",
+   "title": "メーガン妃父 ポルノ所持疑い逮捕",
+   "link": "https://news.yahoo.co.jp/pickup/6601596?source=rss",
    "source": "Yahoo!ニュース",
-   "time": "2026-11-06T15:43:59.000Z"
+   "time": "2026-11-06T22:52:35.000Z"
   },
   {
    "cat": "主なニュース",
-   "title": "海底地形「ゴジラメガムリオン」、「世界地質遺産１００選」認定…海上保安庁が沖ノ鳥島南東の大陸棚調査で発見",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5aMW5va1VhVkRQZUxOMExydkdVbXNEdlBTVElLSnFZUEpaTnNUbmtMelhMdUZDc29aQXZzekM0VVg4dG5TQk9oQjJJMmt2Y18zT1F5bkxNanhPcGFnalYxX0FIWlhpUQ?oc=5",
-   "source": "読売新聞",
-   "time": "2026-11-06T14:57:00.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "池袋女性刺殺 容疑者死亡で不起訴",
-   "link": "https://news.yahoo.co.jp/pickup/6601583?source=rss",
+   "title": "米大統領首席補佐官 ミラー氏昇格",
+   "link": "https://news.yahoo.co.jp/pickup/6601592?source=rss",
    "source": "Yahoo!ニュース",
-   "time": "2026-11-06T14:17:53.000Z"
+   "time": "2026-11-06T22:35:39.000Z"
   },
   {
    "cat": "主なニュース",
-   "title": "久邇邦昭氏死去 上皇さまのいとこ",
-   "link": "https://news.yahoo.co.jp/pickup/6601584?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-06T14:17:32.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "無償トレードの東浜 素直に驚き",
-   "link": "https://news.yahoo.co.jp/pickup/6601576?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-06T13:21:59.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "相次いで空き巣被害にあった男性が状況語る 愛知 岡崎",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9meDIwRlBiRUl2c1V1OE1CVVpFUFpvWW1nSTBrSG9xbVFZNTNHenB2cXlOUEo3WnpQeGdJSEJZd3FuemI3MlczNHNfZ2RxZWkwNkFZS3dkVDZfTndzQTNj?oc=5",
-   "source": "NHKニュース",
-   "time": "2026-11-06T13:00:31.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "石破氏ら採決退席 首相言及控える",
-   "link": "https://news.yahoo.co.jp/pickup/6601568?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-06T12:06:05.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "10式戦車、砲身内の残骸原因か 大分・陸自演習場の4人死傷事故",
-   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBTX0ZTaklWYjdZbk1fY1g4eDRuamhMMF9tZVE1cVZZYzBCS3BPZUNmQ1NqSzNsV1ZoQmRmVTRDU1hYb08zNUZoZHRmbkJxY25LVVdpSGhDc044ZmJDc3VBYngyVW1sdWh2?oc=5",
-   "source": "毎日新聞",
-   "time": "2026-11-06T11:49:58.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "ドコモ 流出の対象者に見舞金検討",
-   "link": "https://news.yahoo.co.jp/pickup/6601566?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-06T11:35:39.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "茂木外相、在沖米軍向けの再発防止策発表　強殺事件受け日米共同",
-   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOUU9LeVY2bU5mTW9na3FLSFYtSmlldGtCRVQxSlZYcVhEcUJ5Nk82TjBIdGtXX0hyQ0dYaUk0VU1OX0hDV2lra2lvQWtTcTV0ak9Fd212anVKc3FEQXRud3BLejlwUFJKNE5TTklNRDJnejRoa1AtS253NnVyY3huUC1BOTJkREhhVjZ6YWJTalhYVWVIVXfSAZsBQVVfeXFMUC1hMlQtTHNvR01vUE5fVEdNY0lIQ1RJd1NkME9HdG9VUEVhOHJSVVZyOUsxamhrV2N1ZWJ2dFdrZ2tZZE9aSGZYcWR2Q1FQU2VEUzN1WWhlVldESmRhQVlHZ3daeFRBR0dtOEh0MWZhblNnaHFQeUxSaFZ3bXdPenhUaTlkTkJocFQtVVE3dGwwM3B3RkkyZnRoSnM?oc=5",
-   "source": "ｄメニューニュース",
-   "time": "2026-11-06T11:16:00.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "マグニチュード6.1、宮城や茨城で震度3の地震 東京や神奈川でも揺れ観測、各市町村の震度一覧 11月6日19時39分発生",
-   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBBZ0d4UmJiSUQ0OVNmb21EdV9tbGJjN25iSkwyZEVkZ2Etc3VtUkV5NU8xelE2NFJpUjJTZnNfemw2VUxnWUJoLUxYVmhuSEZ4MHRVUldpNHdpcG1VVXc?oc=5",
+   "title": "台風32号発生へ…気象庁の予想進路、米軍・ヨーロッパの見方 日本への影響は",
+   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE96ZzhUN2FDbjFoVjB0WUExNXdNU25fZ3BfamhSXzZhOG9EMGdPU2hqY1ZvSVY2MUZlcmhwVlVaZXJMS3Ztc29zWlVsVzViUzB0ajdHQ09HZEhjUGJSUVE?oc=5",
    "source": "福井新聞社",
-   "time": "2026-11-06T10:53:00.000Z"
+   "time": "2026-11-06T22:30:00.000Z"
   },
   {
    "cat": "主なニュース",
-   "title": "宇都宮市議の言動問題、調査結果を公表 職員から200件の訴え 当該市議「精査したい」",
-   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9ScnJJcnZxOG56QUNpekdHSU1XaDZ6bHJsOFExaGNPcDVKa2lwb1V6U0F1NmlkZUVyQTF1QndlZmNNaTZ3b21Gb0lqN1VnVl9CNWNMTjJLOFhhd1k?oc=5",
-   "source": "下野新聞社",
-   "time": "2026-11-06T10:40:00.000Z"
+   "title": "「パワースポット」将門塚で下半身を露出、石碑にしがみつき奇声…３０代を礼拝所不敬容疑などで書類送検",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE93RU9oSDlXVDA0OUFnVElINzV0djJzVXRZMFRISU1tdTAydFB3RTZFc0oxS3RiRG8yMTNGWWlFWUpfMkhmeFFEaHhJLWk0OU9JX1N4dU1rYTQ1SUN5VVJxYUE0VDFhQQ?oc=5",
+   "source": "読売新聞",
+   "time": "2026-11-06T22:01:00.000Z"
   },
   {
    "cat": "国際",
-   "title": "【速報】トランプ大統領 最側近のワイルズ大統領首席補佐官を交代 中間選挙での大敗受けた事実上の更迭か",
+   "title": "米民主党 AI規制法案を多数提出へ",
+   "link": "https://news.yahoo.co.jp/pickup/6601606?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-06T23:49:22.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "「トランプが去っても、アメリカは元に戻らない」三牧聖子氏が指摘する超大国の厳しい現実（ダイヤモンド・オンライン）",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1ETG9OQUMza2JodGRSc081d1ZxcXVpbXpTem5WUnluOHdNTTVXcUV4ekZUZVllV1I0YmlteDlKVXJXYXg1TjVFbmg2cGZJSHN0a3pJWnJlY19SUkp3M2tjeHl2UE9GbzZ6OF9faGFCMmxzWmE0WXVhRzJPb0F6Wm8?oc=5",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-06T22:07:18.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "独、初の女性大統領有力　与党がアイグナー氏擁立へ",
+   "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNTHVnVjFucVo0cS1jeXQzQldzMkVWckl2aDVFT2ZIWHNBcmxhTFNWZ2szQkV0Tl85TnBxTGUxWTkyZGlNVUczQkZjcm1laFBxWXRLYV9qSFR1VFo2cXVLNk1BcUU1YWNVMHhsXzF2LU1Yak1vVkc5ZlBhZkhFQUZjLTJTWTh1ZzVPYlHSAY8BQVVfeXFMTjNUT0txcHpXckVma1NqcC03eWRFSjlsN1lPR1VCZ09MQWxwSjRTUHV1V083SURkbEdsS3hRRldQZWxPVUUwajVnUnNnN19nQTlPbXFPdm55QXl4ZHZwWlNQWmNxQzFkQy1Rc0c0ck9Ua2hVamticDFtTGRLTG1RUzFNSmJxMkNTb3VmNGxkd0U?oc=5",
+   "source": "ｄメニューニュース",
+   "time": "2026-11-06T21:45:00.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "トランプ氏、イラン再攻撃か撤収か ｢近く決断｣選挙大敗後のシナリオ",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBJcXpxS3BKdU1lX1BIdmpTT1VwSFpWT3ZxSGMySHNRVks3ZkNyTC01Ul9vLUUzcm5fVVpSX3pHdEtPbWNTN0VuVGpYREQ0TE9MZGNXa2VtOGJQOWVmbXJqdE5nX2hWNm9aTmFQSg?oc=5",
+   "source": "日本経済新聞",
+   "time": "2026-11-06T21:19:11.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "食事に汁物が出ない…飲み水もままならない韓国軍、意外とも言える「水の事情」（Wedge（ウェッジ））",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5zVWh4aEdkb2QxRVFuVmxsUU02c3hwWXZ0ZlVoRkE2ZHhfZURROFN4am9SSU9JTG1kSU5SLVRCTm92U1g5cV9VcVVjREtjaU5YZjRVWGU5cFgyMERmWDlEMm9HUjhwOFdCRDNpTGJlcEhWdy1RYXlOTTBSazlIcTg?oc=5",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-06T20:01:40.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "イスラエル野党 組閣へ 第２党 アイゼンコット氏…アラブ系協力に反発も",
+   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9OWlRSMnhGa2w1RnRpRUhDX3Vpa3ZWWDRLYTVfZU1RbkVlQlF6VUFsMEEyOW40UzhlYmctb0lmMEh5c2l0aUtyRWR6YVBBand2UGtTdV91ZVVIcktHQlVWbTlB?oc=5",
+   "source": "読売新聞",
+   "time": "2026-11-06T20:00:00.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "地球は凍っていた 有力説に進展、「布団役」のガス減った意外な理由",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1uYXJjYlZwNHVGeGo1dzVGU0YwQVZtbkZXWUVPWDFMUXlLMy1IS0Z4XzM3ZDB6RzEzcmhVU2xKMjVGdnJRRjF5bFptdGZwVzRRS29CYlJnVnNnVXNCN0ttZ01Yazc3T2JjQi1ySg?oc=5",
+   "source": "日本経済新聞",
+   "time": "2026-11-06T20:00:00.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "トランプ大統領 最側近の首席補佐官を交代 中間選大敗による更迭か 後任は強硬派のミラー次席補佐官",
    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9kTW9ySXJVOHBOMU8zbFhMZUdfRGk2ckh4Z01XMHNub3VqVkVGaElqcGdvbkJFUVY0ZnhNZmE2X3ZhekNuSnhFNktkdXZvN1EyVTVPYkp1VThCXzd5MjF3VDBubVAwZjNXUEhsSXFNM1ZzM1hxZTBIRTZ2U0t1Nlk?oc=5",
    "source": "Yahoo!ニュース",
    "time": "2026-11-06T19:47:14.000Z"
   },
   {
    "cat": "国際",
-   "title": "約6年間お蔵入りになった「コロナ対策映画」公開直前に上映見送りか (2026年11月6日掲載)",
-   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1xTS01emt4eU1tbU82ak5oVWZGa2NEYVdRTGZkUWQxaHVUTU5Rc1pFSURwcU53WVMwTkw1dUhsNUFzYnpzZFl4VkpRd1djUDVJQXpfbl85cnZhcmJQcVE?oc=5",
-   "source": "ライブドアニュース",
-   "time": "2026-11-06T16:04:07.000Z"
+   "title": "トランプ氏の米国版凱旋門、連邦地裁が一時差し止め 計画承認直後に",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5DTDZtazQyakJDV2FkbExOZzlBRms1RTZkUWpMMXVybnhMcXUwUXVNY0Z4S3JEQVdIUnlwZ0YxYVZzRTFCT0xwRV8xZ2hUcGswdS1na1NCd3k0NTFwT3BnbkdvWW9OdGZPM3RFRg?oc=5",
+   "source": "日本経済新聞",
+   "time": "2026-11-06T16:02:49.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "台湾、パプアニューギニア首都にある窓口機関閉鎖・全職員撤収へ…中国が政治的圧力で介入と非難",
+   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5iNjVjSzQ2WW9ISHVueHlsXzUyd1g5TXA4Z2VKYkh5bjI5MlotQTZ0UjN0T0FkTDloX29rTVhqZE9qMHlkVTFyNWdKZlhwNmVVVFEtY1U3NjlhbU5kMklPXzFB?oc=5",
+   "source": "読売新聞",
+   "time": "2026-11-06T15:55:00.000Z"
   },
   {
    "cat": "国際",
@@ -192,66 +248,10 @@
   },
   {
    "cat": "国際",
-   "title": "台湾、在パプアニューギニアの窓口機関を閉鎖 「中国が介入」と非難、LNG購入停止",
-   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNM1BNSmhWXzNSSm5kNk1sRHdTTDhuSTJCNmZyM0ttd0gtanR5RXRvaTNpblFnbjliSV92WlFQaXd6NjhZRGkzeHVRZlFnRlBRejYzZkZTZ1FXM0RjYTl5c016aWRvUjVxd3E5WjBlOUpJTGxPY3hmUDV5eDdlUThGTnFpdEJGZ0hwRFhXYQ?oc=5",
-   "source": "産経ニュース",
-   "time": "2026-11-06T12:15:42.000Z"
-  },
-  {
-   "cat": "国際",
    "title": "フランスで「最大規模」の抗議デモとストライキ、労組呼びかけ５７万人参加…一部は暴徒化し４５５人拘束",
    "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5ma2xnTUI5SVd2UkJNMS15amRQX08wRlIyd2x6eVF6ZGFyUmNWMlc0VzZCNFEybEcyRktGUnBZVzAzNTYyTTRCdWhnU3Zzb0VDWXZCNmd5ZG0tTE0xcUJxRnZR?oc=5",
    "source": "読売新聞",
    "time": "2026-11-06T12:11:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "MAGA連合に亀裂生じる CNN調査",
-   "link": "https://news.yahoo.co.jp/pickup/6601569?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-06T12:09:10.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "マカオで初の国家安全維持法違反判決 懲役12年6か月",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1neGp5NlNVb1NMdVhmVkN6NnQ2UHd2M0xkYzBlb3VCVnFQYmhad2RKZXVYNGQ5SVlXVzdXc2ZXTVBMSUpaOFl5Q01JQXQtUzJBU25iNmNDZnQ2UkljY2hn?oc=5",
-   "source": "NHKニュース",
-   "time": "2026-11-06T11:43:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "「青い大波」「赤い引き潮」 共和大敗の米中間選挙―中林美恵子・早稲田大教授",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5LeTczVFN1cGZWaUVUVDlLb29iYnl6TWlHQ2QwQlkwN1J4VGQzMk9DbHhHcjdRZFV0VGN5cHB6NTNuRlNIR0hnYUw0Y0EyNXg2Xzl0MDdOVW5PZXpldlZmVVplZw?oc=5",
-   "source": "時事ドットコム",
-   "time": "2026-11-06T11:31:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "米国防長官に責任論 共和大敗で、来週にも弾劾採決か",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFA4RncxMUlKQmZ4ME1WdUprS1NOTlF4eVNYVzF6RlY3RklybmJXaFpnM0RwMUliaXRBQnh4cHhVYlpyMXdxLVE0UFFHR3lKaGU3TGdWb1pMSC14M3VmampVS19paw?oc=5",
-   "source": "時事ドットコム",
-   "time": "2026-11-06T11:31:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "ゴリゴリの共和党員すら50年ぶりに民主党へ全票投じた…米メディアが報じた｢トランプ大惨敗｣の実態（プレジデントオンライン）",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBNcVlLSlE3dTJmdlBQS2F1cFBaaVRTWkZuOVM5bmdzMXJ2NUhURGEySHdob3dDWW1UMl9MMzdSeW9mQ18tRmItM2hTZDQ2bnFlWjFKRVUtcG9mbXpld3ZfNm5aQ1ZRNUMtWk9MSTFGd1NWaHZsbXpzVDRFUXVmbXc?oc=5",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-06T11:15:40.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "ロシア海軍“戦後の戦艦”ともいえる巨艦の改修を断念へ!? 大幅遅延していた姉妹艦も影響か（1/2 ページ）",
-   "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1BVTNYUHN0RVBvZUU5a3FDeEZIY25UU0NKamFkYTEyYWZtc3haWXo3RDYwNTI0R2g5ZmRwNzFtak1jd1dLMllzNDZR?oc=5",
-   "source": "乗りものニュース",
-   "time": "2026-11-06T11:12:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "中国、南極での活動と環境保護に関する法律を承認＝新華社",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBfZHRaR1l4aTJZOFhjWjZpcDFmdUVNdXF0TGhmaW04MHpuZ1dZVmV0eHdEblVSZllza2ZmcEJTWVU4MzZ6ZnJBWlJtSV9jMHIybVI1Nk1sNm1wekk1Z2VaZmJwdGVHY2g3OVRlWW9RNm8wVlZudU1MUWhySWs3RWc?oc=5",
-   "source": "Reuters",
-   "time": "2026-11-06T10:28:30.000Z"
   }
  ]
 }
