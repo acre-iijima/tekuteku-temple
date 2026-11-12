@@ -1,12 +1,61 @@
 {
- "updatedAt": "2026-11-12T15:55:04.323Z",
+ "updatedAt": "2026-11-12T22:11:42.945Z",
  "items": [
   {
    "cat": "経済",
-   "title": "ワタミがMBOへ、創業者の渡辺美樹氏が取得 総合外食に転換",
-   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE43QjhYb0ZqaENaUm9pQ0lTNlRvd0JmRnp6b2RtaVhoWFY1bVRQUmF6b2NxOTlJUy15ZnJxUk56NlFxbUdaeXpKN1piek9MTFRRcnVTd0dEczhzbjJpdk5SRHE1eWMzOWl0VjFZVg?oc=5",
-   "source": "日本経済新聞",
-   "time": "2026-11-12T15:00:00.000Z"
+   "title": "エヌビディアCEO辞任 動揺広がる",
+   "link": "https://news.yahoo.co.jp/pickup/6602361?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-12T21:59:48.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "米エヌビディア、ジェンスン・フアンＣＥＯが辞任…不倫発覚で引責か",
+   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9oSXpUd0dUR1VRTkI3NGloUUlXZncyanprYXFJX2hTR1RLc2dkYjJ6QmNmZ3RTbWdXVXljQjJ4VWhzbUo2QVdOeFNTUC1iNWNIdHhUUU94SFlBRjNReGZ0U19QVC0?oc=5",
+   "source": "読売新聞",
+   "time": "2026-11-12T21:35:03.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "無印良品、クレカ番号「全桁流出」の経緯説明--「不要になっても16桁をマスクせずに保存」",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5yY3JNQlZHeGZ2bmZXYVNuTWVnUDZGcFNLUFJKUmpRc1hBT09qWmNUR19Cc2tLUUpTa3hnQ3ZicXB4MzFCaXN4eTdrd2dmT2QzcWc?oc=5",
+   "source": "CNET Japan",
+   "time": "2026-11-12T21:05:15.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "マイクロソフトのサービスで世界的な接続障害が発生",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9aYW9kVEUxc2wxVF84MWN4b3Y5UUROdzRnRG1xajhwLU5kRXBtNnFGeFVoOVhTekI0RWlaV2ttRlRlbC05Z1g4eVpPWktpUkE4cGJsazNkakRhMVRXRm5v?oc=5",
+   "source": "NHKニュース",
+   "time": "2026-11-12T20:42:04.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "エヌビディアのフアンＣＥＯ辞任、ＡＩ業界に影響も 暫定トップにＣＦＯ",
+   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNTHNtRTljbXpkbmVMOTBrY3NPcm1NdUtneEdUeTk3dFg5c3ZvTDRvUHlSaElwMmwzcktDNW5xOWVZeWlkWHF2NnRrMUs5MjgxcGc3blBxYXlXb2k4YXhvTkNiT3ZwNXI2MlBDYTNIaXU4UjhFd2dkS0VYTzJCck1uOGxwMHRwUQ?oc=5",
+   "source": "Reuters",
+   "time": "2026-11-12T20:07:50.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "【市場反応】米10月中古住宅販売件数は2010年来で最低、ドルは利上げ織り込む買いが継続｜FX・為替ニュース",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9aeVBOX0tod3Z3XzNPWXB4TUxBa1hLbHlnbHZOeTV6YTVXSVlxbjRXRXNLWmEyYzFkN2tBWl9KaXAzZFNrelNXa2YyZGgyWXFlVlE?oc=5",
+   "source": "ザイFX！",
+   "time": "2026-11-12T15:49:00.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "【ＮＹ為替オープニング】原油相場やFRB高官発言、米30年債入札を睨む",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB1alQwTnVVYzJDRDBYWFBkMUNkb3ZPV3ZkVF9rek9iSE1GbW16M1pyLURCWGxVb2RMM3dGTUFfYkVXZHBUczhmQ0FQUXpOVmxiSEE?oc=5",
+   "source": "ザイFX！",
+   "time": "2026-11-12T15:07:00.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "【市場反応】米先週分新規失業保険申請件数は増加、予想も上回る、ドルは底堅い｜FX・為替ニュース",
+   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE0tQ3diTXlValA3Zm11ZVlxWDl1N3JoSFhIZWhLbmZoS2JpTkZEbGdCV0dEOFg0dEJleFptWjZOekNJR2xYdmgxeHVPcmt1UVU0c3c?oc=5",
+   "source": "ザイFX！",
+   "time": "2026-11-12T14:13:00.000Z"
   },
   {
    "cat": "経済",
@@ -14,20 +63,6 @@
    "link": "https://news.yahoo.co.jp/pickup/6602353?source=rss",
    "source": "Yahoo!ニュース",
    "time": "2026-11-12T14:08:14.000Z"
-  },
-  {
-   "cat": "経済",
-   "title": "エヌビディア フアンCEOが辞任 業界全体に影響も",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE01QS1ZVlhBSmRqNDR0SXpoa1lyaU14N3JWOThIeEpEOW9zaWRYZEw0N29YR0htYWlBTC1TS1Q4cHBlaHJqcmx3Tjl5R0VFWGtjVWlJdm9ZZ2ZBQl9zZW5F?oc=5",
-   "source": "NHKニュース",
-   "time": "2026-11-12T14:07:00.000Z"
-  },
-  {
-   "cat": "経済",
-   "title": "Googleの落とし物トラッカー「Pixel Tag」が日本で発売される",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9hY01pbTRnQ0J0WVBCbEU5bzVyWUhMM3IzZkIwU2h2REpkMjFodjBqc0xpZnJDenVrLUdFQjB4OS13MWVEUDBrTnZGSU1RV0lOZEJwV1otVkRWNXBFTTh5NFpFcw?oc=5",
-   "source": "GIGAZINE",
-   "time": "2026-11-12T13:57:49.000Z"
   },
   {
    "cat": "経済",
@@ -51,39 +86,25 @@
    "time": "2026-11-12T13:02:08.000Z"
   },
   {
-   "cat": "経済",
-   "title": "JR芸備線 一部区間を“バスなどへ転換”案 国側が提示で調整",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB5OEw1T3VDMTJ2cHF3b0UwQTNiOW9nTUxxYmZSMjd5RzZ2aG9wZXFodmFWaEJMWVVVd3lRTGlvT0ZPOC1uNnZlT19LT3R6VGVZQ0c2ZkF4ZXJBdFNpM040?oc=5",
-   "source": "NHKニュース",
-   "time": "2026-11-12T11:43:38.000Z"
-  },
-  {
-   "cat": "経済",
-   "title": "遅くとも２０２０年から保険金不正請求か、タマホームが全店調査…「損保各社と連携」",
-   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBjRUlDUkowRzdrYmhrNmZqZzIzRExTRGhxeWg3bHdtSXF1MmR2aExzR3BRM0QzSGI2VnNkMlg2QnptaWtNSmFFLTBJVzdGS2g3VkhFTGVYTUZSc2Q4d1Z2eS1pdng?oc=5",
-   "source": "読売新聞",
-   "time": "2026-11-12T11:41:00.000Z"
-  },
-  {
-   "cat": "経済",
-   "title": "新築転売対策 与党が空室税検討",
-   "link": "https://news.yahoo.co.jp/pickup/6602338?source=rss",
+   "cat": "主なニュース",
+   "title": "EBiDANが紅白初出場 節目に悲願",
+   "link": "https://news.yahoo.co.jp/pickup/6602360?source=rss",
    "source": "Yahoo!ニュース",
-   "time": "2026-11-12T11:26:49.000Z"
+   "time": "2026-11-12T21:45:40.000Z"
   },
   {
-   "cat": "経済",
-   "title": "不二家 メルマガ会員のアドレス 最大で約15万件流出のおそれ",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFB2NVpvSVBueTBaS1ZPVVBaM2VHNW9CX1dTdi1pV0JVeEtZMkJBNExDdEkwaVBzR0hFcm50NFNTUjd2Y0twcXFYclZtQVo2RHB4cklqY1ozazNqV3A2bm1V?oc=5",
-   "source": "NHKニュース",
-   "time": "2026-11-12T11:14:32.000Z"
+   "cat": "主なニュース",
+   "title": "幾田りら 髪染め本格俳優デビュー",
+   "link": "https://news.yahoo.co.jp/pickup/6602359?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-12T21:40:10.000Z"
   },
   {
-   "cat": "経済",
-   "title": "【明日の好悪材料】を開示情報でチェック！ (11月12日発表分)",
-   "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBWa0R5dS1vNHV3NDVUNEExTDJRUmVFLVVmMXo5d0JFTkFQNXFaZ3BTcnZQZWg5Zk5xd3kxRkJraUxVcXBBU2RmTXpGQU11UHdxeUF0dEZYV0x2VDlwTUI4NQ?oc=5",
-   "source": "株探",
-   "time": "2026-11-12T11:00:00.000Z"
+   "cat": "主なニュース",
+   "title": "マイクロソフト「365」大規模障害",
+   "link": "https://news.yahoo.co.jp/pickup/6602357?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-12T21:11:23.000Z"
   },
   {
    "cat": "主なニュース",
@@ -94,10 +115,10 @@
   },
   {
    "cat": "主なニュース",
-   "title": "米国防長官ら 墓地で衛兵から叱責",
-   "link": "https://news.yahoo.co.jp/pickup/6602354?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-12T14:26:32.000Z"
+   "title": "広島の３人死亡火災、住人の長男を逮捕…何らかの方法で火放ち自宅を全焼させた疑い",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5yeEVNMnlmZ3hhNTFiM2pBR1JTZ3lrSEdkeFhVd3I3TU92UG1ieXdBcUpNT3k4cTRKRVNlbHV5dV9tajdOOEg4blVXaFo0N1RhdlBZcFhrM2ZlVDd4Sk94a0Nmd1dtQQ?oc=5",
+   "source": "読売新聞",
+   "time": "2026-11-12T14:32:00.000Z"
   },
   {
    "cat": "主なニュース",
@@ -105,13 +126,6 @@
    "link": "https://news.yahoo.co.jp/pickup/6602352?source=rss",
    "source": "Yahoo!ニュース",
    "time": "2026-11-12T14:10:37.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "海岸にクジラの死骸 深海の希少種",
-   "link": "https://news.yahoo.co.jp/pickup/6602351?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-12T13:57:11.000Z"
   },
   {
    "cat": "主なニュース",
@@ -129,45 +143,73 @@
   },
   {
    "cat": "主なニュース",
-   "title": "ヤマカガシに狙われたカエル→必死に逃げるも……　目を疑う光景に「これも大自然」（1/3） | その他生き物 ねとらぼ",
-   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFByZURiYWFmZGluZ3BpakkwUWZ3dUxjbzl3aVU1azhCSUpLd2FwcGdoNDVmWnFTaFpCSTFVV3JEM0loekdGZHJ6SjlacnB0ZlJ0d0xtSGRiSTNjU1ZhN3fSAWNBVV95cUxPTFpndy1jdXJEWVFxRl80Z2JrQk1BSFRUNnJHd3hkbi12SzFwWlBPTlNneDBPX3dlcERwRktWRHlrOThnNTVxMUZMM2VHUVI0dzd5WHN6NjA5RDc5N3ZZVVJDZEU?oc=5",
+   "title": "【速報】米、駐留経費負担5年で3兆円超要求",
+   "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1vQkdVd25ROHpuMTdiazlzUWNjbWVHMnp5UVZZUnpLNXBYbGlGaFJybmgtQlVlRXF6cVV2NHlrbm9XUmJHNGQ1azVidw?oc=5",
+   "source": "47NEWS",
+   "time": "2026-11-12T12:31:05.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "市長逮捕の徳島 阿波市 副市長が会見「心からおわび」",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFByLTVJODNETTBtQkVJT040QWNQb1V1QTRDQ2RPdGZWUklvT1ppQXYwTUtxVE1XUE1mZHpBUFctV0c2eEdoaHBSS2FiN3lGZGJFNVdITFVRSzVWdDg3TVRz?oc=5",
+   "source": "NHKニュース",
+   "time": "2026-11-12T11:17:00.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "佐賀県の山道そばを走っていると“注意看板”発見　背筋が凍る内容に「怖すぎる…」「やだ、やめて！」（1/3） | ライフスタイル ねとらぼ",
+   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE8weVVMRkZUUEJyWFFVME9UZkVKUWd2VkFIaUJ4dHF6MkxEV3lwbHpyalE4X3U1aHRtUmxxSFdjaUxVQWlnTVhJYW5yVlNQT0xxSzBvYXRWZzhVN25faHfSAWNBVV95cUxPNXVXMlMzaTRVcG9nc1lvSGdSbDJpYlpUX0xOdXVhWDg1T0ZpQ2R4VG9UWHVzNkhTUUFJME92eUpuRVhWcE1tR0o4MjlwRmY1Ykk2YU1zWk9hMEtmdHp5VFRDWEE?oc=5",
    "source": "ねとらぼ",
-   "time": "2026-11-12T12:15:00.000Z"
+   "time": "2026-11-12T11:00:00.000Z"
   },
   {
    "cat": "主なニュース",
-   "title": "蒔田彩珠です 森七菜がついたうそ",
-   "link": "https://news.yahoo.co.jp/pickup/6602341?source=rss",
+   "title": "死亡した弟の車はエンジンがかかりドアが開いた状態 殺害容疑で逮捕の男「酔っぱらって覚えていない」 鹿児島・曽於市",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFB4aWFwelFDVGtUZWY3d0I4blVXLV9yMDgwV3ZPVmlaaVNVUFZ3b19wRE44N0VnZlFfYmRHX1cxbU1PTUcwdEZlX3NfakxJMGpheXd6RlB5UU05MG93R3hfXzBuS24tVU0?oc=5",
+   "source": "TBSテレビ",
+   "time": "2026-11-12T10:53:00.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "「トランプはもう終わり」は大間違い？歴史的大敗から始まる驚きの逆転シナリオ（ダイヤモンド・オンライン）",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1wdXBZUnN3ZGo0MWl1cjBCV2EtdTFxMzdGWEZfZzdJanRCVFIzZVlaNC1vdGozWmQ3YmRlbHV4YzRxRmR4N1gwbHB5bGxwSmtxT256UDRuTW9lY2VuT2c3NlF2dVZLczQyRzU0c3g0UlRrbENLZmkxbmJZZTBweVk?oc=5",
    "source": "Yahoo!ニュース",
-   "time": "2026-11-12T12:06:42.000Z"
+   "time": "2026-11-12T20:02:21.000Z"
   },
   {
-   "cat": "主なニュース",
-   "title": "広島の３人死亡火災、通報の住人「寝たばこで火が出た」…親子３人と連絡取れず",
-   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFA5SWF2cDlBeFZFczExQU1ZRXE3eElFT1dCR1A5Tk9mSmdmNGF2UHJlZ2tmUVowdnp3UUQtX3NhRnB6ZWxzaW1hSUtyNjJzYlp6SVZtUjVQUkJIQUVzNE5LeUZoUWFzdw?oc=5",
+   "cat": "国際",
+   "title": "中国海軍・海警・「海上民兵」が連携、南シナ海で「他国の船舶に対する圧力を強めている」…防衛研究所が警鐘",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBmd0l6eExkNU1vbi0yUEp0VHhjZVBFYUJneXhNNzd6Q0tJRHVNX256LWpZQUpWcEg2eVZYbUcydXJsOGdOZDhacVFfMENDTlpON1Y4M09MUmhSdndrdXJSbTNyYmx6QQ?oc=5",
    "source": "読売新聞",
-   "time": "2026-11-12T10:41:00.000Z"
+   "time": "2026-11-12T20:00:00.000Z"
   },
   {
-   "cat": "主なニュース",
-   "title": "“ニセ保育士”「働くなら資格取って」と言われ、約6万円で偽の保育士証を入手 42歳女を逮捕 働きぶりは「休みがちで遅刻多い」",
-   "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFAzbDJhX0NaUldYcEh5NmpKQUZfVjh2U25IZnhLbzhrX294WTNWbFN2eWJaWTRWaTJKWWV3QWlHVVBVMGJTNE93aXFkdjBVQQ?oc=5",
-   "source": "FNNプライムオンライン",
-   "time": "2026-11-12T10:25:00.000Z"
+   "cat": "国際",
+   "title": "トランプ氏、イランとの停戦合意「不要」 バンス氏に国内集中を指示",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBuWmp0TGlGUXNnRVBpSTNwOVFJZ3Z0ME5YQWU0ZFVQY1ZGeDNsd2RjaUFqV2s2SjA1REN2NlBjS2hCZ1ZCVm9vQU5zbTZuY3FVY3cxOGFqb0gwYllfTG5aTWwyeTU4ZDB5dk44Zw?oc=5",
+   "source": "日本経済新聞",
+   "time": "2026-11-12T19:47:30.000Z"
   },
   {
-   "cat": "主なニュース",
-   "title": "＜独自＞「適応障害は風邪」いじめ訴えた生徒に副校長 東京都内の区立学校で重大事態認定",
-   "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOSmdKdnpsY0lEQXNFYjRhZDNHd1kzNUxUTkxjWm5rbXBHeWpOYnJ4NmdPOWI4T0s5MXVzTDJkZzFFa1ViUFRiWTcwUUItVkUtY3VqeUpkU18wWW91NUJVSWVxSWNsVTFxbmNlN0lCT3huWkNUSTU0TXN3dE9MYmNvd3BDSkZZSkpleVFTcw?oc=5",
-   "source": "産経ニュース",
-   "time": "2026-11-12T10:07:50.000Z"
+   "cat": "国際",
+   "title": "ウクライナ侵略でロシア軍側「雇い兵」に参加か、南アフリカで外国人の摘発相次ぐ…捜査当局が１０人を逮捕",
+   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5hcWVTYmVTQ0pWV3BKRVZyVExKbmFTRFppb1g0dFFLejJKc001bUU3OHBac0RoaWpqa2ZnTnY2OHNGelk0WE1wSXNSWEI3RlVpNU5FU0dqUTdnQWFSdFBMVzhB?oc=5",
+   "source": "読売新聞",
+   "time": "2026-11-12T18:25:00.000Z"
   },
   {
-   "cat": "主なニュース",
-   "title": "【社説】非核三原則の例外明記を検討 抜け道作りは許されない [高市政権の安保見直し][安全保障関連3文書]",
-   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE4yblJNS3h4dUJOWXFGOTZsUTl0UjUxQUFNMFFxQmhkZFRvTGhTdDBTbWVGbHlraEFZbnZseElqdDB1aWk3dkpSckZaNi12ZU9qRUJoZXVWUUJ3MExzTmdQdDM2d1Joajg?oc=5",
-   "source": "朝日新聞",
-   "time": "2026-11-12T10:00:00.000Z"
+   "cat": "国際",
+   "title": "[FT]習主席、米ロ失敗に学ぶか 強権指導者が握る開戦判断",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9ORlF2NTlXOWdOWF9qS2pIcVZIYXh2VHVia1l3YUltUi11RENOVExtWXgwLVZjV1pvY0dSa0JfTlpxdDd3T2FUeXU4RjVfa2JjcmdNbWdBdm1iMF9uS1pNallXMEc4T1h4WVBmYQ?oc=5",
+   "source": "日本経済新聞",
+   "time": "2026-11-12T17:00:00.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "米首都ワシントンで銃撃、5人死傷 ホワイトハウス北東",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9SNG5GVVRGSHR6eXMySkZDYk05X2xMRlU3SUFpWl9DWkkxNzFJVVctdWxIczg2Q2lqSFlrcVlPZWVNTER5bHFYT3VVZXVvV0xxM2JDMlNVWV9VODdFX2x0YmdTanNXUkN3R1pyRg?oc=5",
+   "source": "日本経済新聞",
+   "time": "2026-11-12T16:25:56.000Z"
   },
   {
    "cat": "国際",
@@ -178,6 +220,27 @@
   },
   {
    "cat": "国際",
+   "title": "米国防長官ら 墓地で衛兵から叱責",
+   "link": "https://news.yahoo.co.jp/pickup/6602354?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-12T14:26:32.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "米共和党のヘイリー元国連大使、２０２８年の大統領選挙「出馬するつもりはない」…「優れた候補を支援」",
+   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFB1VTIwai02cHFqUDV2ZGtIbnVWYW1FUlFwSEVaTmhEeFNSY0RQMFd0cWw0dkRtNjFZRFFxbHpFd281MFhWc2NkQVpuTmUtcjcwbWZsYTY0WVk1WGxnN3gyUTF3?oc=5",
+   "source": "読売新聞",
+   "time": "2026-11-12T13:50:00.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "【速報】日ロ首脳接触ならウクライナ支援見直し要求",
+   "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1zTk90UkFUYjlyOFM4SlhOUjlKVF9mdW9JV1lNLWNJYXJxaHdmSW1ORG1CcHV5azRhREVuOV91Y3V3WGFKZ05fV2M1UQ?oc=5",
+   "source": "47NEWS",
+   "time": "2026-11-12T13:27:43.000Z"
+  },
+  {
+   "cat": "国際",
    "title": "中国 習主席 「祖国統一は実現できる」 台湾統一に改めて意欲",
    "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1OSGhkT2UzMlgwc0ZUMVJBeVhTVjg1aDhhQ1YxMGQ3RXM5RThyRVJWUjJMZDlheTVCZUgwR2MtWVlPVTdscHB2dGNlaWpYRW1vbnVwejFibmhSYXBLSktz?oc=5",
    "source": "NHKニュース",
@@ -185,73 +248,10 @@
   },
   {
    "cat": "国際",
-   "title": "28年米大統領選、民主はオソフ・ブティジェッジ両氏に注目＝調査",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1IU3FIaTBxUE1OSEJGTmtYb1pQWXA1N0g1WTl0eS0yVkhDMHNBbkRzRkhvUGFuNWlENmJmQkowT0xBLXBrSlU3bkc3aUE4SDFzbXBuRTdBdlZLU08zRUJqamt2SDZBb0RfemxNX2FoZ1ZVVEM0ckhkYURJbVF0c2c?oc=5",
-   "source": "Reuters",
-   "time": "2026-11-12T11:57:49.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "目撃〉新種のホエザル、つり橋の自動撮影カメラにひょっこり 架けた人も知らなかった（ナショナル ジオグラフィック日本版",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFA1NWZEQUFfU2xGTkE0cTNqR1pBa0ZPRk1qazVoZzVvZm5WWXN6NzF1U0FBaEtyamF4TmFhdHVGMGdoelhVMkd6VWNJZDVMaDc4ZnlwcDhKY283REs2NXZ5NVBQY1h4OERHWGE2cC1lZ2lLVTVlMFhaN0E4OFlVTlE?oc=5",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-12T11:57:03.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "スターシールドに障害、速度制限で迎撃に支障＝ゼレンスキー氏",
-   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPdlNId19veVpOT2FieFlnRFBTeWZvN0JHXzVYSUVCYjdQLS1qLVVWd0hwcHZVT1M5QnBIeERES3U5d2RYZkszTkpLV3hJSEtnMlJIU1p0bnJQOWRoVUNjWVF5Rl9TNGFSZktBcHlPMllwaGdpMG1uS3Jtc2lHZzM1aWxTVENEQQ?oc=5",
-   "source": "Reuters",
-   "time": "2026-11-12T11:33:44.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "イタリア公立校８割強の６３００校に爆破予告…メローニ首相ら、国家的組織による「ハイブリッド攻撃」の見方",
-   "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBxNzlsWjhXSTItWEJyMC1XVWstQnN3UmVjeGtWMTJsblVIdUlhWE9PVHdESzJFVWRZZHpvQVhnQjUwVVN3M0E0cktCZS1NVTNyVkU0TXVobG5DWW1VU3lSYW13?oc=5",
-   "source": "読売新聞",
-   "time": "2026-11-12T11:07:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "タンカー2隻、ホルムズ海峡で機雷に触れ爆発＝イラン革命防衛隊",
-   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQd1dmemMxNUJnbHc1T1dzN3JRSmlSdnQxVkRfR1JxTjY0b25vOTgyaFZDTEgzYmRzWU5FaGdJV2hlWTY0NzZtemZDaWpYNVhYTV9RTGF2cjZWWEl6N205UEltWEhVYTZGS2lFQkNqSVUwMjQ0TkJua2RESnhOaGJhT0t6WnJvTkU?oc=5",
-   "source": "Reuters",
-   "time": "2026-11-12T09:55:43.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "焦点：ウクライナ、ＥＵ加盟への道狭く 戦争長引き受け入れ機運後退",
-   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOME81RE5OZFY3STRCYXg3SzJEOUZhT1ZYSnpLTXNTN1R1eVQ2M3FtTURqMVd5VUtwcVNucUdmTzRBWWlZOXRKcFJIa1RZcy1GT2kyQ29SR2VKQjVxVFlUdzNzZVdObHI2VmJBT0ROYWE4akVieTVnczl2S3dBSU1rb0w2OUdPQQ?oc=5",
-   "source": "Reuters",
-   "time": "2026-11-12T09:42:48.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "「アメリカの威信をかけた巨大船」ついに沈没！ 最期はライブ配信で74年の生涯に幕 世界最大の人工「魚のすみか」に",
-   "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQZUpNM0pUVktVRFlHbnNWVmxzRVFyQVJNR3VORS1kSmpoOEQwNnI0bjQtRWd6UjdTVkxWai1ITVI4Z1RnN3NGaExSbGcwb0JIRzBBNkJUekNmbjdSNFdpMG1RQWNBbzZTV205Nm9UcVFSNHRTX3VERXdlTTFFWW9aQ3UwcUFhM0pn?oc=5",
-   "source": "carview!",
-   "time": "2026-11-12T09:12:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "米軍を弱体化させ、共和党を敗北させた「責任者」ヘグセス国防長官…それでもクビにならない理由（ニューズウィーク日本版）",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB3akFyMWhDZHNockZYZ0tsQ1VyeWVqVzVIM1BkdXh0VmtkV3VFYVRZYWRUanhScnNPMkhYeEx6MXoydHdDY3RNZVgxQzNUSWp0ZkpkdzlkRkRuSDN4OVNwQ2lUeFBQM1F4QllnMFNQdmZub0tkdGpkbXhPaDZkREk?oc=5",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-12T07:40:09.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "AIエージェントが公的機関に記録のないマヤ文明の遺跡をたった数十時間で再発見したとの報告",
-   "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBncTBXaU96MDNTaHo3WmtZdmZFQ0xzRFMzc3ZLSkNRU1VwcVpIWXQyWUtRamZ1NTJOcTl6MHJFMGhBYUhseHVHcTZMb2FGNFJJZllXS0FuTDJUMmh2VHRmNnh2dzlEMXpLQVY2SmdOTk40R0dwX0p3?oc=5",
-   "source": "GIGAZINE",
-   "time": "2026-11-12T07:00:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "ギブラン・インドネシア副大統領、辞表を提出 父親のジョコ前大統領と現政権に摩擦",
-   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE82VDJETXRCODd5OENqa241TG1rUXUzdlZJNnVUSm1uYmV2ZkdPaWZoVEd1THc3S3ZSRW1vNWRiWC05VExJT0EyRTA3eDF4UmM5SENQTGU3MkJZYmx1aFFRX0lLT2dwNVl4MVloMQ?oc=5",
+   "title": "米特使がプーチン氏と会談 3カ国協議受け、ゼレンスキー氏とも面会へ",
+   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9OemJEd3YyYm1MZ1VUMjZFY2l6cVU4QXltcEk3WUNpeWJoTkpia2pxZWFHeDBLUEdhNzNPeG5oRmROV0VKaXA4ZHVlTF9BeXZFYkFTMUlzdk9ybF9EYzloN1R0b0tZRnlpb2ZjeQ?oc=5",
    "source": "日本経済新聞",
-   "time": "2026-11-12T06:56:02.000Z"
+   "time": "2026-11-12T12:12:15.000Z"
   }
  ]
 }
