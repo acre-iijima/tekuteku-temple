@@ -1,6 +1,34 @@
 {
- "updatedAt": "2026-11-16T19:47:48.997Z",
+ "updatedAt": "2026-11-17T02:52:28.915Z",
  "items": [
+  {
+   "cat": "経済",
+   "title": "コメダがタイ初出店 朝から行列",
+   "link": "https://news.yahoo.co.jp/pickup/6602885?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-17T02:28:36.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "「白い麻婆豆腐」じわじわ拡大",
+   "link": "https://news.yahoo.co.jp/pickup/6602880?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-17T01:47:32.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "「オーケー」関西出店加速 強みは",
+   "link": "https://news.yahoo.co.jp/pickup/6602859?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-16T22:49:00.000Z"
+  },
+  {
+   "cat": "経済",
+   "title": "NY株大幅反落 ハイテク株に売り",
+   "link": "https://news.yahoo.co.jp/pickup/6602852?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-16T21:54:31.000Z"
+  },
   {
    "cat": "経済",
    "title": "いきステに復活の兆し 改革の成果",
@@ -24,178 +52,143 @@
   },
   {
    "cat": "経済",
-   "title": "日経平均は反落 AI株が下げ主導",
-   "link": "https://news.yahoo.co.jp/pickup/6602802?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-16T07:24:08.000Z"
-  },
-  {
-   "cat": "経済",
-   "title": "若者に広がる投資熱 その実態は",
-   "link": "https://news.yahoo.co.jp/pickup/6602779?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-16T03:11:43.000Z"
-  },
-  {
-   "cat": "経済",
    "title": "フアン氏復帰求める署名 16万人超",
    "link": "https://news.yahoo.co.jp/pickup/6602778?source=rss",
    "source": "Yahoo!ニュース",
    "time": "2026-11-16T03:10:41.000Z"
   },
   {
-   "cat": "経済",
-   "title": "コンテナホテル8年で145店舗 背景",
-   "link": "https://news.yahoo.co.jp/pickup/6602759?source=rss",
+   "cat": "主なニュース",
+   "title": "東京・葛飾区の住宅街にシカ1頭",
+   "link": "https://news.yahoo.co.jp/pickup/6602884?source=rss",
    "source": "Yahoo!ニュース",
-   "time": "2026-11-16T00:42:07.000Z"
-  },
-  {
-   "cat": "経済",
-   "title": "フアン氏がNVIDIA復帰協議 報道",
-   "link": "https://news.yahoo.co.jp/pickup/6602744?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-15T22:28:14.000Z"
+   "time": "2026-11-17T02:16:52.000Z"
   },
   {
    "cat": "主なニュース",
-   "title": "中野死亡 男は女性が勤める店の客",
-   "link": "https://news.yahoo.co.jp/pickup/6602848?source=rss",
+   "title": "米中露 共同コミュニケを発表へ",
+   "link": "https://news.yahoo.co.jp/pickup/6602883?source=rss",
    "source": "Yahoo!ニュース",
-   "time": "2026-11-16T14:51:54.000Z"
+   "time": "2026-11-17T02:13:12.000Z"
   },
   {
    "cat": "主なニュース",
+   "title": "ロシア機が領空侵犯か 福岡・沖ノ島周辺で：時事ドットコム",
+   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBwZ0JROV9yanl5TG4xbmMzbVBQWkpmTUZXVDhpMlNncGNWaEw1cEdrU2lrRmdOR2RTWkxlcWtNd0JTMkk5MzFGUTBsc1pyZVVQdWYxWkl0bkxZTGVlRFU5aU5yZw?oc=5",
+   "source": "時事ドットコム",
+   "time": "2026-11-17T02:13:00.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "推定ロシア機領空侵犯 福岡沖ノ島",
+   "link": "https://news.yahoo.co.jp/pickup/6602882?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-17T01:47:00.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "MS大規模障害 幹部が原因を説明",
+   "link": "https://news.yahoo.co.jp/pickup/6602871?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-17T01:32:41.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "菊地直子さん 逃亡の日々振り返る",
+   "link": "https://news.yahoo.co.jp/pickup/6602875?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-17T01:18:28.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "群馬・前橋の住宅街でクマ出没 50代男性襲われけが 近くでは車もボンネット被害…小中学校はきょう保護者送迎のみ登下校",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5CZFBIQkdObkFwcmRxNnhxbkdiMWd3SWpXZmJDWkJjSFpPWUQyRGx6c1Bqd3luN1pEQ2dCN1pQb18tN3N2bTl4aC1VWDhQNVNjNGh0YUtJMVRyd1dnQnpHajEwdkRJZGQ1NXJGcnpGcFRYQXVzdThzVWJIYTNZWW8?oc=5",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-17T00:58:26.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "【速報】愛子さまシンガポールに向け皇居を出発 2回目の外国公式訪問 大統領表敬やランの命名式、植樹式などに出席 21日まで滞在へ（日テレNEWS NNN）",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1aV2JnZlVHUHoxZjkzaWZMUkNqMHJ3ckxIdmxSb3Z4OUhJb0VHczUxTEE1MWZvX3pvcEo5RHZBR2t6VFdfZ0QzbTEzVUVvZ1dvdG5jY1p4TzRTZTZTbDd4REh3d1BteDVzZjk2YVRDNU5SdUxBb1RkOGZOYWprVG8?oc=5",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-17T00:55:00.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "中野の女性刺殺 容疑者「食事した後にむかつくこと言われた」",
+   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9kRm5NV3VGbUkxdmtFRlZEckc4ZHoxZlpjQWxEbktla3dja3dRc0hyWWdzbnRXSVlNakMwbmVGemtHNGN0V3p5eG1iUW1xSjVoUW0wd1QtemVsZkRGcW1XRXNfemFuNm54?oc=5",
+   "source": "毎日新聞",
+   "time": "2026-11-17T00:51:19.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "町内会入らずゴミ捨て場利用 賛否",
+   "link": "https://news.yahoo.co.jp/pickup/6602868?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-17T00:26:18.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "中３男子が包丁で同級生の「おなか辺りを１回突き刺した」…傷害容疑で逮捕、被害生徒は２週間のけが",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1vM2QwSlhZVS1MU0N3d1dhNTllc0RBVlgxSng2UHF2aVM2VXpkSWlNQW03TDZ2U0xNMXRYdklYcVlwVk1OQi1vQWVwQXhLYU5fVHJCOWQycmZmUjBGNm40a0xwSDZmdw?oc=5",
+   "source": "読売新聞",
+   "time": "2026-11-17T00:22:00.000Z"
+  },
+  {
+   "cat": "主なニュース",
+   "title": "安全放置したトップに改革ができるのか 沖縄・辺野古沖転覆招いた同志社の「集団浅慮」",
+   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE02Wlh3Z3JfeEZVa3ZEdnFfR0s0YWhsaGpPYjlPYlkwcGpLNHlDMlI2SmRQQ1VJNl9wVy1ZMGNOR1MwcDhwOHpPRmt3dkpDSlQwbU1XQ0lLTEtWRHpzRjlNQkljRWFEZHF4d1RfWFE2QVdsYllHSHc?oc=5",
+   "source": "産経ニュース",
+   "time": "2026-11-17T00:00:00.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "イラン「汚い爆弾」米高官狙いか",
+   "link": "https://news.yahoo.co.jp/pickup/6602889?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-17T02:45:26.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "米大統領 金正恩氏と会談の可能性",
+   "link": "https://news.yahoo.co.jp/pickup/6602867?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-17T00:09:18.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "ネパールに「ガチ中華」急増 なぜ",
+   "link": "https://news.yahoo.co.jp/pickup/6602865?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-16T23:58:55.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "米大統領 フアン氏復帰検討に理解",
+   "link": "https://news.yahoo.co.jp/pickup/6602861?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-16T23:08:34.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "日露会談「否定しない」露報道官",
+   "link": "https://news.yahoo.co.jp/pickup/6602860?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-16T23:05:40.000Z"
+  },
+  {
+   "cat": "国際",
+   "title": "トランプ大統領 アジア歴訪へ出発",
+   "link": "https://news.yahoo.co.jp/pickup/6602850?source=rss",
+   "source": "Yahoo!ニュース",
+   "time": "2026-11-16T21:21:32.000Z"
+  },
+  {
+   "cat": "国際",
    "title": "3カ国会談巡り中国「戦勝国」強調",
    "link": "https://news.yahoo.co.jp/pickup/6602847?source=rss",
    "source": "Yahoo!ニュース",
    "time": "2026-11-16T14:25:07.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "はやぶさ2に不具合 目的地を変更",
-   "link": "https://news.yahoo.co.jp/pickup/6602844?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-16T14:00:45.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "元モデル死亡 男は「自傷」と説明",
-   "link": "https://news.yahoo.co.jp/pickup/6602842?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-16T13:39:59.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "卵サンドつかむ客動画炎上 店説明",
-   "link": "https://news.yahoo.co.jp/pickup/6602840?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-16T13:31:14.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "矢野ら カープに謝罪求める要請書",
-   "link": "https://news.yahoo.co.jp/pickup/6602841?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-16T13:20:14.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "高橋一生が公演中に負傷 舞台中止",
-   "link": "https://news.yahoo.co.jp/pickup/6602834?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-16T12:44:03.000Z"
-  },
-  {
-   "cat": "主なニュース",
-   "title": "中田乃愛さん死去 テレ東など追悼",
-   "link": "https://news.yahoo.co.jp/pickup/6602827?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-16T11:15:16.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "ロシアに過去最大規模の攻撃 1336機を撃墜 ウクライナは石油施設攻撃を発表（テレビ朝日系（ANN））",
-   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1MaGxCSG1FdEFfQ1JJbWxNUlZpc3BLejhKTGEyajFmX3YyMVBfbEtvVDBLTWJjMUZJSmNOWFByVXVMMHhJZi1pODZVOVJKWWdJaFlZcXFnVGtIWGZxSTlwbVRlX2RFdVM3YnpwOUtjOGpXYlE5bTBUaVcteC03NUk?oc=5",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-16T17:31:06.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "トランプ大統領「キム・ジョンウン総書記とも会う可能性」",
-   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1wZk5rdmpwdU9oU2FFa3Yzd0U0YVNtRko1ZTlxTGRSN3c4SWF6elJGYk0xUDZhMnNEempsMkpPdV9BdUZXeHNxU2xWUEVnUHlVUU9VZXg0MUFBZTlScU1j?oc=5",
-   "source": "NHKニュース",
-   "time": "2026-11-16T14:52:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "米中ロ首脳会談向け中国外務省が意義強調 日本念頭にけん制も",
-   "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1ZTVZnZFp1MXU1SFo2N0xQNVNVU0NvMFhkSXRXSmt1eW1zX3UyTEJxczVEMllKRmxFR1I1bGJ6UEt3VnR6WDczMXFTV0IxTTduZm45RjV4ZklfYzFhWU9IdFNQR1pGWUhPRWFlNk1vSnN6eXh0bElheWh3?oc=5",
-   "source": "テレ朝NEWS",
-   "time": "2026-11-16T11:16:44.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "世界の「汚職度」ランキング、米国が過去最低順位に転落",
-   "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1nOXE1dVdhdWQwenloa2tENkVCWk1VUnVHbnl0Szl3WWFmZXFERF84M2F5TndJM0tzT0p5TFp4ZkdUUXZkMUs5bElMbS1ZN3FGcnZycU96UQ?oc=5",
-   "source": "CNN",
-   "time": "2026-11-16T10:05:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "ASEANで日中首脳の接触なし 李強氏、日本同席の会議出ず帰途に",
-   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1RX0w2bUtaMF9qODI4UGtLNElsRFFjNWNjclFzSFdNLUVVdEdfb2lPQVVwRXh3WXBOWHRINmFITXRoUEJ4Sl9sdUVlZ05kRVZhNlVpWWg0MTBzazNJeTM3QUNGNGx2Zkk?oc=5",
-   "source": "朝日新聞",
-   "time": "2026-11-16T09:59:38.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "韓国 運動会が消える学校の事情 (2026年11月16日掲載)",
-   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5EMnd1S1FaOG5uUVJGeUpQdU1ZVWZ2UnJrMXFQUXQtYUdEZnRmeC1BaXNPbDNPTXFDdTFUdk1neGRRV0lGUWJOVVJFaHJvUXBEbnJoR25nTTNFbXJIVUE?oc=5",
-   "source": "ライブドアニュース",
-   "time": "2026-11-16T08:26:20.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "米陸軍少佐が告発書を提出 米兵6人が死亡したイランの攻撃めぐり",
-   "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1DbllESENoSGFETmN2WkYxZWdtRWFoWE5rYlItQ2RXYjhBbm1ON2tSY20yWjFOaWlIeUtFY212THNoYUtSS0FERHlvM01ZZDFh?oc=5",
-   "source": "CNN",
-   "time": "2026-11-16T08:26:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "イスラエル野党連合、与党の切り崩し模索 アラブ系政党との連携は難航",
-   "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5XU00wdVdub3pHSTQ2dlozOC1uLW5TVlNkWkZtSUVyZXdmWWlXSFhBVjZPdzBlR05hNkx3UVM3aXFoVTdsSVZTWUVqYUhuZzFjRGUtWHNNX21FdVlTbTJoeklXajBSa3JvSlllQQ?oc=5",
-   "source": "日本経済新聞",
-   "time": "2026-11-16T08:25:40.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "AIカンニングに韓国政府が危機感",
-   "link": "https://news.yahoo.co.jp/pickup/6602806?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-16T07:38:58.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "中国スパイ 諜報の傾向とパターン",
-   "link": "https://news.yahoo.co.jp/pickup/6602800?source=rss",
-   "source": "Yahoo!ニュース",
-   "time": "2026-11-16T06:55:34.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "トランプ政権と「外交爆発」のリスク 2度目のレームダックが国際秩序を揺さぶる 湯浅博の世界読解",
-   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE41cWFpSkUyRTNNOU0xS3k4T3pQOHVlOXpXZTdZcnowcF9yOGhXNHZ0MW05dXFtOUU5dmpaUHNEbUFYbW9EVUZuOU5mcm5qNVNXZmR5R1I0MVdtVVpHWUZ0NHhYM1VxamdDYnY1S25mT1lOMmNSdXc?oc=5",
-   "source": "産経ニュース",
-   "time": "2026-11-16T06:00:00.000Z"
-  },
-  {
-   "cat": "国際",
-   "title": "「メキシコのゴッドファーザー」死亡 麻薬カルテルの原型確立：時事ドットコム",
-   "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9aVXRUS2V2RHlYVnkzYTl6TEV6V19YUEVlUXYzbGVQR3A1SWRMMmIxNlVOZ0dEQV9yMmNkTEItVmlDcjVvc2ltSFlTSFJMeWFqQS1oZmdXcVpWcTRzZERYNEtPYw?oc=5",
-   "source": "時事ドットコム",
-   "time": "2026-11-16T05:50:00.000Z"
   }
  ]
 }
